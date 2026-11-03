@@ -6,7 +6,12 @@ O Oceano e o site oceano.gg só contam uso com a sua autorização, dada nos pri
 
 **No app, no máximo um sinal por dia:** versão, sistema (Mac, Windows ou Linux), idioma, país configurado no sistema, faixa de tempo de uso do dia anterior (até 15 min, até 1 h, até 3 h ou mais), se é a primeira vez e se é o primeiro sinal do mês.
 
-**No site:** com o seu aceite, o Google Analytics carrega e registra a visita. Ele guarda cookies próprios e envia ao Google dados como páginas vistas, aparelho, navegador e região aproximada, e o Google trata esses dados conforme a política dele, inclusive fora do Brasil. Sem o aceite, ele nem carrega.
+**No site:** com o seu aceite, carregam dois serviços de medição. Sem o aceite, nenhum dos dois carrega.
+
+- **Google Analytics (Google):** guarda cookies e registra páginas vistas, aparelho, navegador e região aproximada.
+- **Microsoft Clarity (Microsoft):** guarda cookies e grava como a página é usada, como cliques, rolagem e movimento do mouse, em gravações de sessão e mapas de calor.
+
+Cada empresa trata esses dados conforme a própria política, inclusive fora do Brasil, e recebe o seu IP ao atender a conexão.
 
 No app, nunca vão sites visitados, conversas, arquivos, chaves, nome, e-mail ou qualquer identificador. O tempo é medido no seu computador, e só a faixa sai dele.
 
@@ -18,14 +23,15 @@ Cada envio recebe um recibo aleatório, guardado no seu computador. No servidor 
 
 ## Seus direitos
 
-- **Desligar:** a qualquer momento, em Configurações, no app, ou em Privacidade, no menu do site. O envio para na hora.
-- **Remover:** o botão "Apagar meus dados de uso", nos mesmos lugares, retira das somas do app tudo o que você enviou nos últimos 30 dias e apaga os recibos e as datas guardados com você. No site, ele desliga o Google Analytics e apaga os cookies dele deste navegador; o que já foi registrado fica no Google pelo prazo de retenção da conta e deixa de ser ligado a você quando o cookie some. Sem internet, o app guarda o pedido e tenta de novo.
+- **Desligar no site:** em Privacidade, no menu, o botão "Desligar e apagar meus cookies" para a medição e apaga os cookies dela neste navegador. O que já foi registrado fica com o Google e a Microsoft pelo prazo de retenção de cada serviço, e nós não conseguimos apagar uma visita específica, porque ela não tem o seu nome. Para pedir a eles, use os canais de privacidade do [Google](https://policies.google.com/privacy) e da [Microsoft](https://privacy.microsoft.com/privacystatement).
+- **Desligar no app:** em Configurações, a qualquer momento. O envio para na hora.
+- **Remover no app:** o botão "Apagar meus dados de uso", em Configurações, retira das somas tudo o que você enviou nos últimos 30 dias e apaga os recibos e as datas guardados com você. Sem internet, o app guarda o pedido e tenta de novo.
 - **Conferir:** no app, cada envio aparece em `oceano://rede`.
 
-Como não há identificador, ninguém consegue achar os seus envios sem os recibos que estão com você. Se limpar os dados do navegador ou do app, os recibos somem junto, e a remoção deixa de ser possível para os envios anteriores.
+Na contagem do app não há identificador, então ninguém consegue achar os seus envios sem os recibos que estão com você. Se limpar os dados do app, os recibos somem junto, e a remoção deixa de ser possível para os envios anteriores.
 
 ## Base legal e responsável
 
-A base legal é o seu consentimento (art. 7º, I, da LGPD), que você pode retirar quando quiser. Os dados não são vendidos nem compartilhados, e servem só para estimar quantas pessoas usam o Oceano e onde. A contagem roda na Cloudflare, que atua como operadora: como em qualquer conexão à internet, ela recebe o IP para entregar o envio e trata esses dados conforme a política dela, inclusive fora do Brasil. A conexão é cifrada.
+A base legal é o seu consentimento (art. 7º, I, da LGPD), que você pode retirar quando quiser. Não vendemos dados. Eles servem para estimar quantas pessoas usam o Oceano e onde, e para entender como melhorar o site, e só chegam às empresas citadas aqui. A contagem roda na Cloudflare, que atua como operadora: como em qualquer conexão à internet, ela recebe o IP para entregar o envio e trata esses dados conforme a política dela, inclusive fora do Brasil. A conexão é cifrada.
 
 Responsável: @hericdk. Dúvidas e pedidos: abra um aviso em [github.com/hericdk/oceano/issues](https://github.com/hericdk/oceano/issues).
