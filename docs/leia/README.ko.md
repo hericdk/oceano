@@ -1,6 +1,6 @@
-<p align="center"><img src="../imagens/cara.gif" width="320" alt="눈을 깜빡이는 Oceano의 내비게이터 Cara"></p>
+<p align="center"><img src="../imagens/cara.gif" width="320" alt="눈을 깜빡이는 Oceano의 내비게이터 Kara"></p>
 
-> 안녕! 나는 Cara, 너의 내비게이터야. 처음부터 AI 에이전트가 통합된 브라우저의 첫 번째 내비게이터지. 그리고 뭔지 알아? 바이브 코딩으로 만든 최초의 브라우저이기도 해 😉
+> 안녕! 나는 Kara, 너의 내비게이터야. 처음부터 AI 에이전트가 통합된 브라우저의 첫 번째 내비게이터지. 그리고 뭔지 알아? 바이브 코딩으로 만든 최초의 브라우저이기도 해 😉
 
 <p align="center"><a href="../../README.md">Português</a> · <a href="README.en.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.it.md">Italiano</a> · <a href="README.de.md">Deutsch</a> · <a href="README.ja.md">日本語</a> · <b>한국어</b> · <a href="README.zh.md">中文</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.ar.md">العربية</a> · <a href="README.ru.md">Русский</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.bn.md">বাংলা</a> · <a href="README.ur.md">اردو</a> · <a href="README.te.md">తెలుగు</a> · <a href="README.mr.md">मराठी</a> · <a href="README.ta.md">தமிழ்</a> · <a href="README.sw.md">Kiswahili</a> · <a href="README.ha.md">Hausa</a> · <a href="README.am.md">አማርኛ</a> · <a href="README.yo.md">Yorùbá</a> · <a href="README.zu.md">isiZulu</a> · <a href="README.so.md">Soomaali</a> · <a href="README.ne.md">नेपाली</a> · <a href="README.my.md">မြန်မာ</a> · <a href="README.km.md">ខ្មែរ</a> · <a href="README.lo.md">ລາວ</a> · <a href="README.fil.md">Filipino</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.ps.md">پښتو</a> · <a href="README.fa.md">فارسی</a> · <a href="README.ht.md">Kreyòl ayisyen</a> · <a href="README.mg.md">Malagasy</a></p>
 

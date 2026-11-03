@@ -1,5 +1,5 @@
 /* notch do Oceano: fechado, só um rostinho embaixo do notch; aberto, desce a janela da Navegadora (expo-out).
-   A Cara preenche o fundo e, por cima dela, ficam a conversa, o que ela está fazendo e o campo de mensagem.
+   A Kara preenche o fundo e, por cima dela, ficam a conversa, o que ela está fazendo e o campo de mensagem.
    Solta, a mesma janela flutua e pode ir para qualquer lugar da tela. As cores vêm do tema do navegador;
    só o vermelho de "ao vivo" e de fechar é fixo. Temas livres (ex.: o gato) trocam o fundo. */
 @font-face { font-family: 'Pixelify'; src: url(vendor/fonts/pixelify-sans-latin-400-normal.woff2) format('woff2'); font-weight: 400; }
@@ -33,7 +33,7 @@ svg { shape-rendering: crispEdges; fill: currentColor; }
 .jb.fechar { background: var(--vermelho); border-color: #cc2222; }
 .jb.fechar:hover, .jb.fechar:focus-visible { background: #b30000; }
 
-/* a Cara no fundo, inteira até a base */
+/* a Kara no fundo, inteira até a base */
 .palco { position: absolute; left: 0; right: 0; top: 32px; bottom: 0; overflow: hidden; background: var(--avatar-fundo, var(--fundo)); }
 .avatar { position: absolute; left: 50%; top: -14px; width: 400px; height: 400px; transform: translateX(-50%); image-rendering: pixelated; }
 .janela[data-foco] .avatar { width: 560px; height: 560px; top: -34px; }
@@ -68,7 +68,7 @@ h2 { font-size: 10px; font-weight: 600; color: var(--suave); }
 .ver { height: 18px; padding: 0 7px; font-size: 11px; font-weight: 600; background: var(--elevado); border: 1px solid var(--suave); color: #fff; cursor: pointer; }
 .ver:hover, .ver:focus-visible { background: var(--borda); outline: 0; }
 
-/* foco: só a Cara e o campo */
+/* foco: só a Kara e o campo */
 .janela[data-foco] .mensagens, .janela[data-foco] .previa { display: none; }
 
 .atividades { position: absolute; left: 6px; right: 6px; top: 74px; bottom: 66px; padding: 8px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px; background: color-mix(in srgb, var(--painel) 98%, transparent); border: 1px solid var(--borda); z-index: 3; }

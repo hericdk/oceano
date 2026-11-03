@@ -13,8 +13,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { os: windows-latest, padrao: 'app/dist-outros/*.exe', executavel: 'app/dist-outros/win-unpacked/Oceano.exe' }
-          - { os: ubuntu-latest, padrao: 'app/dist-outros/*.AppImage', executavel: 'app/dist-outros/linux-unpacked/oceano' }
+          - { os: windows-latest, padrao: 'app/dist-outros/*.exe app/dist-outros/*.blockmap app/dist-outros/latest.yml', executavel: 'app/dist-outros/win-unpacked/Oceano.exe' }
+          - { os: ubuntu-latest, padrao: 'app/dist-outros/*.AppImage app/dist-outros/latest-linux.yml', executavel: 'app/dist-outros/linux-unpacked/oceano' }
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4

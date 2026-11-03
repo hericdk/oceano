@@ -73,9 +73,9 @@ function tocarFrase(ctx, entrada, pcm, sr, g, quando) {
   return { fonte: s, fim: quando + dur };
 }
 
-// as vozes do Kokoro em português, a voz italiana lendo português (Mari, misturada) e a mistura feita para a Cara; cada amostra toca antes de baixar o modelo
+// as vozes do Kokoro em português, a voz italiana lendo português (Mari, misturada) e a mistura feita para a Kara; cada amostra toca antes de baixar o modelo
 export const VOZES_NEURAIS = {
-  brilho: { nome: 'Brilho', desc: 'alegre e viva, a voz da Cara' },
+  brilho: { nome: 'Brilho', desc: 'alegre e viva, a voz da Kara' },
   mari: { nome: 'Mari', desc: 'feminina, mais aguda e leve' },
   alex: { nome: 'Alex', desc: 'masculina, tranquila' },
   noel: { nome: 'Seu Noel', desc: 'masculina, mais grave' },

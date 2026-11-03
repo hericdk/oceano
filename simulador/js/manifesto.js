@@ -66,7 +66,7 @@ export const manifesto = {
       </section>
 
       <section class="px bloco mf-fecha">
-        <p><b>A Cara é a nossa persona principal. Um dia, todos terão um avatar próprio, e ela é a precursora desse novo futuro!</b></p>
+        <p><b>A Kara é a nossa persona principal. Um dia, todos terão um avatar próprio, e ela é a precursora desse novo futuro!</b></p>
         <p>Se o Oceano ajudar uma pessoa a apertar o botão de gravar pela primeira vez, ele já valeu a pena.</p>
         <p class="nota">@hericdk · <a href="#" data-ir="oceano://sobre">sobre o Oceano</a></p>
       </section>

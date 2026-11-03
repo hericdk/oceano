@@ -1,4 +1,4 @@
-// A conversinha do slide de avatar: a Cara e o gato discutindo enquanto a pessoa escolhe. As falas já vêm gravadas,
+// A conversinha do slide de avatar: a Kara e o gato discutindo enquanto a pessoa escolhe. As falas já vêm gravadas,
 // então funciona sem IA e sem baixar nada. Cada um fala com a legenda embaixo; termina e recomeça.
 import { linguaGravada } from './voz-neural.js';
 

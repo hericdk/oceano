@@ -1,4 +1,4 @@
-// Lab: a Cara em vários caminhos, com o mesmo roteiro de movimento, medindo o custo de cada um.
+// Lab: a Kara em vários caminhos, com o mesmo roteiro de movimento, medindo o custo de cada um.
 //  - Pontos (malha 2D do Mesh Avatar Studio): a ilustração deformada por elipses e linhas (olhos, boca, cabeça,
 //    mechas). Três densidades da mesma malha: densa (a padrão), leve e mínima.
 //  - Pixel desenhado: o pixel art feito à mão, preso na grade de 6 px, com os mesmos pontos.
@@ -69,7 +69,7 @@ async function pontos(nome, pasta, escala, nota, lado = LADO, nitido = false) {
 
 const montados = await Promise.all([
   pontos('PONTOS · MALHA DENSA', '../cara/', 1, 'A malha padrão do Mesh Avatar Studio (célula de 7 px no rosto).'),
-  pontos('PONTOS · MALHA LEVE', '../cara/', 2, 'Mesma Cara e mesmos pontos, células 2× maiores no rosto e no corpo.'),
+  pontos('PONTOS · MALHA LEVE', '../cara/', 2, 'Mesma Kara e mesmos pontos, células 2× maiores no rosto e no corpo.'),
   pontos('PONTOS · MALHA MÍNIMA', '../cara/', 4, 'Células 4× maiores: o menor número de triângulos que ainda dobra olhos, boca e cabelo.'),
   pontos('PIXEL DESENHADO', '../cara-pixel/', 2, 'Seu pixel art (grade de 6 px, 40 cores dela), animado pelos mesmos pontos e mostrado na grade dele (180 px).', 180, true),
 ]);

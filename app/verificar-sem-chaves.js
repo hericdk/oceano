@@ -47,6 +47,8 @@ if (!guardrails.FIXOS.some(f => f.id === 'ia-local') || !/nada chega a uma IA lo
 if (guardrails.pedidoCompleto({ pedido: 'x' }) || !guardrails.pedidoCompleto({ pedido: 'x', origem: 'x', intencao: 'x', recomendacao: 'x' })) erros.push('app/guardrails.js deixa passar mensagem à IA local sem origem, intenção ou recomendação');
 if (!/FERRAMENTA_PEDIDO\.nome && !guardrails\.pedidoCompleto/.test(conversaJs)) erros.push('app/conversa.js não confere a mensagem à IA local');
 if (/claudeAbrir\([^)]*\S[^)]*\)|ENDERECO\s*\+/.test(lerApp('abrir-claude.js'))) erros.push('app/abrir-claude.js põe a mensagem no endereço');
+const atualizacoesJs = lerApp('atualizacoes.js');
+if (!/autoDownload = false/.test(atualizacoesJs) || !/autoInstallOnAppQuit = false/.test(atualizacoesJs) || !/repos\/hericdk\/oceano\/releases\/latest/.test(atualizacoesJs)) erros.push('app/atualizacoes.js passou a instalar sozinho ou a procurar em outro lugar');
 const contagemJs = lerApp('contagem.js');
 if (!/const SERVIDOR = '(https:\/\/oceano-analytics\.[a-z0-9-]+\.workers\.dev\/v1)?';/.test(contagemJs) || /chuva/i.test(contagemJs) || !/const corpo = \{ versao: app\.getVersion\(\), sistema, idioma: String\(idioma\)\.slice\(0, 10\), pais, tempo: [^,]*, novo: [^,]*, mes: [^}]*\};/.test(contagemJs)) erros.push('app/contagem.js mudou o endereço ou o que envia');
 if (!/guardado\.ler\('uso-anonimo', false\) !== true\) \{ [^\n]*return; \}/.test(fs.readFileSync(path.join(RAIZ, 'simulador/js/contagem-uso.js'), 'utf8'))) erros.push('a contagem de uso deixou de conferir a autorização');

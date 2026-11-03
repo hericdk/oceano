@@ -71,7 +71,7 @@ Antes de criar ou mudar algo no Oceano, pergunte:
 - Respeita a privacidade e a acessibilidade?
 - Aproxima as pessoas umas das outras?
 
-A Cara é a nossa persona principal. Um dia, todos terão um avatar próprio, e ela é a precursora desse novo futuro!
+A Kara é a nossa persona principal. Um dia, todos terão um avatar próprio, e ela é a precursora desse novo futuro!
 
 Se o Oceano ajudar uma pessoa a apertar o botão de gravar pela primeira vez, ele já valeu a pena.
 

@@ -305,16 +305,6 @@ ipcMain.handle('cache:limpar', async (_, particao) => {
   return true;
 });
 
-// ---------- atualização: só quando você pede ----------
-
-ipcMain.handle('atualizacao:verificar', async () => {
-  const url = 'https://registry.npmjs.org/electron/latest';
-  ganchos.registrarPropria(url, 'Você pediu: ver a versão mais nova do Electron/Chromium', 'nada (só download)');
-  const r = await fetch(url);
-  const j = await r.json();
-  return { atual: process.versions.electron, chromium: process.versions.chrome, ultima: j.version, publicada: j.time || null };
-});
-
 // ---------- o que o Chromium deixaria ligado e o Oceano desliga ----------
 
 function desligarTelemetria() {

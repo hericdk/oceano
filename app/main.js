@@ -20,6 +20,7 @@ require('./imagem').registrar(ipcMain);
 const notch = require('./notch');
 require('./transcricao').registrar((...a) => registrarPropria(...a));   // transcrição da voz, no computador
 require('./voz').registrar((...a) => registrarPropria(...a));   // voz neural da Navegadora
+require('./atualizacoes').registrar((...a) => enviar(...a), (...a) => registrarPropria(...a));   // versão nova, só com clique da pessoa
 require('./contagem').registrar((...a) => registrarPropria(...a));   // contagem anônima, só com autorização
 require('./gimp').registrar(registrarPropria);   // abrir o GIMP e aplicar o PhotoGIMP
 require('./downloads').registrar((...a) => enviar(...a));   // lista de downloads, só na memória

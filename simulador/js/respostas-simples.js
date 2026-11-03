@@ -1,4 +1,4 @@
-// O que a Cara responde sem nenhuma IA conectada: regras simples, com energia, e sempre honestas sobre o limite.
+// O que a Kara responde sem nenhuma IA conectada: regras simples, com energia, e sempre honestas sobre o limite.
 // Nada disso sai do computador. O clima é o único caso que consulta a internet, e fica nas ferramentas da Navegadora.
 
 const semAcento = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();

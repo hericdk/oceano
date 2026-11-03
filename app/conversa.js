@@ -226,7 +226,7 @@ function registrar(ipcMain) {
   ipcMain.handle('conversa:abrir', (_e, id) => { const c = achar(String(id)); return c ? { id: c.id, titulo: c.titulo, tela: c.tela } : null; });
   ipcMain.handle('conversa:nova', () => { const c = nova(); return { id: c.id, titulo: c.titulo }; });
   ipcMain.handle('conversa:apagar', (_e, id) => { estado.conversas = estado.conversas.filter(c => c.id !== String(id)); salvar(); return true; });
-  ipcMain.handle('conversa:enviar', (e, id, texto, ferramentas, nome, imagens) => enviar(e.sender, String(id || ''), String(texto || '').slice(0, 40000), (telasDoNotch.has(e.sender.id) ? [guardrails.FERRAMENTA_PEDIDO] : Array.isArray(ferramentas) ? ferramentas : []).filter(f => guardrails.ferramentaPermitida(f?.nome)), String(nome || 'Cara').slice(0, 40), limparImagens(imagens)));
+  ipcMain.handle('conversa:enviar', (e, id, texto, ferramentas, nome, imagens) => enviar(e.sender, String(id || ''), String(texto || '').slice(0, 40000), (telasDoNotch.has(e.sender.id) ? [guardrails.FERRAMENTA_PEDIDO] : Array.isArray(ferramentas) ? ferramentas : []).filter(f => guardrails.ferramentaPermitida(f?.nome)), String(nome || 'Kara').slice(0, 40), limparImagens(imagens)));
   // cartão de pedido: fica na tela da conversa para voltar ao reabrir
   ipcMain.handle('conversa:cartao', (_e, id, cartao, dados) => {
     const c = achar(String(id)); if (!c) return false;

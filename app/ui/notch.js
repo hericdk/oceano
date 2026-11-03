@@ -12,7 +12,8 @@ const naLateral = new URLSearchParams(location.search).has('lateral');
 if (naLateral) { window.oceanoNativo = parent.oceanoNativo; document.documentElement.classList.add('na-lateral'); }
 const n = naLateral ? parent.notchNaLateral : window.notch, raiz = document.querySelector('.notch');
 const ler = (k, padrao) => { try { return JSON.parse(localStorage.getItem(k)) ?? padrao; } catch { return padrao; } };
-const nomeAtual = () => { try { return localStorage.getItem('oceano:avatar-nome') || 'Cara'; } catch { return 'Cara'; } };
+// quem tinha o nome antigo salvo vê o novo; nome escolhido pela pessoa fica
+const nomeAtual = () => { try { const n = localStorage.getItem('oceano:avatar-nome'); return !n || n === 'Cara' ? 'Kara' : n; } catch { return 'Kara'; } };
 const $ = s => document.querySelector(s), esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const avatarTela = $('.avatar'), rosto = $('.rosto'), janelaEl = $('.janela');
 const pintarNome = () => { $('.nome').textContent = nomeAtual(); $('.campo textarea').placeholder = `Mensagem para a ${nomeAtual()}…`; };

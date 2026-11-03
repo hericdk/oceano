@@ -291,7 +291,7 @@ export function gerarMundo({ semente, grupos, central = [], graficos = 'novo' })
   const lista = [{ id: 'central', nome: 'Oceano', agentes: central, central: true }, ...grupos];
   for (const g of lista) {
     let melhor = null;
-    // O Castelo da Cara: sempre no ponto mais alto da ilha. Regra fixa: mod ou editor de mapa pode mudar o que quiser,
+    // O Castelo da Kara: sempre no ponto mais alto da ilha. Regra fixa: mod ou editor de mapa pode mudar o que quiser,
     // mas o castelo é colocado por último neste ponto, com o terreno em volta aplainado e o jardim dele.
     if (g.central && novo) {
       let topo = null, mais = -Infinity;

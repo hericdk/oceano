@@ -1862,3 +1862,6 @@ button.chip:hover:not(:disabled), button.chip:focus-visible { background: var(--
 .as-pedido-partes { display: grid; gap: 2px 0; margin: 6px 0; font-size: 12px; }
 .as-pedido-partes dt { color: var(--suave); }
 .as-pedido-partes dd { margin: 0 0 4px; overflow-wrap: anywhere; }
+
+.selo-atualizar { padding: 2px 8px; border: 0; background: var(--sol); color: #000; font: inherit; font-size: 11px; white-space: nowrap; cursor: pointer; }
+.selo-atualizar[hidden] { display: none; }

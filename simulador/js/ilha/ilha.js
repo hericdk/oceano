@@ -96,7 +96,7 @@ export function criarIlha(app, guardado, raiz) {
     cena.fog = new THREE.Fog(0xbcd3e6, 200, 900);
     mundo = gerarMundo({ semente, grupos: grupos.map(g => ({ id: g.id, nome: g.nome, agentes: g.agentes || [], cor: parseInt(g.cor.slice(1), 16) })), central: [], graficos });
     const central = mundo.vilas.find(v => v.central);
-    if (central) central.nome = central.castelo ? `Castelo de ${app.assistente?.nome?.() || 'Cara'}` : app.assistente?.nome?.() || 'Orquestrador';
+    if (central) central.nome = central.castelo ? `Castelo de ${app.assistente?.nome?.() || 'Kara'}` : app.assistente?.nome?.() || 'Orquestrador';
     vivo = montarCena(cena, mundo, { destaque: 0x0040ff, graficos });
     vivo.definirVegetacao?.(graficos === 'novo' ? guardado.ler('ilha-vegetacao', 'pixel') : '3d');
     tempestades = criarTempestades(cena, mundo.vilas);

@@ -3,7 +3,7 @@
 Avatares 2D no formato do [Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)
 (runtime `mesh-avatar` 0.4.0, MIT, em `vendor/mesh-avatar/`).
 
-- `cara/`: a personagem do Oceano (malha de pontos). `cara-pixel/`: a mesma Cara em pixel art.
+- `cara/`: a personagem do Oceano (malha de pontos). `cara-pixel/`: a mesma Kara em pixel art.
 - `boneco-3d/`: exemplo 3D em VRM 1.0, gerado por `gerar.mjs` (nada de fora). Prova que ossos, molas e expressões funcionam.
 - Avatares 3D importados (`.vrm` ou `.glb`) ficam no IndexedDB deste computador. Código em `js/avatar3d.js`.
 

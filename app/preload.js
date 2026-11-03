@@ -22,6 +22,12 @@ contextBridge.exposeInMainWorld('oceanoNativo', {
   perfilApagarDados: chamar('perfil:apagar-dados'),
   efemeraApagar: chamar('efemera:apagar'),
   verificarAtualizacao: chamar('atualizacao:verificar'),
+  atualizacaoEstado: chamar('atualizacao:estado'),
+  atualizacaoPrefs: chamar('atualizacao:prefs'),
+  atualizacaoDefinirAuto: chamar('atualizacao:definir-auto'),
+  atualizacaoAtualizar: chamar('atualizacao:atualizar'),
+  atualizacaoInstalar: chamar('atualizacao:instalar'),
+  aoAtualizacaoEstado: ouvir('atualizacao:estado'),
   bloqueadorLiberar: chamar('bloqueador:liberar'),
   leitorImagem: chamar('leitor:imagem'),
   // dev

@@ -35,8 +35,8 @@ export const avatar = {
         <div class="av-controles">
           <section class="px bloco"><h2>Personagem</h2>
             <div class="cfg-opcoes" data-av-quem role="group" aria-label="Personagem"></div>
-            <label class="av-campo"><span>Nome dela</span><input data-av-nomecampo maxlength="24" autocomplete="off" placeholder="Cara"></label>
-            <button class="btn mini secundario" data-av-padrao>voltar para a Cara</button>
+            <label class="av-campo"><span>Nome dela</span><input data-av-nomecampo maxlength="24" autocomplete="off" placeholder="Kara"></label>
+            <button class="btn mini secundario" data-av-padrao>voltar para a Kara</button>
             <div class="av-3d">
               <p class="av-rotulo">avatar 3D</p>
               <label class="btn mini secundario av-importar3d">importar .vrm ou .glb<input type="file" accept=".vrm,.glb" data-av-3d hidden></label>
@@ -59,13 +59,13 @@ export const avatar = {
       </div>
       <section class="px bloco av-caminhos" aria-labelledby="av-caminhos-titulo">
         <h2 id="av-caminhos-titulo">Três jeitos de criar</h2>
-        <p class="av-conversa"><b>A Cara é a nossa persona principal. Um dia, todos terão um avatar próprio, e ela é a precursora desse novo futuro!</b></p>
+        <p class="av-conversa"><b>A Kara é a nossa persona principal. Um dia, todos terão um avatar próprio, e ela é a precursora desse novo futuro!</b></p>
         <p class="av-conversa">Quero que você escolha como dar forma à sua Navegadora, e não só usar o que eu imaginei. Por isso são três caminhos. Nenhum é o certo: vai no que te der mais vontade. E dá para trocar quando quiser.</p>
         <div class="av-caminhos-grade">
           <article class="av-caminho">
             <p class="av-rotulo">malha 2D · o padrão</p>
             <h3>Um desenho que ganha vida</h3>
-            <p>Foi assim que eu fiz a Cara, e é ela que aparece primeiro quando o Oceano abre. Você começa com um desenho, marca olhos, boca e cabelo, e ele passa a piscar, falar e reagir. É o caminho que eu recomendo para começar, porque dá um resultado bonito sem você precisar animar quadro por quadro.</p>
+            <p>Foi assim que eu fiz a Kara, e é ela que aparece primeiro quando o Oceano abre. Você começa com um desenho, marca olhos, boca e cabelo, e ele passa a piscar, falar e reagir. É o caminho que eu recomendo para começar, porque dá um resultado bonito sem você precisar animar quadro por quadro.</p>
             <div class="av-caminho-acoes"><button class="btn mini" data-av-ir-malha>criar com malha</button></div>
           </article>
           <article class="av-caminho">

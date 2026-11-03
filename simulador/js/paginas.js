@@ -101,7 +101,7 @@ function statusDoMod(m) {
 let catalogoVisto = false;
 let abaMods = 'mods';
 
-const nomeAvatar = app => app.assistente?.nome?.() || 'Cara';
+const nomeAvatar = app => app.assistente?.nome?.() || 'Kara';
 // o que dá para desligar no navegador, além dos mods: tudo fica junto, na tela de mods
 const desativaveis = app => [
   { id: 'clima', nome: 'Clima', desc: 'Mostra o clima da sua cidade na página inicial, em tamanho pequeno ou médio e com fundo normal ou transparente. Começa desligado.', ligado: () => app.guardado.ler('mod-clima', false) === true, alternar() { app.guardado.gravar('mod-clima', app.guardado.ler('mod-clima', false) !== true); app.emitir?.('clima'); } },
@@ -1377,7 +1377,7 @@ const sobre = {
           <li>Fontes <b>Pixelify Sans</b> e <b>Silkscreen</b> (SIL OFL) e bloqueador da <b>Ghostery</b> (MPL-2.0). Leitor com o <b>Readability</b> da Mozilla (Apache-2.0).</li>
           <li><a href="https://github.com/shinshin86/mesh-avatar-studio" target="_blank" rel="noopener"><b>Mesh Avatar Studio</b></a> (shinshin86, MIT): o avatar animado da Navegadora e o editor de avatar em <a href="#" data-ir="oceano://avatar">oceano://avatar</a>.</li>
           <li><a href="https://github.com/pixiv/three-vrm" target="_blank" rel="noopener"><b>three-vrm</b></a> (pixiv, MIT): os avatares 3D em VRM.</li>
-          <li><b>Cara</b>, a personagem do Oceano (@hericdk, GPL-3.0-or-later), animada pelo runtime do Mesh Avatar Studio.</li>
+          <li><b>Kara</b>, a personagem do Oceano (@hericdk, GPL-3.0-or-later), animada pelo runtime do Mesh Avatar Studio.</li>
         </ul>
       </section>
       <section class="px bloco">
@@ -1673,9 +1673,9 @@ const configuracoes = {
           <span class="cfg-ctrl"><select data-cfg-idioma aria-label="Idioma"><option value="" ${app.idioma?.escolhido() ? '' : 'selected'}>do computador</option>${Object.entries(IDIOMAS).map(([k, n]) => `<option value="${k}" ${app.idioma?.escolhido() === k ? 'selected' : ''}>${n}</option>`).join('')}</select></span></div>
         <div class="cfg-linha"><span><b>Sugestões da conversa</b><small>ideias do que pedir, que mudam a cada conversa e somem depois da primeira mensagem</small></span>
           <span class="cfg-ctrl"><label class="cfg-chave"><input type="checkbox" data-cfg-sugestoes ${app.guardado.ler('assistente-sugestoes', true) ? 'checked' : ''}> mostrar</label></span></div>
-        <div class="cfg-linha"><span><b>Estilo de ${esc(app.assistente?.nome?.() || 'Cara')}</b><small>vale para o painel do navegador e para o notch</small></span>
+        <div class="cfg-linha"><span><b>Estilo de ${esc(app.assistente?.nome?.() || 'Kara')}</b><small>vale para o painel do navegador e para o notch</small></span>
           <span class="cfg-ctrl cfg-opcoes" data-cfg-estilo role="group" aria-label="Estilo do avatar"></span></div>
-        <div class="cfg-linha"><span><b>Cor de fundo no navegador</b><small>atrás de ${esc(app.assistente?.nome?.() || 'Cara')} no painel e nas janelas do navegador; "padrão" volta à do tema</small></span>
+        <div class="cfg-linha"><span><b>Cor de fundo no navegador</b><small>atrás de ${esc(app.assistente?.nome?.() || 'Kara')} no painel e nas janelas do navegador; "padrão" volta à do tema</small></span>
           <span class="cfg-ctrl"><input type="color" data-fundo-avatar="navegador" aria-label="Cor de fundo do avatar no navegador"> <button class="btn mini secundario" data-fundo-padrao="navegador">padrão</button></span></div>
       </section>`}
       ${app.real ? `<section class="px bloco" id="notch">
@@ -1684,9 +1684,9 @@ const configuracoes = {
           <span class="cfg-ctrl"><label class="cfg-chave"><input type="checkbox" data-notch="ligado"> mostrar</label></span></div>
         <div class="cfg-linha"><span><b>Visível ao trocar de app</b><small>ligado: continua no notch, minimizado, em qualquer app ou mesa. Desligado: fica só na mesa do Oceano e some quando outro app está na frente.</small></span>
           <span class="cfg-ctrl"><label class="cfg-chave"><input type="checkbox" data-notch="sempre"> sempre visível</label></span></div>
-        <div class="cfg-linha"><span><b>Continuar ligada ao fechar o navegador</b><small>${esc(app.assistente?.nome?.() || 'Cara')} fica no notch e na barra do Mac, só para conversar com as IAs conectadas. Abas e sites fecham. Para encerrar tudo, use Sair do Oceano (⌘Q ou o ícone da barra).</small></span>
+        <div class="cfg-linha"><span><b>Continuar ligada ao fechar o navegador</b><small>${esc(app.assistente?.nome?.() || 'Kara')} fica no notch e na barra do Mac, só para conversar com as IAs conectadas. Abas e sites fecham. Para encerrar tudo, use Sair do Oceano (⌘Q ou o ícone da barra).</small></span>
           <span class="cfg-ctrl"><label class="cfg-chave"><input type="checkbox" data-notch="ficar"> continuar ligada</label></span></div>
-        <div class="cfg-linha"><span><b>Cor de fundo de ${esc(app.assistente?.nome?.() || 'Cara')} no notch</b><small>separada da cor do navegador; "padrão" volta à do tema</small></span>
+        <div class="cfg-linha"><span><b>Cor de fundo de ${esc(app.assistente?.nome?.() || 'Kara')} no notch</b><small>separada da cor do navegador; "padrão" volta à do tema</small></span>
           <span class="cfg-ctrl"><input type="color" data-fundo-avatar="notch" aria-label="Cor de fundo do avatar no notch"> <button class="btn mini secundario" data-fundo-padrao="notch">padrão</button></span></div>
         <div class="cfg-linha"><span><b>Tema do notch</b><small>"Janela do Oceano" segue as janelinhas e as cores do tema do navegador; outros temas trazem um personagem próprio</small></span>
           <span class="cfg-ctrl cfg-opcoes" data-notch-temas role="group" aria-label="Tema do notch"></span></div>

@@ -23,10 +23,12 @@ export const privacidade = {
     if (!app.real) return null;
     const nativo = window.oceanoNativo;
     const raiz = el.querySelector('[data-priv]');
-    let c, telemetria, permissoes, atualizacao = null;
+    let c, telemetria, permissoes, atualizacao = null, autoAtualizar = true;
 
     async function carregar() {
       [c, telemetria, permissoes] = await Promise.all([nativo.configLer(), nativo.telemetria(), nativo.permissoes()]);
+      atualizacao = await nativo.atualizacaoEstado();
+      autoAtualizar = (await nativo.atualizacaoPrefs()).auto;
       desenhar();
     }
     async function gravar(parcial, msg) {
@@ -109,16 +111,19 @@ export const privacidade = {
 
       <section class="px bloco">
         <h2>Versão e atualização</h2>
-        <p>Chromium <b>${esc(nativo.versoes.chromium)}</b> · Electron ${esc(nativo.versoes.electron)}. Correções de segurança do Chromium saem a cada 4 semanas.</p>
-        <p data-atualizacao>${atualizacao ? (atualizacao.erro ? esc(atualizacao.erro)
-          : atualizacao.ultima === atualizacao.atual ? '✓ Você está na versão mais nova.'
-          : `Existe o Electron <b>${esc(atualizacao.ultima)}</b>. Para atualizar este MVP: <code>npm install electron@latest</code> na pasta app.`) : ''}</p>
+        <p>Oceano <b>${esc(atualizacao?.atual || '')}</b> · Chromium ${esc(nativo.versoes.chromium)} · Electron ${esc(nativo.versoes.electron)}.</p>
+        <p data-atualizacao role="status">${!atualizacao || atualizacao.fase === 'parada' ? '' : atualizacao.fase === 'erro' ? 'Não consegui verificar agora.'
+          : atualizacao.fase === 'atualizada' ? '✓ Você está na versão mais nova.'
+          : atualizacao.fase === 'procurando' ? 'Procurando…'
+          : atualizacao.nova ? `Existe a versão <b>${esc(atualizacao.nova)}</b>. Use o botão na barra do navegador.` : ''}</p>
         <button class="btn mini" data-verificar>Verificar agora</button>
-        <p class="nota">O Oceano só procura versão nova quando você clica. No navegador final, a atualização será automática, com aviso na tela.</p>
+        <label class="vivo"><input type="checkbox" data-atualizacao-auto${autoAtualizar ? ' checked' : ''}> Procurar versão nova ao abrir</label>
+        <p class="nota">A procura só pergunta ao GitHub qual é a versão mais nova e não envia dados seus. Nada é baixado nem instalado sem o seu clique.</p>
       </section>`;
     }
 
     raiz.addEventListener('change', e => {
+      if (e.target.matches('[data-atualizacao-auto]')) { nativo.atualizacaoDefinirAuto(e.target.checked); autoAtualizar = e.target.checked; return; }
       const t = e.target;
       const cfg = c.config;
       if (t.name === 'dns-modo') return gravar({ dns: { ...cfg.dns, modo: t.value } }, 'DNS atualizado.');
@@ -163,7 +168,7 @@ export const privacidade = {
       if (b.matches('[data-esquecer-tudo]')) { await nativo.permissaoEsquecer(null); return carregar(); }
       if (b.matches('[data-verificar]')) {
         b.disabled = true;
-        try { atualizacao = await nativo.verificarAtualizacao(); } catch (err) { atualizacao = { erro: 'Não consegui verificar: ' + (err.message || err) }; }
+        atualizacao = await nativo.verificarAtualizacao();
         desenhar();
       }
     });

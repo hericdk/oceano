@@ -33,6 +33,7 @@ import { iniciarFarol } from './farol-mods.js';
 import { MAX_MOD_BYTES } from './mod-analise.js';
 import { normalizar as normalizarPedido, pedidoCompleto } from './pedido-claude.js';
 import { contarUso } from './contagem-uso.js';
+import { ligarAtualizacoes } from './atualizacoes.js';
 
 // ---------- armazenamento (opcional: o simulador funciona sem ele) ----------
 
@@ -79,6 +80,7 @@ const app = {
 };
 window.oceano = app;   // para inspecionar no console do navegador
 setTimeout(() => contarUso(guardado), 5000);
+ligarAtualizacoes(app);
 
 // a mensagem à IA local preparada no notch aparece aqui, na conversa da lateral, para a pessoa ler e autorizar
 window.oceanoNativo?.aoPedidoDoNotch?.(async d => {
@@ -1032,7 +1034,7 @@ let rostoDoGato = null;
 })().catch(() => {});   // sem a folha, fica o ícone desenhado
 const navegadoraAberta = () => !$('#lateral').hidden && guardado.ler('lateral-aba', 'assistente') === 'assistente';
 function pintarBotaoNavegadora() {
-  const quem = guardado.ler('avatar-personagem', 'cara'), nome = guardado.ler('avatar-nome', '') || { cara: 'Cara', gato: 'Gato', boneco3d: 'Boneco 3D' }[quem] || 'avatar próprio';
+  const quem = guardado.ler('avatar-personagem', 'cara'), nome = guardado.ler('avatar-nome', '') || { cara: 'Kara', gato: 'Gato', boneco3d: 'Boneco 3D' }[quem] || 'avatar próprio';
   if (quem === 'gato' && rostoDoGato) botaoNavegadora.replaceChildren(rostoDoGato);
   else botaoNavegadora.innerHTML = icone(ICONE_DO_AVATAR[quem] || 'perfil');
   botaoNavegadora.setAttribute('aria-pressed', String(navegadoraAberta()));

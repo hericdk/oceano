@@ -16,7 +16,7 @@ const T = {
   pt: {
     p_link: "Privacidade", p_txt: "Posso medir a sua visita? Com o seu aceite, o site usa o Google Analytics e o Microsoft Clarity. Eles guardam cookies, contam as visitas e gravam como a página é usada, como cliques e rolagem.", p_sim: "Pode contar", p_nao: "Agora não", p_apagar: "Desligar e apagar meus cookies", p_politica: "Como funciona", p_feito: "Pronto: a medição foi desligada e os cookies saíram deste navegador. O que já foi registrado segue o prazo de cada serviço.", p_falha: "Sem conexão agora. Tente de novo em instantes.",
     b_breve: 'em breve',
-    c_ola: "Oi! Eu sou a Cara\nA primeira IA de um navegador com agentes integrados desde o início. E adivinha só: o primeiro vibecodado também 😉", c_baixar: "Baixar o GIF",
+    c_ola: "Oi! Eu sou a Kara\nA primeira IA de um navegador com agentes integrados desde o início. E adivinha só: o primeiro vibecodado também 😉", c_baixar: "Baixar o GIF",
     baseado: 'Baseado em:', base_sta: "Strudel e fork do Mrityunjay Bhardwaj",
     titulo: 'Oceano · o navegador feito para quem cria', pular: 'Ir para o conteúdo', idioma: 'Idioma', pausar: 'Pausar o movimento', continuar: 'Continuar o movimento',
     menu: 'Menu', baixar: 'Baixar', m_ia: 'A Navegadora', m_baixar: 'Baixar o Oceano', gato: 'Gato',
@@ -38,7 +38,7 @@ const T = {
     f_robo_t: 'Robôs', f_robo: 'Monte e teste robôs num simulador 3D, com física e motores.',
     f_nav_t: 'A Navegadora', f_nav: 'Conecte a sua IA. Ela conversa, planeja e usa as ferramentas com você.',
     f_ilh_t: 'A ilha', f_ilh: 'Cada assunto vira uma vila, com os especialistas que trabalham para você.',
-    f_ava_t: 'O seu avatar', f_ava: 'Comece pela Cara ou pelo gato, e crie o seu em pixel, malha ou 3D.',
+    f_ava_t: 'O seu avatar', f_ava: 'Comece pela Kara ou pelo gato, e crie o seu em pixel, malha ou 3D.',
     f_tem_t: 'Temas', f_tem: 'Troque cada cor e veja o resultado na hora.',
     f_mod_t: 'Mods', f_mod: 'Mude o navegador com poucas linhas. Mods não tocam em arquivos nem senhas.',
     f_mes_t: 'A mesa', f_mes: 'Sua página inicial é uma mesa de janelas sobre o mar, no horário de agora.',
@@ -49,7 +49,7 @@ const T = {
   en: {
     p_link: "Privacy", p_txt: "Can I measure your visit? If you accept, the site uses Google Analytics and Microsoft Clarity. They store cookies, count visits and record how the page is used, such as clicks and scrolling.", p_sim: "Count me in", p_nao: "Not now", p_apagar: "Turn off and delete my cookies", p_politica: "How it works", p_feito: "Done: measurement is off and the cookies are gone from this browser. What was already recorded follows each service's retention period.", p_falha: "No connection right now. Try again shortly.",
     b_breve: 'coming soon',
-    c_ola: "Hi! I'm Cara\nThe first AI of a browser with agents built in from the very start. And guess what: the first vibe-coded one, too 😉", c_baixar: "Download the GIF",
+    c_ola: "Hi! I'm Kara\nThe first AI of a browser with agents built in from the very start. And guess what: the first vibe-coded one, too 😉", c_baixar: "Download the GIF",
     baseado: 'Based on:', base_sta: "Strudel and a fork by Mrityunjay Bhardwaj",
     titulo: 'Oceano · the browser made for people who create', pular: 'Skip to content', idioma: 'Language', pausar: 'Pause motion', continuar: 'Resume motion',
     menu: 'Menu', baixar: 'Download', m_ia: 'The Navigator', m_baixar: 'Download Oceano', gato: 'Cat',
@@ -71,7 +71,7 @@ const T = {
     f_robo_t: 'Robots', f_robo: 'Build and test robots in a 3D simulator, with physics and motors.',
     f_nav_t: 'The Navigator', f_nav: 'Connect your AI. She talks, plans and uses the tools with you.',
     f_ilh_t: 'The island', f_ilh: 'Each topic becomes a village, with the specialists who work for you.',
-    f_ava_t: 'Your avatar', f_ava: 'Start with Cara or the cat, then make your own in pixel, mesh or 3D.',
+    f_ava_t: 'Your avatar', f_ava: 'Start with Kara or the cat, then make your own in pixel, mesh or 3D.',
     f_tem_t: 'Themes', f_tem: 'Change each color and see the result right away.',
     f_mod_t: 'Mods', f_mod: 'Change the browser with a few lines. Mods never touch files or passwords.',
     f_mes_t: 'The desk', f_mes: 'Your home page is a desk of windows over the sea, at the time it is right now.',
@@ -310,7 +310,7 @@ function iniciarBorda() {
   return fazer;
 }
 
-// ---------- Cara e gato, cada um com a sua animação ----------
+// ---------- Kara e gato, cada um com a sua animação ----------
 async function iniciarRostos() {
   const pix = criarPixelizador(); pix.definirPaleta(PALETA);
   const cara = $('#cara'), gato = $('#gato'), ctxC = cara.getContext('2d', { willReadFrequently: true }), ctxG = gato.getContext('2d', { willReadFrequently: true });

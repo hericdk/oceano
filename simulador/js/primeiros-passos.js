@@ -179,10 +179,10 @@ export function iniciarPrimeirosPassos(app, guardado) {
     app.mostrarLateral?.(false, false);   // atrás dos passos fica só o oceano
     if (app.url?.() !== 'oceano://nova-aba') app.navegar('oceano://nova-aba');
     const a = await app.carregarPainel?.('assistente');
-    // começa com o gato e a Cara aparece no meio do caminho; ao minimizar, volta o avatar que a pessoa já tinha
+    // começa com o gato e a Kara aparece no meio do caminho; ao minimizar, volta o avatar que a pessoa já tinha
     const salvo = estado();
     const antes = !rever && salvo.antes ? salvo.antes : a?.personagem?.() || 'cara';
-    const nome = antes === 'gato' ? 'Cara' : a?.nome?.() || 'Cara';
+    const nome = antes === 'gato' ? 'Kara' : a?.nome?.() || 'Kara';
     let revelou = !rever && !!salvo.revelou;
     if (!rever) salvarEstado({ antes });
     if (!revelou) a?.definirPersonagem?.('gato');
@@ -332,7 +332,7 @@ export function iniciarPrimeirosPassos(app, guardado) {
       await espera(100);
       if (await irComOCursor(alvo, n)) { await clicarCursor(); await espera(500); if (n === demo) mao.hidden = true; }
     }
-    // o avatar: os dois em cena, discutindo. A Cara é a de verdade; o gato é a folha dele. A escolha só vale ao sair do slide
+    // o avatar: os dois em cena, discutindo. A Kara é a de verdade; o gato é a folha dele. A escolha só vale ao sair do slide
     const aCara = antes === 'gato' ? 'cara' : antes;
     let escolha = salvo.escolha === 'gato' ? 'gato' : 'cara', conversa = null, gatoEmCena = null, gatoRaf = 0, noAvatar = false;
     const pintarEscolha = () => { $('[data-pp="revelar"]').setAttribute('aria-pressed', escolha === 'cara'); $('[data-pp="gato"]').setAttribute('aria-pressed', escolha === 'gato'); };

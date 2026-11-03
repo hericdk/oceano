@@ -33,7 +33,9 @@ Toda vez que um site recebe acesso à câmera ou ao microfone, um aviso vermelho
 
 ## O que ainda não existe
 
-Assinatura do app e atualização automática. Até lá, confira de onde você baixou o Oceano.
+Assinatura do app. Até lá, confira de onde você baixou o Oceano.
+
+O Oceano procura versão nova no GitHub ao abrir, sem enviar dados seus, e dá para desligar em Privacidade. Nada é baixado nem instalado sem o seu clique. No Mac, sem a assinatura, o botão abre a página de download.
 
 Encontrou uma falha? Abra um aviso no repositório, sem publicar detalhes de como explorar.
 

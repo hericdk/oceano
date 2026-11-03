@@ -79,7 +79,7 @@ function torre(m, x, y, z, telhado) {
   }
 }
 
-// O Castelo da Cara, nas cores dela: muralha clara, telhados azul-marinho, pontas douradas e bandeiras coral.
+// O Castelo da Kara, nas cores dela: muralha clara, telhados azul-marinho, pontas douradas e bandeiras coral.
 // É sempre a construção mais alta e mais exagerada da ilha.
 function castelo(m, x, y, z) {
   const PAREDE = 0xf2e7d2, SOMBRA = 0xd8c9ad, AZUL = 0x1f3f8f, OURO = 0xffc93c, CORAL = 0xf0705a, V = (a, b, c) => new THREE.Vector3(a, b, c);
@@ -98,7 +98,7 @@ function castelo(m, x, y, z) {
   // muralha com ameias e torres nos cantos
   anel(x, z, 12, y - 0.5, 5, 8); ameias(x, z, 12, y + 4.5, 32);
   for (let k = 0; k < 8; k++) { const a = k / 8 * Math.PI * 2; torreC(x + Math.cos(a) * 12, z + Math.sin(a) * 12, 1.9, 9 + (k % 2) * 3, 6); }
-  // corpo, torres médias e a torre mais alta, a da Cara
+  // corpo, torres médias e a torre mais alta, a da Kara
   anel(x, z, 6.5, y - 0.5, 14); anel(x, z, 6.9, y + 13, 1, 8, OURO, OURO); ameias(x, z, 6.9, y + 14, 24);
   for (let k = 0; k < 4; k++) { const a = (k + 0.5) / 4 * Math.PI * 2; torreC(x + Math.cos(a) * 6.5, z + Math.sin(a) * 6.5, 1.5, 20, 7); }
   torreC(x, z, 3, 32, 15);

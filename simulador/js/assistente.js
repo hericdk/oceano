@@ -1,5 +1,5 @@
 // Navegadora do Oceano (simulação) no painel lateral.
-// Avatar: runtime mesh-avatar (Mesh Avatar Studio, MIT). Padrão: a Cara, personagem do Oceano (o nome dá para mudar).
+// Avatar: runtime mesh-avatar (Mesh Avatar Studio, MIT). Padrão: a Kara, personagem do Oceano (o nome dá para mudar).
 // Cérebro: regras locais que escolhem ferramentas. As ferramentas já têm o mesmo
 // formato de "tool use" das APIs de IA (nome, descrição, parâmetros), então trocar
 // o cérebro simulado por um modelo de verdade não muda o resto.
@@ -349,9 +349,9 @@ function comLista(nome, texto, app) {
   return `<small>${comLinks(texto.slice(0, inicio).trim())}</small><ul class="as-itens">${itens.map(t => `<li><a href="#" class="brilho brilho-item" data-as-ir="${esc(L.ir(t, app))}"><span class="bolinha" aria-hidden="true"></span>${esc(t)}</a></li>`).join('')}</ul>${depois ? `<small>${comLinks(depois)}</small>` : ''}`;
 }
 
-// personagens: a Cara é a padrão; "pixel" é a versão desenhada à mão (pixel art dela, grade de 6 px)
+// personagens: a Kara é a padrão; "pixel" é a versão desenhada à mão (pixel art dela, grade de 6 px)
 export const PERSONAGENS = {
-  cara: { nome: 'Cara', pasta: 'avatares/cara/', pixel: 'avatares/cara-pixel/', credito: 'Cara, personagem do Oceano (@hericdk, GPL-3.0-or-later)' },
+  cara: { nome: 'Kara', pasta: 'avatares/cara/', pixel: 'avatares/cara-pixel/', credito: 'Kara, personagem do Oceano (@hericdk, GPL-3.0-or-later)' },
   gato: { nome: 'Gato', sprite: 'avatares/gato/', credito: 'Gato, modelo de pixel art do Oceano, torto de propósito (@hericdk, GPL-3.0-or-later)' },
   boneco3d: { nome: 'Boneco 3D', arquivo3d: 'avatares/boneco-3d/boneco.vrm', credito: 'Boneco 3D, exemplo em VRM do Oceano (@hericdk, GPL-3.0-or-later)' },
 };
@@ -387,7 +387,7 @@ export function opcoesDeVoz(escolhida, lingua) {
 const paraFalar = t => t.replace(/\*\*/g, '').replace(/(?:https?|oceano):\/\/\S+/g, m => (m.startsWith('oceano') ? 'a página ' + m.slice(9).replace(/[^\p{L}].*$/u, '') : 'o site')).replace(/\p{Extended_Pictographic}\uFE0F?/gu, '').replace(/!{2,}/g, '!').replace(/\s{2,}/g, ' ').trim();
 export const MALHAS = { minima: { nome: 'mínima', escala: 4 }, leve: { nome: 'leve', escala: 2 }, densa: { nome: 'densa', escala: 1 } };
 const VISUAIS = { paleta: 'Pixel + tema', pixel: 'Pixel', desenhado: 'Pixel desenhado', original: 'Original' };
-let AVATAR_NOME = 'Cara';
+let AVATAR_NOME = 'Kara';
 
 export async function montarAssistente(app, raiz, guardado) {
   const caixa = ferramentas(app);
@@ -401,6 +401,7 @@ export async function montarAssistente(app, raiz, guardado) {
   if (!VISUAIS[visual]) visual = 'paleta';
   let quem = PERSONAGENS[guardado.ler('avatar-personagem', 'cara')] ? guardado.ler('avatar-personagem', 'cara') : 'cara';
   let malha = MALHAS[guardado.ler('avatar-malha', 'minima')] ? guardado.ler('avatar-malha', 'minima') : 'minima';
+  if (guardado.ler('avatar-nome', '') === 'Cara') guardado.gravar('avatar-nome', 'Kara');   // o nome mudou; o escolhido pela pessoa fica
   const nomeAtual = () => guardado.ler('avatar-nome', '') || PERSONAGENS[quem].nome;
   const publicarNome = () => { AVATAR_NOME = nomeAtual(); try { localStorage.setItem('oceano:avatar-nome', AVATAR_NOME); } catch {} };   // o notch do Mac lê o nome daqui
   publicarNome();
@@ -510,9 +511,9 @@ export async function montarAssistente(app, raiz, guardado) {
     } catch (e) {
       tela2.remove();
       console.warn('assistente: avatar', e);
-      // 3D que não abre não pode deixar a Navegadora sem rosto: volta para a Cara e diz o motivo
-      if (sprite) { app.aviso?.(`Não abri a folha de "${P.nome}": ${e.message || e}. Voltei para a Cara.`, 'Avatar'); quem = 'cara'; guardado.gravar('avatar-personagem', 'cara'); app.emitir?.('avatar-personagem', 'cara'); publicarNome(); ajustarResolucao(); carregarAvatar(); return; }
-      if (tres) { app.aviso?.(`Não abri o avatar 3D "${P.nome}": ${e.message || e}. Voltei para a Cara.`, 'Avatar'); quem = 'cara'; guardado.gravar('avatar-personagem', 'cara'); app.emitir?.('avatar-personagem', 'cara'); publicarNome(); carregada = ''; app.emitir?.('avatar-nome', AVATAR_NOME); return carregarAvatar(); }
+      // 3D que não abre não pode deixar a Navegadora sem rosto: volta para a Kara e diz o motivo
+      if (sprite) { app.aviso?.(`Não abri a folha de "${P.nome}": ${e.message || e}. Voltei para a Kara.`, 'Avatar'); quem = 'cara'; guardado.gravar('avatar-personagem', 'cara'); app.emitir?.('avatar-personagem', 'cara'); publicarNome(); ajustarResolucao(); carregarAvatar(); return; }
+      if (tres) { app.aviso?.(`Não abri o avatar 3D "${P.nome}": ${e.message || e}. Voltei para a Kara.`, 'Avatar'); quem = 'cara'; guardado.gravar('avatar-personagem', 'cara'); app.emitir?.('avatar-personagem', 'cara'); publicarNome(); carregada = ''; app.emitir?.('avatar-nome', AVATAR_NOME); return carregarAvatar(); }
       fala('avatar indisponível');
     }
   }
@@ -898,7 +899,7 @@ export async function montarAssistente(app, raiz, guardado) {
   function definirMalha(v) { if (!MALHAS[v]) return; malha = v; guardado.gravar('avatar-malha', v); carregarAvatar(); }
   function definirPersonagem(v) { if (!PERSONAGENS[v]) return; quem = v; guardado.gravar('avatar-personagem', v); app.emitir?.('avatar-personagem', v); publicarNome(); ajustarResolucao(); carregarAvatar(); app.emitir?.('avatar-nome', AVATAR_NOME); }
   function definirNome(n) { guardado.gravar('avatar-nome', String(n || '').trim().slice(0, 24)); publicarNome(); app.emitir?.('avatar-nome', AVATAR_NOME); }
-  // volta tudo para a Cara: personagem, nome e malha
+  // volta tudo para a Kara: personagem, nome e malha
   function voltarPadrao() { guardado.gravar('avatar-nome', ''); malha = 'minima'; guardado.gravar('avatar-malha', 'minima'); definirPersonagem('cara'); }
   // a sua folha de sprites: fica neste computador e aparece como personagem
   const TAMANHO_FOLHA = 1000000;

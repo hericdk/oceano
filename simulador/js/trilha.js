@@ -439,7 +439,7 @@ export async function montarTrilha(app, raiz, guardado) {
     <div class="tr-col">
     <div class="tr-topo">
       <h2 class="tr-titulo">Trilha</h2>
-      <span class="tr-dica"><button type="button" class="tr-ajuda" aria-describedby="tr-ajuda-texto" aria-label="O que é a Trilha">?</button><span class="tr-balao" id="tr-ajuda-texto" role="tooltip">Quem cria a música é ${esc(app.assistente?.nome?.() || 'a Cara')}. Clique na grade para pôr as suas notas.<span class="tr-paragrafo">${esc(AVISO_DIREITOS)}</span></span></span>
+      <span class="tr-dica"><button type="button" class="tr-ajuda" aria-describedby="tr-ajuda-texto" aria-label="O que é a Trilha">?</button><span class="tr-balao" id="tr-ajuda-texto" role="tooltip">Quem cria a música é ${esc(app.assistente?.nome?.() || 'a Kara')}. Clique na grade para pôr as suas notas.<span class="tr-paragrafo">${esc(AVISO_DIREITOS)}</span></span></span>
     </div>
     <div class="tr-botoes">
       <button class="btn tr-tocar" data-tr="tocar">Tocar</button>
