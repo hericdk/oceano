@@ -1,0 +1,52 @@
+name: Instaladores
+on:
+  workflow_dispatch:
+    inputs:
+      versao:
+        description: Tag do release que recebe os instaladores
+        required: true
+permissions:
+  contents: write
+jobs:
+  construir:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-latest, padrao: 'app/dist-outros/*.exe', executavel: 'app/dist-outros/win-unpacked/Oceano.exe' }
+          - { os: ubuntu-latest, padrao: 'app/dist-outros/*.AppImage', executavel: 'app/dist-outros/linux-unpacked/oceano' }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Baixar o editor de animação
+        shell: bash
+        run: git clone --depth 1 https://github.com/hericdk/micromediaflash.git ../micromediaflash
+      - name: Instalar dependências
+        working-directory: app
+        run: npm ci
+      - name: Gerar o instalador
+        working-directory: app
+        run: node instalador/empacotar-outros.mjs
+      - name: Preparar o Linux para o teste
+        if: runner.os == 'Linux'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libnss3 libatk-bridge2.0-0 libgtk-3-0 libgbm1 libasound2t64
+      - name: Abrir o app e tirar a foto
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = Linux ]; then xvfb-run -a -s "-screen 0 1280x800x24" node app/instalador/testar-abertura.mjs "${{ matrix.executavel }}" foto.png
+          else node app/instalador/testar-abertura.mjs "${{ matrix.executavel }}" foto.png; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: foto-${{ runner.os }}
+          path: foto.png
+          if-no-files-found: ignore
+      - name: Enviar para o release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSAO: ${{ inputs.versao }}
+        run: gh release upload "$VERSAO" ${{ matrix.padrao }} --clobber
