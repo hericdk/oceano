@@ -5,8 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { app, ipcMain, powerMonitor, BrowserWindow } = require('electron');
 
-// vazio até o endereço definitivo: sem ele, nada é enviado nem medido
-const SERVIDOR = '';
+const SERVIDOR = 'https://oceano-analytics.oceano-gg.workers.dev/v1';
 const SISTEMAS = { darwin: 'mac', win32: 'windows', linux: 'linux' };
 const DIAS_DO_RECIBO = 30, OCIOSO_SEGUNDOS = 300;
 const hoje = () => new Date().toISOString().slice(0, 10);

@@ -1,6 +1,6 @@
 # Privacidade da contagem de uso
 
-O Oceano e o site oceano.gg só contam uso com a sua autorização, dada nos primeiros passos, em Configurações ou no aviso do site. Sem ela, nada é enviado. A contagem do app ainda não está ativa: ela entra em uma próxima versão. Este texto segue a Lei Geral de Proteção de Dados (LGPD).
+O Oceano e o site oceano.gg só contam uso com a sua autorização, dada nos primeiros passos, em Configurações ou no aviso do site. Sem ela, nada é enviado. A contagem do app começa na versão seguinte à 0.1.0. Este texto segue a Lei Geral de Proteção de Dados (LGPD).
 
 ## O que é enviado
 
