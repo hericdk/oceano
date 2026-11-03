@@ -31,6 +31,7 @@
 <aside class="menu" id="menu" hidden>
   <nav>
     <a href="#navegadora" data-t="m_ia"></a>
+    <a href="#" id="abrir-privacidade" data-t="p_link"></a>
     <a href="#baixar" data-t="m_baixar"></a>
     <a href="#criar" data-t="g_criar"></a>
     <a href="#musica" data-t="g_musica"></a>
@@ -111,6 +112,16 @@
   <button id="pilula-btn" aria-expanded="false" aria-controls="pilula-lista"><span data-t="baixar"></span></button>
 </div>
 
+<aside class="consent" id="consent" hidden role="dialog" aria-labelledby="consent-t">
+  <p id="consent-t" data-t="p_txt"></p>
+  <p class="consent-nota" id="consent-nota" role="status" hidden></p>
+  <div class="consent-botoes">
+    <button id="consent-sim" data-t="p_sim"></button>
+    <button id="consent-nao" data-t="p_nao"></button>
+    <button id="consent-apagar" data-t="p_apagar" hidden></button>
+    <a href="https://github.com/hericdk/oceano/blob/main/docs/PRIVACIDADE.md" target="_blank" rel="noopener" data-t="p_politica"></a>
+  </div>
+</aside>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script type="module" src="site.js"></script>

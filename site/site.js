@@ -14,6 +14,7 @@ const PALETA = ['#070b1f', '#0e1a3d', '#16306b', '#1f4f9e', '#2f7fd1', '#5bb6f0'
 // ---------- textos ----------
 const T = {
   pt: {
+    p_link: "Privacidade", p_txt: "Posso contar a sua visita? Com o seu aceite, o site usa o Google Analytics, que guarda cookies e envia dados da visita ao Google.", p_sim: "Pode contar", p_nao: "Agora não", p_apagar: "Apagar meus dados de uso", p_politica: "Como funciona", p_feito: "Pronto: seus dados de uso foram apagados.", p_falha: "Sem conexão agora. Tente de novo em instantes.",
     b_breve: 'em breve',
     c_ola: "Oi! Eu sou a Cara\nA primeira IA de um navegador com agentes integrados desde o início. E adivinha só: o primeiro vibecodado também 😉", c_baixar: "Baixar o GIF",
     baseado: 'Baseado em:', base_sta: "Strudel e fork do Mrityunjay Bhardwaj",
@@ -46,6 +47,7 @@ const T = {
     f_titulo: 'Oceano.', f_sub: 'Feito para quem cria. E de graça.',
   },
   en: {
+    p_link: "Privacy", p_txt: "Can I count your visit? If you accept, the site uses Google Analytics, which stores cookies and sends visit data to Google.", p_sim: "Count me in", p_nao: "Not now", p_apagar: "Delete my usage data", p_politica: "How it works", p_feito: "Done: your usage data was deleted.", p_falha: "No connection right now. Try again shortly.",
     b_breve: 'coming soon',
     c_ola: "Hi! I'm Cara\nThe first AI of a browser with agents built in from the very start. And guess what: the first vibe-coded one, too 😉", c_baixar: "Download the GIF",
     baseado: 'Based on:', base_sta: "Strudel and a fork by Mrityunjay Bhardwaj",
@@ -147,6 +149,62 @@ fetch(`https://api.github.com/repos/${REPO}/releases/latest`).then(r => r.ok ? r
     }
   }
 }).catch(() => {});
+
+// ---------- contagem anônima: só depois de a pessoa aceitar, e ela pode desligar e pedir a remoção ----------
+// a contagem própria entra quando o serviço estiver no ar; até lá, SERVIDOR fica vazio e nada vai para ele
+const SERVIDOR = '', GA = 'G-68HB0YKQMQ', C_ACEITE = 'oceano-site-contagem', C_DADOS = 'oceano-site-contagem-dados', DIAS_DO_RECIBO = 30;
+const lerLocal = (k, padrao) => { try { return JSON.parse(localStorage.getItem(k)) ?? padrao; } catch { return padrao; } };
+const gravarLocal = (k, v) => { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+const postar = (rota, corpo) => fetch(`${SERVIDOR}/${rota}`, { method: 'POST', credentials: 'omit', headers: { 'content-type': 'application/json' }, body: JSON.stringify(corpo) });
+async function contarVisita() {
+  const d = lerLocal(C_DADOS, {}), dia = new Date().toISOString().slice(0, 10);
+  if (!SERVIDOR || lerLocal(C_ACEITE, null) !== 'sim' || d.dia === dia) return;
+  const pais = /-([A-Z]{2})\b/.exec(navigator.language || '')?.[1] || '';
+  try {
+    const r = await postar('visita', { idioma: lingua, pais, novo: !d.dia, mes: d.dia?.slice(0, 7) !== dia.slice(0, 7) });
+    if (!r.ok) return;
+    const { recibo } = await r.json();
+    const limite = new Date(Date.now() - DIAS_DO_RECIBO * 86400000).toISOString().slice(0, 10);
+    gravarLocal(C_DADOS, { dia, recibos: [...(d.recibos || []).filter(x => x.dia >= limite), { recibo, dia }] });
+  } catch {}
+}
+// o Google Analytics só carrega depois do aceite, e recusar ou apagar o desliga e tira os cookies dele
+function ligarGA() {
+  if (lerLocal(C_ACEITE, null) !== 'sim' || document.querySelector('script[data-ga]')) return;
+  window['ga-disable-' + GA] = false;
+  const s = document.createElement('script');
+  s.async = true; s.dataset.ga = ''; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA;
+  document.head.append(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', GA);
+}
+function desligarGA() {
+  window['ga-disable-' + GA] = true;
+  for (const c of document.cookie.split('; ')) {
+    const nome = c.split('=')[0];
+    if (/^_ga/.test(nome)) for (const d of [location.hostname, '.' + location.hostname.replace(/^www\./, ''), '']) document.cookie = `${nome}=; Max-Age=0; path=/${d ? '; domain=' + d : ''}`;
+  }
+}
+const consent = $('#consent'), consentNota = $('#consent-nota');
+function abrirConsent(nota = '') {
+  $('#consent-apagar').hidden = lerLocal(C_ACEITE, null) !== 'sim' && !lerLocal(C_DADOS, {}).recibos?.length;
+  consentNota.hidden = !nota; consentNota.textContent = nota;
+  consent.hidden = false;
+}
+$('#consent-sim').onclick = () => { gravarLocal(C_ACEITE, 'sim'); consent.hidden = true; ligarGA(); contarVisita(); };
+$('#consent-nao').onclick = () => { gravarLocal(C_ACEITE, 'nao'); desligarGA(); consent.hidden = true; };
+$('#consent-apagar').onclick = async () => {
+  gravarLocal(C_ACEITE, 'nao'); desligarGA();
+  const recibos = (lerLocal(C_DADOS, {}).recibos || []).map(x => x.recibo);
+  try {
+    if (recibos.length) { const r = await postar('remover', { recibos }); if (!r.ok) throw 0; }
+    gravarLocal(C_DADOS, null); abrirConsent(T[lingua].p_feito ?? T.en.p_feito);
+  } catch { abrirConsent(T[lingua].p_falha ?? T.en.p_falha); }
+};
+$('#abrir-privacidade').onclick = e => { e.preventDefault(); mostrarMenu(false); abrirConsent(); };
+if (lerLocal(C_ACEITE, null) === null) abrirConsent(); else { ligarGA(); contarVisita(); }
 
 // ---------- menu e pílula: clicar fora fecha ----------
 const menu = $('#menu'), abrirMenu = $('#abrir-menu'), lista = $('#pilula-lista'), pil = $('#pilula-btn');

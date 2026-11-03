@@ -3,6 +3,7 @@ export const IDIOMAS = [['pt', 'Português'], ['en', 'English'], ['es', 'Españo
 
 export const MAIS_TEXTOS = {
   es: {
+    p_link: "Privacidad", p_txt: "¿Puedo contar tu visita? Si aceptas, el sitio usa Google Analytics, que guarda cookies y envía datos de la visita a Google.", p_sim: "Puedes contarla", p_nao: "Ahora no", p_apagar: "Borrar mis datos de uso", p_politica: "Cómo funciona", p_feito: "Listo: tus datos de uso se borraron.", p_falha: "Sin conexión ahora. Inténtalo de nuevo en un momento.",
     b_breve: "muy pronto",
     c_ola: "¡Hola! Soy Cara\nLa primera IA de un navegador con agentes integrados desde el principio. Y adivina qué: el primero hecho en vibe coding también 😉", c_baixar: "Descargar el GIF",
     baseado: 'Basado en:', base_sta: "Strudel y un fork de Mrityunjay Bhardwaj",
@@ -35,6 +36,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Hecho para quienes crean. Y gratis.',
   },
   fr: {
+    p_link: "Confidentialité", p_txt: "Puis-je compter ta visite ? Si tu acceptes, le site utilise Google Analytics, qui enregistre des cookies et envoie des données de visite à Google.", p_sim: "Tu peux compter", p_nao: "Pas maintenant", p_apagar: "Supprimer mes données d'utilisation", p_politica: "Comment ça marche", p_feito: "C'est fait : tes données d'utilisation ont été supprimées.", p_falha: "Pas de connexion pour le moment. Réessaie dans un instant.",
     b_breve: "bientôt",
     c_ola: "Salut ! Je suis Cara\nLa première IA d'un navigateur avec des agents intégrés dès le départ. Et devine quoi : c'est aussi le premier fait en vibe coding 😉", c_baixar: "Télécharger le GIF",
     baseado: 'Basé sur :', base_sta: "Strudel et un fork de Mrityunjay Bhardwaj",
@@ -67,6 +69,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Fait pour celles et ceux qui créent. Et gratuit.',
   },
   it: {
+    p_link: "Privacy", p_txt: "Posso contare la tua visita? Se accetti, il sito usa Google Analytics, che salva cookie e invia a Google i dati della visita.", p_sim: "Puoi contarla", p_nao: "Non ora", p_apagar: "Elimina i miei dati d'uso", p_politica: "Come funziona", p_feito: "Fatto: i tuoi dati d'uso sono stati eliminati.", p_falha: "Nessuna connessione ora. Riprova tra poco.",
     b_breve: "in arrivo",
     c_ola: "Ciao! Sono Cara\nLa prima IA di un browser con agenti integrati fin dall'inizio. E indovina un po': è anche il primo fatto in vibe coding 😉", c_baixar: "Scarica la GIF",
     baseado: 'Basato su:', base_sta: "Strudel e un fork di Mrityunjay Bhardwaj",
@@ -99,6 +102,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Fatto per chi crea. Ed è gratis.',
   },
   de: {
+    p_link: "Datenschutz", p_txt: "Darf ich deinen Besuch zählen? Wenn du zustimmst, nutzt die Seite Google Analytics, das Cookies speichert und Besuchsdaten an Google sendet.", p_sim: "Zählen erlaubt", p_nao: "Jetzt nicht", p_apagar: "Meine Nutzungsdaten löschen", p_politica: "So funktioniert es", p_feito: "Fertig: Deine Nutzungsdaten wurden gelöscht.", p_falha: "Gerade keine Verbindung. Versuche es gleich noch einmal.",
     b_breve: "bald verfügbar",
     c_ola: "Hallo! Ich bin Cara\nDie erste KI eines Browsers, in dem Agenten von Anfang an eingebaut sind. Und rate mal: Er ist auch der erste mit Vibe Coding 😉", c_baixar: "GIF herunterladen",
     baseado: 'Basierend auf:', base_sta: "Strudel und ein Fork von Mrityunjay Bhardwaj",
@@ -131,6 +135,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Für alle, die etwas erschaffen. Und gratis.',
   },
   ja: {
+    p_link: "プライバシー", p_txt: "この訪問を数えてもいいですか？同意すると、このサイトはGoogleアナリティクスを使い、Cookieを保存して訪問データをGoogleに送ります。", p_sim: "数えてOK", p_nao: "今はしない", p_apagar: "利用データを削除", p_politica: "しくみ", p_feito: "完了：利用データを削除しました。", p_falha: "今は接続できません。少ししてからもう一度お試しください。",
     b_breve: "近日公開",
     c_ola: "こんにちは！カーラです\n最初からエージェントを組み込んだブラウザの、はじめてのAI。しかも、バイブコーディングで作られた最初のブラウザなんです 😉", c_baixar: "GIFをダウンロード",
     baseado: 'ベース:', base_sta: "Strudel と Mrityunjay Bhardwaj のフォーク",
@@ -163,6 +168,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'つくる人のために。しかも無料。',
   },
   ko: {
+    p_link: "개인정보", p_txt: "방문을 집계해도 될까요? 동의하면 이 사이트는 Google 애널리틱스를 사용해 쿠키를 저장하고 방문 데이터를 Google에 보내요.", p_sim: "집계해도 좋아요", p_nao: "지금은 안 할래요", p_apagar: "내 사용 데이터 삭제", p_politica: "작동 방식", p_feito: "완료: 사용 데이터를 삭제했어요.", p_falha: "지금은 연결되지 않아요. 잠시 후 다시 시도하세요.",
     b_breve: "곧 출시",
     c_ola: "안녕하세요! 저는 카라예요\n처음부터 에이전트를 품은 브라우저의 첫 AI죠. 그리고 있잖아요, 바이브 코딩으로 만든 최초의 브라우저이기도 해요 😉", c_baixar: "GIF 다운로드",
     baseado: '기반:', base_sta: "Strudel 및 Mrityunjay Bhardwaj의 포크",

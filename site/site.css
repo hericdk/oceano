@@ -120,3 +120,12 @@ main:focus { outline: 0; }
 .cara-baixar svg { width: 14px; height: 14px; fill: currentColor; }
 @media (max-width: 560px) { .cara-baixar { left: 16px; transform: none; } }
 .botao.sem-versao { opacity: .5; cursor: default; pointer-events: none; }
+
+.consent { position: fixed; left: clamp(14px, 2.4vw, 28px); bottom: clamp(14px, 2.4vw, 28px); z-index: 30; width: min(420px, calc(100vw - 28px)); padding: 16px; background: #000; color: #fff; font-size: 14px; line-height: 1.4; }
+.consent[hidden] { display: none; }
+.consent-nota { margin-top: 8px; color: #a6e3ff; }
+.consent-botoes { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 12px; }
+.consent-botoes button { padding: 6px 12px; background: #fff; color: #000; font-weight: 600; transition: background .35s var(--expo); }
+.consent-botoes button + button { background: #1b1b1f; color: #fff; }
+.consent-botoes button:hover { background: var(--acento); color: #000; }
+.consent-botoes a { text-decoration: underline; font-size: 13px; }
