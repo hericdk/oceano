@@ -13,6 +13,7 @@ import { criarConversa } from './conversa-avatares.js';
 import { criarAvatarSprite } from './avatar-sprite.js';
 import { IDIOMAS, idiomaAtual } from './idioma.js';
 import { listarGrupos, criarGrupo, apagarGrupoVazio, criarEspecialista, apagarEspecialista } from './especialistas.js';
+import { contarUso } from './contagem-uso.js';
 
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const ESTADO = 'primeiros-passos-3';   // { pos, vistos, concluido, antes, revelou }
@@ -254,6 +255,7 @@ export function iniciarPrimeirosPassos(app, guardado) {
             <p class="pp-falta" role="status"></p>
             <label class="pp-uso"><input type="checkbox" data-pp-uso> <b>Autorizo compartilhar dados de uso anonimizados</b></label>
             <p class="pp-uso-texto">É só para um monitoramento anônimo, com uma estimativa da ordem de grandeza de uso, para medirmos o sucesso deste projeto. Sem isso, a única forma de sabermos seria se as pessoas gravassem vídeos sobre o Oceano, o que, aliás, seria muito legal se fizessem!</p>
+            <p class="pp-uso-texto">Se você autorizar, o Oceano envia um sinal por dia com a versão, o sistema, o idioma, o país do sistema e uma faixa de tempo de uso. Não vai nenhum identificador nem site visitado, e o IP não é guardado. Dá para desligar e pedir a remoção em Configurações, e cada envio aparece em oceano://rede.</p>
             <button type="button" class="btn" data-pp="concluir">Concluir</button></div>
         </section>
       </div>
@@ -267,7 +269,7 @@ export function iniciarPrimeirosPassos(app, guardado) {
     document.body.append(el);
     const usoAnonimo = el.querySelector('[data-pp-uso]');
     usoAnonimo.checked = guardado.ler('uso-anonimo', false) === true;
-    usoAnonimo.addEventListener('change', () => guardado.gravar('uso-anonimo', usoAnonimo.checked));
+    usoAnonimo.addEventListener('change', () => { guardado.gravar('uso-anonimo', usoAnonimo.checked); contarUso(guardado); });
 
     const $ = s => el.querySelector(s);
     const trilho = $('.pp-trilho'), slides = [...el.querySelectorAll('.pp-s')], pontos = $('.pp-pontos'), barra = $('.pp-etapas'), mao = $('.pp-mao');

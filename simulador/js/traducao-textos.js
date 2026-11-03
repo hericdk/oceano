@@ -1477,4 +1477,10 @@ export const TEXTOS = [
   ["Copiei, mas o Claude não abriu. Abra o app e cole a mensagem.","I copied it, but Claude didn't open. Open the app and paste the message."],
   ["Copiado. Cole no agente que você usa: ele explica e espera a sua autorização.","Copied. Paste it into the agent you use: it explains and waits for your authorization."],
   ["enviar à IA local sem autorização","send to the local AI without authorization"],
+  ["Se você autorizar, o Oceano envia um sinal por dia com a versão, o sistema, o idioma, o país do sistema e uma faixa de tempo de uso. Não vai nenhum identificador nem site visitado, e o IP não é guardado. Dá para desligar e pedir a remoção em Configurações, e cada envio aparece em oceano://rede.","If you authorize it, Oceano sends one signal a day with the version, system, language, system country and a usage time range. No identifier or visited site is included, and your IP isn't stored. You can turn it off and request removal in Settings, and each send shows up in oceano://rede."],
+  ["Apagar meus dados de uso","Delete my usage data"],
+  ["Também desliga a contagem. Os envios dos últimos 30 dias saem das somas do servidor. Depois disso, só restam totais sem ligação com ninguém.","This also turns off the count. Sends from the last 30 days are removed from the server's totals. Older ones remain only as totals with no link to anyone."],
+  ["Pronto: seus dados de uso foram apagados.","Done: your usage data was deleted."],
+  ["Sem conexão agora. A remoção fica guardada e o Oceano tenta de novo ao abrir.","No connection right now. The removal is saved and Oceano tries again when it opens."],
+  ["Sua contagem de uso: veja, desligue ou peça a remoção em","Your usage count: see it, turn it off or request removal in"],
 ];

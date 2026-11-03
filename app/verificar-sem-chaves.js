@@ -47,6 +47,10 @@ if (!guardrails.FIXOS.some(f => f.id === 'ia-local') || !/nada chega a uma IA lo
 if (guardrails.pedidoCompleto({ pedido: 'x' }) || !guardrails.pedidoCompleto({ pedido: 'x', origem: 'x', intencao: 'x', recomendacao: 'x' })) erros.push('app/guardrails.js deixa passar mensagem à IA local sem origem, intenção ou recomendação');
 if (!/FERRAMENTA_PEDIDO\.nome && !guardrails\.pedidoCompleto/.test(conversaJs)) erros.push('app/conversa.js não confere a mensagem à IA local');
 if (/claudeAbrir\([^)]*\S[^)]*\)|ENDERECO\s*\+/.test(lerApp('abrir-claude.js'))) erros.push('app/abrir-claude.js põe a mensagem no endereço');
+const contagemJs = lerApp('contagem.js');
+if (!/const SERVIDOR = '(https:\/\/oceano-analytics\.[a-z0-9-]+\.workers\.dev\/v1)?';/.test(contagemJs) || /chuva/i.test(contagemJs) || !/const corpo = \{ versao: app\.getVersion\(\), sistema, idioma: String\(idioma\)\.slice\(0, 10\), pais, tempo: [^,]*, novo: [^,]*, mes: [^}]*\};/.test(contagemJs)) erros.push('app/contagem.js mudou o endereço ou o que envia');
+if (!/guardado\.ler\('uso-anonimo', false\) !== true\) \{ [^\n]*return; \}/.test(fs.readFileSync(path.join(RAIZ, 'simulador/js/contagem-uso.js'), 'utf8'))) erros.push('a contagem de uso deixou de conferir a autorização');
+if (/cf-connecting-ip|x-forwarded-for|x-real-ip|request\.cf|req\.cf|console\.|fetch\(/i.test(fs.readFileSync(path.join(RAIZ, 'servidor/contagem/worker.js'), 'utf8').replace(/async fetch\(req, env\)/, '')) || /method === 'GET'/.test(fs.readFileSync(path.join(RAIZ, 'servidor/contagem/worker.js'), 'utf8'))) erros.push('servidor/contagem/worker.js passou a ler o IP, escrever em log ou chamar fora');
 if (!/gravacao\.marcar\(/.test(lerApp('seguranca.js'))) erros.push('app/seguranca.js parou de avisar quando um site grava');
 if (erros.length) { console.error('Guarda das chaves falhou:\n- ' + erros.join('\n- ')); process.exit(1); }
 console.log('Guarda das chaves e dos limites da IA: tudo certo.');

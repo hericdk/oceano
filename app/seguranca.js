@@ -331,6 +331,7 @@ function desligarTelemetria() {
 
 const TELEMETRIA = [
   ['Métricas de uso (UMA) e relatórios de travamento', 'não existem no Oceano'],
+  ['Contagem anônima de uso do Oceano', 'só com a sua autorização: um sinal por dia, sem identificador'],
   ['Sincronização com conta Google', 'não existe'],
   ['Safe Browsing remoto (manda endereços ao Google)', 'não existe'],
   ['Pings de auditoria de links (<a ping>)', 'bloqueados'],

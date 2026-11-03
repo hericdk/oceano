@@ -41,13 +41,14 @@ export const privacidade = {
       const opcoesProxy = Object.entries(c.proxies);
       raiz.innerHTML = `
       <div class="numeros">
-        <div class="numero px"><b>0 bytes</b><span>de telemetria</span></div>
+        <div class="numero px"><b>${app.guardado.ler('uso-anonimo', false) === true ? '1 sinal por dia' : '0 bytes'}</b><span>de telemetria</span></div>
         <div class="numero px"><b>${cfg.dns.modo === 'desligado' ? 'não' : 'sim'}</b><span>DNS cifrado</span></div>
         <div class="numero px"><b>${cfg.perfis.length}</b><span>perfis isolados</span></div>
       </div>
 
       <section class="px bloco">
         <h2>Telemetria: o que está desligado</h2>
+        <p class="nota">Sua contagem de uso: veja, desligue ou peça a remoção em <a href="#" data-ir="oceano://configuracoes">oceano://configuracoes</a></p>
         <table class="tabela"><tbody>${telemetria.map(([o, s]) => `<tr><td>${esc(o)}</td><td>${esc(s)}</td></tr>`).join('')}</tbody></table>
         <p class="nota">Conexões que o próprio Oceano faz (listas do bloqueador, DNS, verificar versão quando você pede) aparecem em <a href="#" data-ir="oceano://rede">oceano://rede</a>, com o motivo.</p>
       </section>

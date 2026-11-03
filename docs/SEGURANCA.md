@@ -25,7 +25,7 @@ Em `oceano://privacidade` há um texto de scan de segurança para colar numa IA 
 
 ## Rede
 
-A contagem anônima de uso só existe com autorização, nos primeiros passos ou em Configurações, sem identificador e sem guardar IP. As conexões do próprio navegador aparecem em `oceano://rede`. Clima, temas da comunidade e skills só vão à internet depois de a pessoa ligar ou pedir.
+A contagem anônima de uso só existe com autorização, nos primeiros passos ou em Configurações. É um sinal por dia com a versão, o sistema e o idioma, sem identificador. O serviço (`servidor/contagem/`) roda na Cloudflare, só soma os números e não lê o IP. Detalhes em [`PRIVACIDADE.md`](PRIVACIDADE.md). As conexões do próprio navegador aparecem em `oceano://rede`. Clima, temas da comunidade e skills só vão à internet depois de a pessoa ligar ou pedir.
 
 ## Câmera e microfone
 

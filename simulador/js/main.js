@@ -32,6 +32,7 @@ import { criarClima } from './clima.js';
 import { iniciarFarol } from './farol-mods.js';
 import { MAX_MOD_BYTES } from './mod-analise.js';
 import { normalizar as normalizarPedido, pedidoCompleto } from './pedido-claude.js';
+import { contarUso } from './contagem-uso.js';
 
 // ---------- armazenamento (opcional: o simulador funciona sem ele) ----------
 
@@ -77,6 +78,7 @@ const app = {
   mar: null,
 };
 window.oceano = app;   // para inspecionar no console do navegador
+setTimeout(() => contarUso(guardado), 5000);
 
 // a mensagem à IA local preparada no notch aparece aqui, na conversa da lateral, para a pessoa ler e autorizar
 window.oceanoNativo?.aoPedidoDoNotch?.(async d => {

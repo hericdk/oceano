@@ -9,6 +9,9 @@ contextBridge.exposeInMainWorld('oceanoNativo', {
   metricas: chamar('metricas'),
   congelar: chamar('congelar'),
   redeProprias: chamar('rede:proprias'),
+  contagemSinal: chamar('contagem:sinal'),
+  contagemParar: chamar('contagem:parar'),
+  contagemApagar: chamar('contagem:apagar'),
   // privacidade e segurança
   configLer: chamar('config:ler'),
   configGravar: chamar('config:gravar'),

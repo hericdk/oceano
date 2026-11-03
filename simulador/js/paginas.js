@@ -38,6 +38,7 @@ import { analisarMod, htmlAnalise, MAX_MOD_BYTES } from './mod-analise.js';
 import { htmlFarolMod, htmlLegendaFarol } from './farol-mods.js';
 import { htmlClima, ligarClima } from './clima.js';
 import { enderecoDoTema, baixarTema as baixarTemaDoLink, procurarTemas, ARQUIVO as ARQUIVO_TEMA, TOPICO as TOPICO_TEMA } from './temas-comunidade.js';
+import { contarUso } from './contagem-uso.js';
 
 // o selo "última versão" do Sobre só aparece com este Electron: conferir em cada instalador com `npm view electron version`
 const ELECTRON_MAIS_RECENTE = '45.2.1';
@@ -1631,8 +1632,10 @@ const configuracoes = {
       ${htmlGuardrails()}
       ${app.real ? `<section class="px bloco">
         <h2>Uso anônimo</h2>
-        <div class="cfg-linha"><span><b>Autorizo compartilhar dados de uso anonimizados</b><small>É só para um monitoramento anônimo, com uma estimativa da ordem de grandeza de uso, para medirmos o sucesso deste projeto. Sem isso, a única forma de sabermos seria se as pessoas gravassem vídeos sobre o Oceano, o que, aliás, seria muito legal se fizessem!</small></span>
+        <div class="cfg-linha"><span><b>Autorizo compartilhar dados de uso anonimizados</b><small>É só para um monitoramento anônimo, com uma estimativa da ordem de grandeza de uso, para medirmos o sucesso deste projeto. Sem isso, a única forma de sabermos seria se as pessoas gravassem vídeos sobre o Oceano, o que, aliás, seria muito legal se fizessem!</small><small>Se você autorizar, o Oceano envia um sinal por dia com a versão, o sistema, o idioma, o país do sistema e uma faixa de tempo de uso. Não vai nenhum identificador nem site visitado, e o IP não é guardado. Dá para desligar e pedir a remoção em Configurações, e cada envio aparece em oceano://rede.</small></span>
           <span class="cfg-ctrl"><label class="cfg-chave"><input type="checkbox" data-cfg="uso-anonimo" ${app.guardado.ler('uso-anonimo', false) === true ? 'checked' : ''}> autorizo</label></span></div>
+        <div class="cfg-linha"><span><b>Apagar meus dados de uso</b><small>Também desliga a contagem. Os envios dos últimos 30 dias saem das somas do servidor. Depois disso, só restam totais sem ligação com ninguém.</small><small data-apagar-uso-nota role="status"></small></span>
+          <span class="cfg-ctrl"><button class="btn mini secundario" data-apagar-uso>Apagar</button></span></div>
       </section>` : ''}
       <section class="px bloco">
         <h2>Página inicial</h2>
@@ -1769,7 +1772,7 @@ const configuracoes = {
       if (e.target.dataset.cfg === 'pip-auto') app.guardado.gravar('pip-auto', e.target.checked);
       if (e.target.dataset.cfg === 'home-janelas') app.guardado.gravar('home-janelas', e.target.value);
       if (e.target.dataset.cfg === 'robo-tema') app.guardado.gravar('robo-tema', e.target.checked);
-      if (e.target.dataset.cfg === 'uso-anonimo') app.guardado.gravar('uso-anonimo', e.target.checked);
+      if (e.target.dataset.cfg === 'uso-anonimo') { app.guardado.gravar('uso-anonimo', e.target.checked); contarUso(app.guardado); }
       if (e.target.dataset.cfg === 'restaurar-abas') { app.guardado.gravar('restaurar-abas', e.target.checked); app.navegacao?.salvarSessao(); }
       if (e.target.dataset.cfg === 'musica-fechar-aba') { app.guardado.gravar('musica-fechar-aba', e.target.checked); app.midia?.aoGravarOpcao(e.target.checked); }
       if (e.target.dataset.cfg === 'agua') app.agua.definirIntervalo(Number(e.target.value));
@@ -1777,6 +1780,12 @@ const configuracoes = {
     });
     el.addEventListener('click', e => {
       const b = e.target.closest('button'); if (!b) return;
+      if (b.matches('[data-apagar-uso]')) {
+        app.guardado.gravar('uso-anonimo', false);
+        const caixa = el.querySelector('[data-cfg="uso-anonimo"]'); if (caixa) caixa.checked = false;
+        window.oceanoNativo?.contagemApagar?.().then(r => { el.querySelector('[data-apagar-uso-nota]').textContent = r?.ok ? 'Pronto: seus dados de uso foram apagados.' : 'Sem conexão agora. A remoção fica guardada e o Oceano tenta de novo ao abrir.'; });
+        return;
+      }
       if (b.dataset.dither) { app.definirDither(b.dataset.dither); el.querySelectorAll('.cfg-opcoes [data-dither]').forEach(x => x.setAttribute('aria-pressed', x === b)); }
       if (b.hasAttribute('data-esconder-sensivel')) { app.sensivel?.esconder(); app.aviso('Informações locais escondidas.', 'Segurança'); }
       if (b.hasAttribute('data-consumo-abrir')) { e.stopPropagation(); app.consumo?.abrir(); }
