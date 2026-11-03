@@ -1,0 +1,32 @@
+{
+  "formato": "oceano-tema/1",
+  "id": "lagoa",
+  "autor": "oceano",
+  "nome": "Lagoa",
+  "descricao": "Seis verdes de console portátil. Menos cores, mais charme.",
+  "paleta": [
+    "#0f1f12",
+    "#1f3d22",
+    "#3e6b3a",
+    "#7aa04f",
+    "#b8cf7a",
+    "#e6f0b8"
+  ],
+  "ui": {
+    "fundo": 0,
+    "painel": 1,
+    "elevado": 2,
+    "borda": 3,
+    "texto": 5,
+    "suave": 4,
+    "acento": 3,
+    "destaque": 4,
+    "sol": 5
+  },
+  "mar": {
+    "dither": "bayer2",
+    "pixel": 4,
+    "escala": 1,
+    "hora": 9.5
+  }
+}

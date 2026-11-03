@@ -1,0 +1,139 @@
+/* Oceano MVP: área das páginas com as abas reais (<webview>) por cima. */
+.area { flex: 1; position: relative; display: flex; min-width: 0; min-height: 0; }
+.area .pagina { flex: 1; }
+.sites { position: absolute; inset: 0; pointer-events: none; }
+.sites webview { position: absolute; inset: 0; width: 100%; height: 100%; background: #fff; pointer-events: auto; }
+.sites webview.oculto { visibility: hidden; pointer-events: none; }
+
+/* Barra de título integrada (macOS): a linha das abas é a área de arrastar a janela,
+   com espaço à esquerda para os 3 botões do sistema. Abas e botões continuam clicáveis. */
+.cromo .linha-abas { -webkit-app-region: drag; padding-left: 84px; min-height: 42px; }
+.cromo .linha-abas .aba, .cromo .linha-abas button, .cromo .linha-abas a, .cromo .linha-abas input { -webkit-app-region: no-drag; }
+html.tela-cheia .cromo .linha-abas { padding-left: calc(var(--u) * 2); }
+
+/* ---------- perfil por aba e aba efêmera ---------- */
+.aba.com-perfil::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: var(--u); background: var(--perfil); }
+.aba.efemera { background-image: repeating-linear-gradient(90deg, transparent 0 6px, color-mix(in srgb, var(--suave) 14%, transparent) 6px 9px); }
+.tag-efemera { font: normal 9px var(--rotulo); text-transform: uppercase; color: var(--fundo); background: var(--suave); padding: 1px 4px; vertical-align: 1px; }
+.perfil-btn { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 10px; border: 0; background: var(--fundo); color: var(--suave); cursor: pointer; font: 10px var(--rotulo); text-transform: uppercase; white-space: nowrap; }
+.perfil-btn i, .menu-perfil i { width: 9px; height: 9px; flex: none; display: inline-block; }
+.perfil-btn:hover { color: var(--texto); }
+.perfil-btn.efemera { color: var(--sol); }
+@media (max-width: 760px) { .perfil-btn span { display: none; } }
+.menu-perfil { position: fixed; z-index: 20; min-width: 230px; background: var(--elevado); padding: 8px; display: flex; flex-direction: column; gap: 2px; box-shadow: 0 6px 0 color-mix(in srgb, var(--fundo) 60%, transparent); }
+.menu-perfil[hidden] { display: none; }
+.menu-perfil .rotulo { margin: 2px 6px 6px; }
+.menu-perfil button { display: flex; align-items: center; gap: 10px; border: 0; background: none; padding: 8px 8px; text-align: left; cursor: pointer; color: var(--texto); min-height: 36px; }
+.menu-perfil button:hover, .menu-perfil button[aria-current="true"] { background: var(--borda); }
+.menu-perfil kbd, .comandos kbd { margin-left: auto; font: 11px var(--mono); color: var(--suave); }
+
+/* ---------- pedidos de permissão ---------- */
+.permissoes { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 4; display: flex; flex-direction: column; gap: 6px; width: min(560px, calc(100% - 24px)); }
+.permissao { display: flex; align-items: center; gap: 10px; background: var(--elevado); padding: 10px 12px; border-left: var(--u) solid var(--sol); color: var(--sol); }
+.permissao p { margin: 0; flex: 1; color: var(--texto); font-size: 14px; }
+
+/* ---------- emulação de tela ---------- */
+.sites.emulando { background: repeating-conic-gradient(var(--fundo) 0 25%, var(--painel) 0 50%) 0 0 / 12px 12px; pointer-events: auto; }
+.sites.emulando::after { content: attr(data-tela); position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; font: 10px var(--rotulo); text-transform: uppercase; color: var(--suave); pointer-events: none; }
+/* sem transform: a <webview> com transform para de pintar; o centro vem do margin-left do JS */
+.sites webview.emulada { inset: 16px auto auto 50%; box-shadow: 0 0 0 var(--u) var(--borda), 0 8px 0 color-mix(in srgb, #000 40%, transparent); }
+
+/* ---------- teste rápido ---------- */
+.teste { position: absolute; left: 0; right: 0; bottom: 0; height: min(46%, 460px); min-height: 260px; z-index: 5; display: flex; flex-direction: column; background: var(--painel); border-top: var(--u) solid var(--acento); }
+.teste[hidden] { display: none; }
+.teste.cheio { height: auto; top: 0; border-top: 0; }
+.teste-topo { display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 12px; background: var(--elevado); flex-wrap: wrap; }
+.teste-topo .rotulo { margin: 0; display: flex; align-items: center; gap: 8px; }
+.teste-topo .ico { width: 30px; height: 30px; }
+.espaco { flex: 1; }
+.seg { display: inline-flex; gap: 0; }
+.seg button { border: 0; background: var(--fundo); color: var(--suave); padding: 5px 10px; cursor: pointer; font: 10px var(--rotulo); text-transform: uppercase; }
+.seg button[aria-selected="true"] { background: var(--acento); color: var(--fundo); }
+.vivo { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--suave); cursor: pointer; }
+.vivo input { accent-color: var(--acento); }
+.teste-corpo { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); min-height: 0; }
+.teste-editor { display: flex; flex-direction: column; min-height: 0; border-right: var(--u) solid var(--borda); }
+.teste-editor textarea { flex: 1; resize: none; border: 0; outline: 0; padding: 12px 14px; background: var(--fundo); color: var(--texto); font: 13px/1.55 var(--mono); tab-size: 2; }
+.teste-url { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px; align-items: center; }
+.teste-url input { flex: 1; min-width: 160px; height: 34px; border: 0; padding: 0 10px; background: var(--fundo); font: 14px var(--mono); }
+.teste-url .nota { flex-basis: 100%; margin: 0; }
+.teste-saida { display: grid; grid-template-rows: minmax(0, 1fr) minmax(70px, 32%); min-height: 0; }
+.teste-tela { position: relative; background: #fff; }
+.teste-tela webview { position: absolute; inset: 0; width: 100%; height: 100%; }
+.teste-console { overflow-y: auto; background: var(--fundo); border-top: var(--u) solid var(--borda); }
+.teste-console header { display: flex; align-items: center; justify-content: space-between; padding: 4px 8px; position: sticky; top: 0; background: var(--fundo); }
+.teste-console .rotulo { margin: 0; }
+.teste-console ol, .dev-console { list-style: none; margin: 0; padding: 0; font: 12px/1.45 var(--mono); }
+.teste-console li, .dev-console li { display: flex; gap: 8px; justify-content: space-between; padding: 3px 10px; border-bottom: 1px solid var(--painel); overflow-wrap: anywhere; }
+.teste-console li small, .dev-console li small { color: var(--suave); opacity: .7; flex: none; }
+.c-error { color: var(--destaque); background: color-mix(in srgb, var(--destaque) 10%, transparent); }
+.c-warning { color: var(--sol); }
+.c-debug { opacity: .65; }
+@media (max-width: 760px) { .teste-corpo { grid-template-columns: 1fr; grid-template-rows: 40% 60%; } .teste-editor { border-right: 0; border-bottom: var(--u) solid var(--borda); } }
+
+/* ---------- painel Dev ---------- */
+.slot-dev[hidden] { display: none; }
+.dev { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.dev-topo { display: flex; align-items: center; gap: 6px; }
+.dev-topo b { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 12px var(--mono); }
+.dev details { background: var(--fundo); }
+.dev summary { cursor: pointer; padding: 9px 10px; font: 10px var(--rotulo); text-transform: uppercase; color: var(--acento); display: flex; justify-content: space-between; gap: 8px; min-height: 36px; align-items: center; }
+.dev summary span { color: var(--suave); text-transform: none; font: 12px var(--mono); }
+.dev [data-corpo] { padding: 2px 10px 12px; display: flex; flex-direction: column; gap: 4px; }
+.dev .nota { margin: 4px 0; font-size: 12px; }
+.dev .rotulo { margin: 8px 0 2px; font-size: 9px; }
+.dl { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; border-bottom: 1px solid var(--painel); }
+.dl span { color: var(--suave); }
+.dl b { font: 12px var(--mono); text-align: right; overflow-wrap: anywhere; }
+.bom b, li.bom { color: #7bd389; }
+.medio b { color: var(--sol); }
+.ruim, .ruim b, li.ruim { color: var(--destaque); }
+.mini-tabela { width: 100%; border-collapse: collapse; font: 11px var(--mono); margin-top: 6px; }
+.mini-tabela th { text-align: left; color: var(--acento); font: 9px var(--rotulo); text-transform: uppercase; padding: 3px 4px; }
+.mini-tabela td { padding: 3px 4px; border-top: 1px solid var(--painel); }
+.dev-lista, .dev-checagem, .dev-titulos { list-style: none; margin: 0; padding: 0; font: 11px/1.4 var(--mono); }
+.dev-lista li { display: flex; justify-content: space-between; gap: 8px; padding: 2px 0; }
+.dev-lista li span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--suave); }
+.dev-checagem li { padding: 3px 0; overflow-wrap: anywhere; }
+.dev-titulos li { padding: 2px 0 2px calc((var(--n) - 1) * 12px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dev-titulos i { font-style: normal; color: var(--acento); margin-right: 6px; }
+.dev-botoes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; align-items: center; }
+.dev .filtro { display: flex; gap: 0; align-items: center; margin-bottom: 4px; }
+.dev .filtro .btn { margin-left: auto; }
+.dev-console { max-height: 260px; overflow-y: auto; background: var(--painel); }
+.dev-repl { display: flex; gap: 4px; margin-top: 6px; }
+.dev-repl input { flex: 1; min-width: 0; height: 32px; border: 0; padding: 0 8px; background: var(--painel); font: 12px var(--mono); }
+.dev-saida { margin: 4px 0 0; padding: 8px; background: var(--painel); font: 11px/1.4 var(--mono); white-space: pre-wrap; max-height: 200px; overflow: auto; }
+.dev-crus p { margin: 2px 0; font: 11px/1.4 var(--mono); overflow-wrap: anywhere; color: var(--suave); }
+.dev-crus summary { padding: 6px 0; min-height: 0; }
+.dev-campo { display: flex; flex-direction: column; gap: 4px; margin: 4px 0; }
+.dev-campo span { font: 9px var(--rotulo); text-transform: uppercase; color: var(--suave); }
+.dev-campo select, .perfil select, .perfil input:not([type]), .privacidade select { height: 34px; border: 0; padding: 0 8px; background: var(--fundo); color: var(--texto); font: 13px var(--fonte); }
+
+/* ---------- paleta de comandos ---------- */
+.comandos { position: fixed; inset: 0; z-index: 30; background: color-mix(in srgb, var(--fundo) 55%, transparent); display: flex; justify-content: center; align-items: flex-start; padding-top: 12vh; }
+.comandos[hidden] { display: none; }
+.comandos-caixa { width: min(600px, calc(100% - 32px)); background: var(--elevado); box-shadow: 0 8px 0 color-mix(in srgb, #000 40%, transparent); }
+.comandos-caixa input { width: 100%; height: 50px; border: 0; outline: 0; padding: 0 16px; background: var(--painel); font-size: 17px; border-bottom: var(--u) solid var(--acento); }
+.comandos-caixa ol { list-style: none; margin: 0; padding: 6px; max-height: 50vh; overflow-y: auto; }
+.comandos-caixa li { display: flex; align-items: center; gap: 12px; padding: 9px 12px; cursor: pointer; min-height: 40px; }
+.comandos-caixa li span { display: flex; flex-direction: column; }
+.comandos-caixa li small { color: var(--suave); font-size: 12px; }
+.comandos-caixa li[aria-selected="true"] { background: var(--borda); }
+.comandos-caixa li.nota { cursor: default; }
+
+/* ---------- oceano://privacidade ---------- */
+.opcao { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; background: var(--fundo); cursor: pointer; flex: 1; min-width: 170px; }
+.opcao input { accent-color: var(--acento); align-self: flex-start; }
+.opcao small { color: var(--suave); font-size: 12px; }
+.opcao:has(input:checked) { box-shadow: inset 0 0 0 var(--u) var(--acento); }
+.perfis { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+.perfil { background: var(--fundo); padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+.perfil .linha { gap: 8px; }
+.perfil input[type="color"] { width: 34px; height: 34px; border: 0; padding: 0; background: none; cursor: pointer; }
+.perfil input[data-nome] { width: 160px; background: var(--painel); }
+.perfil input[data-regra] { flex: 1; min-width: 200px; background: var(--painel); font-family: var(--mono); }
+.perfil select { background: var(--painel); }
+.perfil .dev-campo { flex-direction: row; align-items: center; gap: 8px; margin: 0; }
+.aviso-perigo { color: var(--sol); }
+.nota.ruim { color: var(--destaque); }

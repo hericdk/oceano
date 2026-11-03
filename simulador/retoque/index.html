@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RetoqueShop 1.0</title>
+  <link rel="stylesheet" href="retoque.css">
+</head>
+<body>
+  <header id="menus" role="menubar"></header>
+  <div id="opcoes" role="toolbar"></div>
+  <main id="area">
+    <nav id="caixa" role="toolbar" aria-orientation="vertical"></nav>
+    <section id="palco">
+      <canvas id="tela"></canvas>
+      <div id="boas-vindas" hidden></div>
+    </section>
+    <aside id="lateral">
+      <section id="painel-camadas" class="painel"></section>
+      <section id="painel-historico" class="painel"></section>
+    </aside>
+  </main>
+  <footer id="rodape"><span id="r-tam"></span><span id="r-pos"></span><label id="r-zoom"></label><span id="r-msg" role="status" aria-live="polite"></span></footer>
+  <dialog id="dialogo"></dialog>
+  <div id="abertura" role="dialog" aria-modal="true" aria-label="RetoqueShop 1.0"><div class="abertura-caixa"><img src="abertura.png" width="480" height="271" alt="RetoqueShop 1.0: um farol e uma praia refletidos em óculos azuis"><button type="button" id="abertura-fechar" aria-label="Fechar">×</button></div></div>
+  <input id="abrir-arquivo" type="file" accept="image/*,.retoque" hidden>
+  <input id="importar-arquivo" type="file" accept="image/*" multiple hidden>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

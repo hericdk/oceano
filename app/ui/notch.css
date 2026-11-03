@@ -1,0 +1,165 @@
+/* notch do Oceano: fechado, só um rostinho embaixo do notch; aberto, desce a janela da Navegadora (expo-out).
+   A Cara preenche o fundo e, por cima dela, ficam a conversa, o que ela está fazendo e o campo de mensagem.
+   Solta, a mesma janela flutua e pode ir para qualquer lugar da tela. As cores vêm do tema do navegador;
+   só o vermelho de "ao vivo" e de fechar é fixo. Temas livres (ex.: o gato) trocam o fundo. */
+@font-face { font-family: 'Pixelify'; src: url(vendor/fonts/pixelify-sans-latin-400-normal.woff2) format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Pixelify'; src: url(vendor/fonts/pixelify-sans-latin-600-normal.woff2) format('woff2'); font-weight: 600; }
+:root { --fundo: #081129; --painel: #0d1b3e; --elevado: #1a2e5e; --borda: #4a6fa5; --texto: #eaf3ff; --suave: #bdd3f2; --acento: #4da3ff; --sol: #ffd34d;
+  --barra: 32px; --vermelho: #8b0000; --vermelho-borda: #ff4444; --expo: cubic-bezier(.16, 1, .3, 1); }
+html, body { margin: 0; background: transparent; overflow: hidden; font: 12px/1.45 'Pixelify', system-ui, sans-serif; color: var(--texto); user-select: none; -webkit-font-smoothing: none; }
+button { font: inherit; color: inherit; }
+h2, p, ul { margin: 0; padding: 0; }
+.notch { position: relative; width: 320px; height: 600px; }
+.ic, [data-ic] svg { display: block; }
+svg { shape-rendering: crispEdges; fill: currentColor; }
+
+.rosto { position: absolute; left: 50%; top: var(--barra); width: 28px; height: 28px; transform: translateX(-50%); image-rendering: pixelated;
+  background: var(--avatar-fundo, #000); transition: opacity .3s var(--expo); }
+.painel { position: absolute; left: 10px; top: 0; width: 300px; height: calc(var(--barra) + 552px); display: flex; flex-direction: column;
+  transform: translateY(-100%); transition: transform .45s var(--expo); }
+.notch[data-estado="aberto"] .painel { transform: translateY(0); }
+.notch[data-estado="aberto"] .rosto { opacity: 0; }
+.faixa { flex: none; height: var(--barra); background: #000; margin: 0 30px; }
+
+/* ----- a janela ----- */
+.janela { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; background: var(--l-fundo, var(--painel)); border: 2px solid var(--borda); box-sizing: border-box; }
+.topo { flex: none; height: 32px; display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 0 6px 0 8px; background: var(--elevado); border-bottom: 2px solid var(--borda); position: relative; z-index: 4; }
+.id { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.id .ic { color: #fff; flex: none; }
+.nome { font-size: 18px; font-weight: 600; line-height: 1; color: #fff; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.acoes { display: flex; gap: 4px; flex: none; }
+.jb { width: 22px; height: 22px; padding: 0; display: grid; place-items: center; background: var(--elevado); border: 1px solid var(--borda); color: #fff; cursor: pointer; }
+.jb:hover, .jb:focus-visible { background: var(--borda); outline: 0; }
+.jb.fechar { background: var(--vermelho); border-color: #cc2222; }
+.jb.fechar:hover, .jb.fechar:focus-visible { background: #b30000; }
+
+/* a Cara no fundo, inteira até a base */
+.palco { position: absolute; left: 0; right: 0; top: 32px; bottom: 0; overflow: hidden; background: var(--avatar-fundo, var(--fundo)); }
+.avatar { position: absolute; left: 50%; top: -14px; width: 400px; height: 400px; transform: translateX(-50%); image-rendering: pixelated; }
+.janela[data-foco] .avatar { width: 560px; height: 560px; top: -34px; }
+.avatar.suave, .rosto.suave { image-rendering: auto; }
+.vinheta { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, transparent 38%, color-mix(in srgb, var(--fundo) 80%, transparent) 68%, var(--fundo) 100%); pointer-events: none; }
+.ao-vivo { position: absolute; left: 8px; top: 8px; display: flex; align-items: center; gap: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; color: #fff; background: var(--vermelho); border: 1px solid var(--vermelho-borda); }
+.ao-vivo i { width: 5px; height: 5px; background: #ff9999; }
+.ao-vivo.parado { background: var(--elevado); border-color: var(--borda); }
+.ao-vivo.parado i { background: var(--suave); }
+
+/* conversa (some em cima, com máscara) e o que está em andamento */
+.mensagens { position: absolute; left: 0; right: 0; bottom: 162px; height: 124px; overflow-y: auto; padding: 0 8px; display: flex; flex-direction: column; gap: 10px; z-index: 2; box-sizing: border-box; user-select: text; scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22px); mask-image: linear-gradient(180deg, transparent 0, #000 22px); }
+.mensagens::-webkit-scrollbar { display: none; }
+.mensagens:empty { display: none; }
+.msg { flex: none; margin-top: auto; padding: 6px 8px; display: flex; flex-direction: column; gap: 3px; align-items: flex-start; background: color-mix(in srgb, var(--painel) 80%, transparent); border: 1px solid var(--borda); }
+.msg + .msg { margin-top: 0; }
+.msg .de { font-size: 10px; color: var(--suave); }
+.msg .de b { font-weight: 600; color: #fff; }
+.msg .balao { box-sizing: border-box; width: 100%; padding: 8px; background: var(--elevado); border: 1px solid color-mix(in srgb, var(--borda) 55%, transparent); color: var(--texto); line-height: 1.5; overflow-wrap: anywhere; white-space: pre-wrap; }
+.msg.voce { align-items: flex-end; }
+.msg.voce .balao { width: auto; background: color-mix(in srgb, var(--acento) 45%, var(--painel)); border-color: var(--acento); color: #fff; }
+.msg.erro .balao { border-color: var(--vermelho-borda); }
+
+.previa { position: absolute; left: 6px; right: 6px; bottom: 66px; height: 90px; padding: 5px 7px; box-sizing: border-box; background: color-mix(in srgb, var(--painel) 96%, transparent); border: 1px solid var(--borda); z-index: 2; display: flex; flex-direction: column; }
+h2 { font-size: 10px; font-weight: 600; color: var(--suave); }
+.previa-lista { list-style: none; flex: 1; min-height: 0; overflow: hidden; font-size: 11px; line-height: 15px; margin-top: 2px; }
+.previa-lista li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #fff; }
+.previa-lista li.pendente { color: var(--suave); }
+.previa-pe { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.contagem { font-size: 10px; color: var(--suave); }
+.ver { height: 18px; padding: 0 7px; font-size: 11px; font-weight: 600; background: var(--elevado); border: 1px solid var(--suave); color: #fff; cursor: pointer; }
+.ver:hover, .ver:focus-visible { background: var(--borda); outline: 0; }
+
+/* foco: só a Cara e o campo */
+.janela[data-foco] .mensagens, .janela[data-foco] .previa { display: none; }
+
+.atividades { position: absolute; left: 6px; right: 6px; top: 74px; bottom: 66px; padding: 8px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px; background: color-mix(in srgb, var(--painel) 98%, transparent); border: 1px solid var(--borda); z-index: 3; }
+.atividades[hidden] { display: none; }
+.atividades > header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.atividades-corpo { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; scrollbar-width: thin; }
+.cartao { padding: 6px 8px; background: var(--elevado); border: 1px solid color-mix(in srgb, var(--borda) 55%, transparent); line-height: 1.45; overflow-wrap: anywhere; }
+.cartao.pendente { background: transparent; border-color: var(--sol); }
+.cartao .cab { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-bottom: 2px; }
+.cartao b { font-weight: 600; color: #fff; font-size: 12px; }
+.cartao .situacao { font-size: 10px; color: var(--suave); display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+.cartao .situacao::before { content: ''; width: 5px; height: 5px; background: var(--acento); }
+.cartao .pend { font-size: 10px; color: var(--sol); }
+.cartao .tirar { padding: 0 4px; background: none; border: 0; color: var(--suave); cursor: pointer; text-decoration: underline; }
+
+.menu { position: absolute; left: 6px; bottom: 66px; width: 208px; padding: 4px; box-sizing: border-box; display: flex; flex-direction: column; gap: 3px; background: var(--painel); border: 2px solid var(--borda); z-index: 5; }
+.menu[hidden] { display: none; }
+.menu button { height: 30px; display: flex; align-items: center; gap: 10px; padding: 0 8px; text-align: left; background: var(--elevado); border: 1px solid color-mix(in srgb, var(--borda) 55%, transparent); color: var(--texto); cursor: pointer; }
+.menu button:hover, .menu button:focus-visible { background: color-mix(in srgb, var(--acento) 35%, var(--elevado)); border-color: var(--suave); color: #fff; outline: 0; }
+.menu .chave { margin-left: auto; width: 20px; height: 10px; border: 1px solid var(--suave); background: linear-gradient(90deg, transparent 50%, var(--suave) 50%); }
+.menu [aria-checked="false"] .chave { background: linear-gradient(90deg, var(--suave) 50%, transparent 50%); opacity: .6; }
+
+.compositor { position: relative; z-index: 4; margin-top: auto; flex: none; min-height: 60px; display: flex; align-items: center; gap: 6px; padding: 0 6px 0 8px; box-sizing: border-box; background: color-mix(in srgb, var(--painel) 98%, transparent); border-top: 2px solid var(--borda); }
+.abrir-menu { flex: none; width: 30px; height: 36px; padding: 0; display: grid; place-items: center; background: var(--painel); border: 1px solid var(--borda); color: #fff; cursor: pointer; }
+.abrir-menu[aria-expanded="true"], .abrir-menu:hover, .abrir-menu:focus-visible { background: var(--borda); outline: 0; }
+.campo { position: relative; flex: 1; min-width: 0; min-height: 44px; margin: 6px 0; display: flex; align-items: center; gap: 6px; padding: 0 3px 0 10px; box-sizing: border-box; background: var(--texto); border: 2px solid color-mix(in srgb, var(--borda) 55%, transparent); }
+.campo:focus-within { border-color: var(--acento); }
+.campo textarea { flex: 1; min-width: 0; height: 16px; max-height: 64px; padding: 0; resize: none; overflow-y: auto; font: 12px/16px 'Pixelify', sans-serif; color: var(--fundo); background: none; border: 0; outline: 0; user-select: text; }
+.campo[data-gravando] textarea { position: absolute; width: 1px; opacity: 0; }
+.mic-onda { flex: 1; min-width: 0; height: 28px; }
+.mic-onda[hidden] { display: none; }
+.mic-oferta { position: relative; z-index: 4; flex: none; padding: 8px 10px; font: 11px/1.4 'Pixelify', sans-serif; color: var(--texto); background: var(--painel); border-top: 2px solid var(--borda); }
+.mic-oferta[hidden] { display: none; }
+.mic-oferta p { margin: 0 0 6px; }
+.mic-oferta div { display: flex; gap: 6px; }
+.mic-oferta button { padding: 3px 8px; font: inherit; color: var(--texto); background: var(--elevado); border: 1px solid var(--borda); cursor: pointer; }
+.mic-oferta button:hover:not(:disabled) { background: var(--borda); }
+.campo textarea::placeholder { color: color-mix(in srgb, var(--fundo) 62%, transparent); }
+.mic, .enviar { flex: none; padding: 0; display: grid; place-items: center; cursor: pointer; }
+.mic { width: 28px; height: 30px; background: var(--elevado); border: 1px solid transparent; color: #fff; }
+.mic:hover, .mic:focus-visible { background: var(--borda); outline: 0; }
+.mic[aria-pressed="true"] { background: #e02424; border-color: #ff8a8a; color: #fff; }
+.mic.ocupado { opacity: .55; cursor: progress; }
+.enviar { width: 34px; height: 34px; background: var(--elevado); border: 1px solid var(--acento); color: #fff; }
+.enviar:hover, .enviar:focus-visible { background: var(--acento); color: var(--fundo); outline: 0; }
+
+/* ----- solta da barra: mesma janela, sem a faixa do notch ----- */
+.notch[data-solto] .painel { transform: none; transition: none; left: 0; height: 552px; width: 300px; }
+.notch[data-solto] .faixa, .notch[data-solto] .rosto { display: none; }
+.notch[data-solto] { width: 300px; height: 552px; }
+.notch[data-solto] .topo { -webkit-app-region: drag; cursor: grab; }
+.notch[data-solto] .acoes, .notch[data-solto] .jb { -webkit-app-region: no-drag; }
+.notch[data-solto][data-minimizada] .painel { height: 34px; }
+.notch[data-solto][data-minimizada] .palco, .notch[data-solto][data-minimizada] .mensagens, .notch[data-solto][data-minimizada] .previa, .notch[data-solto][data-minimizada] .compositor, .notch[data-solto][data-minimizada] .menu, .notch[data-solto][data-minimizada] .atividades { display: none; }
+
+/* temas livres trazem personagem próprio: a faixa some e o painel usa o fundo do tema */
+.notch[data-estilo="livre"] .faixa { background: var(--l-fundo, #000); margin: 0; }
+.notch[data-estilo="livre"] .rosto { background: var(--avatar-fundo, var(--l-fundo, #000)); }
+.notch[data-estilo="livre"] .palco { background: var(--avatar-fundo, var(--l-fundo, var(--fundo))); }
+.notch[data-estilo="livre"] .avatar { width: 240px; height: auto; top: 40px; }
+
+@media (prefers-reduced-motion: reduce) { .painel, .rosto { transition: none; } }
+
+/* os botões de tamanho só existem com a janela solta */
+.jb.so-solto { display: none; font-size: 9px; line-height: 1; }
+.notch[data-solto] .jb.so-solto { display: grid; }
+.notch[data-soltando] .janela { outline: 3px dashed var(--acento, #5bb6f0); outline-offset: -4px; }
+
+/* nova conversa: + no círculo, no alto do palco */
+.nova-conversa { position: absolute; top: 8px; right: 8px; z-index: 3; display: flex; align-items: center; gap: 6px; padding: 0; border: 0; background: none; color: var(--texto, #fff); cursor: pointer; font: inherit; }
+.nova-conversa > i { width: 24px; height: 24px; flex: none; display: grid; place-items: center; border: 2px solid currentColor; border-radius: 50%; background: rgba(0, 0, 0, .55); font-style: normal; font-size: 15px; line-height: 1; }
+.nova-conversa:hover > i, .nova-conversa:focus-visible > i { background: var(--borda, #333); }
+.nova-conversa:focus-visible { outline: 0; }
+.nc-texto { display: flex; font-size: 12px; white-space: nowrap; text-shadow: 1px 1px 0 #000; pointer-events: none; }
+.nc-texto span { opacity: 0; }
+.nova-conversa.mostrando .nc-texto span { animation: nc-entra 270ms steps(1) both; animation-delay: calc(var(--i) * 28ms); }
+.nova-conversa.saindo .nc-texto span { opacity: 1; animation: nc-sai 340ms steps(5) both; animation-delay: calc(var(--i) * 16ms); }
+@keyframes nc-entra { 0% { opacity: 1; color: #8a5cff; } 33% { opacity: 1; color: #ff8a1f; } 66%, 100% { opacity: 1; color: #fff; } }
+@keyframes nc-sai { from { opacity: 1; color: #fff; transform: none; } to { opacity: 0; color: #fff; transform: translateY(-14px); } }
+@media (prefers-reduced-motion: reduce) { .nova-conversa.mostrando .nc-texto span { animation: none; opacity: 1; } .nova-conversa.saindo .nc-texto span { animation-duration: 1ms; } }
+
+/* na barra lateral: a mesma janela, ocupando todo o espaço, sem o notch em cima */
+.na-lateral .notch { width: 100vw; height: 100vh; }
+.na-lateral .painel { left: 0; width: 100%; height: 100%; transform: none; transition: none; }
+.na-lateral .faixa, .na-lateral .rosto { display: none; }
+.na-lateral .janela { border-width: 0; }
+.na-lateral .mensagens { height: calc(100vh - 520px); min-height: 124px; }
+.jb[hidden] { display: none; }
+.ao-vivo.parado { cursor: pointer; }
+.sugestoes { position: absolute; left: 6px; right: 6px; bottom: 162px; display: flex; flex-wrap: wrap; gap: 4px; z-index: 2; }
+.sugestoes[hidden] { display: none; }
+.sugestao { padding: 3px 6px; font-size: 11px; cursor: pointer; color: var(--texto); background: var(--elevado); border: 1px solid var(--borda); transition: background .25s var(--expo); }
+.sugestao:hover, .sugestao:focus-visible { background: var(--borda); }
+.janela[data-sugestoes] .mensagens { display: none; }

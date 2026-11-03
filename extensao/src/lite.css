@@ -1,0 +1,12 @@
+/* Oceano Lite: barra superior simples (o Chrome já tem abas e endereço). */
+
+.cromo .ferramentas { gap: 6px; padding: 6px 10px; }
+.lite-marca { display: flex; align-items: center; gap: 8px; margin-right: 10px; color: var(--texto); text-decoration: none; font: 600 18px var(--fonte); font-variant-ligatures: none; }
+.lite-marca #lite-logo { display: grid; color: var(--acento); }
+.lite-marca .selo { font-size: 9px; }
+.lite-nav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.lite-nav a { flex: none; padding: 7px 10px; font: 11px var(--rotulo); text-transform: uppercase; color: var(--suave); text-decoration: none; }
+.lite-nav a:hover { color: var(--texto); background: var(--borda); }
+.lite-nav a[aria-current="page"] { color: var(--fundo); background: var(--acento); }
+.lite-espaco { flex: 1; }
+@media (max-width: 640px) { .lite-marca > span:not(#lite-logo) { display: none; } }

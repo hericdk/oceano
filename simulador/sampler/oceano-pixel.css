@@ -1,0 +1,60 @@
+/* 🤌 FM ½ sampler dentro do Oceano: a pele em pixel art por cima do original (que não muda).
+   A Space Grotesk do original vira a Pixelify do Oceano (no HTML e nos canvas), cantos retos, sombras duras e
+   imagens sem suavizar. Transparência é sempre malha de pixel, nunca opacidade. */
+@font-face { font-family: 'Space Grotesk'; src: url(../vendor/fonts/pixelify-sans-latin-400-normal.woff2) format('woff2'); font-weight: 100 500; unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: 'Space Grotesk'; src: url(../vendor/fonts/pixelify-sans-latin-ext-400-normal.woff2) format('woff2'); font-weight: 100 500; unicode-range: U+0100-02AF, U+1E00-1EFF; }
+@font-face { font-family: 'Space Grotesk'; src: url(../vendor/fonts/pixelify-sans-latin-600-normal.woff2) format('woff2'); font-weight: 600 900; }
+@font-face { font-family: 'Silkscreen'; src: url(../vendor/fonts/silkscreen-latin-400-normal.woff2) format('woff2'); unicode-range: U+0000-00FF; }
+
+html { -webkit-font-smoothing: none; font-variant-ligatures: none; }
+body, button, input, select, textarea { font-family: 'Space Grotesk', system-ui, sans-serif; }
+canvas, img, video { image-rendering: pixelated; }
+
+/* cantos retos em tudo; o que era redondo (knobs, bolinhas, LEDs) vira um "círculo" de pixel em degraus */
+*, *::before, *::after { border-radius: 0 !important; }
+.oc-redondo { clip-path: polygon(30% 0, 70% 0, 70% 10%, 90% 10%, 90% 30%, 100% 30%, 100% 70%, 90% 70%, 90% 90%, 70% 90%, 70% 100%, 30% 100%, 30% 90%, 10% 90%, 10% 70%, 0 70%, 0 30%, 10% 30%, 10% 10%, 30% 10%); }
+
+/* sombras suaves viram degrau de pixel */
+.oc-sombra { box-shadow: 4px 4px 0 rgba(0, 0, 0, .35) !important; }
+
+/* rótulos pequenos em fonte de pixel própria para tamanhos pequenos */
+.oc-rotulo { font-family: 'Silkscreen', 'Space Grotesk', monospace !important; letter-spacing: 0 !important; }
+
+/* ---------- fundo do Oceano (imagem ou vídeo, com recorte) ---------- */
+#ocFundo { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; display: none; image-rendering: pixelated; }
+html.oc-fundo #ocFundo { display: block; }
+html.oc-fundo, html.oc-fundo body { background-color: transparent !important; }
+html.oc-fundo { background: var(--page, #d9d9d6) !important; }
+
+#ocBtn { position: fixed; left: 12px; bottom: 66px; z-index: 9000; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
+  font: 600 12px 'Space Grotesk', sans-serif; background: #111; color: #fff; border: 2px solid #fff; cursor: pointer; box-shadow: 3px 3px 0 #000; }
+#ocBtn:hover, #ocBtn:focus-visible { background: #0040ff; outline: 0; }
+#ocBtn .oc-ponto { width: 8px; height: 8px; background: #666; }
+#ocBtn .oc-ponto.on { background: #3ddc84; }
+
+#ocPainel { position: fixed; left: 12px; bottom: 106px; z-index: 9001; width: min(360px, calc(100vw - 24px)); max-height: calc(100vh - 124px); overflow: auto;
+  background: #111; color: #eee; border: 2px solid #fff; box-shadow: 6px 6px 0 #000; padding: 12px; font: 13px/1.4 'Space Grotesk', sans-serif;
+  transform: translateY(8px); visibility: hidden; opacity: 0; transition: transform .35s cubic-bezier(.16, 1, .3, 1), opacity .2s steps(3), visibility 0s .35s; }
+#ocPainel.on { transform: none; visibility: visible; opacity: 1; transition: transform .35s cubic-bezier(.16, 1, .3, 1), opacity .2s steps(3); }
+#ocPainel h3 { margin: 0 0 8px; font: 400 12px 'Silkscreen', monospace; letter-spacing: 0; display: flex; justify-content: space-between; align-items: center; }
+#ocPainel h3 button { background: none; border: 0; color: #eee; cursor: pointer; font: inherit; padding: 2px 6px; }
+#ocPainel section { border-top: 2px dotted #444; padding-top: 10px; margin-top: 10px; }
+#ocPainel .oc-linha { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+#ocPainel button.oc-b { font: 600 12px 'Space Grotesk', sans-serif; padding: 5px 9px; background: #222; color: #eee; border: 2px solid #555; cursor: pointer; }
+#ocPainel button.oc-b:hover, #ocPainel button.oc-b:focus-visible { border-color: #0040ff; outline: 0; }
+#ocPainel button.oc-b.on { background: #eee; color: #111; border-color: #eee; }
+#ocPainel button.oc-b:disabled { color: #666; border-color: #333; cursor: default; }
+#ocPainel label.oc-r { display: grid; grid-template-columns: 92px 1fr 46px; gap: 8px; align-items: center; margin-top: 6px; font-size: 12px; color: #bbb; }
+#ocPainel label.oc-r output { text-align: right; color: #eee; }
+#ocPainel input[type=range] { width: 100%; accent-color: #0040ff; }
+#ocPainel .oc-prev { position: relative; margin-top: 8px; background: #000; border: 2px solid #333; cursor: grab; touch-action: none; }
+#ocPainel .oc-prev:active { cursor: grabbing; }
+#ocPainel .oc-prev canvas { display: block; width: 100%; height: auto; }
+#ocPainel .oc-dica { font-size: 11px; color: #999; margin: 6px 0 0; }
+#ocPainel .oc-cmd { display: block; margin-top: 6px; padding: 6px 8px; background: #000; border: 2px solid #333; font: 11px ui-monospace, monospace; color: #ddd; white-space: pre-wrap; word-break: break-all; user-select: all; }
+#ocPainel .oc-estado { display: flex; gap: 8px; align-items: center; font-size: 12px; }
+#ocPainel .oc-estado i.oc-ponto { width: 8px; height: 8px; background: #666; display: inline-block; flex: none; }
+#ocPainel .oc-estado i.oc-ponto.on { background: #3ddc84; }
+#ocPainel .oc-estado i.oc-ponto.meio { background: #ffb020; }
+
+@media (prefers-reduced-motion: reduce) { #ocPainel, #ocPainel.on { transition: none; } }

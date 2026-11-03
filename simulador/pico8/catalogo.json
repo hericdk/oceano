@@ -1,0 +1,2789 @@
+{
+ "gerado": "2026-11-01",
+ "celeste": "11722",
+ "estilos": [
+  "plataforma",
+  "puzzle",
+  "acao",
+  "aventura",
+  "corrida",
+  "arcade",
+  "roguelike",
+  "multiplayer",
+  "estrategia",
+  "curtinhos"
+ ],
+ "jogos": [
+  {
+   "post": "165759",
+   "titulo": "Mole Mole",
+   "autor": "Adam Atomic",
+   "data": "2025-04-18",
+   "estrelas": 95,
+   "capa": "pico8_molemole-1.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "197597",
+   "titulo": "Death Of Kairos",
+   "autor": "voidgazerBon",
+   "data": "2026-10-09",
+   "estrelas": 74,
+   "capa": "pico8_death_of_kairos-0.png",
+   "tags": [
+    "boss-battle",
+    "bullet-hell",
+    "fantasy",
+    "jumping"
+   ],
+   "estilos": [
+    "plataforma",
+    "acao"
+   ]
+  },
+  {
+   "post": "165109",
+   "titulo": "Peak Of Empires (Age Of Empires Demake)",
+   "autor": "taxicomics",
+   "data": "2025-04-06",
+   "estrelas": 66,
+   "capa": "pico8_peakofempires-6.png",
+   "tags": [
+    "rts",
+    "demake",
+    "age",
+    "of"
+   ],
+   "estilos": [
+    "arcade",
+    "estrategia"
+   ]
+  },
+  {
+   "post": "189378",
+   "titulo": "Pico Backrooms",
+   "autor": "electricgryphon",
+   "data": "2026-05-09",
+   "estrelas": 92,
+   "capa": "pico8_pico_backrooms-1.png",
+   "tags": [
+    "backrooms",
+    "3d",
+    "portal",
+    "moody"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "183592",
+   "titulo": "Petal to the Metal 1.0",
+   "autor": "etluconk",
+   "data": "2026-02-08",
+   "estrelas": 67,
+   "capa": "pico8_petal_to_the_metal-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "160388",
+   "titulo": "Petal Quest",
+   "autor": "noelcody",
+   "data": "2025-01-08",
+   "estrelas": 132,
+   "capa": "pico8_petal_quest-12.png",
+   "tags": [
+    "adventure",
+    "puzzle"
+   ],
+   "estilos": [
+    "puzzle",
+    "aventura"
+   ]
+  },
+  {
+   "post": "109978",
+   "titulo": "Loop",
+   "autor": "kreyk29",
+   "data": "2022-04-10",
+   "estrelas": 135,
+   "capa": "pico8_loop-4.png",
+   "tags": [
+    "pipe",
+    "puzzle",
+    "bwj",
+    "1bit"
+   ],
+   "estilos": [
+    "puzzle",
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "171379",
+   "titulo": "Crimson Night",
+   "autor": "Fictionity",
+   "data": "2025-08-01",
+   "estrelas": 179,
+   "capa": "pico8_crimson_night-7.png",
+   "tags": [
+    "gothic",
+    "action",
+    "survivor",
+    "western"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "149934",
+   "titulo": "Up and Away",
+   "autor": "rmcco",
+   "data": "2024-06-27",
+   "estrelas": 105,
+   "capa": "pico8_up_and_away-1.png",
+   "tags": [
+    "adventure",
+    "cute",
+    "cozy",
+    "short"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "148521",
+   "titulo": "Ghost Wave",
+   "autor": "Conor",
+   "data": "2024-05-17",
+   "estrelas": 73,
+   "capa": "pico8_ghostwave-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "140316",
+   "titulo": "Ruby Eyes",
+   "autor": "paperskull",
+   "data": "2024-01-18",
+   "estrelas": 93,
+   "capa": "pico8_rubyeyes-6.png",
+   "tags": [
+    "game",
+    "roguelike",
+    "porklike"
+   ],
+   "estilos": [
+    "roguelike"
+   ]
+  },
+  {
+   "post": "189706",
+   "titulo": "Carrot Kingdom!",
+   "autor": "shoma",
+   "data": "2026-05-15",
+   "estrelas": 212,
+   "capa": "pico8_carrot_kingdom_v7-0.png",
+   "tags": [
+    "puzzle",
+    "platformer"
+   ],
+   "estilos": [
+    "plataforma",
+    "puzzle"
+   ]
+  },
+  {
+   "post": "187124",
+   "titulo": "LootSlime",
+   "autor": "moleman",
+   "data": "2026-04-03",
+   "estrelas": 139,
+   "capa": "pico8_lootslime-1.png",
+   "tags": [
+    "platformer",
+    "metroidvania"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "172967",
+   "titulo": "Libryinth",
+   "autor": "Munro",
+   "data": "2025-08-29",
+   "estrelas": 160,
+   "capa": "pico8_libryinth-10.png",
+   "tags": [
+    "library",
+    "dungeon",
+    "crawler",
+    "raycaster"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "175331",
+   "titulo": "clockwise_knight",
+   "autor": "benjamin_soule",
+   "data": "2025-10-09",
+   "estrelas": 128,
+   "capa": "pico8_clockwise_knight-4.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "167867",
+   "titulo": "Air Pico",
+   "autor": "Mot",
+   "data": "2025-05-31",
+   "estrelas": 147,
+   "capa": "pico8_mot_airpico-1.png",
+   "tags": [
+    "3d",
+    "flight",
+    "simulation"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "185041",
+   "titulo": "Moss Moss",
+   "autor": "noelcody",
+   "data": "2026-03-04",
+   "estrelas": 340,
+   "capa": "pico8_mossmoss-17.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "172338",
+   "titulo": "Mouse Required",
+   "autor": "Werxzy",
+   "data": "2025-08-17",
+   "estrelas": 180,
+   "capa": "pico8_mouse_required-1.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "184410",
+   "titulo": "TAD",
+   "autor": "Doriencey",
+   "data": "2026-02-23",
+   "estrelas": 118,
+   "capa": "pico8_tad_full_release_dc-4.png",
+   "tags": [
+    "survival",
+    "pond",
+    "procedural"
+   ],
+   "estilos": [
+    "roguelike"
+   ]
+  },
+  {
+   "post": "149645",
+   "titulo": "Baba Is You Demake",
+   "autor": "ooooggll",
+   "data": "2024-06-08",
+   "estrelas": 167,
+   "capa": "pico8_baba_demake-9.png",
+   "tags": [
+    "baba-is-you",
+    "demake",
+    "sokoban"
+   ],
+   "estilos": [
+    "puzzle",
+    "arcade"
+   ]
+  },
+  {
+   "post": "166577",
+   "titulo": "Dust Bunny",
+   "autor": "Adam Atomic",
+   "data": "2025-05-05",
+   "estrelas": 127,
+   "capa": "pico8_dust_bunny-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "128883",
+   "titulo": "A Stardew Valley Demake: Pico Valley",
+   "autor": "taxicomics",
+   "data": "2023-04-22",
+   "estrelas": 104,
+   "capa": "pico8_picovalley-2.png",
+   "tags": [
+    "farming",
+    "lifesim",
+    "demake"
+   ],
+   "estilos": [
+    "arcade"
+   ]
+  },
+  {
+   "post": "172855",
+   "titulo": "From Rust To Ash",
+   "autor": "LokiStriker",
+   "data": "2025-08-27",
+   "estrelas": 348,
+   "capa": "pico8_fromrust_a-4.png",
+   "tags": [
+    "roguelike",
+    "autobattler",
+    "strategy"
+   ],
+   "estilos": [
+    "roguelike",
+    "estrategia"
+   ]
+  },
+  {
+   "post": "178576",
+   "titulo": "2025 Advent Calendar",
+   "autor": "bikibird",
+   "data": "2025-12-01",
+   "estrelas": 108,
+   "capa": "pico8_advent2025-41.png",
+   "tags": [
+    "advent",
+    "christmas",
+    "2025"
+   ],
+   "estilos": [],
+   "naoJogo": true
+  },
+  {
+   "post": "131736",
+   "titulo": "Zip Zapper",
+   "autor": "ejreyes",
+   "data": "2023-07-07",
+   "estrelas": 116,
+   "capa": "pico8_zipzapper-0.png",
+   "tags": [
+    "puzzle",
+    "top-down"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "102471",
+   "titulo": "512px under",
+   "autor": "pck404",
+   "data": "2021-12-12",
+   "estrelas": 129,
+   "capa": "pico8_pck404_512px_under-1.png",
+   "tags": [
+    "platformer",
+    "lasers"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "150377",
+   "titulo": "Beam",
+   "autor": "rupees",
+   "data": "2024-06-25",
+   "estrelas": 192,
+   "capa": "pico8_beam4-6.png",
+   "tags": [
+    "adventure",
+    "topdown",
+    "rupees"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "73671",
+   "titulo": "東方運命の星 (Touhou Unmei no Hoshi)",
+   "autor": "Chronocide",
+   "data": "2020-03-04",
+   "estrelas": 126,
+   "capa": "pico8_unh-3.png",
+   "tags": [
+    "touhou",
+    "danmaku",
+    "shoot-em-up",
+    "bullet-hell"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "92323",
+   "titulo": "Sphero",
+   "autor": "electricgryphon",
+   "data": "2021-05-22",
+   "estrelas": 81,
+   "capa": "pico8_sphero_a1-0.png",
+   "tags": [
+    "isometric",
+    "3d",
+    "balls"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "168053",
+   "titulo": "Walker",
+   "autor": "buzzard1337",
+   "data": "2025-06-04",
+   "estrelas": 129,
+   "capa": "pico8_walkeramiga-2.png",
+   "tags": [
+    "2d",
+    "amiga",
+    "retro",
+    "shooter"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "143764",
+   "titulo": "Bubblegum Spin",
+   "autor": "Bee_Randon",
+   "data": "2024-03-18",
+   "estrelas": 173,
+   "capa": "pico8_bubblegum_spin-4.png",
+   "tags": [
+    "bubble-shooter",
+    "puzzle",
+    "arcade"
+   ],
+   "estilos": [
+    "puzzle",
+    "arcade"
+   ]
+  },
+  {
+   "post": "123143",
+   "titulo": "Combat Chopper",
+   "autor": "Mot",
+   "data": "2022-12-29",
+   "estrelas": 87,
+   "capa": "pico8_mot_chopper-2.png",
+   "tags": [
+    "3d",
+    "helicopter",
+    "flight",
+    "simulator"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "171244",
+   "titulo": "PICO-BALL: a Sports Game Starring Jelpi",
+   "autor": "Munchkin",
+   "data": "2025-07-30",
+   "estrelas": 563,
+   "capa": "pico8_pico_ball-5.png",
+   "tags": [
+    "2d",
+    "jelpi",
+    "sport",
+    "sports"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "164478",
+   "titulo": "Super Hat Girl!",
+   "autor": "benvium",
+   "data": "2025-03-26",
+   "estrelas": 191,
+   "capa": "pico8_super_hat_girl-1.png",
+   "tags": [
+    "platformer",
+    "puzzle",
+    "calm",
+    "powerups"
+   ],
+   "estilos": [
+    "plataforma",
+    "puzzle"
+   ]
+  },
+  {
+   "post": "168994",
+   "titulo": "Dino Sort v1.1",
+   "autor": "Adam Atomic",
+   "data": "2025-06-23",
+   "estrelas": 178,
+   "capa": "pico8_dino_sort-1.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "163854",
+   "titulo": "Pole Station",
+   "autor": "Pavilion",
+   "data": "2025-03-15",
+   "estrelas": 113,
+   "capa": "pico8_pavilion_polestation_1-0.png",
+   "tags": [
+    "platformer",
+    "lunch-break"
+   ],
+   "estilos": [
+    "plataforma",
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "166904",
+   "titulo": "Province",
+   "autor": "Perfoon",
+   "data": "2025-05-12",
+   "estrelas": 167,
+   "capa": "pico8_province-4.png",
+   "tags": [
+    "city",
+    "building",
+    "strategy",
+    "rts"
+   ],
+   "estilos": [
+    "estrategia"
+   ]
+  },
+  {
+   "post": "164882",
+   "titulo": "Top Speed!",
+   "autor": "benvium",
+   "data": "2025-04-03",
+   "estrelas": 189,
+   "capa": "pico8_top_speed-3.png",
+   "tags": [
+    "racing",
+    "kart",
+    "circuit",
+    "racer"
+   ],
+   "estilos": [
+    "corrida"
+   ]
+  },
+  {
+   "post": "165229",
+   "titulo": "Picocraft - a pico warcraft III demake",
+   "autor": "dhostin",
+   "data": "2025-04-10",
+   "estrelas": 168,
+   "capa": "pico8_start_picocraft_1-3.png",
+   "tags": [
+    "rts",
+    "demake"
+   ],
+   "estilos": [
+    "arcade",
+    "estrategia"
+   ]
+  },
+  {
+   "post": "166387",
+   "titulo": "Cattle Crisis",
+   "autor": "Krystman",
+   "data": "2025-05-02",
+   "estrelas": 314,
+   "capa": "pico8_cattlecrisis-1.png",
+   "tags": [
+    "shmup",
+    "arcade"
+   ],
+   "estilos": [
+    "acao",
+    "arcade"
+   ]
+  },
+  {
+   "post": "161905",
+   "titulo": "Skeleton Gelatin",
+   "autor": "Adam Atomic",
+   "data": "2025-02-10",
+   "estrelas": 121,
+   "capa": "pico8_skeleton_gelatin-2.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "166212",
+   "titulo": "Snekburd - A Snakebird Demake?",
+   "autor": "Werxzy",
+   "data": "2025-04-28",
+   "estrelas": 265,
+   "capa": "pico8_snekburd-8.png",
+   "tags": [
+    "puzzle",
+    "sokoban"
+   ],
+   "estilos": [
+    "puzzle",
+    "arcade"
+   ]
+  },
+  {
+   "post": "144361",
+   "titulo": "Linecraft - A Minecraft demake",
+   "autor": "El_Nicovw321",
+   "data": "2024-03-25",
+   "estrelas": 277,
+   "capa": "pico8_linecraft-29.png",
+   "tags": [
+    "3d",
+    "minecraft",
+    "adventure",
+    "calm"
+   ],
+   "estilos": [
+    "aventura",
+    "arcade"
+   ]
+  },
+  {
+   "post": "133840",
+   "titulo": "Vacay Volley",
+   "autor": "ejreyes",
+   "data": "2023-09-01",
+   "estrelas": 139,
+   "capa": "pico8_vacayvolley_1_0-1.png",
+   "tags": [
+    "action",
+    "mini-game",
+    "beach",
+    "infinite"
+   ],
+   "estilos": [
+    "acao",
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "162293",
+   "titulo": "Neath",
+   "autor": "binaryeye",
+   "data": "2025-02-16",
+   "estrelas": 153,
+   "capa": "pico8_binaryeye_neath-1.png",
+   "tags": [
+    "exploration",
+    "platformer"
+   ],
+   "estilos": [
+    "plataforma",
+    "aventura"
+   ]
+  },
+  {
+   "post": "118024",
+   "titulo": "Berzerk",
+   "autor": "pahammond",
+   "data": "2022-09-27",
+   "estrelas": 88,
+   "capa": "pico8_berzerk-1.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "161930",
+   "titulo": "SPHONGOS",
+   "autor": "mkoloch",
+   "data": "2025-02-10",
+   "estrelas": 237,
+   "capa": "pico8_mk_sphongos-0.png",
+   "tags": [
+    "sci-fi",
+    "explore",
+    "collect",
+    "upgrade"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "131786",
+   "titulo": "willthemangetfrog",
+   "autor": "MarechalBanane",
+   "data": "2023-07-09",
+   "estrelas": 95,
+   "capa": "pico8_willthemangetfrog-7.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "160117",
+   "titulo": "Cryomancer",
+   "autor": "suezou",
+   "data": "2025-01-02",
+   "estrelas": 185,
+   "capa": "pico8_cryomancer-4.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "137092",
+   "titulo": "S.P.A.C.E. Star Patrol Against Cosmic Enemies",
+   "autor": "tufif",
+   "data": "2023-11-07",
+   "estrelas": 135,
+   "capa": "pico8_starpatrol-4.png",
+   "tags": [
+    "space",
+    "spacesim",
+    "shooter",
+    "shmup"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "132515",
+   "titulo": "Outvain",
+   "autor": "Ruva",
+   "data": "2023-07-29",
+   "estrelas": 188,
+   "capa": "pico8_outvain1-1.png",
+   "tags": [
+    "platformer",
+    "metroidvania",
+    "combat"
+   ],
+   "estilos": [
+    "plataforma",
+    "acao"
+   ]
+  },
+  {
+   "post": "109965",
+   "titulo": "NEMO - Puzzle Pack II",
+   "autor": "mooon",
+   "data": "2022-04-09",
+   "estrelas": 147,
+   "capa": "pico8_nemonemo2-1.png",
+   "tags": [
+    "puzzle",
+    "picross",
+    "nonogram",
+    "nemonemologic"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "157883",
+   "titulo": "Solitomb",
+   "autor": "krajzeg",
+   "data": "2024-11-22",
+   "estrelas": 199,
+   "capa": "pico8_solitomb-3.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "158495",
+   "titulo": "2024 Advent Calendar",
+   "autor": "bikibird",
+   "data": "2024-12-01",
+   "estrelas": 72,
+   "capa": "pico8_advent2024-28.png",
+   "tags": [
+    "advent",
+    "christmas"
+   ],
+   "estilos": [],
+   "naoJogo": true
+  },
+  {
+   "post": "102722",
+   "titulo": "Totally Accurate Holiday Bowling",
+   "autor": "freds72",
+   "data": "2021-12-14",
+   "estrelas": 72,
+   "capa": "pico8_freds72_bowling-5.png",
+   "tags": [
+    "3d",
+    "physics"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "158034",
+   "titulo": "Samurise",
+   "autor": "Troypicol",
+   "data": "2024-11-24",
+   "estrelas": 156,
+   "capa": "pico8_samurise-3.png",
+   "tags": [
+    "platformer",
+    "speedrun",
+    "always-moving",
+    "boss-battle"
+   ],
+   "estilos": [
+    "plataforma",
+    "acao"
+   ]
+  },
+  {
+   "post": "142886",
+   "titulo": "trichromat",
+   "autor": "spratt",
+   "data": "2024-03-13",
+   "estrelas": 178,
+   "capa": "pico8_trichromat-1.png",
+   "tags": [
+    "puzzle",
+    "sokoban"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "155669",
+   "titulo": "Build a Jetpack",
+   "autor": "Aymeri",
+   "data": "2024-10-13",
+   "estrelas": 334,
+   "capa": "pico8_build_a_jetpack-1.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "148834",
+   "titulo": "SUPER World of Goo!",
+   "autor": "primary/convergence",
+   "data": "2024-05-23",
+   "estrelas": 187,
+   "capa": "pico8_super_world_of_goo-6.png",
+   "tags": [
+    "puzzle",
+    "physics"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "125072",
+   "titulo": "Don't Dig Up the Dead",
+   "autor": "morningtoast",
+   "data": "2023-01-31",
+   "estrelas": 137,
+   "capa": "pico8_dontdig-1.png",
+   "tags": [
+    "shmup",
+    "horror",
+    "exploring",
+    "adventure"
+   ],
+   "estilos": [
+    "acao",
+    "aventura"
+   ]
+  },
+  {
+   "post": "152679",
+   "titulo": "Gemstone Dredging 1.9",
+   "autor": "thesailor",
+   "data": "2024-08-15",
+   "estrelas": 140,
+   "capa": "pico8_gemdredging-21.png",
+   "tags": [
+    "minesweeper",
+    "cosy",
+    "remake",
+    "tiles"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "139797",
+   "titulo": "Blood of Vladula jr.",
+   "autor": "slumma",
+   "data": "2024-01-08",
+   "estrelas": 122,
+   "capa": "pico8_blood_of_vladula-0.png",
+   "tags": [
+    "platformer"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "86298",
+   "titulo": "Manbomber",
+   "autor": "Fresh-D",
+   "data": "2021-01-09",
+   "estrelas": 105,
+   "capa": "pico8_manbomber-0.png",
+   "tags": [
+    "action",
+    "multiplayer"
+   ],
+   "estilos": [
+    "acao",
+    "multiplayer"
+   ]
+  },
+  {
+   "post": "154661",
+   "titulo": "ExTerra",
+   "autor": "LokiStriker",
+   "data": "2024-09-23",
+   "estrelas": 193,
+   "capa": "pico8_exterra-1.png",
+   "tags": [
+    "stg",
+    "shmup",
+    "bullethell"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "140954",
+   "titulo": "Pony 9000",
+   "autor": "arrowonionbelly",
+   "data": "2024-01-31",
+   "estrelas": 128,
+   "capa": "pico8_pony9000_1_3_4-0.png",
+   "tags": [
+    "pony",
+    "9000",
+    "shmup",
+    "lgbtq"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "115347",
+   "titulo": "Teenage Mutant Ninja Turtles in: Shredder's Prevenge APRIL UPDATE",
+   "autor": "Wolfe3D",
+   "data": "2022-08-07",
+   "estrelas": 108,
+   "capa": "pico8_tmnt_sp_start-0.png",
+   "tags": [
+    "beatemup",
+    "coop"
+   ],
+   "estilos": [
+    "acao",
+    "multiplayer"
+   ]
+  },
+  {
+   "post": "149656",
+   "titulo": "Balloon",
+   "autor": "Lobo",
+   "data": "2024-06-09",
+   "estrelas": 228,
+   "capa": "pico8_balloon-3.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "152206",
+   "titulo": "mer ork",
+   "autor": "rawArgon",
+   "data": "2024-08-05",
+   "estrelas": 115,
+   "capa": "pico8_mer_ork-0.png",
+   "tags": [
+    "demoscene"
+   ],
+   "estilos": [],
+   "naoJogo": true
+  },
+  {
+   "post": "115916",
+   "titulo": "The Carpathian",
+   "autor": "Trog",
+   "data": "2022-08-17",
+   "estrelas": 166,
+   "capa": "pico8_the_carpathian-6.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "149271",
+   "titulo": "Tiny Hawk: Pico-Sk8r",
+   "autor": "morganquirk",
+   "data": "2024-06-01",
+   "estrelas": 198,
+   "capa": "pico8_tinyhawk-2.png",
+   "tags": [
+    "skateboard",
+    "sk8",
+    "skating",
+    "thps"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "130241",
+   "titulo": "Pet the cat",
+   "autor": "Doriencey",
+   "data": "2023-05-28",
+   "estrelas": 103,
+   "capa": "pico8_pet_the_cat_2-4.png",
+   "tags": [
+    "cat",
+    "cats",
+    "pets",
+    "petsimulator"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "103282",
+   "titulo": "Spirit Solstice",
+   "autor": "Jusiv",
+   "data": "2021-12-31",
+   "estrelas": 104,
+   "capa": "pico8_spirit_solstice-9.png",
+   "tags": [
+    "advent2021",
+    "pico8advent",
+    "adventure",
+    "solstice"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "149969",
+   "titulo": "Woodworm",
+   "autor": "spratt",
+   "data": "2024-06-15",
+   "estrelas": 366,
+   "capa": "pico8_woodworm-0.png",
+   "tags": [
+    "puzzle"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "124621",
+   "titulo": "To take root Among the Stars",
+   "autor": "somin",
+   "data": "2023-01-21",
+   "estrelas": 109,
+   "capa": "pico8_to_take_root_among_the_stars_1-7.png",
+   "tags": [
+    "narrative",
+    "exploration"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "146729",
+   "titulo": "Hot Wax",
+   "autor": "lorandbehold",
+   "data": "2024-04-16",
+   "estrelas": 237,
+   "capa": "pico8_hotwax-5.png",
+   "tags": [
+    "ld55"
+   ],
+   "estilos": [
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "105731",
+   "titulo": "NEMO",
+   "autor": "mooon",
+   "data": "2022-01-27",
+   "estrelas": 200,
+   "capa": "pico8_nemonemo-4.png",
+   "tags": [
+    "puzzle",
+    "picross",
+    "nonogram",
+    "nemonemologic"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "124298",
+   "titulo": "Little Eidolons",
+   "autor": "SmartAlloc",
+   "data": "2023-01-14",
+   "estrelas": 197,
+   "capa": "pico8_littleeidolons_1-16.png",
+   "tags": [
+    "turn-based",
+    "pokemon",
+    "fire-emblem"
+   ],
+   "estilos": [
+    "estrategia"
+   ]
+  },
+  {
+   "post": "133783",
+   "titulo": "The Heavens",
+   "autor": "reskob",
+   "data": "2023-08-31",
+   "estrelas": 234,
+   "capa": "pico8_the_heavens_1-0.png",
+   "tags": [
+    "space-sim",
+    "open-world",
+    "asteroids",
+    "lunar-lander"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "130473",
+   "titulo": "Porter",
+   "autor": "BluMakesGames",
+   "data": "2023-06-03",
+   "estrelas": 200,
+   "capa": "pico8_porterpatch1-1.png",
+   "tags": [
+    "puzzleplatformer",
+    "platformer"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "142641",
+   "titulo": "Oblivion Eve",
+   "autor": "SmartAlloc",
+   "data": "2024-03-08",
+   "estrelas": 507,
+   "capa": "pico8_oblivion_eve-12.png",
+   "tags": [
+    "roguelike",
+    "platformer"
+   ],
+   "estilos": [
+    "plataforma",
+    "roguelike"
+   ]
+  },
+  {
+   "post": "142353",
+   "titulo": "Puzzles of the Paladin",
+   "autor": "NerdyTeachers",
+   "data": "2024-03-03",
+   "estrelas": 264,
+   "capa": "pico8_puzzlesofthepaladin-3.png",
+   "tags": [
+    "puzzle",
+    "sokoban",
+    "single-player"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "141025",
+   "titulo": "PRAXIS FIGHTER X",
+   "autor": "ericb",
+   "data": "2024-02-02",
+   "estrelas": 356,
+   "capa": "pico8_praxis_fighter_x-2.png",
+   "tags": [
+    "shmup",
+    "shoot-em-up",
+    "shooter",
+    "arcade"
+   ],
+   "estilos": [
+    "acao",
+    "arcade"
+   ]
+  },
+  {
+   "post": "141898",
+   "titulo": "Feathered Escape",
+   "autor": "yokozuna",
+   "data": "2024-02-24",
+   "estrelas": 198,
+   "capa": "pico8_feathered_escape_bas2-5.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "141515",
+   "titulo": "Driftmania",
+   "autor": "MaxBize",
+   "data": "2024-02-16",
+   "estrelas": 278,
+   "capa": "pico8_driftmania-5.png",
+   "tags": [
+    "racing",
+    "speedrun"
+   ],
+   "estilos": [
+    "plataforma",
+    "corrida"
+   ]
+  },
+  {
+   "post": "108483",
+   "titulo": "Picowings Flight Simulator",
+   "autor": "electricgryphon",
+   "data": "2022-03-12",
+   "estrelas": 112,
+   "capa": "pico8_picowings_2-0.png",
+   "tags": [
+    "flight",
+    "simulator",
+    "airplane",
+    "3d"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "116052",
+   "titulo": "HAKAI",
+   "autor": "Hobhob",
+   "data": "2022-08-20",
+   "estrelas": 192,
+   "capa": "pico8_hakai-3.png",
+   "tags": [
+    "action",
+    "multiplayer",
+    "fighting",
+    "arcade"
+   ],
+   "estilos": [
+    "acao",
+    "arcade",
+    "multiplayer"
+   ]
+  },
+  {
+   "post": "136390",
+   "titulo": "Lab Cat",
+   "autor": "ooooggll",
+   "data": "2023-10-25",
+   "estrelas": 237,
+   "capa": "pico8_lab_cat-6.png",
+   "tags": [
+    "lab",
+    "cat",
+    "portal",
+    "sokoban"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "129209",
+   "titulo": "Time For Lunch",
+   "autor": "zep",
+   "data": "2023-05-01",
+   "estrelas": 165,
+   "capa": "pico8_tfl-1.png",
+   "tags": [
+    "ldjam",
+    "action",
+    "owl",
+    "physics"
+   ],
+   "estilos": [
+    "acao",
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "136446",
+   "titulo": "Steel Surge: Revolution",
+   "autor": "LokiStriker",
+   "data": "2023-10-26",
+   "estrelas": 258,
+   "capa": "pico8_loki_ssurge_menu-3.png",
+   "tags": [
+    "stg",
+    "shump",
+    "bullethell"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "138958",
+   "titulo": "PICO-8 Holiday Bundle 2023",
+   "autor": "TheTomster",
+   "data": "2023-12-21",
+   "estrelas": 44,
+   "capa": "pico8_holidaybundle23-5.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "136646",
+   "titulo": "Marble Merger",
+   "autor": "2darray",
+   "data": "2023-10-31",
+   "estrelas": 481,
+   "capa": "pico8_marble_merger-5.png",
+   "tags": [
+    "suika",
+    "merge",
+    "watermelon"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "137287",
+   "titulo": "BAS",
+   "autor": "yokozuna",
+   "data": "2023-11-11",
+   "estrelas": 399,
+   "capa": "pico8_bas-9.png",
+   "tags": [
+    "game",
+    "highscore",
+    "endless"
+   ],
+   "estilos": [
+    "arcade"
+   ]
+  },
+  {
+   "post": "134197",
+   "titulo": "subsurface",
+   "autor": "JulianR",
+   "data": "2023-09-11",
+   "estrelas": 251,
+   "capa": "pico8_subsurface-2.png",
+   "tags": [
+    "metroidvania",
+    "platformer",
+    "exploration",
+    "adventure"
+   ],
+   "estilos": [
+    "plataforma",
+    "aventura"
+   ]
+  },
+  {
+   "post": "134926",
+   "titulo": "PIZZA PANDA",
+   "autor": "kittenm4ster",
+   "data": "2023-09-26",
+   "estrelas": 212,
+   "capa": "pico8_pizza_panda-2.png",
+   "tags": [
+    "platformer",
+    "no-combat",
+    "speedrun",
+    "car"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "126450",
+   "titulo": "Sokoblox",
+   "autor": "codeAtorium",
+   "data": "2023-03-01",
+   "estrelas": 138,
+   "capa": "pico8_sokoblox-0.png",
+   "tags": [
+    "puzzle",
+    "bloxorz",
+    "sokoban",
+    "puzzles"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "135971",
+   "titulo": "Redash",
+   "autor": "SmellyFishstiks",
+   "data": "2023-10-16",
+   "estrelas": 158,
+   "capa": "pico8_redash-7.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "123441",
+   "titulo": "Jungle Ping",
+   "autor": "Heracleum",
+   "data": "2023-01-01",
+   "estrelas": 98,
+   "capa": "pico8_jungleping-1.png",
+   "tags": [
+    "action",
+    "arcade",
+    "demake",
+    "remake"
+   ],
+   "estilos": [
+    "acao",
+    "arcade"
+   ]
+  },
+  {
+   "post": "136245",
+   "titulo": "Bun Bun Samurai",
+   "autor": "tmirobot",
+   "data": "2023-10-22",
+   "estrelas": 143,
+   "capa": "pico8_bunbunsamurai-13.png",
+   "tags": [
+    "top-down",
+    "action",
+    "beat-em-up"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "120106",
+   "titulo": "Downward",
+   "autor": "MisterWizard01",
+   "data": "2022-11-04",
+   "estrelas": 196,
+   "capa": "pico8_downward-6.png",
+   "tags": [
+    "shooter",
+    "arcade",
+    "action",
+    "endless"
+   ],
+   "estilos": [
+    "acao",
+    "arcade"
+   ]
+  },
+  {
+   "post": "136042",
+   "titulo": "Suika Game Demake",
+   "autor": "spoike",
+   "data": "2023-10-17",
+   "estrelas": 322,
+   "capa": "pico8_suika_demake-9.png",
+   "tags": [
+    "watermelon",
+    "suika",
+    "game",
+    "demake"
+   ],
+   "estilos": [
+    "puzzle",
+    "arcade"
+   ]
+  },
+  {
+   "post": "93435",
+   "titulo": "Cursed Flail",
+   "autor": "Jusiv",
+   "data": "2021-06-13",
+   "estrelas": 106,
+   "capa": "pico8_jusiv_cursedflail-0.png",
+   "tags": [
+    "dungeon",
+    "action",
+    "gmtk-2021"
+   ],
+   "estilos": [
+    "acao",
+    "aventura",
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "129136",
+   "titulo": "Pico Froggo: Hop Across the Seasons",
+   "autor": "TheSmellyFrog",
+   "data": "2023-04-29",
+   "estrelas": 196,
+   "capa": "pico8_froggohats-1.png",
+   "tags": [
+    "platformer",
+    "frog"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "45781",
+   "titulo": "Happy Larry and the Vampire Bat",
+   "autor": "dollarone",
+   "data": "2017-11-01",
+   "estrelas": 78,
+   "capa": "pico45820.png",
+   "tags": [
+    "3cjam",
+    "adventure",
+    "halloween",
+    "3cjam"
+   ],
+   "estilos": [
+    "aventura",
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "132559",
+   "titulo": "Whiplash Taxi Co",
+   "autor": "Mot",
+   "data": "2023-07-30",
+   "estrelas": 270,
+   "capa": "pico8_mot_taxi-7.png",
+   "tags": [
+    "3d",
+    "taxi",
+    "racing",
+    "driving"
+   ],
+   "estilos": [
+    "corrida"
+   ]
+  },
+  {
+   "post": "129275",
+   "titulo": "Air Delivery",
+   "autor": "pianoman373",
+   "data": "2023-05-02",
+   "estrelas": 333,
+   "capa": "pico8_air_delivery_1-3.png",
+   "tags": [
+    "platformer",
+    "metroidvania",
+    "ludumdare"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "125247",
+   "titulo": "Age of Ants",
+   "autor": "eeooty",
+   "data": "2023-02-03",
+   "estrelas": 167,
+   "capa": "pico8_age_of_ants-9.png",
+   "tags": [
+    "rts",
+    "demake",
+    "strategy"
+   ],
+   "estilos": [
+    "arcade",
+    "estrategia"
+   ]
+  },
+  {
+   "post": "131910",
+   "titulo": "MOTION●REC",
+   "autor": "shoma",
+   "data": "2023-07-13",
+   "estrelas": 306,
+   "capa": "pico8_motionrec-3.png",
+   "tags": [
+    "motionrec",
+    "platformer"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "131586",
+   "titulo": "Kalikan",
+   "autor": "LouieChapm",
+   "data": "2023-07-03",
+   "estrelas": 415,
+   "capa": "pico8_kalikan_menu-6.png",
+   "tags": [
+    "shmup",
+    "stg",
+    "arcade",
+    "dodonpachi"
+   ],
+   "estilos": [
+    "acao",
+    "arcade"
+   ]
+  },
+  {
+   "post": "78599",
+   "titulo": "Caped Feline Arena V1.0",
+   "autor": "Powersaurus",
+   "data": "2020-06-28",
+   "estrelas": 98,
+   "capa": "pico8_caped_feline_arena-4.png",
+   "tags": [
+    "fps",
+    "raycasting",
+    "cats",
+    "3d"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "126683",
+   "titulo": "Dinky Kong",
+   "autor": "Heracleum",
+   "data": "2023-03-07",
+   "estrelas": 273,
+   "capa": "pico8_dinkykong-0.png",
+   "tags": [
+    "demake",
+    "arcade",
+    "platformer",
+    "mario"
+   ],
+   "estilos": [
+    "plataforma",
+    "arcade"
+   ]
+  },
+  {
+   "post": "125548",
+   "titulo": "Beckon the Hellspawn",
+   "autor": "LokiStriker",
+   "data": "2023-02-08",
+   "estrelas": 359,
+   "capa": "pico8_beckon_the_hellspawn-3.png",
+   "tags": [
+    "action",
+    "roguelike",
+    "survivor"
+   ],
+   "estilos": [
+    "acao",
+    "roguelike"
+   ]
+  },
+  {
+   "post": "121642",
+   "titulo": "Shape of Mind",
+   "autor": "Krystman",
+   "data": "2022-11-30",
+   "estrelas": 333,
+   "capa": "pico8_shapeofmind-2.png",
+   "tags": [
+    "agbic",
+    "solitaire"
+   ],
+   "estilos": [
+    "puzzle",
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "127987",
+   "titulo": "HIT8OX",
+   "autor": "vladcom",
+   "data": "2023-04-01",
+   "estrelas": 220,
+   "capa": "pico8_hit8ox-9.png",
+   "tags": [
+    "fighting",
+    "3d",
+    "fighter",
+    "hit8ox"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "105213",
+   "titulo": "DUNGEON!",
+   "autor": "deklaswas",
+   "data": "2022-01-17",
+   "estrelas": 247,
+   "capa": "pico8_dungeon-0.png",
+   "tags": [
+    "platformer",
+    "dungeon"
+   ],
+   "estilos": [
+    "plataforma",
+    "aventura"
+   ]
+  },
+  {
+   "post": "109822",
+   "titulo": "RP-8 1.1 - now with pattern randomizer!",
+   "autor": "luchak",
+   "data": "2022-04-07",
+   "estrelas": 77,
+   "capa": "pico8_rp8-23.png",
+   "tags": [
+    "music",
+    "audio",
+    "synth",
+    "pcm"
+   ],
+   "estilos": [],
+   "naoJogo": true
+  },
+  {
+   "post": "118151",
+   "titulo": "1k Landscape",
+   "autor": "electricgryphon",
+   "data": "2022-09-29",
+   "estrelas": 90,
+   "capa": "pico8_onek_landscape06-0.png",
+   "tags": [
+    "1kjam",
+    "landscape",
+    "3d",
+    "dither"
+   ],
+   "estilos": [
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "116823",
+   "titulo": "WitchCraft TD",
+   "autor": "unikotoast",
+   "data": "2022-09-03",
+   "estrelas": 304,
+   "capa": "pico8_witchcrafttd-6.png",
+   "tags": [],
+   "estilos": [
+    "estrategia"
+   ]
+  },
+  {
+   "post": "86117",
+   "titulo": "Spider-Bat: Horticultural Hero",
+   "autor": "kittenm4ster",
+   "data": "2021-01-04",
+   "estrelas": 119,
+   "capa": "pico8_spiderbat-0.png",
+   "tags": [
+    "toyboxjam",
+    "tbj2020",
+    "gardening",
+    "physics"
+   ],
+   "estilos": [
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "66745",
+   "titulo": "New School Reunion",
+   "autor": "gasman",
+   "data": "2019-08-17",
+   "estrelas": 78,
+   "capa": "pico8_newschoolreunion-0.png",
+   "tags": [
+    "demoscene",
+    "demo"
+   ],
+   "estilos": [],
+   "naoJogo": true
+  },
+  {
+   "post": "93457",
+   "titulo": "Digger",
+   "autor": "paranoidcactus",
+   "data": "2021-06-14",
+   "estrelas": 124,
+   "capa": "pico8_digger-2.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198766",
+   "titulo": "fly_seagull_fly",
+   "autor": "nmzbof",
+   "data": "2026-11-01",
+   "estrelas": 0,
+   "capa": "pico8_fly_seagull_fly-0.png",
+   "tags": [
+    "firstgame"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "198753",
+   "titulo": "PUMPATCHED!",
+   "autor": "lumberdummy",
+   "data": "2026-10-31",
+   "estrelas": 2,
+   "capa": "pico8_pumpatchedtestgame-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198751",
+   "titulo": "Yet another lone roof runner",
+   "autor": "acid_bjorn",
+   "data": "2026-10-31",
+   "estrelas": 1,
+   "capa": "pico8_rososrif-1.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198744",
+   "titulo": "CORPSE FLOWER - The Bloom",
+   "autor": "UnholyBrie",
+   "data": "2026-10-31",
+   "estrelas": 8,
+   "capa": "pico8_corpse_flower-0.png",
+   "tags": [
+    "narrative",
+    "horror",
+    "flower",
+    "halloween"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "198739",
+   "titulo": "toki_tc",
+   "autor": "c0d3l1ght",
+   "data": "2026-10-31",
+   "estrelas": 1,
+   "capa": "pico8_toki_tc-0.png",
+   "tags": [
+    "tokipona",
+    "tweetcart",
+    "postcart"
+   ],
+   "estilos": [
+    "curtinhos"
+   ]
+  },
+  {
+   "post": "198735",
+   "titulo": "no_signal_2",
+   "autor": "pallmalla",
+   "data": "2026-10-31",
+   "estrelas": 2,
+   "capa": "pico8_no_signal_2-0.png",
+   "tags": [
+    "tv",
+    "tv-show",
+    "television",
+    "cathodic"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "198734",
+   "titulo": "Captain",
+   "autor": "canemxiao",
+   "data": "2026-10-31",
+   "estrelas": 5,
+   "capa": "pico8_captain_release-0.png",
+   "tags": [
+    "shooter",
+    "first-game",
+    "vector",
+    "twin-stick"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "198729",
+   "titulo": "Slime Climb",
+   "autor": "Epic_Soria",
+   "data": "2026-10-31",
+   "estrelas": 1,
+   "capa": "pico8_slimeclimbepicsoria-0.png",
+   "tags": [
+    "endlessrunner",
+    "infinite",
+    "highscore",
+    "fast"
+   ],
+   "estilos": [
+    "arcade"
+   ]
+  },
+  {
+   "post": "198728",
+   "titulo": "Forest",
+   "autor": "Epic_Soria",
+   "data": "2026-10-31",
+   "estrelas": 2,
+   "capa": "pico8_forestepicsoria-0.png",
+   "tags": [
+    "firstgame",
+    "adventure",
+    "suspense",
+    "mystery"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "198714",
+   "titulo": "Pumpkin smasher (happy halloween!)",
+   "autor": "terebiki",
+   "data": "2026-10-31",
+   "estrelas": 3,
+   "capa": "pico8_pumpkinsmasher-2.png",
+   "tags": [
+    "halloween",
+    "happyhalloween",
+    "cartridge",
+    "pico8"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "198703",
+   "titulo": "Simple Pico-8 Particle Editor",
+   "autor": "pepsiman",
+   "data": "2026-10-31",
+   "estrelas": 4,
+   "capa": "pico8_partedit-1.png",
+   "tags": [
+    "particles",
+    "editor",
+    "simple"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "198676",
+   "titulo": "themonstermatch",
+   "autor": "VANTABlack",
+   "data": "2026-10-30",
+   "estrelas": 0,
+   "capa": "pico8_themonstermatch-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198661",
+   "titulo": "Ufo Race",
+   "autor": "Cammander1",
+   "data": "2026-10-30",
+   "estrelas": 4,
+   "capa": "pico8_ufo_race1-0.png",
+   "tags": [],
+   "estilos": [
+    "corrida"
+   ]
+  },
+  {
+   "post": "198648",
+   "titulo": "Crossbond Colors",
+   "autor": "The_BeeshSpweesh",
+   "data": "2026-10-30",
+   "estrelas": 6,
+   "capa": "pico8_crossbond_colors-2.png",
+   "tags": [
+    "puzzle",
+    "colormatch"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "198640",
+   "titulo": "One More GPU",
+   "autor": "Mossbit",
+   "data": "2026-10-29",
+   "estrelas": 8,
+   "capa": "pico8_one_more_gpu-0.png",
+   "tags": [
+    "incremental",
+    "idle",
+    "simulation",
+    "strategy"
+   ],
+   "estilos": [
+    "estrategia"
+   ]
+  },
+  {
+   "post": "198633",
+   "titulo": "BTD64",
+   "autor": "iris64",
+   "data": "2026-10-29",
+   "estrelas": 8,
+   "capa": "pico8_bloonstd64-2.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198630",
+   "titulo": "blackball_billiards",
+   "autor": "pareinjeanphilippe",
+   "data": "2026-10-29",
+   "estrelas": 6,
+   "capa": "pico8_blackball_billiards-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198621",
+   "titulo": "Ninja Cactus: Escape the Cacti Caverns",
+   "autor": "MaxOsirus",
+   "data": "2026-10-29",
+   "estrelas": 12,
+   "capa": "pico8_maxosirus_ninja_cactus-0.png",
+   "tags": [
+    "metroidvania",
+    "platformer",
+    "hard",
+    "multicart"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "198584",
+   "titulo": "Die Forever",
+   "autor": "snoozemagoo",
+   "data": "2026-10-28",
+   "estrelas": 11,
+   "capa": "pico8_dieforever-0.png",
+   "tags": [
+    "action",
+    "cards",
+    "gambling",
+    "fighting"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "198577",
+   "titulo": "Slime Soccer",
+   "autor": "Damobmafia",
+   "data": "2026-10-28",
+   "estrelas": 16,
+   "capa": "pico8_slimesoccer-0.png",
+   "tags": [
+    "sports",
+    "2p",
+    "2",
+    "player"
+   ],
+   "estilos": [
+    "multiplayer"
+   ]
+  },
+  {
+   "post": "198571",
+   "titulo": "Mettaton Space Invader",
+   "autor": "Cyber3692",
+   "data": "2026-10-28",
+   "estrelas": 3,
+   "capa": "pico8_weyatajuko-1.png",
+   "tags": [
+    "arcade",
+    "game"
+   ],
+   "estilos": [
+    "arcade"
+   ]
+  },
+  {
+   "post": "198570",
+   "titulo": "The Mine",
+   "autor": "flavipix",
+   "data": "2026-10-28",
+   "estrelas": 5,
+   "capa": "pico8_the_mine_surface-0.png",
+   "tags": [
+    "platformer",
+    "celeste",
+    "tnt",
+    "spring"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "198533",
+   "titulo": "bateatbug",
+   "autor": "Gilded_Ember",
+   "data": "2026-10-27",
+   "estrelas": 2,
+   "capa": "pico8_bateatbug-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198532",
+   "titulo": "Pixel Sort",
+   "autor": "yun",
+   "data": "2026-10-27",
+   "estrelas": 6,
+   "capa": "pico8_pixelsort-1.png",
+   "tags": [
+    "sand",
+    "sort"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "198512",
+   "titulo": "Picomon Stadium",
+   "autor": "sticky",
+   "data": "2026-10-27",
+   "estrelas": 1,
+   "capa": "pico8_picomon_stadium-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198510",
+   "titulo": "Pico-Pets",
+   "autor": "5e2bbff",
+   "data": "2026-10-27",
+   "estrelas": 1,
+   "capa": "pico8_wojugroba-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198507",
+   "titulo": "beefys_burgers",
+   "autor": "nappa9693",
+   "data": "2026-10-27",
+   "estrelas": 1,
+   "capa": "pico8_beefys_burgers-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198504",
+   "titulo": "pico-pewpew v0.1",
+   "autor": "Nour Ramy",
+   "data": "2026-10-27",
+   "estrelas": 1,
+   "capa": "pico8_pico_pewpew_shoot314-1.png",
+   "tags": [
+    "pico8",
+    "shoot",
+    "game"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "198502",
+   "titulo": "Fetch! with Arya the Shiba",
+   "autor": "Dali_Dog",
+   "data": "2026-10-27",
+   "estrelas": 4,
+   "capa": "pico8_fetch_arya-1.png",
+   "tags": [
+    "platformer",
+    "dog"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "198487",
+   "titulo": "gilded_vault",
+   "autor": "EZ_ICE",
+   "data": "2026-10-27",
+   "estrelas": 4,
+   "capa": "pico8_gilded_vault-0.png",
+   "tags": [
+    "dungeoncrawler",
+    "dungeon",
+    "1stperson"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "198475",
+   "titulo": "Pocket Racers",
+   "autor": "pepsiman",
+   "data": "2026-10-26",
+   "estrelas": 10,
+   "capa": "pico8_pocket_racers-0.png",
+   "tags": [
+    "racing",
+    "driving",
+    "timetrial",
+    "action"
+   ],
+   "estilos": [
+    "acao",
+    "corrida"
+   ]
+  },
+  {
+   "post": "198449",
+   "titulo": "Storebror &amp; Lillebror",
+   "autor": "templelionstudio",
+   "data": "2026-10-26",
+   "estrelas": 1,
+   "capa": "pico8_storebrorlillebror-0.png",
+   "tags": [
+    "action",
+    "adventure",
+    "sidescroller",
+    "multiplayer"
+   ],
+   "estilos": [
+    "acao",
+    "aventura",
+    "multiplayer"
+   ]
+  },
+  {
+   "post": "198448",
+   "titulo": "Season Runners &ndash; a jump'n'run through the whole year",
+   "autor": "simoasis",
+   "data": "2026-10-26",
+   "estrelas": 4,
+   "capa": "pico8_seasonrunners-0.png",
+   "tags": [
+    "pico8",
+    "platformer"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "198446",
+   "titulo": "PLAYMAKE: pocket music studio",
+   "autor": "templelionstudio",
+   "data": "2026-10-26",
+   "estrelas": 7,
+   "capa": "pico8_playmake-0.png",
+   "tags": [
+    "musicmaker",
+    "musicproduction",
+    "daw",
+    "music"
+   ],
+   "estilos": [],
+   "naoJogo": true
+  },
+  {
+   "post": "198432",
+   "titulo": "Dragon vs Vampires",
+   "autor": "grilledmint",
+   "data": "2026-10-26",
+   "estrelas": 8,
+   "capa": "pico8_dragon_vs_vampires-2.png",
+   "tags": [
+    "shmup",
+    "dragon",
+    "vampires"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "198431",
+   "titulo": "Wizards vs Cats",
+   "autor": "OlieB123",
+   "data": "2026-10-26",
+   "estrelas": 4,
+   "capa": "pico8_wizardvcat-0.png",
+   "tags": [
+    "magic",
+    "schmup"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "198427",
+   "titulo": "-- p i c o  f a l l --",
+   "autor": "AAAAAmed",
+   "data": "2026-10-26",
+   "estrelas": 2,
+   "capa": "pico8_aaaaamed_picofall-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198425",
+   "titulo": "Moonjar",
+   "autor": "astropelican",
+   "data": "2026-10-25",
+   "estrelas": 13,
+   "capa": "pico8_astropelican_intro-0.png",
+   "tags": [
+    "pacmania",
+    "pacman",
+    "platformer",
+    "flicky"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "198420",
+   "titulo": "Cat that murders rats (first attempt on pico)",
+   "autor": "soapydino77",
+   "data": "2026-10-25",
+   "estrelas": 3,
+   "capa": "pico8_tusehiyiju-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198417",
+   "titulo": "Polder",
+   "autor": "SirVer",
+   "data": "2026-10-25",
+   "estrelas": 6,
+   "capa": "pico8_poldernetherlands-0.png",
+   "tags": [
+    "strategy",
+    "simulation",
+    "puzzle",
+    "water"
+   ],
+   "estilos": [
+    "puzzle",
+    "estrategia"
+   ]
+  },
+  {
+   "post": "198413",
+   "titulo": "Specter Deflector",
+   "autor": "st0ker",
+   "data": "2026-10-25",
+   "estrelas": 1,
+   "capa": "pico8_st0k3r-0.png",
+   "tags": [
+    "piexel-art",
+    "retro",
+    "shmup",
+    "shoot-em-up"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "198410",
+   "titulo": "Shadow Assassin",
+   "autor": "Agent1zed11",
+   "data": "2026-10-25",
+   "estrelas": 1,
+   "capa": "pico8_bwpubono-1.png",
+   "tags": [
+    "fighting",
+    "2d",
+    "adventure"
+   ],
+   "estilos": [
+    "acao",
+    "aventura"
+   ]
+  },
+  {
+   "post": "198404",
+   "titulo": "Singing Snake",
+   "autor": "hoyoun",
+   "data": "2026-10-25",
+   "estrelas": 4,
+   "capa": "pico8_singing_snake-1.png",
+   "tags": [
+    "snake",
+    "music"
+   ],
+   "estilos": [],
+   "naoJogo": true
+  },
+  {
+   "post": "198400",
+   "titulo": "Oppositz-V1.0",
+   "autor": "Agent1zed11",
+   "data": "2026-10-25",
+   "estrelas": 1,
+   "capa": "pico8_oppositz-0.png",
+   "tags": [
+    "puzzle",
+    "2d",
+    "pixel"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "198388",
+   "titulo": "Keep It Up Soph",
+   "autor": "sean360s",
+   "data": "2026-10-25",
+   "estrelas": 8,
+   "capa": "pico8_keepitupsoph-4.png",
+   "tags": [
+    "first-game",
+    "pick-up-and-play",
+    "arcade"
+   ],
+   "estilos": [
+    "arcade"
+   ]
+  },
+  {
+   "post": "198375",
+   "titulo": "Shmupgrade",
+   "autor": "ragibson",
+   "data": "2026-10-25",
+   "estrelas": 3,
+   "capa": "pico8_shmupgrade-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198355",
+   "titulo": "hookminer",
+   "autor": "alvie",
+   "data": "2026-10-24",
+   "estrelas": 7,
+   "capa": "pico8_hookminer-0.png",
+   "tags": [
+    "arcade",
+    "action",
+    "retro",
+    "flash"
+   ],
+   "estilos": [
+    "acao",
+    "arcade"
+   ]
+  },
+  {
+   "post": "198353",
+   "titulo": "Red Ball: Platforms",
+   "autor": "cherepets",
+   "data": "2026-10-24",
+   "estrelas": 6,
+   "capa": "pico8_rebapla-0.png",
+   "tags": [
+    "platformer",
+    "runner"
+   ],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "198345",
+   "titulo": "River Kitty Ransom",
+   "autor": "ducktapedave",
+   "data": "2026-10-24",
+   "estrelas": 14,
+   "capa": "pico8_riverkittyransom-0.png",
+   "tags": [
+    "beatemup",
+    "brawler"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  },
+  {
+   "post": "198344",
+   "titulo": "Sprout",
+   "autor": "jack_turps",
+   "data": "2026-10-24",
+   "estrelas": 7,
+   "capa": "pico8_sprout_-0.png",
+   "tags": [
+    "arcade",
+    "keepsake"
+   ],
+   "estilos": [
+    "arcade"
+   ]
+  },
+  {
+   "post": "198341",
+   "titulo": "Real &quot;Pinball Mode&quot; (the special command for print)",
+   "autor": "228",
+   "data": "2026-10-24",
+   "estrelas": 1,
+   "capa": "pico8_realpinballmode-0.png",
+   "tags": [],
+   "estilos": [
+    "arcade"
+   ]
+  },
+  {
+   "post": "198330",
+   "titulo": "Town Builder",
+   "autor": "penguin_studio",
+   "data": "2026-10-24",
+   "estrelas": 2,
+   "capa": "pico8_town_builder__penguin_studio-0.png",
+   "tags": [
+    "town",
+    "city",
+    "city-builder",
+    "game"
+   ],
+   "estilos": [
+    "estrategia"
+   ]
+  },
+  {
+   "post": "198316",
+   "titulo": "rsspr() | A rotatable sspr() function!",
+   "autor": "Aetherpixel",
+   "data": "2026-10-23",
+   "estrelas": 5,
+   "capa": "pico8_rsspr-1.png",
+   "tags": [
+    "rotate",
+    "tool"
+   ],
+   "estilos": [],
+   "naoJogo": true
+  },
+  {
+   "post": "198309",
+   "titulo": "Breakout Ver 1",
+   "autor": "TheGreatKiirith",
+   "data": "2026-10-23",
+   "estrelas": 1,
+   "capa": "pico8_fojuhipude-1.png",
+   "tags": [],
+   "estilos": [
+    "arcade"
+   ]
+  },
+  {
+   "post": "198307",
+   "titulo": "Dungeon Golf",
+   "autor": "red_llama7",
+   "data": "2026-10-23",
+   "estrelas": 18,
+   "capa": "pico8_dungeon_golf-2.png",
+   "tags": [
+    "golf",
+    "roguelike"
+   ],
+   "estilos": [
+    "aventura",
+    "roguelike"
+   ]
+  },
+  {
+   "post": "198302",
+   "titulo": "DICEBITS",
+   "autor": "SimGraveline",
+   "data": "2026-10-23",
+   "estrelas": 5,
+   "capa": "pico8_dicebits-1.png",
+   "tags": [
+    "puzzle",
+    "falling",
+    "blocks"
+   ],
+   "estilos": [
+    "puzzle"
+   ]
+  },
+  {
+   "post": "198286",
+   "titulo": "Visual Captcha",
+   "autor": "228",
+   "data": "2026-10-23",
+   "estrelas": 0,
+   "capa": "pico8_visualcaptcha-0.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "155139",
+   "titulo": "Asteroid Field Miner",
+   "autor": "keen",
+   "data": "2024-10-01",
+   "estrelas": 11,
+   "capa": "pico8_astfm-1.png",
+   "tags": [],
+   "estilos": []
+  },
+  {
+   "post": "198235",
+   "titulo": "Shaft - A Short Adventure",
+   "autor": "KingMig",
+   "data": "2026-10-22",
+   "estrelas": 7,
+   "capa": "pico8_shaft-2.png",
+   "tags": [
+    "game",
+    "adventure",
+    "horror",
+    "space"
+   ],
+   "estilos": [
+    "aventura"
+   ]
+  },
+  {
+   "post": "198224",
+   "titulo": "Pronto Pizza",
+   "autor": "Again_August",
+   "data": "2026-10-22",
+   "estrelas": 10,
+   "capa": "pico8_pronto_pizza-0.png",
+   "tags": [
+    "pizza",
+    "restaurant",
+    "cafe",
+    "food"
+   ],
+   "estilos": []
+  },
+  {
+   "post": "11722",
+   "titulo": "Celeste",
+   "autor": "noel",
+   "data": "2015-07-21",
+   "estrelas": 2072,
+   "capa": "pico15133.png",
+   "tags": [],
+   "estilos": [
+    "curtinhos",
+    "plataforma"
+   ]
+  },
+  {
+   "post": "86783",
+   "titulo": "celeste classic 2",
+   "autor": "noel",
+   "data": "2021-01-26",
+   "estrelas": 785,
+   "capa": "pico8_celeste_classic_2-5.png",
+   "tags": [],
+   "estilos": [
+    "plataforma"
+   ]
+  },
+  {
+   "post": "73825",
+   "titulo": "Porklike",
+   "autor": "Krystman",
+   "data": "2020-03-11",
+   "estrelas": 465,
+   "capa": "pico8_porklike-2.png",
+   "tags": [],
+   "estilos": [
+    "roguelike"
+   ]
+  },
+  {
+   "post": "42784",
+   "titulo": "Dank Tomb is out!",
+   "autor": "krajzeg",
+   "data": "2017-07-25",
+   "estrelas": 510,
+   "capa": "pico8_dank_tomb-0.png",
+   "tags": [],
+   "estilos": [
+    "acao",
+    "aventura",
+    "roguelike"
+   ]
+  },
+  {
+   "post": "49234",
+   "titulo": "Just One Boss",
+   "autor": "bridgs",
+   "data": "2018-02-12",
+   "estrelas": 820,
+   "capa": "pico49232.png",
+   "tags": [
+    "boss",
+    "boss-fight"
+   ],
+   "estilos": [
+    "acao",
+    "arcade"
+   ]
+  },
+  {
+   "post": "101541",
+   "titulo": "POOM",
+   "autor": "freds72",
+   "data": "2021-12-05",
+   "estrelas": 615,
+   "capa": "pico8_poom_0-9.png",
+   "tags": [
+    "3d",
+    "fps"
+   ],
+   "estilos": [
+    "acao"
+   ]
+  }
+ ]
+}

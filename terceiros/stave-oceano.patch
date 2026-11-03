@@ -1,0 +1,721 @@
+diff --git a/packages/app/next.config.ts b/packages/app/next.config.ts
+index bf63aaf..e6ff1b5 100644
+--- a/packages/app/next.config.ts
++++ b/packages/app/next.config.ts
+@@ -1,6 +1,17 @@
+ import type { NextConfig } from "next";
+ 
+-const nextConfig: NextConfig = {
++// Oceano: build estático servido em /stave dentro do navegador Oceano (STAVE_OCEANO=1).
++const OCEANO = process.env.STAVE_OCEANO === "1";
++
++const nextConfig: NextConfig = OCEANO ? {
++  transpilePackages: ["@stave/editor"],
++  output: "export",
++  basePath: "/stave",
++  trailingSlash: true,
++  images: { unoptimized: true },
++  typescript: { ignoreBuildErrors: true },   // os testes do servidor (rotas tiradas do build) não entram aqui
++  env: { NEXT_PUBLIC_BASE_PATH: "/stave", NEXT_PUBLIC_OCEANO: "1" },
++} : {
+   // Only transpile the local workspace package — it ships TypeScript/JSX source.
+   // The @strudel/* and @kabelsalat/* packages are pre-compiled ESM bundles;
+   // adding them to transpilePackages causes Turbopack to try statically resolving
+diff --git a/packages/app/src/app/api/share/[id]/route.ts b/packages/app/src/app/api/share/[id]/route.ts
+deleted file mode 100644
+index fd03ce4..0000000
+--- a/packages/app/src/app/api/share/[id]/route.ts
++++ /dev/null
+@@ -1,23 +0,0 @@
+-import { SHARE_ID_PATTERN } from "../../../../shareCrypto";
+-import { shareStore } from "../store";
+-
+-// #2248 — fetch one sealed shared project by its id. Never lists; a stored
+-// project never changes, so the answer can be cached for good.
+-
+-export async function GET(
+-  _req: Request,
+-  { params }: { params: Promise<{ id: string }> },
+-): Promise<Response> {
+-  const { id } = await params;
+-  if (!SHARE_ID_PATTERN.test(id)) return new Response("not found", { status: 404 });
+-  const store = shareStore();
+-  if (!store) return new Response("short links are not set up here", { status: 503 });
+-  const bytes = await store.get(id);
+-  if (!bytes) return new Response("not found", { status: 404 });
+-  return new Response(bytes as BodyInit, {
+-    headers: {
+-      "Content-Type": "application/octet-stream",
+-      "Cache-Control": "public, max-age=31536000, immutable",
+-    },
+-  });
+-}
+diff --git a/packages/app/src/app/api/share/route.ts b/packages/app/src/app/api/share/route.ts
+deleted file mode 100644
+index 6009e22..0000000
+--- a/packages/app/src/app/api/share/route.ts
++++ /dev/null
+@@ -1,36 +0,0 @@
+-import { isSealedShape, MAX_SEALED_BYTES, newShareId } from "../../../shareCrypto";
+-import { shareStore } from "./store";
+-
+-// #2248 — store a sealed shared project and hand back its short id.
+-//
+-// The body is the browser's sealed bytes; the key never reaches here. All this
+-// route can check is the shape (version byte, length), so that is all it checks.
+-//
+-// #2250 — how often one visitor may upload is limited before this code runs, by a
+-// Vercel Firewall rate-limit rule on stave-code-app: POST on path /api/share,
+-// fixed window, 10 per 10 minutes, keyed by IP, answered 429. It lives in the
+-// project's Firewall settings, not in this repo; a deploy elsewhere needs its own.
+-// The client copies the long link on a 429 and says why.
+-
+-export async function POST(req: Request): Promise<Response> {
+-  const store = shareStore();
+-  if (!store) return Response.json({ error: "short links are not set up here" }, { status: 503 });
+-
+-  const declared = Number(req.headers.get("content-length") ?? "0");
+-  if (declared > MAX_SEALED_BYTES) {
+-    return Response.json({ error: "project too large for a short link" }, { status: 413 });
+-  }
+-  const bytes = new Uint8Array(await req.arrayBuffer());
+-  if (bytes.byteLength > MAX_SEALED_BYTES) {
+-    return Response.json({ error: "project too large for a short link" }, { status: 413 });
+-  }
+-  if (!isSealedShape(bytes)) {
+-    return Response.json({ error: "not a sealed Stave project" }, { status: 400 });
+-  }
+-
+-  for (let attempt = 0; attempt < 3; attempt++) {
+-    const id = newShareId();
+-    if (await store.put(id, bytes)) return Response.json({ id }, { status: 201 });
+-  }
+-  return Response.json({ error: "could not store the project" }, { status: 500 });
+-}
+diff --git a/packages/app/src/app/api/share/store.ts b/packages/app/src/app/api/share/store.ts
+deleted file mode 100644
+index d76cfc4..0000000
+--- a/packages/app/src/app/api/share/store.ts
++++ /dev/null
+@@ -1,82 +0,0 @@
+-import { mkdir, readFile, writeFile } from "node:fs/promises";
+-import os from "node:os";
+-import path from "node:path";
+-
+-import { get, put } from "@vercel/blob";
+-
+-// #2248 — where sealed shared projects live, keyed by share id. Server-only.
+-//
+-// Production is Vercel Blob (private: a blob can't be fetched without the store's
+-// token, so the only way in is our GET route, one id at a time). Off Vercel, in dev
+-// and the browser tests, a folder under the OS temp dir stands in, so a short link
+-// can be made and opened on a laptop without a cloud store. A production build with
+-// no Blob store configured has no store at all, and the routes answer 503 so the
+-// client falls back to the long link.
+-
+-export interface ShareStore {
+-  /** Store new bytes under `id`. Returns false if the id is already taken. */
+-  put(id: string, bytes: Uint8Array): Promise<boolean>;
+-  /** The bytes stored under `id`, or null. */
+-  get(id: string): Promise<Uint8Array | null>;
+-}
+-
+-const blobPath = (id: string) => `shares/${id}`;
+-
+-function hasBlobStore(): boolean {
+-  return Boolean(
+-    process.env.BLOB_READ_WRITE_TOKEN ||
+-      (process.env.BLOB_STORE_ID && process.env.VERCEL_OIDC_TOKEN),
+-  );
+-}
+-
+-const blobStore: ShareStore = {
+-  async put(id, bytes) {
+-    // `allowOverwrite: false` makes a taken id a thrown error, never an overwrite.
+-    // Ids are 64 random bits, so that throw means a real failure in practice; the
+-    // client falls back to the long link either way.
+-    await put(blobPath(id), Buffer.from(bytes), {
+-      access: "private",
+-      addRandomSuffix: false,
+-      allowOverwrite: false,
+-      contentType: "application/octet-stream",
+-    });
+-    return true;
+-  },
+-  async get(id) {
+-    const res = await get(blobPath(id), { access: "private" });
+-    if (!res || res.statusCode !== 200) return null;
+-    return new Uint8Array(await new Response(res.stream).arrayBuffer());
+-  },
+-};
+-
+-const DEV_DIR = path.join(os.tmpdir(), "stave-share-dev");
+-
+-const folderStore: ShareStore = {
+-  async put(id, bytes) {
+-    await mkdir(DEV_DIR, { recursive: true });
+-    try {
+-      await writeFile(path.join(DEV_DIR, id), bytes, { flag: "wx" });
+-      return true;
+-    } catch (err) {
+-      if ((err as NodeJS.ErrnoException).code === "EEXIST") return false;
+-      throw err;
+-    }
+-  },
+-  async get(id) {
+-    try {
+-      return new Uint8Array(await readFile(path.join(DEV_DIR, id)));
+-    } catch (err) {
+-      if ((err as NodeJS.ErrnoException).code === "ENOENT") return null;
+-      throw err;
+-    }
+-  },
+-};
+-
+-/** The store for this deployment, or null when a production build has none. */
+-export function shareStore(): ShareStore | null {
+-  if (hasBlobStore()) return blobStore;
+-  if (process.env.NODE_ENV !== "production" || process.env.STAVE_SHARE_DEV_STORE === "1") {
+-    return folderStore;
+-  }
+-  return null;
+-}
+diff --git a/packages/app/src/app/docs/[[...slug]]/__tests__/resolveDocsFile.test.ts b/packages/app/src/app/docs/[[...slug]]/__tests__/resolveDocsFile.test.ts
+deleted file mode 100644
+index 425ae4e..0000000
+--- a/packages/app/src/app/docs/[[...slug]]/__tests__/resolveDocsFile.test.ts
++++ /dev/null
+@@ -1,76 +0,0 @@
+-import { describe, it, expect } from "vitest";
+-import path from "node:path";
+-import { resolveDocsFile, DOCS_MIME } from "../route";
+-
+-// A fixed absolute root keeps assertions platform-stable.
+-const ROOT = path.resolve("/srv/docs-dist");
+-const j = (...p: string[]) => path.join(ROOT, ...p);
+-
+-describe("resolveDocsFile (#322 /docs serving)", () => {
+-  it("maps the root (empty slug) to the index page", () => {
+-    const r = resolveDocsFile([], ROOT);
+-    expect(r).toEqual({
+-      filePath: j("index.html"),
+-      contentType: DOCS_MIME[".html"],
+-      cacheControl: "public, max-age=0, must-revalidate",
+-    });
+-  });
+-
+-  it("maps an extensionless single-segment slug to <slug>/index.html", () => {
+-    const r = resolveDocsFile(["getting-started"], ROOT);
+-    expect(r?.filePath).toBe(j("getting-started", "index.html"));
+-    expect(r?.contentType).toBe(DOCS_MIME[".html"]);
+-  });
+-
+-  it("maps a nested page slug to the directory index.html", () => {
+-    const r = resolveDocsFile(["architecture", "glsl"], ROOT);
+-    expect(r?.filePath).toBe(j("architecture", "glsl", "index.html"));
+-    expect(r?.contentType).toBe(DOCS_MIME[".html"]);
+-  });
+-
+-  it("serves an asset (path with extension) verbatim with its mime", () => {
+-    expect(resolveDocsFile(["_astro", "index.abc.css"], ROOT)).toEqual({
+-      filePath: j("_astro", "index.abc.css"),
+-      contentType: DOCS_MIME[".css"],
+-      cacheControl: "public, max-age=31536000, immutable",
+-    });
+-    expect(resolveDocsFile(["_astro", "page.abc.js"], ROOT)?.contentType).toBe(
+-      DOCS_MIME[".js"],
+-    );
+-    expect(resolveDocsFile(["docs-search.json"], ROOT)?.contentType).toBe(
+-      DOCS_MIME[".json"],
+-    );
+-    expect(resolveDocsFile(["sitemap-index.xml"], ROOT)?.contentType).toBe(
+-      DOCS_MIME[".xml"],
+-    );
+-  });
+-
+-  it("falls back to octet-stream for pagefind binary chunks", () => {
+-    // .pagefind (wasm) and .pf_* fragments are not in the mime map.
+-    expect(resolveDocsFile(["pagefind", "wasm.unknown.pagefind"], ROOT)?.contentType).toBe(
+-      "application/octet-stream",
+-    );
+-    expect(resolveDocsFile(["pagefind", "fragment", "x.pf_fragment"], ROOT)?.contentType).toBe(
+-      "application/octet-stream",
+-    );
+-  });
+-
+-  it("caches content-hashed _astro assets immutably, revalidates everything else", () => {
+-    expect(resolveDocsFile(["_astro", "page.abc.js"], ROOT)?.cacheControl).toBe(
+-      "public, max-age=31536000, immutable",
+-    );
+-    expect(resolveDocsFile(["getting-started"], ROOT)?.cacheControl).toBe(
+-      "public, max-age=0, must-revalidate",
+-    );
+-    expect(resolveDocsFile(["pagefind", "pagefind-entry.json"], ROOT)?.cacheControl).toBe(
+-      "public, max-age=0, must-revalidate",
+-    );
+-  });
+-
+-  it("rejects `..` traversal out of the docs root", () => {
+-    expect(resolveDocsFile(["..", "..", "etc", "passwd"], ROOT)).toBeNull();
+-    expect(resolveDocsFile(["..", "next.config.ts"], ROOT)).toBeNull();
+-    // a sibling dir that shares the root's prefix must NOT pass the guard
+-    expect(resolveDocsFile(["..", "docs-dist-secrets", "x"], ROOT)).toBeNull();
+-  });
+-});
+diff --git a/packages/app/src/app/docs/[[...slug]]/route.ts b/packages/app/src/app/docs/[[...slug]]/route.ts
+deleted file mode 100644
+index e994fa2..0000000
+--- a/packages/app/src/app/docs/[[...slug]]/route.ts
++++ /dev/null
+@@ -1,101 +0,0 @@
+-import { readFile } from "node:fs/promises";
+-import path from "node:path";
+-
+-// #322 — serve the @stave/docs (Astro Starlight) static site under /docs.
+-//
+-// The docs build publishes its output (directory format, base '/docs/') into
+-// packages/app/docs-dist — deliberately NOT public/, because Next 16's
+-// public-static handler claims the nested directory clean-URLs (each
+-// `<page>/index.html` exists) and 404s them before any route or rewrite can
+-// serve them (verified against `next build && next start`). Keeping the tree
+-// out of public/ lets this handler own all of /docs/*.
+-//
+-// In dev a next.config rewrite forwards /docs/* to the Astro dev server (:4321)
+-// before this handler runs, so the handler is the production path only.
+-//
+-// docs-dist is traced into this function's bundle via next.config
+-// `outputFileTracingIncludes` so readFile resolves on Vercel (where the files
+-// are otherwise not on the function filesystem).
+-
+-const DOCS_ROOT = path.join(process.cwd(), "docs-dist");
+-
+-// Astro emits a small, fixed set of extensions. Anything not listed (pagefind's
+-// .pf_fragment/.pf_index/.pf_meta/.pagefind binary chunks) falls back to
+-// octet-stream, which is correct — pagefind fetches those as array buffers.
+-export const DOCS_MIME: Record<string, string> = {
+-  ".html": "text/html; charset=utf-8",
+-  ".css": "text/css; charset=utf-8",
+-  ".js": "text/javascript; charset=utf-8",
+-  ".mjs": "text/javascript; charset=utf-8",
+-  ".json": "application/json; charset=utf-8",
+-  ".xml": "application/xml; charset=utf-8",
+-  ".svg": "image/svg+xml",
+-  ".txt": "text/plain; charset=utf-8",
+-  ".woff2": "font/woff2",
+-  ".woff": "font/woff",
+-  ".wasm": "application/wasm",
+-  ".png": "image/png",
+-  ".webp": "image/webp",
+-  ".ico": "image/x-icon",
+-};
+-
+-/**
+- * Map a /docs/* request (the catch-all slug segments) to a file under `root`.
+- *
+- * - A slug with a file extension is an asset, served verbatim.
+- * - An extensionless slug is a page; Astro's directory build emits
+- *   `<route>/index.html`, and the root (`/docs`, slug `[]`) is the index.
+- * - Returns null if the resolved path escapes `root` (`..` traversal).
+- *
+- * Pure (no IO) so the traversal guard and page/asset disambiguation are unit
+- * tested without a filesystem.
+- */
+-export function resolveDocsFile(
+-  slug: string[],
+-  root: string,
+-): { filePath: string; contentType: string; cacheControl: string } | null {
+-  const rel = slug.join("/");
+-  const isAsset = path.extname(rel) !== "";
+-  const filePath = isAsset
+-    ? path.resolve(root, rel)
+-    : path.resolve(root, rel, "index.html");
+-
+-  // Contain to `root`. The root page resolves to `<root>/index.html`, which
+-  // satisfies the prefix guard.
+-  if (!filePath.startsWith(root + path.sep)) return null;
+-
+-  // `_astro/*` filenames are content-hashed by Astro → cache them immutably.
+-  // Everything else (HTML pages, pagefind index/entry, sitemaps) is revalidated
+-  // so a new deploy is picked up immediately.
+-  const cacheControl = rel.startsWith("_astro/")
+-    ? "public, max-age=31536000, immutable"
+-    : "public, max-age=0, must-revalidate";
+-
+-  return {
+-    filePath,
+-    contentType: DOCS_MIME[path.extname(filePath)] ?? "application/octet-stream",
+-    cacheControl,
+-  };
+-}
+-
+-export async function GET(
+-  _req: Request,
+-  ctx: { params: Promise<{ slug?: string[] }> },
+-) {
+-  const { slug = [] } = await ctx.params;
+-  const resolved = resolveDocsFile(slug, DOCS_ROOT);
+-  if (!resolved) return new Response("Not found", { status: 404 });
+-
+-  try {
+-    const body = await readFile(resolved.filePath);
+-    return new Response(body, {
+-      status: 200,
+-      headers: {
+-        "content-type": resolved.contentType,
+-        "cache-control": resolved.cacheControl,
+-      },
+-    });
+-  } catch {
+-    return new Response("Not found", { status: 404 });
+-  }
+-}
+diff --git a/packages/app/src/app/globals.css b/packages/app/src/app/globals.css
+index bdcc848..39a8ce4 100644
+--- a/packages/app/src/app/globals.css
++++ b/packages/app/src/app/globals.css
+@@ -352,3 +352,21 @@ html[data-keyboard] [data-phone-top-bar][data-phone-top-held="sideways"] {
+     user-select: text;
+   }
+ }
++
++/* Oceano: fundo transparente — o mar da página inicial do navegador Oceano aparece por
++   trás do editor. Ativado pelo botão "transparente" ao lado do Play (só no build do Oceano). */
++html[data-oceano-fundo="transparente"] {
++  --bg-app: transparent;
++  --bg-chrome: color-mix(in srgb, #0d0d1a 70%, transparent);
++  --bg-chrome-2: color-mix(in srgb, #111126 70%, transparent);
++  --bg-sidebar: color-mix(in srgb, #1a1a2e 72%, transparent);
++  --bg-panel: color-mix(in srgb, #14142a 72%, transparent);
++  background: transparent !important;
++}
++html[data-oceano-fundo="transparente"] body,
++html[data-oceano-fundo="transparente"] main { background: transparent !important; }
++html[data-oceano-fundo="transparente"] .monaco-editor,
++html[data-oceano-fundo="transparente"] .monaco-editor-background,
++html[data-oceano-fundo="transparente"] .monaco-editor .margin,
++html[data-oceano-fundo="transparente"] .monaco-editor .inputarea.ime-input { background: transparent !important; }
++html[data-oceano-fundo="transparente"] .monaco-editor .view-line span { text-shadow: 1px 1px 0 rgba(0, 0, 0, .85); }
+diff --git a/packages/app/src/app/layout.tsx b/packages/app/src/app/layout.tsx
+index 7c9092f..78ebeea 100644
+--- a/packages/app/src/app/layout.tsx
++++ b/packages/app/src/app/layout.tsx
+@@ -106,7 +106,7 @@ export default function RootLayout({
+             nothing from the editor. Production builds only: in development the
+             component fetches a debug script from va.vercel-scripts.com and logs
+             every view, on every page load of every browser spec. */}
+-        {process.env.NODE_ENV === "production" && <Analytics />}
++        {process.env.NODE_ENV === "production" && !process.env.NEXT_PUBLIC_OCEANO && <Analytics />}
+       </body>
+     </html>
+   );
+diff --git a/packages/app/src/app/s/[id]/page.tsx b/packages/app/src/app/s/[id]/page.tsx
+deleted file mode 100644
+index 5aa4178..0000000
+--- a/packages/app/src/app/s/[id]/page.tsx
++++ /dev/null
+@@ -1,3 +0,0 @@
+-// #2248 — a short share link, `/s/<id>#<key>`, opens Stave itself; the app reads
+-// the id and key from the address and offers to import the project.
+-export { default } from "../../page";
+diff --git a/packages/app/src/components/FileTypeIcon.tsx b/packages/app/src/components/FileTypeIcon.tsx
+index 36d1dc2..a010648 100644
+--- a/packages/app/src/components/FileTypeIcon.tsx
++++ b/packages/app/src/components/FileTypeIcon.tsx
+@@ -21,11 +21,11 @@ import type { WorkspaceFile } from "@stave/editor";
+ type Language = WorkspaceFile["language"];
+ 
+ const LOGOS: Partial<Record<Language, string>> = {
+-  strudel: "/file-icons/strudel.png",
+-  p5js: "/file-icons/p5.svg",
+-  hydra: "/file-icons/hydra.svg",
+-  glsl: "/file-icons/glsl.svg",
+-  sonicpi: "/file-icons/sonicpi.svg",
++  strudel: (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/file-icons/strudel.png",
++  p5js: (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/file-icons/p5.svg",
++  hydra: (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/file-icons/hydra.svg",
++  glsl: (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/file-icons/glsl.svg",
++  sonicpi: (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/file-icons/sonicpi.svg",
+ };
+ 
+ const boxOf = (size: number): React.CSSProperties => ({ width: size, height: size, flex: "none", display: "block" });
+diff --git a/packages/app/src/components/StaveApp.tsx b/packages/app/src/components/StaveApp.tsx
+index f6e9ab9..1e31e62 100644
+--- a/packages/app/src/components/StaveApp.tsx
++++ b/packages/app/src/components/StaveApp.tsx
+@@ -254,7 +254,7 @@ export function StaveApp({ initialProject }: StaveAppProps) {
+     else root.removeAttribute("data-stave-phone");
+     return () => root.removeAttribute("data-stave-phone");
+   }, [phone]);
+-  const [activePanelId, setActivePanelId] = useState<string | null>(() => (isPhone() ? null : "explorer"));
++  const [activePanelId, setActivePanelId] = useState<string | null>(() => (isPhone() || process.env.NEXT_PUBLIC_OCEANO === "1" ? null : "explorer"));
+   // The drawer's Menu tab is the drawer's own, not a panel: it has no rail button and
+   // must not be left selected for a rail that cannot show it.
+   const [phoneMenuOpen, setPhoneMenuOpen] = useState(false);
+@@ -1831,7 +1831,7 @@ export function StaveApp({ initialProject }: StaveAppProps) {
+       keybinding: "mod+shift+\\",
+       run: () => { shellRef.current?.splitActiveGroup?.("south"); },
+     }));
+-    unregs.push(registerCommand({
++    if (!process.env.NEXT_PUBLIC_OCEANO) unregs.push(registerCommand({
+       id: "stave.file.share",
+       title: "Copy Share Link",
+       category: "File",
+diff --git a/packages/app/src/components/StrudelEditorClient.tsx b/packages/app/src/components/StrudelEditorClient.tsx
+index 013cfee..05d6dec 100644
+--- a/packages/app/src/components/StrudelEditorClient.tsx
++++ b/packages/app/src/components/StrudelEditorClient.tsx
+@@ -117,6 +117,8 @@ import { PIANOROLL_HYDRA_CODE, seedMissingPresetFiles } from "../templates";
+ import { installBounceProbe } from "../e2e/bounceProbe";
+ import { installAssetProbe } from "../e2e/assetProbe";
+ import { warmWaveforms } from "../audio/waveformWarm";
++// Oceano: o "ao vivo" já vem ligado (a música só muda durante o play)
++const AO_VIVO_PADRAO = process.env.NEXT_PUBLIC_OCEANO === "1";
+ 
+ 
+ // Phase 20-12 — the timeline collects across the same cycle window the live
+@@ -1166,7 +1168,7 @@ export default function StrudelEditorClient({
+     runtime.onPlayingChanged((playing: boolean) => {
+       setRuntimeStates(prev => {
+         const next = new Map(prev);
+-        const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: false };
++        const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: AO_VIVO_PADRAO };
+         next.set(fileId, { ...cur, isPlaying: playing, bpm: runtime.getBpm() });
+         return next;
+       });
+@@ -1174,7 +1176,7 @@ export default function StrudelEditorClient({
+     runtime.onPlayPendingChanged?.((pending: boolean) => {
+       setRuntimeStates(prev => {
+         const next = new Map(prev);
+-        const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: false };
++        const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: AO_VIVO_PADRAO };
+         next.set(fileId, { ...cur, isPlayPending: pending });
+         return next;
+       });
+@@ -1216,7 +1218,7 @@ export default function StrudelEditorClient({
+         const errorMessage = parts?.message;
+         setRuntimeStates(prev => {
+           const next = new Map(prev);
+-          const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: false };
++          const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: AO_VIVO_PADRAO };
+           next.set(fileId, { ...cur, error: err, errorMessage });
+           return next;
+         });
+@@ -1354,7 +1356,7 @@ export default function StrudelEditorClient({
+ 
+       setRuntimeStates(prev => {
+         const next = new Map(prev);
+-        const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: false };
++        const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: AO_VIVO_PADRAO };
+         // Refresh BPM on every successful eval (#599): the chrome's tempo was
+         // only set on play/stop transitions (onPlayingChanged), so a live
+         // `setcps` edit never updated the readout until stop+play. getBpm()
+@@ -1444,7 +1446,7 @@ export default function StrudelEditorClient({
+     runtime.onAutoRefreshChanged((enabled: boolean) => {
+       setRuntimeStates(prev => {
+         const next = new Map(prev);
+-        const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: false };
++        const cur = next.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: AO_VIVO_PADRAO };
+         next.set(fileId, { ...cur, autoRefresh: enabled });
+         return next;
+       });
+@@ -1471,7 +1473,7 @@ export default function StrudelEditorClient({
+         setRuntimeStates((prev) => {
+           if (prev.has(fileId)) return prev;
+           const next = new Map(prev);
+-          next.set(fileId, { isPlaying: false, error: null, autoRefresh: false });
++          next.set(fileId, { isPlaying: false, error: null, autoRefresh: AO_VIVO_PADRAO });
+           return next;
+         });
+       });
+@@ -1550,7 +1552,7 @@ export default function StrudelEditorClient({
+     if (!rt) return;
+     setRuntimeStates(prev => {
+       const next = new Map(prev);
+-      const cur = prev.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: false };
++      const cur = prev.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: AO_VIVO_PADRAO };
+       next.set(fileId, { ...cur, error: null });
+       return next;
+     });
+@@ -1570,7 +1572,7 @@ export default function StrudelEditorClient({
+   const handleToggleStopAtEnd = useCallback((fileId: string) => {
+     setRuntimeStates(prev => {
+       const next = new Map(prev);
+-      const cur = prev.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: false };
++      const cur = prev.get(fileId) ?? { isPlaying: false, error: null, autoRefresh: AO_VIVO_PADRAO };
+       next.set(fileId, { ...cur, stopAtEnd: !cur.stopAtEnd });
+       return next;
+     });
+diff --git a/packages/app/src/components/menuModel.ts b/packages/app/src/components/menuModel.ts
+index b24f0f0..004f22b 100644
+--- a/packages/app/src/components/menuModel.ts
++++ b/packages/app/src/components/menuModel.ts
+@@ -96,8 +96,8 @@ export function buildMenus(a: MenuActions): Menu[] {
+         item("Open Project File...", a.onImportProject),
+         item("Export as .stave", a.onExportProject),
+         item("Bounce to WAV...", a.onBounceToWav, { disabled: !a.canBounceToWav() }),
+-        divider,
+-        item("Copy Share Link", a.onShareProject),
++        // Oceano: sem servidor de compartilhar — o link curto não existe no build do navegador
++        ...(process.env.NEXT_PUBLIC_OCEANO ? [] : [divider, item("Copy Share Link", a.onShareProject)]),
+         divider,
+         item("Editor Settings...", a.onOpenEditorSettings),
+         item("Keyboard Shortcuts...", a.onOpenShortcuts),
+diff --git a/packages/app/src/startScreen.ts b/packages/app/src/startScreen.ts
+index b39b974..b6d82da 100644
+--- a/packages/app/src/startScreen.ts
++++ b/packages/app/src/startScreen.ts
+@@ -70,7 +70,7 @@ export const INTRO_VIDEO = {
+   id: "LoVfu-FCTAg",
+   title: "Introducing Stave",
+   /** its opening frame, shipped with the app so nothing is fetched from YouTube until Play is pressed */
+-  poster: "/start/introducing-stave.jpg",
++  poster: (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/start/introducing-stave.jpg",
+ } as const;
+ 
+ export const introWatchUrl = `https://www.youtube.com/watch?v=${INTRO_VIDEO.id}`;
+diff --git a/packages/app/src/templates.ts b/packages/app/src/templates.ts
+index 5b1da07..2b61316 100644
+--- a/packages/app/src/templates.ts
++++ b/packages/app/src/templates.ts
+@@ -49,7 +49,19 @@ import { pinTabBackdropIfUnset } from "./state/tabBackdrops";
+ 
+ // ── Default code snippets ────────────────────────────────────────────
+ 
+-export const STRUDEL_CODE = `// Welcome to Stave! Ctrl+Enter plays, Ctrl+. stops.
++export const STRUDEL_CODE = process.env.NEXT_PUBLIC_OCEANO === "1" ? `setcps(110/60/4) // 110 bpm
++
++kick: s("bd*4").bank("LinnDrum").gain(0.5)
++
++snare: s("~ sd ~ sd").bank("LinnDrum").gain(0.4).room(0.6).size(6)
++
++hats: s("[~ hh]*4").bank("LinnDrum").gain(0.3)
++
++
++lead: n("<[4 ~ 3 ~ 2 ~ ~ ~] [~ 0 ~ 2 3 ~ 2 ~]>").scale("A4:minor")
++  .s("square").lpf(2500).gain(0.4).delay(0.4).delaytime(3/8)
++  .viz("scope")
++` : `// Welcome to Stave! Ctrl+Enter plays, Ctrl+. stops.
+ // Each named line is a track: you'll find it in the Mixer and on the Timeline.
+ 
+ setcps(110/60/4) // 110 bpm
+diff --git a/packages/editor/src/LiveCodingEditor.tsx b/packages/editor/src/LiveCodingEditor.tsx
+index 4445759..769f84c 100644
+--- a/packages/editor/src/LiveCodingEditor.tsx
++++ b/packages/editor/src/LiveCodingEditor.tsx
+@@ -114,7 +114,7 @@ export function LiveCodingEditor({
+   const [isPlaying, setIsPlaying] = useState(false)
+   const [error, setError] = useState<Error | null>(null)
+   const [bpm, setBpm] = useState<number | undefined>(bpmProp)
+-  const [autoRefresh, setAutoRefresh] = useState(false)
++  const [autoRefresh, setAutoRefresh] = useState(process.env.NEXT_PUBLIC_OCEANO === '1')
+ 
+   // Seed the workspace file once on mount.
+   const fileIdRef = useRef(FILE_ID)
+diff --git a/packages/editor/src/theme/monacoTheme.ts b/packages/editor/src/theme/monacoTheme.ts
+index 2869e1b..b5b3112 100644
+--- a/packages/editor/src/theme/monacoTheme.ts
++++ b/packages/editor/src/theme/monacoTheme.ts
+@@ -19,7 +19,7 @@ export function defineStrudelMonacoTheme(monaco: typeof Monaco): void {
+       { token: 'number.hex',            foreground: 'fb923c' },
+       { token: 'number.binary',         foreground: 'fb923c' },
+       { token: 'number.float',          foreground: 'fb923c' },
+-      { token: 'comment',               foreground: '6b7280', fontStyle: 'italic' },
++      { token: 'comment',               foreground: 'd6dae2', fontStyle: 'italic' },
+       { token: 'keyword',               foreground: 'c4b5fd' },
+       { token: 'keyword.operator',      foreground: 'f472b6' },
+       { token: 'variable.predefined',   foreground: 'fde68a' },
+diff --git a/packages/editor/src/workspace/runtime/LiveCodingRuntime.ts b/packages/editor/src/workspace/runtime/LiveCodingRuntime.ts
+index d165e65..7f39342 100644
+--- a/packages/editor/src/workspace/runtime/LiveCodingRuntime.ts
++++ b/packages/editor/src/workspace/runtime/LiveCodingRuntime.ts
+@@ -135,6 +135,10 @@ import {
+  */
+ const LIVE_MODE_DEBOUNCE_MS = 500
+ 
++// Oceano: no navegador Oceano o "ao vivo" já começa ligado, mas só re-avalia enquanto
++// a música está tocando: editar parado nunca dispara som.
++const OCEANO_AO_VIVO = process.env.NEXT_PUBLIC_OCEANO === '1'
++
+ /**
+  * #2259 — how long a Play may take to start before it says it is pending.
+  * Long enough that a Play with everything already loaded (a few ms) never
+@@ -275,7 +279,7 @@ export class LiveCodingRuntime implements LiveCodingRuntimeInterface {
+   // without leaking between sessions or firing after dispose. The debounce
+   // timeout is tracked separately so setAutoRefresh(false) / stop() can
+   // cancel an in-flight pending re-play.
+-  private autoRefreshEnabled = false
++  private autoRefreshEnabled = OCEANO_AO_VIVO
+   private autoRefreshUnsub: (() => void) | null = null
+   private autoRefreshTimeout: ReturnType<typeof setTimeout> | null = null
+   private readonly autoRefreshChangedListeners = new Set<(enabled: boolean) => void>()
+diff --git a/packages/editor/src/workspace/runtime/strudelRuntime.tsx b/packages/editor/src/workspace/runtime/strudelRuntime.tsx
+index 369a49d..ffb87b7 100644
+--- a/packages/editor/src/workspace/runtime/strudelRuntime.tsx
++++ b/packages/editor/src/workspace/runtime/strudelRuntime.tsx
+@@ -101,7 +101,43 @@ function LiveModeToggle({
+       }
+       style={autoRefresh ? activeStyle : inactiveStyle}
+     >
+-      {autoRefresh ? '\u27F3 live' : '\u27F3'}
++      {process.env.NEXT_PUBLIC_OCEANO === '1'
++        // Oceano: caixa "ao vivo" ao lado do Play
++        ? <><span aria-hidden="true" style={{ width: 10, height: 10, border: '1px solid currentColor', display: 'inline-grid', placeItems: 'center', fontSize: 9, lineHeight: 1 }}>{autoRefresh ? '\u2713' : ''}</span>ao vivo</>
++        : autoRefresh ? '\u27F3 live' : '\u27F3'}
++    </button>
++  )
++}
++
++// Oceano: fundo próprio (com os backdrops do Stave) ou transparente, mostrando o mar
++// da página inicial do navegador Oceano. A escolha fica guardada e o Oceano é avisado.
++function lerFundoOceano(): string {
++  try { return localStorage.getItem('oceano:fundo') === 'transparente' ? 'transparente' : 'efeitos' } catch { return 'efeitos' }
++}
++function aplicarFundoOceano(f: string): void {
++  if (typeof document === 'undefined') return
++  document.documentElement.dataset.oceanoFundo = f
++  try { localStorage.setItem('oceano:fundo', f) } catch {}
++  try { window.parent?.postMessage({ strudel: 'fundo', valor: f }, '*') } catch {}
++}
++function OceanoFundoToggle(): React.ReactElement {
++  const [fundo, setFundo] = React.useState(lerFundoOceano)
++  React.useEffect(() => { aplicarFundoOceano(fundo) }, [fundo])
++  const transparente = fundo === 'transparente'
++  return (
++    <button
++      data-testid="oceano-fundo-toggle"
++      onClick={() => setFundo(transparente ? 'efeitos' : 'transparente')}
++      title={transparente ? 'Fundo transparente: o mar do Oceano aparece por trás. Clique para o fundo do Stave.' : 'Clique para deixar o fundo transparente e ver o mar do Oceano por trás'}
++      style={{
++        display: 'inline-flex', alignItems: 'center', gap: 4, padding: '3px 8px', borderRadius: 3, fontSize: 10,
++        fontFamily: 'inherit', cursor: 'pointer', userSelect: 'none',
++        background: transparente ? 'var(--accent-dim)' : 'none',
++        color: transparente ? 'var(--accent-strong, var(--accent))' : 'var(--foreground-muted)',
++        border: `1px solid ${transparente ? 'var(--accent-dim)' : 'var(--border)'}`,
++      }}
++    >
++      {transparente ? 'transparente' : 'fundo'}
+     </button>
+   )
+ }
+@@ -256,6 +292,8 @@ function StrudelChrome(ctx: ChromeContext): React.ReactElement {
+         />
+       )}
+ 
++      {process.env.NEXT_PUBLIC_OCEANO === '1' && <OceanoFundoToggle />}
++
+       {onToggleStopAtEnd && (
+         <LoopToggle stopAtEnd={stopAtEnd ?? false} onToggle={onToggleStopAtEnd} />
+       )}
+diff --git a/packages/editor/src/workspace/warmMonaco.ts b/packages/editor/src/workspace/warmMonaco.ts
+index 098ae64..7b2b408 100644
+--- a/packages/editor/src/workspace/warmMonaco.ts
++++ b/packages/editor/src/workspace/warmMonaco.ts
+@@ -5,7 +5,7 @@ import { loader } from '@monaco-editor/react'
+  * `monaco-editor/min/vs` into `public/monaco/vs` (see packages/app/scripts/
+  * copy-monaco.mjs), so this resolves to a same-origin `/monaco/vs/…` URL.
+  */
+-const MONACO_VS_PATH = '/monaco/vs'
++const MONACO_VS_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') + '/monaco/vs'
+ 
+ // Self-host Monaco instead of @monaco-editor's jsdelivr CDN default (#690).
+ // `@monaco-editor/loader` otherwise fetches the editor core + its web workers

@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+terceiros/stave/
+terceiros/mesh-avatar-studio/
+historico/
+FILA.md
+__pycache__/
+simulador/sampler/atualizar.py
+RELATORIO-V0.md
+_*/
+!simulador/stave/_next/
+!simulador/stave/_not-found/

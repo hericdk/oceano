@@ -1,0 +1,54 @@
+{
+  "formato": "oceano-tema/1",
+  "id": "chuva",
+  "autor": "oceano",
+  "nome": "Chuva",
+  "descricao": "Céu fechado, cinza-azulado e chuva miúda no mar. Às vezes, um clarão.",
+  "paleta": [
+    "#0d1217",
+    "#18212a",
+    "#25313c",
+    "#364552",
+    "#4d5f6d",
+    "#6b7f8d",
+    "#93a4b0",
+    "#c3cfd7",
+    "#eef3f6",
+    "#7fb0cf",
+    "#e6cf7e"
+  ],
+  "ui": {
+    "fundo": 0,
+    "painel": 1,
+    "elevado": 2,
+    "borda": 3,
+    "texto": 8,
+    "suave": 6,
+    "acento": 9,
+    "destaque": 10,
+    "sol": 10
+  },
+  "mar": {
+    "dither": "bayer4",
+    "pixel": 3,
+    "cores": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "hora": 15,
+    "chuva": 0.8,
+    "relampago": true,
+    "ondas": 1.3,
+    "velocidade": 1.15,
+    "espuma": 1.2,
+    "contraste": 1.1
+  }
+}

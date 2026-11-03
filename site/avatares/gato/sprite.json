@@ -1,0 +1,14 @@
+{
+  "formato": "oceano-sprite/1",
+  "nome": "Gato",
+  "folha": "folha.png",
+  "quadro": [84, 64],
+  "fps": 6,
+  "estados": {
+    "parado": [[0, 2]],
+    "pensando": [[0, 0], [1, 0], [2, 0], [3, 0]],
+    "falando": [[0, 0], [1, 0], [2, 0], [3, 0]],
+    "feliz": [[0, 1], [1, 1]]
+  },
+  "rosto": [10, 2, 40, 32]
+}

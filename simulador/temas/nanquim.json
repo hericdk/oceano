@@ -1,0 +1,39 @@
+{
+  "formato": "oceano-tema/1",
+  "id": "nanquim",
+  "autor": "oceano",
+  "nome": "Nanquim",
+  "descricao": "1-bit com um único azul (e um tom mais claro dele para destaques legíveis). Para quem gosta de silêncio.",
+  "paleta": [
+    "#000000",
+    "#1a1a1a",
+    "#4d4d4d",
+    "#b3b3b3",
+    "#ffffff",
+    "#0040ff",
+    "#3d6bff"
+  ],
+  "ui": {
+    "fundo": 0,
+    "painel": 1,
+    "elevado": 1,
+    "borda": 2,
+    "texto": 4,
+    "suave": 3,
+    "acento": 5,
+    "destaque": 6,
+    "sol": 4
+  },
+  "mar": {
+    "dither": "bayer8",
+    "pixel": 3,
+    "cores": [
+      0,
+      3,
+      4,
+      5
+    ],
+    "contorno": true,
+    "contraste": 1.2
+  }
+}

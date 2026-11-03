@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mar · fundo de tela</title>
+<!-- Só o mar da página inicial, em tela cheia, para gravar o fundo de tela em loop.
+     ?tema=oceano  &hora=10.5 (0–24)  &periodo=12 (segundos do loop)  &pixel=3
+     Em window.fundo: quadro(t) desenha o instante t; tocar() anima em tempo real. -->
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; image-rendering: pixelated; }
+</style>
+</head>
+<body>
+<canvas id="mar"></canvas>
+<script type="module">
+import { Mar } from './js/mar.js';
+import { normalizarMar } from './js/temas.js';
+
+const q = new URLSearchParams(location.search);
+const tema = await (await fetch(`temas/${(q.get('tema') || 'oceano').replace(/[^\w-]/g, '')}.json`)).json();
+const mar = new Mar(document.getElementById('mar'));
+if (q.has('pixel')) { mar.pixel = Number(q.get('pixel')); mar.redimensionar(); }
+mar.definirEstilo(normalizarMar(tema.mar, tema.paleta.length), tema.paleta);
+mar.horaFixa = q.has('hora') ? Number(q.get('hora')) : null;
+mar.loop(Number(q.get('periodo') || 12));
+mar.desenharEm(0);
+
+window.fundo = {
+  mar, periodo: mar.periodo,
+  // tamanho em que o mar é desenhado de verdade (antes de ampliar os pixels)
+  resolucao: () => ({ w: mar.alvo.width, h: mar.alvo.height }),
+  quadro: t => { mar.desenharEm(t); return true; },
+  tocar() { const t0 = performance.now(); const f = agora => { mar.desenharEm(((agora - t0) / 1000) % mar.periodo); requestAnimationFrame(f); }; requestAnimationFrame(f); },
+  pronto: true,
+};
+if (q.has('tocar')) window.fundo.tocar();
+</script>
+</body>
+</html>

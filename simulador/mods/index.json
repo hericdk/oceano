@@ -1,0 +1,124 @@
+[
+  {
+    "id": "relogio-mare",
+    "nome": "Relógio de Maré",
+    "tipo": "widget",
+    "lugar": "nova-aba",
+    "descricao": "Hora e maré na nova aba.",
+    "permissoes": [
+      "tela"
+    ],
+    "ligado": true,
+    "icone": "relogio"
+  },
+  {
+    "id": "bolhas",
+    "nome": "Bolhas",
+    "tipo": "widget",
+    "lugar": "nova-aba",
+    "linguagem": "teal",
+    "descricao": "Bolhas subindo, escrito em Teal: Lua com tipos.",
+    "permissoes": [
+      "tela"
+    ],
+    "ligado": true,
+    "icone": "bolha"
+  },
+  {
+    "id": "pescadores",
+    "nome": "Pescadores",
+    "tipo": "tema vivo",
+    "lugar": "barra",
+    "descricao": "Barquinhos com pescadores que puxam os peixes que passam no anzol.",
+    "permissoes": [
+      "tela"
+    ],
+    "ligado": true
+  },
+  {
+    "id": "surfistas",
+    "nome": "Surfistas",
+    "tipo": "tema vivo",
+    "lugar": "barra",
+    "descricao": "Ondas de pixel com surfistas descendo a face da onda, com movimento suave.",
+    "permissoes": [
+      "tela"
+    ],
+    "ligado": false
+  },
+  {
+    "id": "peixes-na-barra",
+    "nome": "Peixes na Barra",
+    "tipo": "tema vivo",
+    "lugar": "barra",
+    "descricao": "Faixa animada embaixo das abas.",
+    "permissoes": [
+      "tela"
+    ],
+    "ligado": false
+  },
+  {
+    "id": "sons-do-mar",
+    "nome": "Sons do Mar",
+    "tipo": "automação",
+    "descricao": "Sons 8-bit para cliques, abas e modo jogo.",
+    "permissoes": [
+      "eventos",
+      "som"
+    ],
+    "ligado": true
+  },
+  {
+    "id": "modo-jogo-auto",
+    "nome": "Modo Jogo Automático",
+    "tipo": "automação",
+    "descricao": "Projeto ainda em teste. Um segundo jogador chegou para a luta? Em breve.",
+    "permissoes": [],
+    "ligado": false,
+    "soNavegador": true,
+    "construcao": true
+  },
+  {
+    "id": "cronometro",
+    "nome": "Cronômetro de Speedrun",
+    "tipo": "widget",
+    "lugar": "lateral",
+    "descricao": "Tempo, parciais e melhor marca guardada.",
+    "permissoes": [
+      "tela",
+      "controles",
+      "mouse",
+      "som",
+      "memoria"
+    ],
+    "ligado": true
+  },
+  {
+    "id": "notas",
+    "nome": "Notas",
+    "tipo": "widget",
+    "lugar": "lateral",
+    "descricao": "Bloco de notas pixel art. Clique e digite.",
+    "permissoes": [
+      "tela",
+      "controles",
+      "teclado",
+      "memoria"
+    ],
+    "ligado": true
+  },
+  {
+    "id": "radio",
+    "nome": "Rádio do Mar",
+    "tipo": "widget",
+    "lugar": "lateral",
+    "descricao": "Chiptune gerado na hora, sem arquivo de áudio.",
+    "permissoes": [
+      "tela",
+      "controles",
+      "mouse",
+      "som"
+    ],
+    "ligado": true
+  }
+]

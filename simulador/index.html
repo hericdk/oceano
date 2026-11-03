@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e1a3d">
+  <title>Oceano · Simulador</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 7' shape-rendering='crispEdges'%3E%3Cpath fill='%235bb6f0' d='M2 0h3v1h-3zM1 1h1v1h-1zM5 1h1v1h-1zM0 2h1v3h-1zM6 2h1v3h-1zM2 3h2v1h-2zM1 4h1v1h-1zM4 4h2v1h-2zM1 5h5v1h-5zM2 6h3v1h-3z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/oceano.css">
+  <link rel="stylesheet" href="css/leitor.css">
+  <script src="vendor/wasmoon.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <canvas id="mar" aria-hidden="true"></canvas>
+
+  <div id="app">
+    <header class="cromo">
+      <div class="linha-abas">
+        <div id="abas" class="abas" role="tablist"></div>
+      </div>
+      <div class="ferramentas">
+        <button id="voltar" class="ico" aria-label="Voltar"></button>
+        <button id="avancar" class="ico" aria-label="Avançar"></button>
+        <button id="recarregar" class="ico" aria-label="Recarregar"></button>
+        <button id="inicio" class="ico some-estreito" aria-label="Nova aba"></button>
+        <form id="form-endereco" class="endereco px">
+          <span id="seguranca" class="seguranca"></span>
+          <input id="endereco" autocomplete="off" spellcheck="false" placeholder="Pesquise ou digite um endereço" aria-label="Endereço">
+          <button id="btn-pip" type="button" class="ico ico-pip" aria-label="Mini player" title="Mini player: o vídeo flutua por cima de tudo (⌘⇧P)" hidden></button>
+        </form>
+        <button id="btn-gravando" type="button" class="ico ico-gravando" hidden></button>
+        <button id="btn-trilha" class="ico tocando-trilha" aria-label="Pausar a trilha" title="Trilha tocando: clique para pausar (⌥M)" hidden></button>
+        <button id="btn-musica" class="ico" aria-label="Música" aria-haspopup="dialog" aria-expanded="false" title="Música: Trilha, CDs, Stave e ½ sampler"></button>
+        <button id="btn-som" class="ico" aria-label="Sons" title="Sons"></button>
+        <button id="btn-menu" class="ico some-estreito" aria-label="Temas" title="Temas"></button>
+        <span class="selo some-estreito" title="Versão de testes">beta</span>
+      </div>
+      <div class="slot slot-barra" data-slot="barra"></div>
+    </header>
+
+    <div class="corpo">
+      <aside id="lateral" class="lateral" aria-label="Barra lateral">
+        <div class="lateral-topo">
+          <span class="lateral-abas" role="tablist">
+            <button class="lateral-aba" role="tab" data-lateral="assistente" aria-selected="true">Navegadora</button>
+          </span>
+          <button id="fechar-lateral" class="ico" aria-label="Fechar barra lateral"></button>
+        </div>
+        <div class="slot-assistente" hidden></div>
+      </aside>
+      <main id="pagina" class="pagina"></main>
+    </div>
+  </div>
+
+  <div id="avisos" class="avisos" aria-live="polite"></div>
+
+</body>
+</html>

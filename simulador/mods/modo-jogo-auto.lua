@@ -1,0 +1,2 @@
+-- Modo Jogo Automático · em construção
+-- Projeto ainda em teste. Um segundo jogador chegou para a luta? Em breve.

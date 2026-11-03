@@ -1,0 +1,50 @@
+{
+  "formato": "oceano-tema/1",
+  "id": "oceano",
+  "autor": "oceano",
+  "nome": "Oceano",
+  "descricao": "O tema padrão: azul profundo, espuma, areia e coral.",
+  "paleta": [
+    "#070b1f",
+    "#0e1a3d",
+    "#16306b",
+    "#1f4f9e",
+    "#2f7fd1",
+    "#5bb6f0",
+    "#a6e3ff",
+    "#f4fbff",
+    "#f3d49b",
+    "#c98f5a",
+    "#ff6f59",
+    "#ffd166",
+    "#3a2b52",
+    "#8a5c9e",
+    "#2e8b74",
+    "#7fd6a8"
+  ],
+  "ui": {
+    "fundo": 0,
+    "painel": 1,
+    "elevado": 2,
+    "borda": 3,
+    "texto": 7,
+    "suave": 6,
+    "acento": 5,
+    "destaque": 10,
+    "sol": 11
+  },
+  "mar": {
+    "dither": "bayer4",
+    "pixel": 3,
+    "cores": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      11
+    ]
+  }
+}

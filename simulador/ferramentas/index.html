@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="pt-BR" data-tela="selecao">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferramentas</title>
+<link rel="stylesheet" href="vendor/fa/css/all.min.css">
+<link rel="stylesheet" href="tailwind.css">
+<link rel="stylesheet" href="ferramentas.css">
+<link rel="stylesheet" href="pele.css">
+<script src="gsap-leve.js"></script>
+</head>
+<body class="flex h-screen overflow-hidden">
+    <section id="selecao" aria-label="Escolher uma ferramenta">
+        <div class="sel-cabeca"><h1><span aria-hidden="true">🧰</span> Ferramentas</h1><p>Ferramentas úteis de edição, em um lugar só. Role para ver todas e clique para abrir.</p></div>
+        <div id="sel-cartoes"></div>
+        <input id="sel-regua" type="range" min="0" max="1000" value="0" aria-label="Rolar a lista de ferramentas">
+    </section>
+    
+    <!-- Menu flutuante -->
+    <header id="topbar">
+        <nav class="topnav" aria-label="Ferramentas">
+            <button id="sel-voltar" class="brand-oceano" title="Ver todas as ferramentas"><span aria-hidden="true">🧰</span> <span>Ferramentas</span></button>
+            <div id="top-links" class="top-links"><span id="nav-indicator" aria-hidden="true"></span></div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="flex-1 bg-gray-950 overflow-y-auto p-6 pt-24">
+        
+        <!-- Tool 1: Case Converter -->
+        <div id="case-converter" class="tab-content active max-w-4xl mx-auto">
+            <div class="flex justify-between items-start gap-4 mb-6">
+                <div><h2 class="text-2xl font-bold">Conversor de frase</h2><p class="tool-sub">Veio um texto todo em maiúsculas ou bagunçado? Cole aqui e escolha como as letras devem ficar. O Limpar texto também tira espaços invisíveis que vêm junto ao copiar de sites e PDFs.</p></div>
+                <div class="space-x-2" style="flex:none;white-space:nowrap">
+                    <button id="cc-clean" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 rounded text-sm" title="Troca espaços especiais (NBSP, espaço estreito, invisíveis) por espaço normal, junta espaços repetidos e limpa as pontas das linhas"><i class="fas fa-broom"></i> Limpar texto<span id="cc-clean-n" class="cc-clean-n is-hidden"></span></button>
+                    <button onclick="clearField('cc-input')" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 rounded text-sm"><i class="fas fa-trash"></i> Apagar</button>
+                    <button onclick="copyToClipboard('cc-input')" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 rounded text-sm"><i class="fas fa-copy"></i> Copiar</button>
+                </div>
+            </div>
+            
+            <textarea id="cc-input" class="w-full h-64 bg-gray-900 border border-gray-700 rounded-lg p-4 text-gray-100 focus:outline-none focus:border-blue-500 resize-none" placeholder="Digite ou cole o seu texto aqui…"></textarea>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                <button onclick="convertCase('title')" class="bg-gray-800 hover:bg-gray-700 py-2 rounded-lg font-medium transition">Cada Palavra Com Maiúscula</button>
+                <button onclick="convertCase('sentence')" class="bg-gray-800 hover:bg-gray-700 py-2 rounded-lg font-medium transition">Só a primeira da frase</button>
+                <button onclick="convertCase('lower')" class="bg-gray-800 hover:bg-gray-700 py-2 rounded-lg font-medium transition">tudo minúsculo</button>
+                <button onclick="convertCase('upper')" class="bg-gray-800 hover:bg-gray-700 py-2 rounded-lg font-medium transition">TUDO MAIÚSCULO</button>
+            </div>
+        </div>
+
+        <!-- Tool 2: Lorem Ipsum -->
+        <div id="lorem" class="tab-content max-w-4xl mx-auto">
+            <div class="flex justify-between items-start gap-4 mb-6">
+                <div><h2 class="text-2xl font-bold">Lorem</h2><p class="tool-sub">Gera texto provisório para preencher telas e layouts: o lorem clássico ou o lero-lero do mar, em português. O Converter troca as palavras de um texto seu por lorem, mantendo o formato.</p></div>
+                <div style="flex:none;white-space:nowrap" class="space-x-2">
+                    <button onclick="clearField('lorem-output')" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 rounded text-sm"><i class="fas fa-trash"></i> Apagar</button>
+                    <button onclick="copyToClipboard('lorem-output')" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 rounded text-sm"><i class="fas fa-copy"></i> Copiar</button>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 p-4 rounded-lg border border-gray-700 mb-4 flex flex-wrap gap-4 items-end">
+                <div>
+                    <label class="block text-sm text-gray-400 mb-1">Texto</label>
+                    <div id="lorem-modo" class="seg" role="group" aria-label="Tipo de texto">
+                        <button type="button" class="on" data-modo="lorem" aria-pressed="true">Lorem</button>
+                        <button type="button" data-modo="lero" aria-pressed="false">Lero-lero</button>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-400 mb-1">Quantidade</label>
+                    <input type="number" id="lorem-count" value="3" min="1" class="w-20 bg-gray-800 border border-gray-700 rounded p-2 text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-400 mb-1">Tipo</label>
+                    <div class="flex items-center gap-4 h-10 bg-gray-800 border border-gray-700 rounded px-3">
+                        <label class="flex items-center space-x-2 cursor-pointer text-sm text-gray-300">
+                            <input type="radio" name="lorem-type" value="paragraphs" checked class="w-4 h-4 bg-gray-800 border-gray-700">
+                            <span>Parágrafos</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer text-sm text-gray-300">
+                            <input type="radio" name="lorem-type" value="words" class="w-4 h-4 bg-gray-800 border-gray-700">
+                            <span id="lorem-unidade">Palavras</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ml-auto flex gap-2">
+                    <button onclick="generateLorem()" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg font-medium transition">Gerar</button>
+                    <button id="lorem-converter" onclick="scrambleText()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg font-medium transition">Converter</button>
+                </div>
+            </div>
+
+            <textarea id="lorem-output" oninput="autoResizeTextarea('lorem-output')" class="w-full min-h-64 bg-gray-900 border border-gray-700 rounded-lg p-4 text-gray-100 focus:outline-none focus:border-blue-500 resize-none mb-4 overflow-hidden" placeholder="O texto gerado aparece aqui. Ou cole o seu para converter…"></textarea>
+        </div>
+
+        <!-- Tool 13: Editor de faixas (vários vídeos + áudios → versão final) -->
+        <div id="editor" class="tab-content tool-wide">
+            <div class="tool-head">
+                <div>
+                    <h2 class="text-2xl font-bold">Editor de vídeo</h2>
+                    <p class="tool-sub">Junte trechos de vários vídeos numa versão final, com faixas de áudio, fades e volume.</p>
+                </div>
+                <div class="seg">
+                        <a href="#editor" class="on"><i class="fas fa-layer-group"></i> Faixas</a>
+                        <a href="#video"><i class="fas fa-gauge-high"></i> Otimizar e GIF</a>
+                    </div>
+            </div>
+            <div id="ed-help" class="card p-5 mb-4 is-hidden"></div>
+            <div class="ed-grid">
+                <div>
+                    <div id="ed-stage" class="ed-stage" title="Clique para tocar/pausar">
+                        <div id="ed-stage-empty" class="ed-stage-empty">Adicione vídeos para ver a prévia</div>
+                    </div>
+                    <div class="ed-transport">
+                        <button id="ed-play" class="btn btn-primary btn-round" title="Tocar/pausar (espaço)"><i class="fas fa-play"></i></button>
+                        <button id="ed-cut" class="btn" title="Cortar na agulha (C)"><i class="fas fa-scissors"></i> Cortar</button>
+                        <button id="ed-del" class="btn btn-icon" title="Excluir clipe selecionado (Delete)"><i class="fas fa-trash"></i></button>
+                        <button id="ed-undo" class="btn btn-icon" title="Desfazer (⌘Z)" disabled><i class="fas fa-rotate-left"></i></button>
+                        <div class="tc"><span id="ed-pos">00:00.00</span> <small>/ <span id="ed-total">00:00.00</span></small></div>
+                        <label class="ed-zoom" title="Zoom da linha do tempo (⌘ + roda)"><i class="fas fa-magnifying-glass-minus"></i><input id="ed-zoom" type="range" min="8" max="240" value="40"><i class="fas fa-magnifying-glass-plus"></i></label>
+                    </div>
+            <div id="ed-tracks" class="ed-tl mt-4">
+                <div class="ed-heads">
+                    <div class="ed-head ruler"></div>
+                    <div class="ed-head v"><i class="fas fa-film"></i> V1</div>
+                    <div class="ed-head a"><i class="fas fa-music"></i> A1</div>
+                    <div class="ed-head a"><i class="fas fa-music"></i> A2</div>
+                </div>
+                <div id="ed-scroll" class="ed-scroll">
+                    <div id="ed-inner" class="ed-inner">
+                        <canvas id="ed-ruler" class="ed-ruler"></canvas>
+                        <div id="ed-lane-v" class="ed-lane ed-lane-v" data-track="v"></div>
+                        <div id="ed-lane-a0" class="ed-lane ed-lane-a" data-track="a0"></div>
+                        <div id="ed-lane-a1" class="ed-lane ed-lane-a" data-track="a1"></div>
+                        <div id="ed-playhead" class="ed-playhead"></div>
+                        <div id="ed-drop-mark" class="ed-drop-mark is-hidden"></div>
+                        <div id="ed-end" class="ed-end is-hidden" title="Fim da versão final: o que passa daqui fica de fora"></div>
+                        <div id="ed-empty" class="ed-empty-tl">Arraste vídeos para V1 e áudios para A1/A2 — ou use "Adicionar"</div>
+                    </div>
+                </div>
+            </div>
+                </div>
+                <aside class="side-panel">
+                    <div class="card p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="lbl" style="margin:0">Arquivos</span>
+                            <button id="ed-add" class="btn"><i class="fas fa-plus"></i> Adicionar</button>
+                        </div>
+                        <div id="ed-drop" class="drop ed-drop">
+                            <i class="fas fa-photo-film drop-icon"></i>
+                            <div class="drop-title">Arraste vídeos e áudios aqui</div>
+                            <div class="drop-hint">Vídeos entram na faixa V1; áudios, na A1/A2</div>
+                            <input id="ed-input" type="file" multiple accept="video/*,audio/*,.mp4,.mov,.m4v,.webm,.mkv,.mp3,.wav,.m4a,.aac,.ogg,.oga,.flac,.opus" class="hidden">
+                        </div>
+                        <div id="ed-bin" class="ed-bin"></div>
+                    </div>
+                    <div class="card p-4">
+                        <span class="lbl">Clipe selecionado</span>
+                        <div id="ed-insp"></div>
+                    </div>
+                    <div class="card p-4">
+                        <span class="lbl">Exportar versão final</span>
+                        <div id="ed-quality" class="seg block">
+                            <button data-v="original" class="on">Original</button>
+                            <button data-v="high">Alta</button>
+                            <button data-v="balanced">Média</button>
+                            <button data-v="small">Leve</button>
+                        </div>
+                        <select id="ed-res" class="field w-full mt-3" title="Tamanho do vídeo final">
+                            <option value="first">Igual ao 1º vídeo</option>
+                            <option value="1920x1080">1920 × 1080 (16:9)</option>
+                            <option value="1280x720">1280 × 720 (16:9)</option>
+                            <option value="1080x1920">1080 × 1920 (vertical)</option>
+                            <option value="1080x1080">1080 × 1080 (quadrado)</option>
+                        </select>
+                        <button id="ed-export" class="btn btn-primary btn-lg w-full mt-3"><i class="fas fa-file-export"></i> <span>Exportar MP4</span></button>
+                        <div id="ed-progress" class="mt-3 is-hidden">
+                            <div class="flex justify-between text-sm mb-2"><span id="ed-status" class="text-gray-300">…</span><span id="ed-pct" class="tc">0%</span></div>
+                            <div class="bar"><i></i></div>
+                            <button id="ed-cancel" class="btn w-full mt-3 is-hidden"><i class="fas fa-xmark"></i> Cancelar</button>
+                        </div>
+                        <div id="ed-result" class="mt-3 is-hidden">
+                            <div class="flex items-center justify-between gap-3">
+                                <div class="tc" id="ed-res-size"></div>
+                                <a id="ed-download" class="btn btn-primary" href="#" download><i class="fas fa-download"></i> Baixar</a>
+                            </div>
+                        </div>
+                        <p class="hint">Vídeos de tamanhos diferentes são encaixados sem esticar (com barras). Os arquivos são enviados ao motor local uma vez e reaproveitados.</p>
+                    </div>
+                </aside>
+            </div>
+            <p class="hint">Nos áudios: linha <b style="color:#ff5a5f">vermelha = −1 dB</b> (acima estoura) e <b style="color:#5b7cff">azul = −20 dB</b> (abaixo está baixo) · A versão final dura o mesmo que a faixa V1 (a área escura fica de fora) · V1: arraste para reordenar · A1/A2: arraste para posicionar (gruda na agulha) · puxe as bordas para recortar · bolinhas brancas no áudio = fades · <b>C</b> corta · <b>Delete</b> exclui · <b>⌘Z</b> desfaz · <b>⌘ + roda</b> dá zoom.</p>
+        </div>
+
+        <!-- Tool 12: Baixar vídeo por link (yt-dlp neste computador) -->
+        <div id="baixar" class="tab-content tool-wide">
+            <div class="tool-head">
+                <div>
+                    <h2 class="text-2xl font-bold">Baixar</h2>
+                    <p class="tool-sub">Cole um link do YouTube, Instagram ou Pinterest e baixe o vídeo — ou mande direto para a edição.</p>
+                </div>
+                <span id="dl-status" class="chip"><span class="dot"></span><span>verificando…</span></span>
+            </div>
+            <div class="card p-5">
+                <div class="dl-row">
+                    <label class="dl-input">
+                        <i class="fas fa-link"></i>
+                        <input id="dl-url" type="url" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://www.youtube.com/watch?v=…">
+                        <button id="dl-paste" type="button" class="btn btn-icon" title="Colar"><i class="fas fa-paste"></i></button>
+                    </label>
+                    <select id="dl-quality" class="field" style="height:44px" title="Qualidade máxima">
+                        <option value="2160">Até 4K</option>
+                        <option value="1080" selected>Até 1080p</option>
+                        <option value="720">720p</option>
+                        <option value="480">480p</option>
+                    </select>
+                    <button id="dl-go" class="btn btn-primary btn-lg"><i class="fas fa-cloud-arrow-down"></i> <span>Baixar</span></button>
+                </div>
+                <p class="hint">Funciona com YouTube, Instagram, Pinterest, Vimeo, TikTok, X e Facebook. Baixe só o que você tem direito de usar.</p>
+                <div id="dl-progress" class="mt-4 is-hidden">
+                    <div class="flex justify-between text-sm mb-2"><span id="dl-p-status" class="text-gray-300">…</span><span id="dl-pct" class="tc">0%</span></div>
+                    <div class="bar"><i></i></div>
+                    <button id="dl-cancel" class="btn mt-3 is-hidden"><i class="fas fa-xmark"></i> Cancelar</button>
+                </div>
+            </div>
+
+            <div id="dl-result" class="card p-5 mt-4 is-hidden">
+                <div class="dl-result">
+                    <video id="dl-preview" controls playsinline preload="metadata"></video>
+                    <div>
+                        <div id="dl-title" class="dl-title"></div>
+                        <div id="dl-meta" class="img-meta mt-2"></div>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <button id="dl-edit" class="btn btn-primary btn-lg"><i class="fas fa-film"></i> Abrir no Editor de vídeo</button>
+                            <button id="dl-save" class="btn btn-lg"><i class="fas fa-download"></i> Salvar no computador</button>
+                        </div>
+                        <p class="hint">O vídeo entra direto nas faixas do Editor de vídeo, para cortar, juntar e exportar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dl-help" class="card p-5 mt-4 is-hidden">
+                <span class="lbl">Como ativar</span>
+                <p class="text-sm text-gray-300">O Baixar e o Editor de vídeo funcionam no app do Oceano, com o <b>yt-dlp</b> e o <b>ffmpeg</b> instalados neste computador. Nada passa por fora dele.</p>
+                <p class="hint" style="margin-top:12px">Mac: cole no app Terminal (Aplicativos → Utilitários) e aperte Enter.</p><code class="code-line">brew install yt-dlp ffmpeg</code>
+                <p class="hint" style="margin-top:8px">Se o Mac não reconhecer o brew, instale antes o Homebrew, o instalador de programas pelo Terminal. Ele é grátis, vem de <a href="https://brew.sh/pt-br/" target="_blank" rel="noopener noreferrer">brew.sh</a> e pode pedir a senha do Mac no próprio Terminal:</p><code class="code-line">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>
+                <p class="hint" style="margin-top:12px">Windows: cole no Terminal ou no PowerShell (procure no menu Iniciar) e aperte Enter.</p><code class="code-line">winget install yt-dlp.yt-dlp Gyan.FFmpeg</code>
+                <p class="hint" style="margin-top:8px">O winget já vem no Windows 10 e 11. Se não aparecer, atualize o Instalador de Aplicativo pela Microsoft Store.</p>
+                <p class="hint" style="margin-top:12px">Linux: cole no Terminal (Ctrl+Alt+T na maioria dos sistemas) e aperte Enter.</p><code class="code-line">sudo apt install yt-dlp ffmpeg</code>
+                <p class="hint" style="margin-top:8px">O apt já vem no Ubuntu e no Debian. Em outros sistemas, use o instalador de pacotes que vier com eles.</p>
+                <p class="hint" style="margin-top:12px">Os sites mudam com frequência: se um link parar de funcionar, atualize o yt-dlp.</p>
+            </div>
+        </div>
+
+        <!-- Tool 8: Imagens (conversão e otimização em lote) -->
+        <div id="images" class="tab-content tool-wide">
+            <div class="tool-head">
+                <div>
+                    <h2 class="text-2xl font-bold">Imagens</h2>
+                    <p class="tool-sub">Otimize e converta em lote para WebP, JPG, PNG ou SVG. Nada sai do seu navegador.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button id="img-clear" class="btn"><i class="fas fa-trash"></i> Limpar</button>
+                    <button id="img-regen" class="btn btn-primary is-hidden" title="Converter de novo com as configurações atuais"><i class="fas fa-rotate"></i> Gerar novamente</button>
+                    <button id="img-zip" class="btn btn-primary" disabled><i class="fas fa-download"></i> <span>Baixar</span></button>
+                </div>
+            </div>
+
+            <div class="card p-5 mb-4">
+                <div class="img-settings">
+                    <div style="max-width: 300px">
+                        <span class="lbl">Formato de saída</span>
+                        <div id="img-format" class="seg">
+                            <button data-v="webp" class="on">WebP</button>
+                            <button data-v="jpeg">JPG</button>
+                            <button data-v="png">PNG</button>
+                            <button data-v="svg">SVG</button>
+                        </div>
+                        <p id="img-format-hint" class="hint"></p>
+                    </div>
+                    <div data-for="webp jpeg">
+                        <div id="img-quality-knob" class="knobs"></div>
+                    </div>
+                    <div style="max-width: 260px">
+                        <span class="lbl">Caber em (máx.)</span>
+                        <div class="flex items-center gap-2">
+                            <input id="img-maxw" type="number" min="1" placeholder="largura" class="field w-24" title="Largura máxima">
+                            <span class="text-sm text-gray-500">×</span>
+                            <input id="img-maxh" type="number" min="1" placeholder="altura" class="field w-24" title="Altura máxima">
+                            <span class="text-sm text-gray-500">px</span>
+                        </div>
+                        <label class="lbl" for="img-dens" style="margin-top:12px">Densidade de pixels</label>
+                        <select id="img-dens" class="field w-full"><option value="1">100% (original)</option><option value="0.75">75%</option><option value="0.5">50% (de @2x para @1x)</option><option value="0.25">25%</option></select>
+                        <p class="hint">Reduz proporcionalmente até caber, sem esticar nem aumentar. Vazio mantém o tamanho.</p>
+                    </div>
+                    <div data-for="webp jpeg png" style="max-width: 220px">
+                        <span class="lbl">Tamanho máx.</span>
+                        <div class="flex items-center gap-2">
+                            <input id="img-target" type="number" min="1" placeholder="sem limite" class="field w-28">
+                            <span class="text-sm text-gray-500">KB</span>
+                        </div>
+                        <p class="hint">Desce a qualidade (no PNG, as cores) e, se ainda não couber, as dimensões.</p>
+                    </div>
+                    <div data-for="jpeg">
+                        <span class="lbl">Fundo</span>
+                        <input id="img-bg" type="color" value="#ffffff" class="field-color">
+                        <p class="hint">Cor sob áreas transparentes.</p>
+                    </div>
+                    <div data-for="png">
+                        <span class="lbl">Cores</span>
+                        <select id="img-png-colors" class="field">
+                            <option value="0">Sem perda</option>
+                            <option value="256" selected>256 cores</option>
+                            <option value="128">128 cores</option>
+                            <option value="64">64 cores</option>
+                            <option value="32">32 cores</option>
+                            <option value="16">16 cores</option>
+                        </select>
+                        <p class="hint">Transparência preservada.</p>
+                    </div>
+                    <div data-for="svg">
+                        <span class="lbl">Cores</span>
+                        <select id="img-svg-colors" class="field">
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="8" selected>8</option>
+                            <option value="16">16</option>
+                            <option value="32">32</option>
+                        </select>
+                    </div>
+                    <div data-for="svg">
+                        <span class="lbl">Detalhe</span>
+                        <div id="img-svg-detail" class="seg">
+                            <button data-v="low">Baixo</button>
+                            <button data-v="mid" class="on">Médio</button>
+                            <button data-v="high">Alto</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-names">
+                    <span class="lbl">Nomes dos arquivos</span>
+                    <div class="img-settings">
+                        <div>
+                            <div id="img-strip" class="seg">
+                                <button data-v="keep" class="on">Manter números</button>
+                                <button data-v="strip">Retirar números</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="img-numbering" class="seg">
+                                <button data-v="none" class="on">Sem numerar</button>
+                                <button data-v="asc"><i class="fas fa-arrow-up-1-9"></i> Crescente</button>
+                                <button data-v="desc"><i class="fas fa-arrow-down-9-1"></i> Decrescente</button>
+                            </div>
+                        </div>
+                        <div id="img-num-opts" class="flex items-center gap-3 is-hidden">
+                            <div id="img-num-pos" class="seg">
+                                <button data-v="before" class="on">Antes</button>
+                                <button data-v="after">Depois</button>
+                            </div>
+                            <label class="flex items-center gap-2 text-sm text-gray-400">começa em
+                                <input id="img-num-start" type="number" min="0" value="1" class="field w-20">
+                            </label>
+                        </div>
+                    </div>
+                    <p class="hint">A prévia do nome novo aparece em cada linha. A numeração segue a ordem da lista.</p>
+                </div>
+            </div>
+
+            <div id="img-drop" class="drop">
+                <i class="fas fa-images drop-icon"></i>
+                <div class="drop-title">Arraste imagens aqui ou clique para escolher</div>
+                <div class="drop-hint">JPG, PNG, WebP, AVIF, GIF, BMP, SVG, ICO · HEIC e TIFF só no Safari</div>
+                <input id="img-input" type="file" multiple accept="image/*,.heic,.heif,.avif,.tif,.tiff,.ico,.bmp,.svg" class="hidden">
+            </div>
+
+            <div class="img-work">
+                <div id="img-list-card" class="card is-hidden">
+                    <div class="img-progress">
+                        <div class="img-prog-icon" aria-hidden="true"><i id="img-prog-water"></i></div>
+                        <div class="min-w-0 flex-1">
+                            <div id="img-prog-title" class="img-prog-title" aria-live="polite">—</div>
+                            <div class="bar mt-2"><i id="img-prog-fill"></i></div>
+                            <div id="img-summary" class="img-prog-sub"></div>
+                        </div>
+                        <button id="img-stop" class="btn btn-icon btn-round" title="Parar"><i class="fas fa-xmark"></i></button>
+                    </div>
+                    <div id="img-list"></div>
+                </div>
+                <div id="img-compare" class="card is-hidden">
+                    <div class="cmp-head">
+                        <div class="min-w-0">
+                            <div id="cmp-name" class="img-name"></div>
+                            <div class="hint" style="margin-top:2px">Passe o mouse para comparar · roda do mouse aproxima no ponto · arraste para mover · duplo clique volta</div>
+                        </div>
+                        <span id="cmp-zoom" class="chip">100%</span>
+                    </div>
+                    <div id="cmp-stage" class="cmp-stage" role="img" aria-label="Comparação entre a imagem original e a convertida">
+                        <canvas></canvas>
+                        <span class="cmp-tag cmp-l">Original</span>
+                        <span class="cmp-tag cmp-r" aria-live="polite">—</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tool 9: Áudio (recorte + fade in/out) -->
+        <div id="audio" class="tab-content tool-wide">
+            <div class="tool-head">
+                <div>
+                    <h2 class="text-2xl font-bold">Áudio</h2>
+                    <p class="tool-sub">Corte em trechos, remova, reordene, aplique fade e baixe. Os knobs giram com o scroll.</p>
+                </div>
+            </div>
+
+            <div id="au-drop" class="drop">
+                <i class="fas fa-wave-square drop-icon"></i>
+                <div class="drop-title">Arraste um áudio aqui ou clique para escolher</div>
+                <div class="drop-hint">MP3, WAV, M4A/AAC, OGG, FLAC, WebM</div>
+                <input id="au-input" type="file" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.oga,.flac,.webm" class="hidden">
+            </div>
+
+            <div id="au-editor" class="is-hidden">
+                <div class="card p-4 mt-4">
+                    <div class="flex flex-wrap justify-between items-center gap-3 mb-4 px-1">
+                        <div class="tc"><span id="au-pos">00:00.00</span> <small>/ <span id="au-dur">00:00.00</span></small></div>
+                        <div class="flex flex-wrap gap-2"><span id="au-peak" class="chip" title="Pico da seleção (com os fades). Linha vermelha = −1 dB · linha azul = −20 dB"></span><span id="au-meta" class="chip"></span></div>
+                    </div>
+                    <div id="au-timeline" class="rt-wave"></div>
+                    <p class="hint px-1 mt-4">Linhas tracejadas: <b style="color:#ff5a5f">vermelha = −1 dB</b> (acima estoura) e <b style="color:#5b7cff">azul = −20 dB</b> (abaixo está baixo) · <b>Cortar</b> (C) divide o áudio na agulha (e nas alças azuis, se você puxou) · passe o mouse num trecho: <b>‹ ›</b> movem, <b>×</b> remove e os lados se juntam · arraste o número para reordenar · alças azuis recortam as pontas · <b>espaço</b> toca/pausa · <b>⌘Z</b> desfaz.</p>
+                </div>
+
+                <div id="au-deck" class="deck">
+                    <div class="deck-grid">
+                        <div class="flex items-center gap-3">
+                            <button id="au-play" class="btn btn-primary btn-round" title="Tocar seleção (espaço)"><i class="fas fa-play"></i></button>
+                            <button id="au-stop" class="btn btn-icon" title="Parar"><i class="fas fa-stop"></i></button>
+                            <button id="au-cut" class="btn" title="Cortar na agulha (C)"><i class="fas fa-scissors"></i> Cortar</button>
+                            <button id="au-undo" class="btn btn-icon" title="Desfazer (⌘Z)" disabled><i class="fas fa-rotate-left"></i></button>
+                            <div>
+                                <span class="lbl" style="margin-bottom:2px">Seleção</span>
+                                <div id="au-sel" class="tc">00:00.00</div>
+                            </div>
+                        </div>
+                        <div class="deck-sep hidden md:block"></div>
+                        <div id="au-knobs" class="knobs"></div>
+                        <div class="deck-sep hidden md:block"></div>
+                        <div class="flex flex-wrap items-end gap-3 ml-auto">
+                            <div>
+                                <span class="lbl">Formato</span>
+                                <select id="au-format" class="field">
+                                    <option value="wav">WAV · sem perda</option>
+                                    <option value="mp3-320">MP3 · 320 kbps</option>
+                                    <option value="mp3-192" selected>MP3 · 192 kbps</option>
+                                    <option value="mp3-128">MP3 · 128 kbps</option>
+                                </select>
+                            </div>
+                            <button id="au-download" class="btn btn-primary btn-lg"><i class="fas fa-download"></i> <span>Baixar áudio</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tool 10: Vídeo (recorte rápido + otimização) -->
+        <div id="video" class="tab-content tool-wide">
+            <div class="tool-head">
+                <div>
+                    <h2 class="text-2xl font-bold">Editor de vídeo</h2>
+                    <p class="tool-sub">Corte em trechos, remova, reordene e exporte na qualidade original ou otimizado para web.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button id="vt-to-editor" class="btn" title="Levar este vídeo, com os cortes, para as faixas"><i class="fas fa-layer-group"></i> Juntar com outros vídeos</button>
+                    <div class="seg">
+                        <a href="#editor"><i class="fas fa-layer-group"></i> Faixas</a>
+                        <a href="#video" class="on"><i class="fas fa-gauge-high"></i> Otimizar e GIF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="vt-drop" class="drop">
+                <i class="fas fa-film drop-icon"></i>
+                <div class="drop-title">Arraste um vídeo aqui ou clique para escolher</div>
+                <div class="drop-hint">MP4, MOV, WebM, MKV</div>
+                <input id="vt-input" type="file" accept="video/*,.mp4,.mov,.m4v,.webm,.mkv,.avi" class="hidden">
+            </div>
+
+            <div id="vt-editor" class="grid-media mt-4 is-hidden">
+                <div>
+                    <div class="stage-wrap">
+                        <div id="vt-stage" class="stage">
+                            <video id="vt-video" playsinline preload="auto"></video>
+                            <div class="stage-flash"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div id="vt-timeline" class="mt-5"></div>
+                    <div class="transport">
+                        <button id="vt-play" class="btn btn-primary btn-round" title="Tocar seleção (espaço)"><i class="fas fa-play"></i></button>
+                        <button id="vt-cut" class="btn" title="Cortar na agulha (C)"><i class="fas fa-scissors"></i> Cortar</button>
+                        <button id="vt-undo" class="btn btn-icon" title="Desfazer (⌘Z)" disabled><i class="fas fa-rotate-left"></i></button>
+                        <div class="tc"><span id="vt-pos">00:00.00</span> <small>/ <span id="vt-dur">00:00.00</span></small></div>
+                        <div class="flex gap-2 ml-auto">
+                            <button id="vt-in" class="btn" title="Marcar início na agulha (I)"><i class="fas fa-arrow-right-to-bracket"></i> Início</button>
+                            <button id="vt-out" class="btn" title="Marcar fim na agulha (O)">Fim <i class="fas fa-arrow-right-from-bracket"></i></button>
+                        </div>
+                        <span id="vt-sel" class="chip">seleção 00:00.00</span>
+                    </div>
+                    <p class="hint"><b>Cortar</b> (C) divide o vídeo na agulha (e nas alças azuis, se você puxou) · passe o mouse num trecho: <b>‹ ›</b> movem, <b>×</b> remove e os lados se juntam · arraste o número para reordenar · alças azuis recortam as pontas · <b>⌘Z</b> desfaz.</p>
+                </div>
+
+                <aside class="card p-5 side-panel">
+                    <div>
+                        <span class="lbl">Exportar como</span>
+                        <div id="vt-kind" class="seg block">
+                            <button data-v="video" class="on"><i class="fas fa-film"></i> Vídeo</button>
+                            <button data-v="gif"><i class="fas fa-images"></i> GIF</button>
+                        </div>
+                    </div>
+                    <div id="vt-engine-wrap">
+                        <span class="lbl">Processar no</span>
+                        <div id="vt-engine" class="seg block">
+                            <button data-v="server" class="on"><i class="fas fa-server"></i> Este computador</button>
+                            <button data-v="browser"><i class="fas fa-globe"></i> Navegador</button>
+                        </div>
+                        <p id="vt-engine-hint" class="hint">Verificando o motor local…</p>
+                    </div>
+                    <div id="vt-mode-wrap">
+                        <span class="lbl">Modo</span>
+                        <div id="vt-mode" class="seg block">
+                            <button data-v="optimize" class="on">Recodificar</button>
+                            <button data-v="copy">Corte rápido</button>
+                        </div>
+                        <p id="vt-copy-hint" class="hint is-hidden">Sem recompressão: instantâneo e sem perda, mas o início encosta no keyframe mais próximo.</p>
+                        <p id="vt-multi-hint" class="hint is-hidden">Com mais de um trecho o vídeo é recodificado para as emendas ficarem exatas no frame — use <b>Original</b> para manter a qualidade.</p>
+                    </div>
+                    <div id="vt-opt" class="side-panel">
+                        <div>
+                            <span class="lbl">Qualidade</span>
+                            <div id="vt-quality" class="seg block">
+                                <button data-v="original" class="on">Original</button>
+                                <button data-v="high">Alta</button>
+                                <button data-v="balanced">Média</button>
+                                <button data-v="small">Leve</button>
+                            </div>
+                            <p id="vt-quality-hint" class="hint"></p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="flex-1">
+                                <span class="lbl">Largura máx.</span>
+                                <select id="vt-width" class="field w-full">
+                                    <option value="0">Original</option>
+                                    <option value="1920">1920 px</option>
+                                    <option value="1280" selected>1280 px</option>
+                                    <option value="854">854 px</option>
+                                    <option value="640">640 px</option>
+                                    <option value="480">480 px</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span class="lbl">Áudio</span>
+                                <div id="vt-audio" class="seg">
+                                    <button data-v="keep" class="on">Manter</button>
+                                    <button data-v="drop">Remover</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="vt-out-hint" class="hint"></p>
+                    <div id="vt-gif" class="side-panel is-hidden">
+                        <div>
+                            <span class="lbl">Largura</span>
+                            <select id="vt-gif-width" class="field w-full">
+                                <option value="0">Original</option>
+                                <option value="960">960 px</option>
+                                <option value="800">800 px</option>
+                                <option value="640">640 px</option>
+                                <option value="480" selected>480 px</option>
+                                <option value="360">360 px</option>
+                                <option value="320">320 px</option>
+                                <option value="240">240 px</option>
+                                <option value="160">160 px</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="lbl">Quadros por segundo</span>
+                            <div id="vt-gif-fps" class="seg block">
+                                <button data-v="24">24</button>
+                                <button data-v="15">15</button>
+                                <button data-v="12" class="on">12</button>
+                                <button data-v="10">10</button>
+                                <button data-v="8">8</button>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="lbl">Cores</span>
+                            <div id="vt-gif-colors" class="seg block">
+                                <button data-v="256">256</button>
+                                <button data-v="128" class="on">128</button>
+                                <button data-v="64">64</button>
+                                <button data-v="32">32</button>
+                                <button data-v="16">16</button>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="lbl">Pixelizar</span>
+                            <div id="vt-gif-dither" class="seg block">
+                                <button data-v="bayer" class="on">Bayer</button>
+                                <button data-v="floyd">Suave</button>
+                                <button data-v="none">Nenhum</button>
+                            </div>
+                            <p class="hint">Para diminuir: menos largura, fps e cores. Sem pixelizar fica menor, mas surgem faixas nos degradês.</p>
+                        </div>
+                        <div class="gif-est">
+                            <div class="flex justify-between items-baseline gap-3">
+                                <span class="lbl" style="margin:0">Tamanho do GIF</span>
+                                <span id="vt-gif-size" class="gif-size">—</span>
+                            </div>
+                            <div id="vt-gif-info" class="hint" style="margin-top:4px">Escolha as opções — a prévia e o tamanho aparecem aqui.</div>
+                            <div class="gif-preview checker"><img id="vt-gif-img" alt="Prévia do GIF"></div>
+                        </div>
+                    </div>
+                    <button id="vt-export" class="btn btn-primary btn-lg w-full"><i class="fas fa-scissors"></i> <span>Exportar recorte</span></button>
+                    <div id="vt-progress" class="is-hidden">
+                        <div class="flex justify-between text-sm mb-2"><span id="vt-status" class="text-gray-300">…</span><span id="vt-pct" class="tc">0%</span></div>
+                        <div class="bar"><i></i></div>
+                        <button id="vt-cancel" class="btn w-full mt-3 is-hidden"><i class="fas fa-xmark"></i> Cancelar</button>
+                    </div>
+                    <div id="vt-result" class="is-hidden">
+                        <div class="flex items-center justify-between gap-3">
+                            <div>
+                                <div class="tc"><span id="vt-res-in"></span> <small>→</small> <span id="vt-res-out" class="text-white"></span></div>
+                                <div id="vt-res-delta" class="delta mt-1"></div>
+                            </div>
+                            <a id="vt-download" class="btn btn-primary" href="#" download><i class="fas fa-download"></i> Baixar</a>
+                        </div>
+                    </div>
+                    <p class="hint">Info do arquivo: <span id="vt-info">—</span></p>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Tool 11: Dither (recorte + efeito ao vivo + exportação leve) -->
+        <div id="dither" class="tab-content tool-wide">
+            <div class="tool-head">
+                <div>
+                    <h2 class="text-2xl font-bold">Pixelizar</h2>
+                    <p class="tool-sub">Filtro de pixel ao vivo sobre fotos e vídeos. Exporte em GIF ou vídeo, ou use como avatar.</p>
+                </div>
+                
+            </div>
+
+            <div id="dt-drop" class="drop">
+                <i class="fas fa-chess-board drop-icon"></i>
+                <div class="drop-title">Arraste uma foto ou um vídeo aqui, ou clique para escolher</div>
+                <div class="drop-hint">JPG, PNG, WebP, MP4, MOV, WebM · o efeito é calculado aqui mesmo</div>
+                <input id="dt-input" type="file" accept="image/*,video/*,.mp4,.mov,.m4v,.webm,.mkv" class="hidden">
+            </div>
+
+            <div id="dt-editor" class="grid-media mt-4 is-hidden">
+                <div>
+                    <div class="stage-wrap">
+                        <div id="dt-stage" class="stage">
+                            <video id="dt-video" playsinline muted preload="auto"></video>
+                            <img id="dt-foto" alt="" hidden>
+                            <div id="dt-crop" class="dt-crop"><canvas id="dt-canvas"></canvas></div>
+                            <div class="stage-tag"><span id="dt-tag" class="chip"></span></div>
+                            <div class="stage-flash"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div id="dt-timeline" class="mt-5"></div>
+                    <div class="transport">
+                        <button id="dt-play" class="btn btn-primary btn-round" title="Tocar recorte em loop (espaço)"><i class="fas fa-play"></i></button>
+                        <button id="dt-prev" class="btn btn-icon" title="Frame anterior (←)"><i class="fas fa-backward-step"></i></button>
+                        <button id="dt-next" class="btn btn-icon" title="Próximo frame (→)"><i class="fas fa-forward-step"></i></button>
+                        <div class="tc"><span id="dt-pos">00:00.00</span> <small>/ <span id="dt-dur">00:00.00</span></small></div>
+                        <span id="dt-frame" class="chip">frame 1/1</span>
+                        <div class="flex gap-2 ml-auto">
+                            <button id="dt-in" class="btn" title="Marcar início na agulha (I)"><i class="fas fa-arrow-right-to-bracket"></i> Início</button>
+                            <button id="dt-out" class="btn" title="Marcar fim na agulha (O)">Fim <i class="fas fa-arrow-right-from-bracket"></i></button>
+                            <button id="dt-original" class="btn" title="Comparar com o original (V)"><i class="fas fa-eye"></i> Original</button>
+                        </div>
+                    </div>
+                    <div class="deck deck-static">
+                        <div class="deck-grid">
+                            <div id="dt-knobs" class="knobs"></div>
+                            <p class="hint" style="margin:0; max-width: 260px">Scroll sobre o knob ajusta · <b>⌥</b> fino · <b>⇧</b> rápido · duplo clique volta ao padrão. O fps vale para a prévia e para a exportação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="card p-5 side-panel">
+                    <div>
+                        <span class="lbl">Tamanho</span>
+                        <select id="dt-size" class="field w-full">
+                            <option value="free">Livre · mantém a proporção</option>
+                            <option value="128x64">OLED SSD1306 · 128×64</option>
+                            <option value="128x32">OLED · 128×32</option>
+                            <option value="160x128">TFT ST7735 · 160×128</option>
+                            <option value="240x135">TTGO T-Display · 240×135</option>
+                            <option value="240x240">TFT ST7789 · 240×240</option>
+                            <option value="320x240">TFT ILI9341 · 320×240</option>
+                            <option value="64x64">Matriz LED · 64×64</option>
+                        </select>
+                        <div id="dt-free" class="flex items-center gap-2 mt-2">
+                            <input id="dt-width" type="number" min="16" max="640" value="160" class="field w-24">
+                            <span class="text-sm text-gray-500">px de largura</span>
+                        </div>
+                        <p class="hint">Formatos fixos recortam o centro do vídeo — a janela azul mostra o enquadramento.</p>
+                    </div>
+                    <div>
+                        <span class="lbl">Algoritmo</span>
+                        <select id="dt-algo" class="field w-full">
+                            <option value="fs">Floyd–Steinberg</option>
+                            <option value="atkinson">Atkinson</option>
+                            <option value="bayer4">Bayer 4×4 (ordenado)</option>
+                            <option value="bayer8">Bayer 8×8 (ordenado)</option>
+                            <option value="none">Limiar (sem pixelizar)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span class="lbl">Paleta</span>
+                        <select id="dt-palette" class="field w-full">
+                            <option value="bw">P&amp;B · 1 bit</option>
+                            <option value="blue">Azul · 1 bit</option>
+                            <option value="tres">Preto, azul e branco · 3 cores</option>
+                            <option value="gray4">Cinza · 4 tons</option>
+                            <option value="gb">Game Boy · 4 tons</option>
+                            <option value="pico">PICO-8 · 16 cores</option>
+                        </select>
+                        <div id="dt-swatches" class="swatches"></div>
+                        <p class="hint">Clique numa cor para trocar.</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <span class="lbl">Exportar</span>
+                        <div id="dt-scope" class="seg block">
+                            <button data-v="clip" class="on">Recorte inteiro</button>
+                            <button data-v="frame">Frame atual</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="dt-format" class="seg block">
+                            <button data-v="gif" class="on">GIF</button>
+                            <button data-v="video">Vídeo</button>
+                            <button data-v="png">PNG</button>
+                            <button data-v="zip">PNGs</button>
+                            <button data-v="h">C&nbsp;.h</button>
+                        </div>
+                        <p id="dt-format-hint" class="hint"></p>
+                    </div>
+                    <div id="dt-scale-wrap">
+                        <span class="lbl">Escala dos pixels</span>
+                        <div id="dt-scale" class="seg block">
+                            <button data-v="1" class="on">1×</button>
+                            <button data-v="2">2×</button>
+                            <button data-v="4">4×</button>
+                            <button data-v="8">8×</button>
+                        </div>
+                    </div>
+                    <div id="dt-h-wrap" class="is-hidden">
+                        <span class="lbl">Bits (1 bit/pixel)</span>
+                        <select id="dt-bitorder" class="field w-full">
+                            <option value="msb">MSB primeiro · Adafruit GFX drawBitmap</option>
+                            <option value="lsb">LSB primeiro · XBM / u8g2 drawXBMP</option>
+                        </select>
+                        <label class="flex items-center gap-2 mt-3 text-sm text-gray-300 cursor-pointer">
+                            <input id="dt-lighton" type="checkbox" checked class="w-4 h-4"> bit 1 = cor clara (pixel aceso no OLED)
+                        </label>
+                    </div>
+                    <div class="chip w-full justify-center" id="dt-estimate">—</div>
+                    <button id="dt-export" class="btn btn-primary btn-lg w-full"><i class="fas fa-download"></i> <span>Exportar</span></button>
+                    <button id="dt-avatar" class="btn btn-lg w-full mt-2"><i class="fas fa-user"></i> <span>Usar como avatar</span></button>
+                    <div id="dt-progress" class="is-hidden">
+                        <div class="flex justify-between text-sm mb-2"><span id="dt-status" class="text-gray-300">…</span><span id="dt-pct" class="tc">0%</span></div>
+                        <div class="bar"><i></i></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="toast" class="toast">Copiado!</div>
+
+    <script src="tema.js"></script>
+</body>
+</html>

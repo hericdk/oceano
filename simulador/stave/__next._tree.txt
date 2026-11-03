@@ -1,0 +1,4 @@
+:HL["/stave/_next/static/chunks/07_hdg42ebqby.css","style"]
+:HL["/stave/_next/static/media/JetBrainsMono_latin_var-s.p.3t6q91iet4nsy.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+1:[["children",{"s":"__PAGE__","h":160}]]
+0:{"b":"z00isnY66rzSOuSZF-mDY","t":{"t":{"s":"","h":84,"c":"$Q1"}}}

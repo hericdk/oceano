@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self' blob:">
+  <title>Oceano · notch</title>
+  <link rel="stylesheet" href="notch.css">
+</head>
+<body>
+  <div class="notch" data-estado="fechado" data-estilo="janela">
+    <canvas class="rosto" width="96" height="96" aria-hidden="true"></canvas>
+    <section class="painel" aria-label="Navegadora do Oceano">
+      <div class="faixa" aria-hidden="true"></div>
+      <div class="janela">
+        <header class="topo">
+          <span class="id"><i class="ic" data-ic="agente"></i><span class="nome">Navegadora</span></span>
+          <span class="acoes">
+            <button class="jb so-solto" type="button" data-acao="menor" title="Diminuir a janela" aria-label="Diminuir a janela">A−</button>
+            <button class="jb so-solto" type="button" data-acao="maior" title="Aumentar a janela" aria-label="Aumentar a janela">A+</button>
+            <button class="jb" type="button" data-acao="soltar" data-ic="soltar" title="Soltar da barra" aria-label="Soltar da barra"></button>
+            <button class="jb" type="button" data-acao="minimizar" data-ic="menos" title="Minimizar" aria-label="Minimizar"></button>
+            <button class="jb fechar" type="button" data-acao="fechar" data-ic="fechar" title="Fechar" aria-label="Fechar"></button>
+          </span>
+        </header>
+        <div class="palco" data-acao="foco">
+          <canvas class="avatar" width="120" height="120" aria-label="Avatar da Navegadora"></canvas>
+          <div class="vinheta" aria-hidden="true"></div>
+          <button class="nova-conversa" type="button" data-acao="nova" aria-label="Nova conversa"><span class="nc-texto" aria-hidden="true"></span><i aria-hidden="true">+</i></button>
+          <p class="ao-vivo" role="status"><i aria-hidden="true"></i><span>Conversando ao vivo</span></p>
+        </div>
+        <div class="mensagens" aria-live="polite"></div>
+        <div class="sugestoes" hidden></div>
+        <section class="previa" aria-label="Referências e agentes">
+          <h2>REFERÊNCIAS E AGENTES</h2>
+          <ul class="previa-lista"></ul>
+          <div class="previa-pe"><span class="contagem"></span><button class="ver" type="button" data-acao="ver">Ver +</button></div>
+        </section>
+        <section class="atividades" hidden aria-label="Referências e agentes, lista completa">
+          <header><div><h2>REFERÊNCIAS E AGENTES</h2><p class="contagem"></p></div>
+            <button class="jb" type="button" data-acao="fechar-atividades" data-ic="fechar" aria-label="Fechar a lista"></button></header>
+          <div class="atividades-corpo"></div>
+        </section>
+        <div class="menu" hidden role="menu" aria-label="Ações">
+          <button type="button" role="menuitem" data-acao="resumir"><i class="ic" data-ic="linhas"></i>Resumir</button>
+          <button type="button" role="menuitem" data-acao="explorar"><i class="ic" data-ic="bussola"></i>Explorar</button>
+          <button type="button" role="menuitemcheckbox" data-acao="voz" aria-checked="true"><i class="ic" data-ic="som"></i><span class="voz-texto">Voz ligada</span><i class="chave" aria-hidden="true"></i></button>
+          <button type="button" role="menuitem" data-acao="ferramentas"><i class="ic" data-ic="chave-inglesa"></i>Ferramentas</button>
+          <button type="button" role="menuitem" data-acao="anexar"><i class="ic" data-ic="clipe"></i>Anexar referência</button>
+          <button type="button" role="menuitem" data-acao="agente"><i class="ic" data-ic="agente-mais"></i>Adicionar agente</button>
+          <button type="button" role="menuitem" data-acao="dev" hidden><i class="ic" data-ic="linhas"></i>Dev</button>
+        </div>
+        <div class="mic-oferta" hidden><p></p><div><button type="button" class="mic-baixar">baixar</button><button type="button" class="mic-depois">agora não</button></div></div>
+        <form class="compositor">
+          <button class="abrir-menu" type="button" data-acao="menu" data-ic="linhas3" aria-label="Abrir ações" aria-expanded="false"></button>
+          <div class="campo">
+            <textarea name="t" rows="1" autocomplete="off" placeholder="Mensagem" aria-label="Mensagem"></textarea>
+            <canvas class="mic-onda" width="300" height="28" aria-hidden="true" hidden></canvas>
+            <button class="mic" type="button" data-acao="mic" data-ic="mic" title="Falar: sua voz vira texto aqui, e você decide quando enviar" aria-label="Falar" aria-pressed="false"></button>
+            <button class="enviar" type="submit" data-ic="seta" title="Enviar" aria-label="Enviar"></button>
+          </div>
+        </form>
+        <input class="arquivo" type="file" hidden multiple >
+      </div>
+    </section>
+  </div>
+  <script type="module" src="notch.js"></script>
+</body>
+</html>

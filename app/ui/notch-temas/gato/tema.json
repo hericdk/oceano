@@ -1,0 +1,21 @@
+{
+  "formato": "oceano-notch/1",
+  "id": "gato",
+  "nome": "Gato",
+  "autor": "@hericdk",
+  "estilo": "livre",
+  "cores": { "fundo": "#000000", "texto": "#ffffff", "destaque": "#0040ff" },
+  "fundoEditavel": true,
+  "personagem": {
+    "folha": "folha.png",
+    "quadro": [84, 64],
+    "fps": 6,
+    "estados": {
+      "parado": [[0, 2]],
+      "pensando": [[0, 0], [1, 0], [2, 0], [3, 0]],
+      "falando": [[0, 0], [1, 0], [2, 0], [3, 0]]
+    },
+    "boca": [36, 31],
+    "rosto": [10, 2, 40, 32]
+  }
+}

@@ -1,0 +1,55 @@
+/* A pele do Oceano sobre as ferramentas: fontes daqui, cantos retos e as cores do tema do navegador. */
+@font-face { font-family: 'Pixelify'; src: url(fontes/pixelify-sans-latin-400-normal.woff2) format('woff2'); font-display: swap; }
+:root { --texto-corpo: 'Pixelify', system-ui, sans-serif; --texto-mono: ui-monospace, 'SF Mono', Menlo, monospace; }
+html, body { background: var(--bg); color: var(--text); }
+body { font-family: var(--texto-corpo); }
+h1, h2, h3, .btn, .top-link, .lbl, .chip, .tool-sub, .sel-cartao { font-family: var(--texto-corpo); }
+.btn, .card, .field, .chip, .seg, .seg > *, .drop, .top-links, .topnav, input, select, textarea, .piece-chip, .stage, .stage-wrap { border-radius: 0 !important; }
+.brand-oceano { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; color: var(--text); cursor: pointer; padding: 6px 10px; font: inherit; white-space: nowrap; }
+.brand-oceano:hover, .brand-oceano:focus-visible { color: var(--brand); outline: 0; }
+
+/* ---------- seleção ---------- */
+#selecao { display: none; position: fixed; inset: 0; z-index: 60; background: var(--bg); padding: 28px 0 22px; flex-direction: column; gap: 16px; }
+html[data-tela="selecao"] #selecao { display: flex; }
+html[data-tela="selecao"] #topbar, html[data-tela="selecao"] #main { display: none; }
+.sel-cabeca { padding: 0 28px; }
+.sel-cabeca h1 { margin: 0; font-size: 28px; }
+.sel-cabeca p { margin: 6px 0 0; color: var(--muted); max-width: 60ch; }
+#sel-cartoes { flex: 1; min-height: 0; display: flex; align-items: center; gap: 14px; padding: 4px 28px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; scrollbar-width: none; }
+#sel-cartoes::-webkit-scrollbar { display: none; }
+.sel-cartao { flex: none; width: min(300px, 78vw); min-height: min(300px, 100%); max-height: 100%; display: flex; flex-direction: column; gap: 12px; text-align: left; padding: 22px; background: var(--surface); color: var(--text); border: 1px solid var(--line); cursor: pointer; scroll-snap-align: center; overflow-y: auto; font-size: 15px; line-height: 1.45; transition: background .3s cubic-bezier(.16, 1, .3, 1), border-color .3s cubic-bezier(.16, 1, .3, 1); }
+.sel-cartao i { font-size: 32px; color: var(--brand); }
+.sel-cartao b { font-size: 21px; font-weight: 600; }
+.sel-cartao span { color: var(--muted); }
+.sel-cartao:hover, .sel-cartao:focus-visible { background: var(--surface-2); border-color: var(--brand); outline: 0; }
+.vitrine-ok #vitrine { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.vitrine-ok .sel-cabeca, .vitrine-ok #sel-cartoes, .vitrine-ok #sel-regua { position: relative; z-index: 1; }
+.vitrine-ok .sel-cabeca { pointer-events: none; }
+.vitrine-ok #sel-cartoes { gap: 12px; scroll-snap-type: none; }
+.vitrine-ok #sel-regua { display: none; }
+.vitrine-ok .sel-cartao { width: clamp(280px, 31vw, 430px); height: min(100%, 620px); min-height: 0; max-height: none; padding: 0; background: transparent; border-color: transparent; color: transparent; }
+.vitrine-ok .sel-cartao > * { visibility: hidden; }
+.vitrine-ok .sel-cartao:hover { background: transparent; border-color: transparent; }
+.vitrine-ok .sel-cartao:focus-visible { background: transparent; outline: 2px solid #0040ff; outline-offset: 2px; }
+.vitrine-ok.vitrine-andando .sel-cartao { pointer-events: none; }
+#lorem-modo > .on { background: var(--surface-3); }
+#sel-regua { margin: 0 28px; flex: none; accent-color: var(--brand); height: 24px; cursor: ew-resize; }
+#sel-regua[hidden] { display: none; }
+
+/* ---------- troca entre ferramentas ---------- */
+#main { position: relative; overflow-x: hidden; }
+.tab-content.saindo { position: absolute; left: 0; right: 0; top: 0; pointer-events: none; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 720px) {
+  #selecao { padding-top: 18px; }
+  .sel-cabeca, #sel-cartoes { padding-left: 16px; padding-right: 16px; }
+  #sel-regua { margin: 0 16px; }
+  #main { padding-left: 16px !important; padding-right: 16px !important; }
+  .tool-head { flex-wrap: wrap; gap: 10px; }
+  .flex.gap-2, .flex.flex-wrap { flex-wrap: wrap; }
+  .field.w-24 { width: 5.5rem; }
+  .seg { flex-wrap: wrap; max-width: 100%; }
+  .seg > * { flex: 1 1 auto; }
+  pre, code { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) { .sel-cartao { transition: none; } }
