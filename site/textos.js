@@ -5,7 +5,7 @@ export const MAIS_TEXTOS = {
   es: {
     b_breve: "muy pronto",
     c_ola: "¡Hola! Soy Cara\nLa primera IA de un navegador con agentes integrados desde el principio. Y adivina qué: el primero hecho en vibe coding también 😉", c_baixar: "Descargar el GIF",
-    baseado: 'Basado en:',
+    baseado: 'Basado en:', base_sta: "Strudel y un fork de Mrityunjay Bhardwaj",
     titulo: 'Oceano · el navegador hecho para quienes crean', pular: 'Ir al contenido', idioma: 'Idioma', pausar: 'Pausar el movimiento', continuar: 'Reanudar el movimiento',
     menu: 'Menú', baixar: 'Descargar', m_ia: 'La Navegadora', m_baixar: 'Descargar Oceano', gato: 'Gato',
     h_titulo: 'El primer navegador en vibecode.',
@@ -37,7 +37,7 @@ export const MAIS_TEXTOS = {
   fr: {
     b_breve: "bientôt",
     c_ola: "Salut ! Je suis Cara\nLa première IA d'un navigateur avec des agents intégrés dès le départ. Et devine quoi : c'est aussi le premier fait en vibe coding 😉", c_baixar: "Télécharger le GIF",
-    baseado: 'Basé sur :',
+    baseado: 'Basé sur :', base_sta: "Strudel et un fork de Mrityunjay Bhardwaj",
     titulo: 'Oceano · le navigateur fait pour celles et ceux qui créent', pular: 'Aller au contenu', idioma: 'Langue', pausar: 'Mettre le mouvement en pause', continuar: 'Reprendre le mouvement',
     menu: 'Menu', baixar: 'Télécharger', m_ia: 'La Navigatrice', m_baixar: 'Télécharger Oceano', gato: 'Chat',
     h_titulo: 'Le premier navigateur en vibe coding.',
@@ -69,7 +69,7 @@ export const MAIS_TEXTOS = {
   it: {
     b_breve: "in arrivo",
     c_ola: "Ciao! Sono Cara\nLa prima IA di un browser con agenti integrati fin dall'inizio. E indovina un po': è anche il primo fatto in vibe coding 😉", c_baixar: "Scarica la GIF",
-    baseado: 'Basato su:',
+    baseado: 'Basato su:', base_sta: "Strudel e un fork di Mrityunjay Bhardwaj",
     titulo: 'Oceano · il browser fatto per chi crea', pular: 'Vai al contenuto', idioma: 'Lingua', pausar: 'Metti in pausa il movimento', continuar: 'Riprendi il movimento',
     menu: 'Menu', baixar: 'Scarica', m_ia: 'La Navigatrice', m_baixar: 'Scarica Oceano', gato: 'Gatto',
     h_titulo: 'Il primo browser in vibe coding.',
@@ -101,7 +101,7 @@ export const MAIS_TEXTOS = {
   de: {
     b_breve: "bald verfügbar",
     c_ola: "Hallo! Ich bin Cara\nDie erste KI eines Browsers, in dem Agenten von Anfang an eingebaut sind. Und rate mal: Er ist auch der erste mit Vibe Coding 😉", c_baixar: "GIF herunterladen",
-    baseado: 'Basierend auf:',
+    baseado: 'Basierend auf:', base_sta: "Strudel und ein Fork von Mrityunjay Bhardwaj",
     titulo: 'Oceano · der Browser für alle, die etwas erschaffen', pular: 'Zum Inhalt springen', idioma: 'Sprache', pausar: 'Bewegung anhalten', continuar: 'Bewegung fortsetzen',
     menu: 'Menü', baixar: 'Herunterladen', m_ia: 'Die Navigatorin', m_baixar: 'Oceano herunterladen', gato: 'Katze',
     h_titulo: 'Der erste Browser mit Vibe Coding.',
@@ -133,7 +133,7 @@ export const MAIS_TEXTOS = {
   ja: {
     b_breve: "近日公開",
     c_ola: "こんにちは！カーラです\n最初からエージェントを組み込んだブラウザの、はじめてのAI。しかも、バイブコーディングで作られた最初のブラウザなんです 😉", c_baixar: "GIFをダウンロード",
-    baseado: 'ベース:',
+    baseado: 'ベース:', base_sta: "Strudel と Mrityunjay Bhardwaj のフォーク",
     titulo: 'Oceano · つくる人のためのブラウザ', pular: '本文へ移動', idioma: '言語', pausar: '動きを止める', continuar: '動きを再開',
     menu: 'メニュー', baixar: 'ダウンロード', m_ia: 'ナビゲーター', m_baixar: 'Oceano をダウンロード', gato: 'ネコ',
     h_titulo: 'バイブコーディングで生まれた初のブラウザ。',
@@ -165,7 +165,7 @@ export const MAIS_TEXTOS = {
   ko: {
     b_breve: "곧 출시",
     c_ola: "안녕하세요! 저는 카라예요\n처음부터 에이전트를 품은 브라우저의 첫 AI죠. 그리고 있잖아요, 바이브 코딩으로 만든 최초의 브라우저이기도 해요 😉", c_baixar: "GIF 다운로드",
-    baseado: '기반:',
+    baseado: '기반:', base_sta: "Strudel 및 Mrityunjay Bhardwaj의 포크",
     titulo: 'Oceano · 만드는 사람을 위한 브라우저', pular: '본문으로 건너뛰기', idioma: '언어', pausar: '움직임 멈추기', continuar: '움직임 다시 시작',
     menu: '메뉴', baixar: '다운로드', m_ia: '내비게이터', m_baixar: 'Oceano 다운로드', gato: '고양이',
     h_titulo: '바이브 코딩으로 만든 최초의 브라우저.',

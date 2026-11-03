@@ -16,7 +16,7 @@ const T = {
   pt: {
     b_breve: 'em breve',
     c_ola: "Oi! Eu sou a Cara\nA primeira IA de um navegador com agentes integrados desde o início. E adivinha só: o primeiro vibecodado também 😉", c_baixar: "Baixar o GIF",
-    baseado: 'Baseado em:',
+    baseado: 'Baseado em:', base_sta: "Strudel e fork do Mrityunjay Bhardwaj",
     titulo: 'Oceano · o navegador feito para quem cria', pular: 'Ir para o conteúdo', idioma: 'Idioma', pausar: 'Pausar o movimento', continuar: 'Continuar o movimento',
     menu: 'Menu', baixar: 'Baixar', m_ia: 'A Navegadora', m_baixar: 'Baixar o Oceano', gato: 'Gato',
     h_titulo: 'O primeiro navegador em vibecode.',
@@ -48,7 +48,7 @@ const T = {
   en: {
     b_breve: 'coming soon',
     c_ola: "Hi! I'm Cara\nThe first AI of a browser with agents built in from the very start. And guess what: the first vibe-coded one, too 😉", c_baixar: "Download the GIF",
-    baseado: 'Based on:',
+    baseado: 'Based on:', base_sta: "Strudel and a fork by Mrityunjay Bhardwaj",
     titulo: 'Oceano · the browser made for people who create', pular: 'Skip to content', idioma: 'Language', pausar: 'Pause motion', continuar: 'Resume motion',
     menu: 'Menu', baixar: 'Download', m_ia: 'The Navigator', m_baixar: 'Download Oceano', gato: 'Cat',
     h_titulo: 'The first browser built with vibe coding.',
@@ -86,7 +86,7 @@ if (!T[lingua]) lingua = 'en';
 // ---------- as funcionalidades: quem é parecido fica no mesmo carrossel, e o carrossel enche a tela ----------
 const GRUPOS = [
   { id: 'criar', nome: 'g_criar', cor: 'preta', itens: [['ferramentas', 'f_ferr'], ['retoque', 'f_ret', 'GIMP'], ['animacao', 'f_ani']] },
-  { id: 'musica', nome: 'g_musica', cor: 'branca', itens: [['trilha', 'f_tri'], ['cds', 'f_cds'], ['stave', 'f_sta', 'Mrityunjay Bhardwaj'], ['sampler', 'f_sam']] },
+  { id: 'musica', nome: 'g_musica', cor: 'branca', itens: [['trilha', 'f_tri'], ['cds', 'f_cds'], ['stave', 'f_sta', '<span data-t="base_sta"></span>'], ['sampler', 'f_sam']] },
   { id: 'jogar', nome: 'g_jogar', cor: 'preta', itens: [['pico8', 'f_pic', 'Lexaloffle'], ['jogo', 'f_jog'], ['surfista', 'f_sur']] },
   { id: 'robos', nome: null, cor: 'branca', itens: [['robo', 'f_robo']] },
   { id: 'ia', nome: 'g_ia', cor: 'preta', itens: [['navegadora', 'f_nav'], ['ilha', 'f_ilh'], ['avatar', 'f_ava']] },
