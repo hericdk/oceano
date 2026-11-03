@@ -11,7 +11,7 @@ Chromium-ভিত্তিক, তুমি অনুমতি দিলে ত
 আছে পিক্সেলে আঁকা সমুদ্রের ওপর জানালায় সাজানো একটা টেবিল-এর মতো হোম পেজ, আর ব্রাউজারের ভেতরেই
 তৈরির সব টুল।
 
-> **অবস্থা:** তৈরির কাজ চলছে। → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **অবস্থা:** তৈরির কাজ চলছে। → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## কেন এটা আছে
 

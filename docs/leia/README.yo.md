@@ -11,7 +11,7 @@ Aṣàwákiri kékeré, ṣíṣí sílẹ̀ àti ti pixel art, fún àwọn tí
 ojú-ìwé ìbẹ̀rẹ̀ tí ó jẹ́ tábìlì fèrèsé lórí òkun pixel, àti àwọn irinṣẹ́ ìdásílẹ̀
 nínú aṣàwákiri fúnra rẹ̀.
 
-> **Ipò:** ó ń wà lábẹ́ ìdàgbàsókè. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Ipò:** ó ń wà lábẹ́ ìdàgbàsókè. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Ìdí tí ó fi wà
 

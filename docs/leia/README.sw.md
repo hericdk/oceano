@@ -11,7 +11,7 @@ Kimejengwa juu ya Chromium, na hesabu isiyo na jina ya matumizi tu ukiruhusu, ch
 ukurasa wa mwanzo ambao ni meza ya madirisha juu ya bahari ya pixel, na zana za ubunifu
 ndani ya kivinjari chenyewe.
 
-> **Hali:** kinaendelea kutengenezwa. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Hali:** kinaendelea kutengenezwa. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Kwa nini kipo
 

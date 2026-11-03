@@ -10,7 +10,7 @@
 基於 Chromium,只有在你允許時才會進行匿名使用統計,支援主題和 Lua 模組(Lua 是巴西 PUC-Rio 創造的語言),
 首頁是一張擺在像素海面上的視窗桌面,創作工具就在瀏覽器裡面。
 
-> **狀態:** 開發中。 → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **狀態:** 開發中。 → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## 為什麼要做它
 

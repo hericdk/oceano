@@ -13,7 +13,7 @@
 یک صفحهٔ آغازین که میزی از پنجره‌ها روی دریایی پیکسلی است، و ابزارهای ساخت و ساز
 درون خود مرورگر.
 
-> **وضعیت:** در حال توسعه. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **وضعیت:** در حال توسعه. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## چرا وجود دارد
 

@@ -11,7 +11,7 @@ Waxaa lagu dhisay Chromium, leh tiris isticmaal oo aan magac lahayn kaliya haddi
 bog hore oo ah miis daaqado ah oo ku yaal badda pixel-ka ah, iyo qalab abuurid
 oo ku jira biraawsarka laftiisa.
 
-> **Xaalad:** wuu soo koraa. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Xaalad:** wuu soo koraa. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Sababta uu u jiro
 

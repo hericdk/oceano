@@ -13,7 +13,7 @@
 وصفحة رئيسية هي طاولة نوافذ فوق بحر مصنوع من البكسلات، وأدوات للإبداع
 داخل المتصفح نفسه.
 
-> **الحالة:** قيد التطوير. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **الحالة:** قيد التطوير. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## لماذا وُجد
 

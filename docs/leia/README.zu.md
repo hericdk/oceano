@@ -11,7 +11,7 @@ Sakhelwe phezu kwe-Chromium, sinokubalwa kokusetshenziswa okungadaluli igama kup
 ikhasi lokuqala eliyithebula lamawindi phezu kwolwandle lwe-pixel, namathuluzi okudala
 ngaphakathi esiphequluli ngokwaso.
 
-> **Isimo:** siyathuthukiswa. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Isimo:** siyathuthukiswa. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Kungani sikhona
 

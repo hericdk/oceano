@@ -11,7 +11,7 @@ An gina ta a kan Chromium, tare da ƙidayar amfani da ba ta bayyana suna ba sai 
 shafin farko wanda tebur ne na tagogi a kan teku na pixel, da kayan ƙirƙira
 a cikin burauzar kanta.
 
-> **Matsayi:** ana kan haɓakawa. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Matsayi:** ana kan haɓakawa. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Dalilin da ya sa yake akwai
 

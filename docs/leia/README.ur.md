@@ -13,7 +13,7 @@ Chromium پر مبنی، گمنام استعمال کی گنتی صرف تمہا
 ایک ہوم پیج جو پکسل والے سمندر پر کھڑکیوں کی میز ہے، اور براؤزر کے اندر ہی
 تخلیق کے اوزار۔
 
-> **حالت:** زیرِ ترقی۔ → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **حالت:** زیرِ ترقی۔ → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## یہ کیوں موجود ہے
 

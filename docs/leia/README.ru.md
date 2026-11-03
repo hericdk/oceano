@@ -11,7 +11,7 @@
 стартовая страница, которая представляет собой стол с окнами над пиксельным морем, и инструменты для творчества
 прямо внутри самого браузера.
 
-> **Статус:** в разработке. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Статус:** в разработке. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Зачем он нужен
 

@@ -11,7 +11,7 @@ Baseado no Chromium, com contagem anônima de uso só se você autorizar, com te
 uma página inicial que é uma mesa de janelas sobre um mar pixelizado, e ferramentas de criação
 dentro do próprio navegador.
 
-> **Estado:** em desenvolvimento. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Estado:** em desenvolvimento. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Por que existe
 

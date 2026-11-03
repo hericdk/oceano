@@ -11,7 +11,7 @@
 ទំព័រដើមដែលជាតុនៃបង្អួចលើសមុទ្រភីកសែល និងឧបករណ៍បង្កើត
 នៅក្នុងកម្មវិធីរុករកផ្ទាល់។
 
-> **ស្ថានភាព:** កំពុងអភិវឌ្ឍ។ → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **ស្ថានភាព:** កំពុងអភិវឌ្ឍ។ → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## ហេតុអ្វីបានជាមាន
 

@@ -13,7 +13,7 @@
 یو کورپاڼه چې د پکسل سمندر پر سر د کړکیو میز دی، او د جوړولو وسایل
 د براوزر په خپل ننه کې.
 
-> **حالت:** په پراختیا کې دی. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **حالت:** په پراختیا کې دی. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## ولې شتون لري
 

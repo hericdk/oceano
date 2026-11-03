@@ -11,7 +11,7 @@ Chromium पर आधारित, गुमनाम इस्तेमाल 
 एक होम पेज जो पिक्सेल वाले समुद्र पर बिछी खिड़कियों की मेज़ है, और बनाने के औज़ार
 ब्राउज़र के अंदर ही।
 
-> **स्थिति:** विकास जारी है। → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **स्थिति:** विकास जारी है। → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## यह क्यों है
 

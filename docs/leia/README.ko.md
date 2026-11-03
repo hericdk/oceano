@@ -11,7 +11,7 @@ Chromium을 기반으로 하고, 허락했을 때만 익명으로 사용량을 �
 픽셀로 된 바다 위에 창들이 놓인 책상 같은 시작 페이지가 있으며, 제작 도구도
 브라우저 안에 들어 있습니다.
 
-> **상태:** 개발 중. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **상태:** 개발 중. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## 왜 존재하는가
 

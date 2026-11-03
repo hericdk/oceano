@@ -11,7 +11,7 @@ Based on Chromium, with anonymous usage counting only if you allow it, with them
 a home page that is a desk of windows over a pixelated sea, and creation tools
 inside the browser itself.
 
-> **Status:** in development. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Status:** in development. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Why it exists
 

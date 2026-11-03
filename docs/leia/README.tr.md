@@ -11,7 +11,7 @@ Chromium tabanlı, anonim kullanım sayımı yalnızca sen izin verirsen, temala
 pikselli bir denizin üzerinde pencerelerden oluşan bir masa olan bir başlangıç sayfası ve tarayıcının
 içinde üretim araçları.
 
-> **Durum:** geliştirme aşamasında. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Durum:** geliştirme aşamasında. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Neden var
 

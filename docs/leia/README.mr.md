@@ -11,7 +11,7 @@ Chromium वर आधारित, तू परवानगी दिलीस
 पिक्सेलच्या समुद्रावर खिडक्यांचे टेबल असलेले मुख्य पान, आणि ब्राउझरच्या आतच
 निर्मितीची साधने.
 
-> **स्थिती:** विकासाधीन. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **स्थिती:** विकासाधीन. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## हे का आहे
 

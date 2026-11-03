@@ -11,7 +11,7 @@ Basato su Chromium, con conteggio anonimo dell'uso solo se lo autorizzi, con tem
 una pagina iniziale che è una scrivania di finestre sopra un mare pixelato, e strumenti di creazione
 dentro il browser stesso.
 
-> **Stato:** in sviluppo. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
+> **Stato:** in sviluppo. → macOS (Apple Silicon) · Windows · Linux: [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Perché esiste
 
