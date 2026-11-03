@@ -11,7 +11,7 @@ Berbasis Chromium, dengan penghitungan penggunaan anonim hanya jika kamu mengizi
 sebuah halaman awal yang berupa meja jendela di atas laut berpiksel, dan alat-alat berkarya
 di dalam browser itu sendiri.
 
-> **Status:** sedang dikembangkan. Belum ada installer publik.
+> **Status:** sedang dikembangkan. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Kenapa ini ada
 

@@ -11,7 +11,7 @@ Chromiumをベースに、許可したときだけ匿名で利用数を数え、
 ピクセル化された海の上にウィンドウが並ぶ机、というホームページを備え、制作ツールも
 ブラウザの中にそのまま入っています。
 
-> **状態:** 開発中。公開インストーラはまだありません。
+> **状態:** 開発中。 → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## なぜ存在するのか
 

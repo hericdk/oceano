@@ -3,6 +3,7 @@ export const IDIOMAS = [['pt', 'Português'], ['en', 'English'], ['es', 'Españo
 
 export const MAIS_TEXTOS = {
   es: {
+    b_breve: "muy pronto",
     c_ola: "¡Hola! Soy Cara, tu navegadora. La primera de un navegador con agentes de IA integrados desde el principio. Y adivina qué: el primero hecho en vibe coding también 😉", c_baixar: "Descargar el GIF",
     baseado: 'Basado en:',
     titulo: 'Oceano · el navegador hecho para quienes crean', pular: 'Ir al contenido', idioma: 'Idioma', pausar: 'Pausar el movimiento', continuar: 'Reanudar el movimiento',
@@ -34,6 +35,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Hecho para quienes crean. Y gratis.',
   },
   fr: {
+    b_breve: "bientôt",
     c_ola: "Salut ! Je suis Cara, ta navigatrice. La première d'un navigateur avec des agents d'IA intégrés dès le départ. Et devine quoi : c'est aussi le premier fait en vibe coding 😉", c_baixar: "Télécharger le GIF",
     baseado: 'Basé sur :',
     titulo: 'Oceano · le navigateur fait pour celles et ceux qui créent', pular: 'Aller au contenu', idioma: 'Langue', pausar: 'Mettre le mouvement en pause', continuar: 'Reprendre le mouvement',
@@ -65,6 +67,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Fait pour celles et ceux qui créent. Et gratuit.',
   },
   it: {
+    b_breve: "in arrivo",
     c_ola: "Ciao! Sono Cara, la tua navigatrice. La prima di un browser con agenti di IA integrati fin dall'inizio. E indovina un po': è anche il primo fatto in vibe coding 😉", c_baixar: "Scarica la GIF",
     baseado: 'Basato su:',
     titulo: 'Oceano · il browser fatto per chi crea', pular: 'Vai al contenuto', idioma: 'Lingua', pausar: 'Metti in pausa il movimento', continuar: 'Riprendi il movimento',
@@ -96,6 +99,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Fatto per chi crea. Ed è gratis.',
   },
   de: {
+    b_breve: "bald verfügbar",
     c_ola: "Hallo! Ich bin Cara, deine Navigatorin. Die erste in einem Browser, in dem KI-Agenten von Anfang an eingebaut sind. Und rate mal: Er ist auch der erste mit Vibe Coding 😉", c_baixar: "GIF herunterladen",
     baseado: 'Basierend auf:',
     titulo: 'Oceano · der Browser für alle, die etwas erschaffen', pular: 'Zum Inhalt springen', idioma: 'Sprache', pausar: 'Bewegung anhalten', continuar: 'Bewegung fortsetzen',
@@ -127,6 +131,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Für alle, die etwas erschaffen. Und gratis.',
   },
   ja: {
+    b_breve: "近日公開",
     c_ola: "こんにちは！カーラです。あなたのナビゲーターです。最初からAIエージェントを組み込んだブラウザの、はじめてのナビゲーター。しかも、バイブコーディングで作られた最初のブラウザなんです 😉", c_baixar: "GIFをダウンロード",
     baseado: 'ベース:',
     titulo: 'Oceano · つくる人のためのブラウザ', pular: '本文へ移動', idioma: '言語', pausar: '動きを止める', continuar: '動きを再開',
@@ -158,6 +163,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'つくる人のために。しかも無料。',
   },
   ko: {
+    b_breve: "곧 출시",
     c_ola: "안녕하세요! 저는 카라, 당신의 내비게이터예요. 처음부터 AI 에이전트를 품은 브라우저의 첫 내비게이터죠. 그리고 있잖아요, 바이브 코딩으로 만든 최초의 브라우저이기도 해요 😉", c_baixar: "GIF 다운로드",
     baseado: '기반:',
     titulo: 'Oceano · 만드는 사람을 위한 브라우저', pular: '본문으로 건너뛰기', idioma: '언어', pausar: '움직임 멈추기', continuar: '움직임 다시 시작',

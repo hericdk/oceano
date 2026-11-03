@@ -11,7 +11,7 @@ Naorina tamin'ny Chromium, misy fanisana ny fampiasana tsy mamoaka anarana raha 
 pejy fandraisana izay latabatra varavarankely eo ambonin'ny ranomasina pixel, ary fitaovana famoronana
 ao anatin'ny navigateur mihitsy.
 
-> **Toe-javatra:** mbola amin'ny fampandrosoana. Mbola tsy misy ny mpametraka ho an'ny daholobe.
+> **Toe-javatra:** mbola amin'ny fampandrosoana. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Nahoana no misy izy
 

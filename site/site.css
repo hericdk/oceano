@@ -121,3 +121,4 @@ main:focus { outline: 0; }
 .cara-baixar:hover { background: #1b1b1f; }
 .cara-baixar svg { width: 14px; height: 14px; fill: currentColor; }
 @media (max-width: 560px) { .cara-baixar { left: 16px; transform: none; } }
+.botao.sem-versao { opacity: .5; cursor: default; pointer-events: none; }

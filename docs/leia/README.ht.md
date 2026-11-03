@@ -11,7 +11,7 @@ Li baze sou Chromium, ak konte itilizasyon anonim sèlman si ou otorize l, ak t�
 yon paj dakèy ki se yon biwo fenèt sou yon lanmè pixelize, ak zouti kreyasyon
 anndan navigatè a menm.
 
-> **Eta:** an devlopman. Poko gen enstalatè piblik.
+> **Eta:** an devlopman. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Poukisa li egziste
 

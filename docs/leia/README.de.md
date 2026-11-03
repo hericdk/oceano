@@ -11,7 +11,7 @@ Basiert auf Chromium, mit anonymer Nutzungszählung nur, wenn du es erlaubst, mi
 einer Startseite, die ein Schreibtisch aus Fenstern über einem verpixelten Meer ist, und Werkzeugen zum Kreieren
 direkt im Browser selbst.
 
-> **Stand:** in Entwicklung. Es gibt noch kein öffentliches Installationsprogramm.
+> **Stand:** in Entwicklung. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Warum es das gibt
 

@@ -11,7 +11,7 @@ Dựa trên Chromium, chỉ đếm lượt dùng ẩn danh khi cậu cho phép, 
 một trang chủ là cái bàn đầy cửa sổ đặt trên một vùng biển pixel, và các công cụ sáng tạo
 ngay bên trong trình duyệt.
 
-> **Trạng thái:** đang phát triển. Hiện chưa có bộ cài công khai.
+> **Trạng thái:** đang phát triển. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Vì sao nó tồn tại
 

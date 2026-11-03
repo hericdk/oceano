@@ -11,7 +11,7 @@
 በፒክስል ባሕር ላይ የተዘረጋ የመስኮቶች ጠረጴዛ የሆነ መነሻ ገጽ፣ እና በአሳሹ ውስጥ
 የሚገኙ የመፍጠሪያ መሣሪያዎች።
 
-> **ሁኔታ:** በልማት ላይ ነው። ገና ለሕዝብ የሚሆን መጫኛ የለም።
+> **ሁኔታ:** በልማት ላይ ነው። → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## ለምን አለ
 

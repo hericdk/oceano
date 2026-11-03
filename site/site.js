@@ -14,6 +14,7 @@ const PALETA = ['#070b1f', '#0e1a3d', '#16306b', '#1f4f9e', '#2f7fd1', '#5bb6f0'
 // ---------- textos ----------
 const T = {
   pt: {
+    b_breve: 'em breve',
     c_ola: "Oi! Eu sou a Cara, a sua navegadora. A primeira de um navegador com agentes de IA integrados desde o início. E adivinha só: o primeiro vibecodado também 😉", c_baixar: "Baixar o GIF",
     baseado: 'Baseado em:',
     titulo: 'Oceano · o navegador feito para quem cria', pular: 'Ir para o conteúdo', idioma: 'Idioma', pausar: 'Pausar o movimento', continuar: 'Continuar o movimento',
@@ -45,6 +46,7 @@ const T = {
     f_titulo: 'Oceano.', f_sub: 'Feito para quem cria. E de graça.',
   },
   en: {
+    b_breve: 'coming soon',
     c_ola: "Hi! I'm Cara, your navigator. The first one in a browser with AI agents built in from the very start. And guess what: the first vibe-coded one, too 😉", c_baixar: "Download the GIF",
     baseado: 'Based on:',
     titulo: 'Oceano · the browser made for people who create', pular: 'Skip to content', idioma: 'Language', pausar: 'Pause motion', continuar: 'Resume motion',
@@ -137,7 +139,13 @@ fetch(`https://api.github.com/repos/${REPO}`).then(r => r.ok ? r.json() : null).
 fetch(`https://api.github.com/repos/${REPO}/releases/latest`).then(r => r.ok ? r.json() : null).then(j => {
   const achar = re => j?.assets?.find(x => re.test(x.name))?.browser_download_url;
   const links = { mac: achar(/(arm64|apple|silicon).*\.dmg$|\.dmg$/i), win: achar(/\.(exe|msi)$/i), linux: achar(/\.(appimage|deb)$/i) };
-  for (const a of $$('[data-baixar]')) if (links[a.dataset.baixar]) { a.href = links[a.dataset.baixar]; a.removeAttribute('target'); }
+  for (const a of $$('[data-baixar]')) {
+    if (links[a.dataset.baixar]) { a.href = links[a.dataset.baixar]; a.removeAttribute('target'); }
+    else if (j) {   // ainda sem instalador para este sistema: o botão não promete o que não existe
+      a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); a.classList.add('sem-versao');
+      const s = a.querySelector('small'); s.dataset.t = 'b_breve'; s.textContent = T[lingua].b_breve ?? T.en.b_breve;
+    }
+  }
 }).catch(() => {});
 
 // ---------- menu e pílula: clicar fora fecha ----------

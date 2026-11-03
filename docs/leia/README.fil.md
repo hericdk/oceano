@@ -11,7 +11,7 @@ Nakabatay sa Chromium, may anonymous na pagbibilang ng paggamit na kung papayaga
 isang home page na parang mesa ng mga bintana sa ibabaw ng pixelated na dagat, at mga kasangkapan sa paglikha
 sa loob mismo ng browser.
 
-> **Katayuan:** ginagawa pa. Wala pang pampublikong installer.
+> **Katayuan:** ginagawa pa. → macOS (Apple Silicon): [Releases](https://github.com/hericdk/oceano/releases/latest)
 
 ## Bakit ito umiiral
 
