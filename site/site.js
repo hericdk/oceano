@@ -15,7 +15,7 @@ const PALETA = ['#070b1f', '#0e1a3d', '#16306b', '#1f4f9e', '#2f7fd1', '#5bb6f0'
 const T = {
   pt: {
     b_breve: 'em breve',
-    c_ola: "Oi! Eu sou a Cara, a sua navegadora. A primeira de um navegador com agentes de IA integrados desde o início. E adivinha só: o primeiro vibecodado também 😉", c_baixar: "Baixar o GIF",
+    c_ola: "Oi! Eu sou a Cara\nA primeira de um navegador com agentes de IA integrados desde o início. E adivinha só: o primeiro vibecodado também 😉", c_baixar: "Baixar o GIF",
     baseado: 'Baseado em:',
     titulo: 'Oceano · o navegador feito para quem cria', pular: 'Ir para o conteúdo', idioma: 'Idioma', pausar: 'Pausar o movimento', continuar: 'Continuar o movimento',
     menu: 'Menu', baixar: 'Baixar', m_ia: 'A Navegadora', m_baixar: 'Baixar o Oceano', gato: 'Gato',
@@ -47,7 +47,7 @@ const T = {
   },
   en: {
     b_breve: 'coming soon',
-    c_ola: "Hi! I'm Cara, your navigator. The first one in a browser with AI agents built in from the very start. And guess what: the first vibe-coded one, too 😉", c_baixar: "Download the GIF",
+    c_ola: "Hi! I'm Cara\nThe first one in a browser with AI agents built in from the very start. And guess what: the first vibe-coded one, too 😉", c_baixar: "Download the GIF",
     baseado: 'Based on:',
     titulo: 'Oceano · the browser made for people who create', pular: 'Skip to content', idioma: 'Language', pausar: 'Pause motion', continuar: 'Resume motion',
     menu: 'Menu', baixar: 'Download', m_ia: 'The Navigator', m_baixar: 'Download Oceano', gato: 'Cat',
