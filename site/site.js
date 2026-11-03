@@ -23,6 +23,7 @@ const T = {
     h_titulo: 'O primeiro navegador em vibecode.',
     h_sub: 'E um canivete de ferramentas gratuitas, completo para animadores, músicos, influencers, devs, gamers, ou só para quem quer um navegador novo e bem otimizado.',
     ee: 'vem com um orquestrador de agentes de IA direto no navegador!!!',
+    v_ver: 'Assistir ao vídeo', v_nota: 'Abre pelo YouTube', v_fechar: 'Fechar o vídeo',
     b_titulo: 'De graça. Pode baixar.', mac: 'macOS', mac_s: 'Apple Silicon (M1 ou mais novo)', b_codigo: 'Todo o código',
     g_criar: 'Para criar', g_musica: 'Para fazer música', g_jogar: 'Para jogar', g_ia: 'Sua IA, de verdade', g_jeito: 'Do seu jeito', g_calma: 'Sem distração, sem segredo',
     f_ferr_t: 'Ferramentas', f_ferr: 'Baixe, corte e converta vídeo, áudio e imagem. Tudo roda no seu computador.',
@@ -56,6 +57,7 @@ const T = {
     h_titulo: 'The first browser built with vibe coding.',
     h_sub: 'And a free Swiss Army knife of tools for animators, musicians, influencers, devs, gamers, or anyone who just wants a new, well-optimized browser.',
     ee: 'it comes with an AI agent orchestrator right in the browser!!!',
+    v_ver: 'Watch the video', v_nota: 'Opens from YouTube', v_fechar: 'Close the video',
     b_titulo: 'It’s free. Go get it.', mac: 'macOS', mac_s: 'Apple Silicon (M1 or newer)', b_codigo: 'All the code',
     g_criar: 'To create', g_musica: 'To make music', g_jogar: 'To play', g_ia: 'Your AI, for real', g_jeito: 'Your way', g_calma: 'No noise, no secrets',
     f_ferr_t: 'Tools', f_ferr: 'Download, cut and convert video, audio and images. It all runs on your computer.',
@@ -108,6 +110,16 @@ $('#funcoes').innerHTML = GRUPOS.map(g => g.itens.length > 1
 
 // cada idioma tem as gravações do navegador nesse idioma
 const pastaDosClipes = () => (lingua === 'pt' ? 'media' : `media/${lingua}`);
+// O vídeo: português no filme em português, todos os outros idiomas no filme em inglês
+const FILMES = { pt: 'jB0BJ_CxdFo', en: 'M41ddYNwfUg' };
+const idiomaDoFilme = () => (lingua === 'pt' ? 'pt' : 'en');
+const laco = $('#filme-laco');
+function pintarLaco() {
+  const novo = `media/filme/${idiomaDoFilme()}${matchMedia('(max-aspect-ratio: 1/1)').matches ? '-vertical' : ''}`;
+  if (laco.dataset.fonte === novo) return;
+  const tocando = !laco.paused; laco.dataset.fonte = novo; laco.poster = novo + '.jpg'; laco.src = novo + '.mp4';
+  if (tocando) laco.play().catch(() => {});
+}
 function pintarTextos() {
   document.documentElement.lang = lingua === 'pt' ? 'pt-BR' : lingua;
   document.title = T[lingua].titulo;
@@ -120,6 +132,7 @@ function pintarTextos() {
     const tocando = !v.paused; v.dataset.fonte = novo; v.poster = novo + '.jpg'; v.src = novo + '.mp4';
     if (tocando) v.play().catch(() => {});
   }
+  pintarLaco();
 }
 const linguas = $('#linguas');
 linguas.innerHTML = IDIOMAS.map(([id, nome]) => `<button type="button" lang="${id}" data-lingua="${id}" aria-label="${nome}" title="${nome}">${id.toUpperCase()}</button>`).join('');
@@ -231,6 +244,23 @@ function pintarPausa() {
   $('#cara-gif').src = parado ? 'marca/cara-parada.png' : 'marca/cara.gif';
   if (gsap?.globalTimeline) gsap.globalTimeline.timeScale(parado ? 1000 : 1);
 }
+
+// ---------- o vídeo: o YouTube só carrega depois do clique, e o filme sempre começa do início ----------
+const telaDoFilme = $('#filme-tela');
+$('#filme-abrir').addEventListener('click', () => {
+  const quadro = document.createElement('iframe');
+  quadro.title = T[lingua].v_ver ?? T.en.v_ver;
+  quadro.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
+  quadro.allowFullscreen = true;
+  quadro.referrerPolicy = 'strict-origin-when-cross-origin';
+  quadro.src = `https://www.youtube-nocookie.com/embed/${FILMES[idiomaDoFilme()]}?autoplay=1&start=0&rel=0&playsinline=1&cc_load_policy=1&cc_lang_pref=${lingua}&hl=${lingua}`;
+  $('#filme-lugar').replaceChildren(quadro);
+  laco.pause();
+  telaDoFilme.showModal();
+});
+$('#filme-fechar').addEventListener('click', () => telaDoFilme.close());
+telaDoFilme.addEventListener('close', () => { $('#filme-lugar').replaceChildren(); if (laco.dataset.visivel && !parado) laco.play().catch(() => {}); });
+addEventListener('resize', pintarLaco);
 
 // ---------- os vídeos só tocam na tela ----------
 const olho = new IntersectionObserver(es => { for (const e of es) { if (e.isIntersecting) { e.target.dataset.visivel = '1'; if (e.target.preload === 'none') e.target.preload = 'auto'; if (!parado) e.target.play().catch(() => {}); } else { delete e.target.dataset.visivel; e.target.pause(); } } }, { threshold: 0.25 });

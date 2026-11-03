@@ -3,6 +3,7 @@ export const IDIOMAS = [['pt', 'Português'], ['en', 'English'], ['es', 'Españo
 
 export const MAIS_TEXTOS = {
   es: {
+    v_ver: "Ver el video (en inglés)", v_nota: "Se abre desde YouTube", v_fechar: "Cerrar el video",
     p_link: "Privacidad", p_txt: "¿Puedo medir tu visita? Si aceptas, el sitio usa Google Analytics y Microsoft Clarity. Guardan cookies, cuentan las visitas y graban cómo se usa la página, como clics y desplazamiento.", p_sim: "Puedes contarla", p_nao: "Ahora no", p_apagar: "Desactivar y borrar mis cookies", p_politica: "Cómo funciona", p_feito: "Listo: la medición se desactivó y las cookies salieron de este navegador. Lo ya registrado sigue el plazo de cada servicio.", p_falha: "Sin conexión ahora. Inténtalo de nuevo en un momento.",
     b_breve: "muy pronto",
     c_ola: "¡Hola! Soy Kara\nLa primera IA de un navegador con agentes integrados desde el principio. Y adivina qué: el primero hecho en vibe coding también 😉", c_baixar: "Descargar el GIF",
@@ -36,6 +37,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Hecho para quienes crean. Y gratis.',
   },
   fr: {
+    v_ver: "Voir la vidéo (en anglais)", v_nota: "S’ouvre depuis YouTube", v_fechar: "Fermer la vidéo",
     p_link: "Confidentialité", p_txt: "Puis-je mesurer ta visite ? Si tu acceptes, le site utilise Google Analytics et Microsoft Clarity. Ils enregistrent des cookies, comptent les visites et enregistrent l'usage de la page, comme les clics et le défilement.", p_sim: "Tu peux compter", p_nao: "Pas maintenant", p_apagar: "Désactiver et supprimer mes cookies", p_politica: "Comment ça marche", p_feito: "C'est fait : la mesure est désactivée et les cookies ont quitté ce navigateur. Ce qui est déjà enregistré suit le délai de chaque service.", p_falha: "Pas de connexion pour le moment. Réessaie dans un instant.",
     b_breve: "bientôt",
     c_ola: "Salut ! Je suis Kara\nLa première IA d'un navigateur avec des agents intégrés dès le départ. Et devine quoi : c'est aussi le premier fait en vibe coding 😉", c_baixar: "Télécharger le GIF",
@@ -69,6 +71,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Fait pour celles et ceux qui créent. Et gratuit.',
   },
   it: {
+    v_ver: "Guarda il video (in inglese)", v_nota: "Si apre da YouTube", v_fechar: "Chiudi il video",
     p_link: "Privacy", p_txt: "Posso misurare la tua visita? Se accetti, il sito usa Google Analytics e Microsoft Clarity. Salvano cookie, contano le visite e registrano come viene usata la pagina, come clic e scorrimento.", p_sim: "Puoi contarla", p_nao: "Non ora", p_apagar: "Disattiva ed elimina i miei cookie", p_politica: "Come funziona", p_feito: "Fatto: la misurazione è disattivata e i cookie sono usciti da questo browser. Ciò che è già registrato segue i tempi di ogni servizio.", p_falha: "Nessuna connessione ora. Riprova tra poco.",
     b_breve: "in arrivo",
     c_ola: "Ciao! Sono Kara\nLa prima IA di un browser con agenti integrati fin dall'inizio. E indovina un po': è anche il primo fatto in vibe coding 😉", c_baixar: "Scarica la GIF",
@@ -102,6 +105,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Fatto per chi crea. Ed è gratis.',
   },
   de: {
+    v_ver: "Video ansehen (auf Englisch)", v_nota: "Wird über YouTube geöffnet", v_fechar: "Video schließen",
     p_link: "Datenschutz", p_txt: "Darf ich deinen Besuch messen? Wenn du zustimmst, nutzt die Seite Google Analytics und Microsoft Clarity. Sie speichern Cookies, zählen Besuche und zeichnen auf, wie die Seite genutzt wird, etwa Klicks und Scrollen.", p_sim: "Zählen erlaubt", p_nao: "Jetzt nicht", p_apagar: "Ausschalten und meine Cookies löschen", p_politica: "So funktioniert es", p_feito: "Fertig: Die Messung ist aus und die Cookies sind aus diesem Browser entfernt. Bereits Erfasstes folgt der Frist des jeweiligen Dienstes.", p_falha: "Gerade keine Verbindung. Versuche es gleich noch einmal.",
     b_breve: "bald verfügbar",
     c_ola: "Hallo! Ich bin Kara\nDie erste KI eines Browsers, in dem Agenten von Anfang an eingebaut sind. Und rate mal: Er ist auch der erste mit Vibe Coding 😉", c_baixar: "GIF herunterladen",
@@ -135,6 +139,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'Für alle, die etwas erschaffen. Und gratis.',
   },
   ja: {
+    v_ver: "動画を見る(英語)", v_nota: "YouTube で開きます", v_fechar: "動画を閉じる",
     p_link: "プライバシー", p_txt: "この訪問を計測してもいいですか？同意すると、このサイトはGoogleアナリティクスとMicrosoft Clarityを使います。Cookieを保存し、訪問を数え、クリックやスクロールなどページの使われ方を記録します。", p_sim: "数えてOK", p_nao: "今はしない", p_apagar: "オフにしてCookieを削除", p_politica: "しくみ", p_feito: "完了：計測をオフにし、このブラウザのCookieを削除しました。記録済みの内容は各サービスの保存期間に従います。", p_falha: "今は接続できません。少ししてからもう一度お試しください。",
     b_breve: "近日公開",
     c_ola: "こんにちは！カーラです\n最初からエージェントを組み込んだブラウザの、はじめてのAI。しかも、バイブコーディングで作られた最初のブラウザなんです 😉", c_baixar: "GIFをダウンロード",
@@ -168,6 +173,7 @@ export const MAIS_TEXTOS = {
     f_sub: 'つくる人のために。しかも無料。',
   },
   ko: {
+    v_ver: "영상 보기(영어)", v_nota: "YouTube에서 열립니다", v_fechar: "영상 닫기",
     p_link: "개인정보", p_txt: "방문을 측정해도 될까요? 동의하면 이 사이트는 Google 애널리틱스와 Microsoft Clarity를 사용해요. 쿠키를 저장하고 방문을 세며 클릭과 스크롤 같은 페이지 사용 방식을 기록합니다.", p_sim: "집계해도 좋아요", p_nao: "지금은 안 할래요", p_apagar: "끄고 내 쿠키 삭제", p_politica: "작동 방식", p_feito: "완료: 측정을 끄고 이 브라우저의 쿠키를 삭제했어요. 이미 기록된 내용은 각 서비스의 보관 기간을 따릅니다.", p_falha: "지금은 연결되지 않아요. 잠시 후 다시 시도하세요.",
     b_breve: "곧 출시",
     c_ola: "안녕하세요! 저는 카라예요\n처음부터 에이전트를 품은 브라우저의 첫 AI죠. 그리고 있잖아요, 바이브 코딩으로 만든 최초의 브라우저이기도 해요 😉", c_baixar: "GIF 다운로드",

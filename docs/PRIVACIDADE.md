@@ -11,6 +11,8 @@ O Oceano e o site oceano.gg só contam uso com a sua autorização, dada nos pri
 - **Google Analytics (Google):** guarda cookies e registra páginas vistas, aparelho, navegador e região aproximada.
 - **Microsoft Clarity (Microsoft):** guarda cookies e grava como a página é usada, como cliques, rolagem e movimento do mouse, em gravações de sessão e mapas de calor.
 
+O vídeo de apresentação do site é do YouTube (Google) e só carrega se você clicar nele, sem depender do aceite acima. O trecho que passa sozinho na página é um arquivo do próprio site e não fala com o YouTube. Ao clicar, o YouTube recebe a conexão e pode registrar a reprodução. Usamos o modo de privacidade reforçada dele.
+
 Cada empresa trata esses dados conforme a própria política, inclusive fora do Brasil, e recebe o seu IP ao atender a conexão.
 
 No app, nunca vão sites visitados, conversas, arquivos, chaves, nome, e-mail ou qualquer identificador. O tempo é medido no seu computador, e só a faixa sai dele.

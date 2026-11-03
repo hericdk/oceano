@@ -129,3 +129,20 @@ main:focus { outline: 0; }
 .consent-botoes button + button { background: #1b1b1f; color: #fff; }
 .consent-botoes button:hover { background: var(--acento); color: #000; }
 .consent-botoes a { text-decoration: underline; font-size: 13px; }
+
+/* ---------- o vídeo: 10 s em laço na tela; o clique abre o filme inteiro do YouTube ---------- */
+.filme { padding: 0; background: #000; }
+.filme video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.filme-abrir { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 10px; padding-bottom: clamp(40px, 9vh, 96px); color: #fff; }
+.filme-rotulo { display: inline-flex; align-items: center; gap: 14px; padding: 16px 26px; background: #000; font-size: clamp(20px, 2.4vw, 32px); font-weight: 600; letter-spacing: -.02em; transition: background .35s var(--expo), color .35s var(--expo); }
+.filme-rotulo svg { width: 1em; height: 1em; fill: currentColor; }
+.filme-abrir small { padding: 3px 8px; background: #000; font-size: 13px; }
+.filme-abrir:hover .filme-rotulo, .filme-abrir:focus-visible .filme-rotulo { background: var(--acento); color: #000; }
+.filme-abrir:focus-visible { outline-offset: -6px; }
+.filme-tela { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: #000; color: #fff; overflow: hidden; }
+.filme-tela::backdrop { background: #000; }
+html:has(.filme-tela[open]) { overflow: hidden; }
+.filme-lugar, .filme-lugar iframe { display: block; width: 100%; height: 100%; border: 0; }
+.filme-fechar { position: absolute; top: 12px; right: 12px; z-index: 1; display: grid; place-items: center; width: 44px; height: 44px; background: #000; transition: background .35s var(--expo), color .35s var(--expo); }
+.filme-fechar svg { width: 18px; height: 18px; fill: currentColor; }
+.filme-fechar:hover { background: var(--acento); color: #000; }

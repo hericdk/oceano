@@ -75,6 +75,14 @@
     </a>
   </section>
 
+  <section class="tela filme" id="filme" data-fundo="#000000">
+    <video id="filme-laco" aria-hidden="true" muted loop playsinline preload="none"></video>
+    <button type="button" class="filme-abrir" id="filme-abrir">
+      <span class="filme-rotulo"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h2v1h2v1h2v1h2v1h2v4h-2v1h-2v1H8v1H6v1H4z"/></svg><span data-t="v_ver"></span></span>
+      <small data-t="v_nota"></small>
+    </button>
+  </section>
+
   <section class="tela preta baixar" id="baixar" data-fundo="#000000">
     <h2 data-t="b_titulo"></h2>
     <div class="botoes">
@@ -111,6 +119,11 @@
   </div>
   <button id="pilula-btn" aria-expanded="false" aria-controls="pilula-lista"><span data-t="baixar"></span></button>
 </div>
+
+<dialog class="filme-tela" id="filme-tela" data-t-label="v_ver">
+  <button type="button" class="filme-fechar" id="filme-fechar" data-t-label="v_fechar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2h3v1h1v1h1v1h2V4h1V3h1V2h3v3h-1v1h-1v1h-1v2h1v1h1v1h1v3h-3v-1h-1v-1H9v-1H7v1H6v1H5v1H2v-3h1v-1h1V9h1V7H4V6H3V5H2z"/></svg></button>
+  <div class="filme-lugar" id="filme-lugar"></div>
+</dialog>
 
 <aside class="consent" id="consent" hidden role="dialog" aria-labelledby="consent-t">
   <p id="consent-t" data-t="p_txt"></p>
