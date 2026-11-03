@@ -1,6 +1,6 @@
 {
   "name": "oceano-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MVP do navegador Oceano: a interface do simulador com abas reais (Electron).",
   "main": "main.js",
   "private": true,
