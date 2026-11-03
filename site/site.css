@@ -97,8 +97,6 @@ h1, h2, h3, p, figure { margin: 0; }
 /* ---------- idioma, pausa e acessibilidade ---------- */
 .topo-botao { display: inline-flex; align-items: center; gap: 5px; min-width: 32px; min-height: 32px; justify-content: center; font-size: 13px; letter-spacing: .04em; }
 .topo-botao svg { width: 15px; height: 15px; fill: currentColor; }
-#pausar .ic-toca, #pausar[aria-pressed="true"] .ic-pausa { display: none; }
-#pausar[aria-pressed="true"] .ic-toca { display: inline; }
 .pular { position: fixed; z-index: 40; top: 8px; left: 8px; padding: 10px 16px; background: #fff; color: #000; transform: translateY(-200%); transition: transform .3s var(--expo); }
 .pular:focus { transform: none; }
 .sem-js { position: relative; z-index: 40; margin: 0; padding: 12px 16px; background: #fff; color: #000; }

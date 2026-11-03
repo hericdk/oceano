@@ -158,20 +158,14 @@ addEventListener('click', e => { if (!e.target.closest('#menu')) mostrarMenu(fal
 addEventListener('keydown', e => { if (e.key === 'Escape') { if (!menu.hidden) abrirMenu.focus(); mostrarMenu(false); mostrarLista(false); } });
 for (const a of $$('#menu a')) a.addEventListener('click', () => mostrarMenu(false));
 
-// ---------- quem prefere sem movimento: nada toca sozinho, e o botão vale para todo mundo ----------
+// ---------- quem prefere sem movimento (ajuste do sistema): nada toca sozinho ----------
 let parado = quieto;
-try { const g = localStorage.getItem('oceano-site-parado'); if (g !== null) parado = g === '1'; } catch {}
-const botaoPausa = $('#pausar');
 function pintarPausa() {
-  botaoPausa.setAttribute('aria-pressed', parado);
-  botaoPausa.dataset.tLabel = parado ? 'continuar' : 'pausar';
-  botaoPausa.setAttribute('aria-label', T[lingua][botaoPausa.dataset.tLabel]); botaoPausa.title = T[lingua][botaoPausa.dataset.tLabel];
   for (const v of $$('video')) { if (parado) v.pause(); else if (v.dataset.visivel) v.play().catch(() => {}); }
   document.body.classList.toggle('parado', parado);
   $('#cara-gif').src = parado ? 'marca/cara-parada.png' : 'marca/cara.gif';
   if (gsap?.globalTimeline) gsap.globalTimeline.timeScale(parado ? 1000 : 1);
 }
-botaoPausa.onclick = () => { parado = !parado; try { localStorage.setItem('oceano-site-parado', parado ? '1' : '0'); } catch {} pintarPausa(); };
 
 // ---------- os vídeos só tocam na tela ----------
 const olho = new IntersectionObserver(es => { for (const e of es) { if (e.isIntersecting) { e.target.dataset.visivel = '1'; if (e.target.preload === 'none') e.target.preload = 'auto'; if (!parado) e.target.play().catch(() => {}); } else { delete e.target.dataset.visivel; e.target.pause(); } } }, { threshold: 0.25 });
