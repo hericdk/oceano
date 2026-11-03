@@ -46,6 +46,6 @@ const fotografar = async nome => { const i = await cmd('Page.captureScreenshot',
 await fotografar(foto);
 await avaliar(`document.querySelector('.pp')?.remove(); oceano.navegar?.('oceano://sobre'); 1`);
 await espera(3000);
-const sobre = await avaliar(`document.body.innerText.includes('Oceano MVP')`);
+const sobre = await avaliar(`/oceano mvp/i.test(document.body.innerText)`);
 await fotografar(foto.replace(/\.png$/, '-sobre.png'));
 fim(pronto && sobre && estado?.texto > 50 ? 0 : 1, `interface: ${pronto} | página Sobre: ${sobre}`);

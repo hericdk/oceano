@@ -1483,4 +1483,5 @@ export const TEXTOS = [
   ["Pronto: seus dados de uso foram apagados.","Done: your usage data was deleted."],
   ["Sem conexão agora. A remoção fica guardada e o Oceano tenta de novo ao abrir.","No connection right now. The removal is saved and Oceano tries again when it opens."],
   ["Sua contagem de uso: veja, desligue ou peça a remoção em","Your usage count: see it, turn it off or request removal in"],
+  ["continuar","continue"],
 ];
