@@ -96,6 +96,7 @@ contextBridge.exposeInMainWorld('oceanoNativo', {
   conversaCartao: chamar('conversa:cartao'),
   aoConversaPedaco: ouvir('conversa:pedaco'),
   aoConversaFerramenta: ouvir('conversa:ferramenta'),
+  aoPedidoDoNotch: ouvir('notch:pedido'),
   imagemEditar: chamar('imagem:editar'),
   iaEstado: chamar('ia:estado'),
   iaDefinir: chamar('ia:definir'),

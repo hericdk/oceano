@@ -225,6 +225,7 @@ async function atualizarAgentes() {
   try { agentes = (await n.agentesListar?.()) || []; iaConectada = !!(await n.conversaModo()).real; } catch {}
   pintarAtividades();
 }
+n.aoAgentesMudou?.(atualizarAgentes);
 
 // ---------- voz: a mesma escolha do navegador ----------
 const vozLigada = () => ler(VOZ_CHAVE, true);

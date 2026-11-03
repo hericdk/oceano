@@ -17,8 +17,8 @@ export const ia = {
       <header class="cab"><h1>${icone('raio')}<span>Inteligência</span></h1>
         <p>Conecte as IAs que você já usa e escolha qual faz cada coisa. Cada IA cobra pelo uso direto na conta dela; a chave fica só na memória enquanto o Oceano está aberto: não é gravada em lugar nenhum e nunca aparece na tela. Ao fechar, ela some.</p></header>
       ${app.real ? `
-      <section class="px bloco"><h2>Quem faz o quê</h2><div data-iap-papeis><p class="nota">carregando…</p></div></section>
-      <section class="px bloco"><h2>Conectar uma IA</h2><div class="iap-provedores" data-iap-provedores></div><div data-iap-form></div></section>` : `
+      <section class="px bloco"><h2>Conectar uma IA</h2><div class="iap-provedores" data-iap-provedores></div><div data-iap-form></div></section>
+      <section class="px bloco"><h2>Quem faz o quê</h2><div data-iap-papeis><p class="nota">carregando…</p></div></section>` : `
       <section class="px bloco"><h2>No app Oceano</h2><p>As conexões com as IAs ficam no app (o processo dele guarda as chaves com segurança). No simulador, a Navegadora continua respondendo por regras simples.</p></section>`}
     </div>`,
   montar(el, r, app, { linkParaCopiar = false } = {}) {

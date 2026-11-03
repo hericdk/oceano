@@ -1,7 +1,7 @@
 // O campo Guardrail das Configurações. A tela só mostra e pede: quem aplica os limites é o processo principal (app/guardrails.js).
 import { icone } from './icones.js';
 
-const FIXOS_SIMULADOR = ['modificar arquivos', 'esconder gravação de câmera ou microfone'];
+const FIXOS_SIMULADOR = ['modificar arquivos', 'esconder gravação de câmera ou microfone', 'enviar à IA local sem autorização'];
 const PADRAO = ['política'];
 const PIXEL = 4;
 const ESC = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));

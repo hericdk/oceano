@@ -11,7 +11,7 @@ const seg = require('./seguranca');
 const { animarIcone } = require('./icone');
 require('./ia');
 // IA: conexões (cofre de chaves), conversa da Navegadora e edição de imagem
-require('./agentes').registrar(ipcMain, () => enviar('agentes:mudou'));
+require('./agentes').registrar(ipcMain, () => { enviar('agentes:mudou'); require('./notch').agentesMudaram(); });
 require('./conversa').registrar(ipcMain);
 require('./guardrails').registrar(ipcMain);
 require('./gravacao').registrar(ipcMain, (...a) => enviar(...a), app);
@@ -492,6 +492,8 @@ app.whenReady().then(async () => {
   await abrirNavegador();
   notch.registrar({
     // pode vir com um endereço (ex.: Ferramentas): com o navegador recém-aberto, espera a interface ficar pronta
+    // a mensagem à IA local nasce no notch, mas a autorização é sempre na janela do Oceano
+    aoPedido: async d => { const nova = !janela; await abrirNavegador(); setTimeout(() => enviar('notch:pedido', d), nova ? 1500 : 0); },
     abrirPrincipal: async url => { const nova = !janela; await abrirNavegador(); if (url) setTimeout(() => enviar('aba:nova', url), nova ? 1500 : 0); },
  aoMudar: () => segundoPlano.atualizar(),
   });   // o avatar no notch do Mac (preferências em Configurações → Notch)

@@ -1858,3 +1858,7 @@ button.chip:hover:not(:disabled), button.chip:focus-visible { background: var(--
 .b18-ver .sv-dado::after { background: var(--cor); }
 .b18-ver.aberto .sv-dado { color: var(--fundo); background: var(--cor); user-select: text; }
 .b18-ver.aberto .sv-dado::after { display: none; }
+
+.as-pedido-partes { display: grid; gap: 2px 0; margin: 6px 0; font-size: 12px; }
+.as-pedido-partes dt { color: var(--suave); }
+.as-pedido-partes dd { margin: 0 0 4px; overflow-wrap: anywhere; }

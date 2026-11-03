@@ -16,7 +16,7 @@ try { prefs = { ...prefs, ...JSON.parse(fs.readFileSync(ARQ(), 'utf8')) }; } cat
 const salvar = () => { try { fs.writeFileSync(ARQ(), JSON.stringify(prefs)); } catch {} };
 
 let minimizada = false, seguraFechada = 0;
-let janela = null, aberto = false, foraDesde = 0, relogio = null, abrirPrincipal = () => {}, aoMudar = () => {};
+let opcoesAbertas = {}, janela = null, aberto = false, foraDesde = 0, relogio = null, abrirPrincipal = () => {}, aoMudar = () => {};
 const vivo = w => w && !w.isDestroyed();
 
 function geometria() {
@@ -37,6 +37,7 @@ function criar() {
   janela.setIgnoreMouseEvents(true, { forward: true });         // fechado: o clique passa para o que está embaixo
   janela.on('moved', () => { if (prefs.solto && vivo(janela)) { const b = janela.getBounds(); prefs.x = b.x; prefs.y = b.y; salvar(); } });
   janela.loadURL('oceano-ui://app/notch.html');
+  require('./conversa').ligarNotch(janela.webContents, opcoesAbertas.aoPedido);
   janela.once('ready-to-show', () => { janela.showInactive(); janela.webContents.send('notch:config', { temNotch: g.temNotch, barra: g.barra }); enviarTema(); aplicarSolto(); });
   relogio = setInterval(vigiar, 80);
 }
@@ -156,6 +157,7 @@ function registrar(opcoes = {}) {
   if (registrado) return criar();   // navegador reaberto: o notch continua o mesmo
   registrado = true;
   abrirPrincipal = opcoes.abrirPrincipal || abrirPrincipal;
+  opcoesAbertas = opcoes;
   aoMudar = opcoes.aoMudar || aoMudar;
   ipcMain.handle('notch:prefs', () => ({ ...prefs, disponivel: process.platform === 'darwin' }));
   ipcMain.handle('notch:definir', (_e, novo = {}) => {
@@ -196,4 +198,6 @@ function registrar(opcoes = {}) {
 // a Navegadora continua ligada com o navegador fechado?
 const ficaLigada = () => process.platform === 'darwin' && !!prefs.ligado && !!prefs.ficar;
 
-module.exports = { registrar, destruir, servirTemaSeu, ficaLigada };
+const agentesMudaram = () => { if (janela && !janela.isDestroyed()) janela.webContents.send('agentes:mudou'); };
+
+module.exports = { registrar, destruir, servirTemaSeu, ficaLigada, agentesMudaram };

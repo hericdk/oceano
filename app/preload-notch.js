@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld('notch', {
   minimizar: () => ipcRenderer.send('notch:minimizar'),
   fechar: () => ipcRenderer.send('notch:fechar'),
   agentesListar: () => ipcRenderer.invoke('agentes:listar'),
+  aoAgentesMudou: ouvir('agentes:mudou'),
   conversaTranscrever: (dados, tipo) => ipcRenderer.invoke('conversa:transcrever', dados, tipo),
   transcricaoEstado: () => ipcRenderer.invoke('transcricao:estado'),
   transcricaoBaixar: () => ipcRenderer.invoke('transcricao:baixar'),

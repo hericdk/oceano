@@ -42,3 +42,11 @@ Encontrou uma falha? Abra um aviso no repositório, sem publicar detalhes de com
 - Cada ferramenta embutida tem origem própria e não alcança o navegador: só pede o que está numa lista curta, por mensagens. O Stave roda código de fora (padrões colados e sons baixados), então tem também as permissões mais curtas.
 - Só o que vem com o Oceano pode ter janela sem fundo. Mod de outra pessoa sempre tem fundo.
 - Mods rodam na mesma linha da interface: o limite de tempo interrompe laços, mas ainda não é um isolamento em processo separado.
+
+## Mensagens para uma IA local
+
+A Navegadora não fala sozinha com o Claude ou outro agente deste computador. Ela só prepara um cartão com a
+mensagem, a origem, a intenção e a recomendação dela. Nada sai dali sem um clique da pessoa, e a mensagem vai
+apenas para a área de transferência, nunca num endereço. O texto copiado pede que a IA local explique a mensagem,
+dê a recomendação dela e espere a autorização antes de agir. Esse limite é fixo em `app/guardrails.js`, e
+`npm run verificar` confere a trava antes de cada instalador.

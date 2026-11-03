@@ -43,6 +43,10 @@ if (/fixos|FIXOS/.test(lerApp('guardrails.js').split('function gravar')[1].split
 for (const n of ['preload.js', 'preload-notch.js']) if (/require\(['"](node:)?(fs|child_process)['"]\)/.test(lerApp(n))) erros.push(`app/${n} abre o disco ou comandos para a tela`);
 for (const m of fs.readFileSync(path.join(RAIZ, 'simulador/js/assistente.js'), 'utf8').matchAll(/\bnome: '(\w+)',?\s*(?:descricao|$)/gm)) if (!guardrails.ferramentaPermitida(m[1])) erros.push(`a ferramenta ${m[1]} fere o limite de arquivos`);
 for (const p of ['simulador/avatares/cara/fonte', 'simulador/imagens/ilha-exemplo.jpg']) if (fs.existsSync(path.join(RAIZ, p))) erros.push(`${p} é imagem de referência: fica em _referencias`);
+if (!guardrails.FIXOS.some(f => f.id === 'ia-local') || !/nada chega a uma IA local/.test(guardrails.bloco([]))) erros.push('app/guardrails.js perdeu o limite fixo da IA local');
+if (guardrails.pedidoCompleto({ pedido: 'x' }) || !guardrails.pedidoCompleto({ pedido: 'x', origem: 'x', intencao: 'x', recomendacao: 'x' })) erros.push('app/guardrails.js deixa passar mensagem à IA local sem origem, intenção ou recomendação');
+if (!/FERRAMENTA_PEDIDO\.nome && !guardrails\.pedidoCompleto/.test(conversaJs)) erros.push('app/conversa.js não confere a mensagem à IA local');
+if (/claudeAbrir\([^)]*\S[^)]*\)|ENDERECO\s*\+/.test(lerApp('abrir-claude.js'))) erros.push('app/abrir-claude.js põe a mensagem no endereço');
 if (!/gravacao\.marcar\(/.test(lerApp('seguranca.js'))) erros.push('app/seguranca.js parou de avisar quando um site grava');
 if (erros.length) { console.error('Guarda das chaves falhou:\n- ' + erros.join('\n- ')); process.exit(1); }
 console.log('Guarda das chaves e dos limites da IA: tudo certo.');
