@@ -42,7 +42,7 @@ jobs:
         if: always()
         with:
           name: foto-${{ runner.os }}
-          path: foto.png
+          path: foto*.png
           if-no-files-found: ignore
       - name: Enviar para o release
         shell: bash

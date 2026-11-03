@@ -7,7 +7,7 @@ import { join } from 'node:path';
 
 const [exe, foto] = process.argv.slice(2), PORTA = 9333;
 const dados = mkdtempSync(join(tmpdir(), 'oceano-teste-'));
-const filho = spawn(exe, [`--remote-debugging-port=${PORTA}`, `--user-data-dir=${dados}`, ...(process.platform === 'linux' ? ['--no-sandbox'] : [])], { stdio: 'inherit' });
+const filho = spawn(exe, [`--remote-debugging-port=${PORTA}`, `--user-data-dir=${dados}`, ...(process.platform === 'linux' ? ['--no-sandbox', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] : [])], { stdio: 'inherit' });
 let saiu = null;
 filho.on('exit', c => { saiu = c ?? -1; });
 const espera = ms => new Promise(r => setTimeout(r, ms));
@@ -41,9 +41,11 @@ for (let i = 0; i < 30 && !pronto; i++) { await espera(1000); pronto = await ava
 await espera(4000);
 const estado = await avaliar(`({ url: location.href, sistema: navigator.platform, versoes: window.oceanoNativo?.versoes, abas: document.querySelectorAll('.aba').length, texto: document.body.innerText.length })`);
 console.log(JSON.stringify(estado));
-await avaliar(`oceano.navegar?.('oceano://sobre'); 1`);
-await espera(2000);
-const sobre = await avaliar(`document.body.innerText.includes('Sobre a Navegadora')`);
-const img = await cmd('Page.captureScreenshot', { format: 'png' });
-if (img.result?.data) writeFileSync(foto, Buffer.from(img.result.data, 'base64'));
+// a primeira foto é a saudação; depois fecha os primeiros passos e abre uma página de verdade
+const fotografar = async nome => { const i = await cmd('Page.captureScreenshot', { format: 'png' }); if (i.result?.data) writeFileSync(nome, Buffer.from(i.result.data, 'base64')); };
+await fotografar(foto);
+await avaliar(`document.querySelector('.pp')?.remove(); oceano.navegar?.('oceano://sobre'); 1`);
+await espera(3000);
+const sobre = await avaliar(`document.body.innerText.includes('Oceano MVP')`);
+await fotografar(foto.replace(/\.png$/, '-sobre.png'));
 fim(pronto && sobre && estado?.texto > 50 ? 0 : 1, `interface: ${pronto} | página Sobre: ${sobre}`);
