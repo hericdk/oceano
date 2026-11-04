@@ -102,9 +102,9 @@ contraste en direct et te prévient avant d'enregistrer. Si tu crées des thème
 
 ## Licence
 
-Le code d'Oceano est un **logiciel libre**, sous la [GNU GPL v3.0 ou ultérieure](../../LICENSE) :
+Le code d'Oceano est un **logiciel libre**, sous la [GNU AGPL v3.0 ou ultérieure](../../LICENSE) :
 tu peux l'utiliser, l'étudier, le modifier et le distribuer ; quiconque distribue une version modifiée doit
-garder le code ouvert, sous la même licence.
+garder le code ouvert, sous la même licence. Il en va de même pour quiconque propose une version modifiée via un réseau.
 
 - **Les mods et les thèmes sont à toi.** Les mods (scripts Lua/Teal qui utilisent l'API de mods) et les thèmes (fichiers
   `oceano-tema`) ne sont pas considérés comme des œuvres dérivées d'Oceano et peuvent avoir n'importe quelle licence.
@@ -120,7 +120,7 @@ Oceano est construit sur le travail de beaucoup de monde. En particulier :
 - **[Strudel](https://strudel.cc)** de Felix Roos, Alex McLean et la communauté ([code](https://codeberg.org/uzu/strudel), AGPL-3.0) : le langage de musique par le code qui fait tourner Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** de shinshin86 (MIT) : l'avatar animé de la Navigatrice et l'éditeur d'avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** et **Electron**.
-- **Modèle 3D du robot quadrupède** (`simulador/robo/modelos/quadrupede.3mf`), licence BY-NC, selon les données du fichier lui-même : il est utilisé **uniquement sur le robot Quadrupède**, et pas sur les autres robots. Il n'est pas sous la GPL d'Oceano et ne peut pas avoir d'usage commercial.
+- **Modèle 3D du robot quadrupède** (`simulador/robo/modelos/quadrupede.3mf`), licence BY-NC, selon les données du fichier lui-même : il est utilisé **uniquement sur le robot Quadrupède**, et pas sur les autres robots. Il n'est pas sous la AGPL d'Oceano et ne peut pas avoir d'usage commercial.
 
 - **[Whisper](https://github.com/openai/whisper)** d'OpenAI (MIT), dans la conversion ONNX de [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0) : la transcription vocale, qui tourne sur l'ordinateur et n'est téléchargée que si la personne le demande.
 - **[Open-Meteo](https://open-meteo.com)** : la météo et la recherche de villes, sans clé et sans compte.

@@ -102,9 +102,9 @@ Oceano ຖືກຄິດມາເພື່ອປາກົດໃນວິດີ�
 
 ## ໃບອະນຸຍາດ
 
-ໂຄ້ດຂອງ Oceano ເປັນ **ຊອບແວເສລີ**, ພາຍໃຕ້ [GNU GPL v3.0 ຫຼືຫຼັງຈາກນັ້ນ](../../LICENSE):
+ໂຄ້ດຂອງ Oceano ເປັນ **ຊອບແວເສລີ**, ພາຍໃຕ້ [GNU AGPL v3.0 ຫຼືຫຼັງຈາກນັ້ນ](../../LICENSE):
 ເຈົ້າໃຊ້, ສຶກສາ, ແກ້ໄຂ ແລະແຈກຈ່າຍໄດ້; ຜູ້ທີ່ແຈກຈ່າຍເວີຊັນທີ່ແກ້ໄຂແລ້ວຕ້ອງ
-ຮັກສາໂຄ້ດໃຫ້ເປີດເຜີຍ, ພາຍໃຕ້ໃບອະນຸຍາດດຽວກັນ.
+ຮັກສາໂຄ້ດໃຫ້ເປີດເຜີຍ, ພາຍໃຕ້ໃບອະນຸຍາດດຽວກັນ. ຜູ້ທີ່ໃຫ້ບໍລິການເວີຊັນທີ່ແກ້ໄຂຜ່ານເຄືອຂ່າຍກໍເຊັ່ນດຽວກັນ.
 
 - **mod ແລະທີມເປັນຂອງເຈົ້າ.** mod (ສະຄຣິບ Lua/Teal ທີ່ໃຊ້ API ຂອງ mod) ແລະທີມ (ໄຟລ໌
   `oceano-tema`) ບໍ່ຖືວ່າເປັນງານດັດແປງຂອງ Oceano ແລະມີໃບອະນຸຍາດໃດກໍໄດ້.
@@ -120,7 +120,7 @@ Oceano ສ້າງຂຶ້ນເທິງຜົນງານຂອງຫຼາ�
 - **[Strudel](https://strudel.cc)** ຂອງ Felix Roos, Alex McLean ແລະຊຸມຊົນ ([ໂຄ້ດ](https://codeberg.org/uzu/strudel), AGPL-3.0): ພາສາດົນຕີດ້ວຍໂຄ້ດທີ່ຂັບເຄື່ອນ Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** ຂອງ shinshin86 (MIT): avatar ເຄື່ອນໄຫວຂອງຜູ້ນຳທາງ ແລະຕົວແກ້ໄຂ avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** ແລະ **Electron**.
-- **ໂມເດວ 3D ຂອງຫຸ່ນຍົນສີ່ຂາ** (`simulador/robo/modelos/quadrupede.3mf`), ໃບອະນຸຍາດ BY-NC, ຕາມຂໍ້ມູນຂອງໄຟລ໌ເອງ: ໃຊ້ **ສະເພາະໃນຫຸ່ນຍົນສີ່ຂາ**, ບໍ່ໃຊ້ໃນຫຸ່ນຍົນອື່ນ. ບໍ່ຢູ່ພາຍໃຕ້ GPL ຂອງ Oceano ແລະໃຊ້ທາງການຄ້າບໍ່ໄດ້.
+- **ໂມເດວ 3D ຂອງຫຸ່ນຍົນສີ່ຂາ** (`simulador/robo/modelos/quadrupede.3mf`), ໃບອະນຸຍາດ BY-NC, ຕາມຂໍ້ມູນຂອງໄຟລ໌ເອງ: ໃຊ້ **ສະເພາະໃນຫຸ່ນຍົນສີ່ຂາ**, ບໍ່ໃຊ້ໃນຫຸ່ນຍົນອື່ນ. ບໍ່ຢູ່ພາຍໃຕ້ AGPL ຂອງ Oceano ແລະໃຊ້ທາງການຄ້າບໍ່ໄດ້.
 
 - **[Whisper](https://github.com/openai/whisper)** ຂອງ OpenAI (MIT), ໃນການແປງ ONNX ຂອງ [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): ການຖອດສຽງເປັນຂໍ້ຄວາມ, run ໃນຄອມພິວເຕີ ແລະດາວໂຫຼດສະເພາະເມື່ອຜູ້ໃຊ້ຂໍ.
 - **[Open-Meteo](https://open-meteo.com)**: ອາກາດ ແລະການຄົ້ນຫາເມືອງ, ບໍ່ຕ້ອງມີ key ແລະບໍ່ຕ້ອງມີບັນຊີ.

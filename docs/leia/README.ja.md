@@ -102,9 +102,9 @@ Oceano自身がオンとオフを切り替え、あなたのコンピュータ�
 
 ## ライセンス
 
-Oceanoのコードは**フリーソフトウェア**で、[GNU GPL v3.0以降](../../LICENSE)のもとにあります。
+Oceanoのコードは**フリーソフトウェア**で、[GNU AGPL v3.0以降](../../LICENSE)のもとにあります。
 使い、学び、変更し、配布することができます。変更したバージョンを配布する人は、
-同じライセンスのもとでコードをオープンに保つ必要があります。
+同じライセンスのもとでコードをオープンに保つ必要があります。 変更したバージョンをネットワーク経由で提供する人も同様です。
 
 - **モッドとテーマはあなたのものです。** モッド（モッドAPIを使うLua/Tealのスクリプト）とテーマ（`oceano-tema`
   ファイル）はOceanoの派生物とはみなされず、どんなライセンスにもできます。
@@ -120,7 +120,7 @@ Oceanoは、たくさんの人の仕事の上に作られています。とく�
 - **[Strudel](https://strudel.cc)**、Felix Roos、Alex McLean、コミュニティ作（[コード](https://codeberg.org/uzu/strudel)、AGPL-3.0）：Staveを動かす、コードで音楽を作る言語。
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)**、shinshin86作（MIT）：ナビゲーターのアニメーションするアバターと、アバターエディタ。
 - **Lua**（PUC-Rio）、**Teal**（Hisham Muhammad）、**three.js**、**Chromium**、**Electron**。
-- **四足歩行ロボットの3Dモデル**（`simulador/robo/modelos/quadrupede.3mf`）。ファイル自体のデータによるとBY-NCライセンスです。**四足歩行ロボットでのみ**使われ、ほかのロボットでは使われません。OceanoのGPLのもとにはなく、商用利用はできません。
+- **四足歩行ロボットの3Dモデル**（`simulador/robo/modelos/quadrupede.3mf`）。ファイル自体のデータによるとBY-NCライセンスです。**四足歩行ロボットでのみ**使われ、ほかのロボットでは使われません。OceanoのAGPLのもとにはなく、商用利用はできません。
 
 - **[Whisper](https://github.com/openai/whisper)**、OpenAI作（MIT）。[onnx-community](https://huggingface.co/onnx-community/whisper-base)によるONNX変換版（Apache-2.0）：音声の文字起こしで、コンピュータ上で動き、ユーザーが求めたときだけダウンロードされます。
 - **[Open-Meteo](https://open-meteo.com)**：天気と都市の検索。キーもアカウントも不要です。

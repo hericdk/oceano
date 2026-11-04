@@ -102,9 +102,9 @@ farqiga tooska ah wuxuuna ku digayaa kahor intaadan kaydin. Haddii aad abuurto m
 
 ## Shahaadada
 
-Koodhka Oceano waa **software xor ah**, hoos [GNU GPL v3.0 ama ka dambeeya](../../LICENSE):
+Koodhka Oceano waa **software xor ah**, hoos [GNU AGPL v3.0 ama ka dambeeya](../../LICENSE):
 waad isticmaali kartaa, bari kartaa, beddeli kartaa oo qaybin kartaa; ku alla kii qaybiya nooc la beddelay waa inuu
-koodhka furan ku sii hayaa, hoos shahaado isku mid ah.
+koodhka furan ku sii hayaa, hoos shahaado isku mid ah. Sidoo kale ayay u tahay qof kasta oo nooc la beddelay ku bixiya shabakadda.
 
 - **Mods iyo mawduucyadu adigaa leh.** Mods (qoraallo Lua/Teal ah oo isticmaala API-ga mods) iyo mawduucyada (faylasha
   `oceano-tema`) lama tiriyo shaqooyin ka soo baxay Oceano waxayna yeelan karaan shahaado kasta.
@@ -120,7 +120,7 @@ Oceano waxaa lagu dhisay shaqada dad badan. Gaar ahaan:
 - **[Strudel](https://strudel.cc)** oo ay leeyihiin Felix Roos, Alex McLean iyo bulshada ([koodh](https://codeberg.org/uzu/strudel), AGPL-3.0): luqadda muusikada ee koodhka ah oo wada Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** oo uu leeyahay shinshin86 (MIT): avatar-ka firfircoon ee Hagaha Socdaalka iyo tifaftiraha avatar-ka.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** iyo **Electron**.
-- **Qaabka 3D ee robotka afar-lugood** (`simulador/robo/modelos/quadrupede.3mf`), shahaado BY-NC, sida xogta faylka laftiisu sheegayso: waxaa la isticmaalaa **robotka Quadrúpede oo keliya**, ma aha robotada kale. Ma ahan hoos GPL-ka Oceano lamana isticmaali karo ganacsi.
+- **Qaabka 3D ee robotka afar-lugood** (`simulador/robo/modelos/quadrupede.3mf`), shahaado BY-NC, sida xogta faylka laftiisu sheegayso: waxaa la isticmaalaa **robotka Quadrúpede oo keliya**, ma aha robotada kale. Ma ahan hoos AGPL-ka Oceano lamana isticmaali karo ganacsi.
 
 - **[Whisper](https://github.com/openai/whisper)** oo ay leedahay OpenAI (MIT), beddelka ONNX ee [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): u beddelka codka qoraal, kaas oo ku shaqeeya kombiyuutarka oo la soo dejiyo kaliya haddii qofku weydiisto.
 - **[Open-Meteo](https://open-meteo.com)**: cimilada iyo raadinta magaalooyinka, furaha la'aan iyo akoon la'aan.

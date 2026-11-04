@@ -102,9 +102,9 @@ tí ó sì ń pa, wọ́n sì ń bá kọ̀ǹpútà rẹ sọ̀rọ̀ nìkan.
 
 ## Ìwé àṣẹ
 
-Kóòdù Oceano jẹ́ **sọ́fítíwèé òmìnira**, lábẹ́ [GNU GPL v3.0 tàbí lẹ́yìn rẹ̀](../../LICENSE):
+Kóòdù Oceano jẹ́ **sọ́fítíwèé òmìnira**, lábẹ́ [GNU AGPL v3.0 tàbí lẹ́yìn rẹ̀](../../LICENSE):
 o lè lò ó, kẹ́kọ̀ọ́ rẹ̀, yí i padà kí o sì pín in; ẹni tí ó bá pín ẹ̀yà tí a yípadà gbọ́dọ̀
-jẹ́ kí kóòdù náà ṣí sílẹ̀, lábẹ́ ìwé àṣẹ kan náà.
+jẹ́ kí kóòdù náà ṣí sílẹ̀, lábẹ́ ìwé àṣẹ kan náà. Bákan náà ni fún ẹni tí ó bá pèsè ẹ̀yà tí a yípadà lórí nẹ́tíwọ̀ọ̀kì.
 
 - **Mods àti àwọn àkòrí jẹ́ tìrẹ.** Mods (àwọn àkọsílẹ̀ Lua/Teal tí ń lo API mods) àti àwọn àkòrí (àwọn fáìlì
   `oceano-tema`) a kò kà wọ́n sí iṣẹ́ tí ó ti inú Oceano wá, wọ́n sì lè ní ìwé àṣẹ èyíkéyìí.
@@ -120,7 +120,7 @@ A kọ́ Oceano lórí iṣẹ́ ọ̀pọ̀ ènìyàn. Ní pàtàkì:
 - **[Strudel](https://strudel.cc)** láti ọwọ́ Felix Roos, Alex McLean àti àwùjọ ([kóòdù](https://codeberg.org/uzu/strudel), AGPL-3.0): èdè orin nípa kóòdù tí ń darí Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** láti ọwọ́ shinshin86 (MIT): avatar alárinrin ti Atọ́nà Ìrìnàjò àti olùṣàtúnṣe avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** àti **Electron**.
-- **Àwòṣe 3D ti roboti oníẹsẹ̀ mẹ́rin** (`simulador/robo/modelos/quadrupede.3mf`), ìwé àṣẹ BY-NC, ní ìbámu pẹ̀lú dátà fáìlì fúnra rẹ̀: a ń lò ó **lórí roboti Quadrúpede nìkan**, kì í ṣe lórí àwọn roboti yòókù. Kò sí lábẹ́ GPL Oceano, a kò sì lè lò ó fún òwò.
+- **Àwòṣe 3D ti roboti oníẹsẹ̀ mẹ́rin** (`simulador/robo/modelos/quadrupede.3mf`), ìwé àṣẹ BY-NC, ní ìbámu pẹ̀lú dátà fáìlì fúnra rẹ̀: a ń lò ó **lórí roboti Quadrúpede nìkan**, kì í ṣe lórí àwọn roboti yòókù. Kò sí lábẹ́ AGPL Oceano, a kò sì lè lò ó fún òwò.
 
 - **[Whisper](https://github.com/openai/whisper)** láti ọwọ́ OpenAI (MIT), nínú ìyípadà ONNX ti [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): ìyípadà ohùn sí ọ̀rọ̀, tí ń ṣiṣẹ́ lórí kọ̀ǹpútà tí a sì ń gbà á sílẹ̀ nìkan tí ẹni bá béèrè.
 - **[Open-Meteo](https://open-meteo.com)**: ojú-ọjọ́ àti ìwádìí àwọn ìlú, láìsí kọ́kọ́rọ́ àti láìsí àkọọ́lẹ̀.

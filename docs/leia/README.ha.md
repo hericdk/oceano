@@ -102,9 +102,9 @@ bambanci kai tsaye kuma yana gargaɗi kafin adanawa. Idan kana ƙirƙirar jigogi
 
 ## Lasisi
 
-Code ɗin Oceano **manhaja ce ta kyauta**, ƙarƙashin [GNU GPL v3.0 ko daga baya](../../LICENSE):
+Code ɗin Oceano **manhaja ce ta kyauta**, ƙarƙashin [GNU AGPL v3.0 ko daga baya](../../LICENSE):
 za ka iya amfani da shi, nazarinsa, gyara shi da raba shi; duk wanda ya raba sigar da aka gyara dole ne ya
-bar code ɗin a buɗe, ƙarƙashin lasisi ɗaya.
+bar code ɗin a buɗe, ƙarƙashin lasisi ɗaya. Haka ma ga duk wanda ya samar da sigar da aka gyara ta hanyar sadarwa.
 
 - **Mods da jigogi naka ne.** Mods (rubutun Lua/Teal da ke amfani da API ɗin mods) da jigogi (fayilolin
   `oceano-tema`) ba a ɗaukar su ayyukan da suka samo asali daga Oceano kuma suna iya samun kowane lasisi.
@@ -120,7 +120,7 @@ An gina Oceano a kan aikin mutane da yawa. Musamman:
 - **[Strudel](https://strudel.cc)** na Felix Roos, Alex McLean da al'umma ([code](https://codeberg.org/uzu/strudel), AGPL-3.0): harshen kiɗa ta code da ke tafiyar da Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** na shinshin86 (MIT): avatar mai motsi na Mai Jagorar Tuƙi da editan avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** da **Electron**.
-- **Samfurin 3D na mutum-mutumin mai ƙafa huɗu** (`simulador/robo/modelos/quadrupede.3mf`), lasisin BY-NC, bisa bayanan fayil ɗin kansa: ana amfani da shi **a mutum-mutumin Quadrúpede kawai**, ba a sauran mutum-mutumin ba. Ba ya ƙarƙashin GPL na Oceano kuma ba za a iya amfani da shi don kasuwanci ba.
+- **Samfurin 3D na mutum-mutumin mai ƙafa huɗu** (`simulador/robo/modelos/quadrupede.3mf`), lasisin BY-NC, bisa bayanan fayil ɗin kansa: ana amfani da shi **a mutum-mutumin Quadrúpede kawai**, ba a sauran mutum-mutumin ba. Ba ya ƙarƙashin AGPL na Oceano kuma ba za a iya amfani da shi don kasuwanci ba.
 
 - **[Whisper](https://github.com/openai/whisper)** na OpenAI (MIT), a sauyin ONNX na [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): rubuta murya, wanda ke gudana a kwamfuta kuma ana saukar da shi ne kawai idan mutum ya nema.
 - **[Open-Meteo](https://open-meteo.com)**: yanayi da binciken birane, babu makulli kuma babu asusu.

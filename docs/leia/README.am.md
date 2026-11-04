@@ -102,9 +102,9 @@
 
 ## ፈቃድ
 
-የኦሺያኖ ኮድ **ነጻ ሶፍትዌር** ነው፣ በ[GNU GPL v3.0 ወይም ከዚያ በኋላ](../../LICENSE) ስር፦
+የኦሺያኖ ኮድ **ነጻ ሶፍትዌር** ነው፣ በ[GNU AGPL v3.0 ወይም ከዚያ በኋላ](../../LICENSE) ስር፦
 መጠቀም፣ ማጥናት፣ ማሻሻል እና ማሰራጨት ትችላለህ፤ የተሻሻለ ስሪት የሚያሰራጭ ሰው
-ኮዱን ክፍት ማድረግ አለበት፣ በዚያው ፈቃድ ስር።
+ኮዱን ክፍት ማድረግ አለበት፣ በዚያው ፈቃድ ስር። በአውታረ መረብ ላይ የተሻሻለ ስሪት ለሚያቀርብም ይኸው ይሠራል።
 
 - **Mods እና ገጽታዎች የአንተ ናቸው።** Mods (የmods APIን የሚጠቀሙ የLua/Teal ስክሪፕቶች) እና ገጽታዎች (የ
   `oceano-tema` ፋይሎች) ከኦሺያኖ የተገኙ ሥራዎች ተደርገው አይቆጠሩም እና ማንኛውም ፈቃድ ሊኖራቸው ይችላል።
@@ -120,7 +120,7 @@
 - **[Strudel](https://strudel.cc)** በFelix Roos፣ Alex McLean እና ማኅበረሰቡ ([ኮድ](https://codeberg.org/uzu/strudel)፣ AGPL-3.0)፦ Staveን የሚያንቀሳቅሰው በኮድ የሚጻፍ የሙዚቃ ቋንቋ።
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** በshinshin86 (MIT)፦ የመርከበኛዋ አኒሜት የተደረገ አቫታር እና የአቫታር አርታኢ።
 - **Lua** (PUC-Rio)፣ **Teal** (Hisham Muhammad)፣ **three.js**፣ **Chromium** እና **Electron**።
-- **የአራት እግር ሮቦት 3D ሞዴል** (`simulador/robo/modelos/quadrupede.3mf`)፣ BY-NC ፈቃድ፣ በፋይሉ የራሱ መረጃ መሠረት፦ የሚጠቀመው **በQuadrúpede ሮቦት ላይ ብቻ** ነው፣ በሌሎች ሮቦቶች ላይ አይደለም። በኦሺያኖ GPL ስር አይደለም እና ለንግድ ሊውል አይችልም።
+- **የአራት እግር ሮቦት 3D ሞዴል** (`simulador/robo/modelos/quadrupede.3mf`)፣ BY-NC ፈቃድ፣ በፋይሉ የራሱ መረጃ መሠረት፦ የሚጠቀመው **በQuadrúpede ሮቦት ላይ ብቻ** ነው፣ በሌሎች ሮቦቶች ላይ አይደለም። በኦሺያኖ AGPL ስር አይደለም እና ለንግድ ሊውል አይችልም።
 
 - **[Whisper](https://github.com/openai/whisper)** በOpenAI (MIT)፣ በ[onnx-community](https://huggingface.co/onnx-community/whisper-base) የONNX ልወጣ (Apache-2.0)፦ ድምፅን ወደ ጽሑፍ መቀየር፣ በኮምፒውተር ላይ የሚሠራ እና ሰውየው ከጠየቀ ብቻ የሚወርድ።
 - **[Open-Meteo](https://open-meteo.com)**፦ የአየር ሁኔታውና የከተሞች ፍለጋ፣ ያለ ቁልፍና ያለ መለያ።

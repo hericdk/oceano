@@ -102,9 +102,9 @@ Oceano가 직접 켜고 끄며, 네 컴퓨터와만 통신합니다.
 
 ## 라이선스
 
-Oceano의 코드는 **자유 소프트웨어**이며, [GNU GPL v3.0 이상](../../LICENSE)을 따릅니다.
+Oceano의 코드는 **자유 소프트웨어**이며, [GNU AGPL v3.0 이상](../../LICENSE)을 따릅니다.
 사용하고, 연구하고, 수정하고, 배포할 수 있습니다. 수정한 버전을 배포하는 사람은
-같은 라이선스로 코드를 계속 공개해야 합니다.
+같은 라이선스로 코드를 계속 공개해야 합니다. 수정한 버전을 네트워크로 제공하는 사람도 마찬가지입니다.
 
 - **모드와 테마는 여러분의 것입니다.** 모드(모드 API를 쓰는 Lua/Teal 스크립트)와 테마(`oceano-tema`
   파일)는 Oceano의 2차적 저작물로 보지 않으며 어떤 라이선스든 가질 수 있습니다.
@@ -120,7 +120,7 @@ Oceano는 많은 사람들의 작업 위에 만들어졌습니다. 특히 다음
 - **[Strudel](https://strudel.cc)**, Felix Roos, Alex McLean과 커뮤니티 제작([코드](https://codeberg.org/uzu/strudel), AGPL-3.0): Stave를 움직이는, 코드로 음악을 만드는 언어.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)**, shinshin86 제작(MIT): 내비게이터의 애니메이션 아바타와 아바타 편집기.
 - **Lua**(PUC-Rio), **Teal**(Hisham Muhammad), **three.js**, **Chromium**, **Electron**.
-- **네발 로봇의 3D 모델**(`simulador/robo/modelos/quadrupede.3mf`), 파일 자체의 데이터에 따르면 BY-NC 라이선스: **네발 로봇에서만** 사용하며 다른 로봇에서는 사용하지 않습니다. Oceano의 GPL 아래에 있지 않으며 상업적으로 사용할 수 없습니다.
+- **네발 로봇의 3D 모델**(`simulador/robo/modelos/quadrupede.3mf`), 파일 자체의 데이터에 따르면 BY-NC 라이선스: **네발 로봇에서만** 사용하며 다른 로봇에서는 사용하지 않습니다. Oceano의 AGPL 아래에 있지 않으며 상업적으로 사용할 수 없습니다.
 
 - **[Whisper](https://github.com/openai/whisper)**, OpenAI 제작(MIT), [onnx-community](https://huggingface.co/onnx-community/whisper-base)의 ONNX 변환본(Apache-2.0): 음성 받아쓰기로, 컴퓨터에서 실행되며 사용자가 요청할 때만 다운로드됩니다.
 - **[Open-Meteo](https://open-meteo.com)**: 날씨와 도시 검색. 키도 계정도 필요 없습니다.

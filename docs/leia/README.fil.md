@@ -102,9 +102,9 @@ contrast nang live at nagbababala bago mag-save. Kung gumagawa ka ng mga tema, b
 
 ## Lisensya
 
-Ang code ng Oceano ay **free software**, sa ilalim ng [GNU GPL v3.0 o mas bago](../../LICENSE):
+Ang code ng Oceano ay **free software**, sa ilalim ng [GNU AGPL v3.0 o mas bago](../../LICENSE):
 puwede mo itong gamitin, pag-aralan, baguhin, at ipamahagi; ang magpapamahagi ng binagong bersyon ay kailangang
-panatilihing bukas ang code, sa ilalim ng parehong lisensya.
+panatilihing bukas ang code, sa ilalim ng parehong lisensya. Ganoon din sa sinumang nag-aalok ng binagong bersyon sa network.
 
 - **Sa iyo ang mga mod at tema.** Ang mga mod (mga Lua/Teal script na gumagamit ng mod API) at mga tema (mga file na
   `oceano-tema`) ay hindi itinuturing na derivative works ng Oceano at puwedeng magkaroon ng anumang lisensya.
@@ -120,7 +120,7 @@ Ang Oceano ay itinayo sa ibabaw ng gawa ng maraming tao. Lalo na ang mga ito:
 - **[Strudel](https://strudel.cc)** nina Felix Roos, Alex McLean, at ng komunidad ([code](https://codeberg.org/uzu/strudel), AGPL-3.0): ang wika ng musika sa pamamagitan ng code na nagpapatakbo sa Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** ni shinshin86 (MIT): ang animated na avatar ng Navigator at ang avatar editor.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium**, at **Electron**.
-- **3D model ng quadruped na robot** (`simulador/robo/modelos/quadrupede.3mf`), lisensyang BY-NC, ayon sa datos ng mismong file: ginagamit ito **sa Quadruped na robot lang**, at hindi sa ibang mga robot. Wala ito sa ilalim ng GPL ng Oceano at hindi puwedeng gamitin nang pangkomersyo.
+- **3D model ng quadruped na robot** (`simulador/robo/modelos/quadrupede.3mf`), lisensyang BY-NC, ayon sa datos ng mismong file: ginagamit ito **sa Quadruped na robot lang**, at hindi sa ibang mga robot. Wala ito sa ilalim ng AGPL ng Oceano at hindi puwedeng gamitin nang pangkomersyo.
 
 - **[Whisper](https://github.com/openai/whisper)** ng OpenAI (MIT), sa ONNX conversion ng [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): ang transcription ng boses, na tumatakbo sa computer at dina-download lang kung hihilingin ng tao.
 - **[Open-Meteo](https://open-meteo.com)**: ang panahon at paghahanap ng mga lungsod, walang key at walang account.

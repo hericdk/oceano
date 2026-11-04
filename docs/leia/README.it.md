@@ -102,9 +102,9 @@ contrasto dal vivo e ti avvisa prima di salvare. Se crei temi, leggi la
 
 ## Licenza
 
-Il codice di Oceano è **software libero**, sotto la [GNU GPL v3.0 o successiva](../../LICENSE):
+Il codice di Oceano è **software libero**, sotto la [GNU AGPL v3.0 o successiva](../../LICENSE):
 puoi usarlo, studiarlo, modificarlo e distribuirlo; chi distribuisce una versione modificata deve
-mantenere il codice aperto, sotto la stessa licenza.
+mantenere il codice aperto, sotto la stessa licenza. Lo stesso vale per chi offre una versione modificata tramite la rete.
 
 - **Mod e temi sono tuoi.** I mod (script Lua/Teal che usano l'API dei mod) e i temi (file
   `oceano-tema`) non sono considerati opere derivate di Oceano e possono avere qualsiasi licenza.
@@ -120,7 +120,7 @@ Oceano è costruito sul lavoro di molte persone. In particolare:
 - **[Strudel](https://strudel.cc)** di Felix Roos, Alex McLean e della community ([codice](https://codeberg.org/uzu/strudel), AGPL-3.0): il linguaggio di musica tramite codice che muove Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** di shinshin86 (MIT): l'avatar animato della Navigatrice e l'editor di avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** ed **Electron**.
-- **Modello 3D del robot quadrupede** (`simulador/robo/modelos/quadrupede.3mf`), licenza BY-NC, secondo i dati del file stesso: è usato **solo nel robot Quadrupede**, e non negli altri robot. Non è sotto la GPL di Oceano e non può avere uso commerciale.
+- **Modello 3D del robot quadrupede** (`simulador/robo/modelos/quadrupede.3mf`), licenza BY-NC, secondo i dati del file stesso: è usato **solo nel robot Quadrupede**, e non negli altri robot. Non è sotto la AGPL di Oceano e non può avere uso commerciale.
 
 - **[Whisper](https://github.com/openai/whisper)** di OpenAI (MIT), nella conversione ONNX di [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): la trascrizione vocale, che gira sul computer e viene scaricata solo se la persona lo chiede.
 - **[Open-Meteo](https://open-meteo.com)**: il meteo e la ricerca delle città, senza chiave e senza account.

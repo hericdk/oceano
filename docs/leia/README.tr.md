@@ -102,9 +102,9 @@ kontrastı canlı denetler ve kaydetmeden önce uyarır. Tema yapıyorsan,
 
 ## Lisans
 
-Oceano'nun kodu **özgür yazılımdır**, [GNU GPL v3.0 veya sonrası](../../LICENSE) altında:
+Oceano'nun kodu **özgür yazılımdır**, [GNU AGPL v3.0 veya sonrası](../../LICENSE) altında:
 kullanabilir, inceleyebilir, değiştirebilir ve dağıtabilirsin; değiştirilmiş bir sürümü dağıtan kişi
-kodu aynı lisans altında açık tutmak zorunda.
+kodu aynı lisans altında açık tutmak zorunda. Değiştirilmiş bir sürümü ağ üzerinden sunan herkes için de aynısı geçerlidir.
 
 - **Modlar ve temalar senindir.** Modlar (mod API'sini kullanan Lua/Teal betikleri) ve temalar (`oceano-tema`
   dosyaları) Oceano'nun türev eseri sayılmaz ve herhangi bir lisansa sahip olabilir.
@@ -120,7 +120,7 @@ Oceano, pek çok insanın emeği üzerine kuruldu. Özellikle:
 - **[Strudel](https://strudel.cc)**, Felix Roos, Alex McLean ve topluluğun ([kod](https://codeberg.org/uzu/strudel), AGPL-3.0): Stave'i çalıştıran, kodla müzik yapma dili.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)**, shinshin86'nın (MIT): Navigatörün animasyonlu avatarı ve avatar editörü.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** ve **Electron**.
-- **Dört ayaklı robotun 3D modeli** (`simulador/robo/modelos/quadrupede.3mf`), BY-NC lisansı, dosyanın kendi verilerine göre: **yalnızca Quadrúpede robotunda** kullanılır, diğer robotlarda kullanılmaz. Oceano'nun GPL'si altında değildir ve ticari kullanılamaz.
+- **Dört ayaklı robotun 3D modeli** (`simulador/robo/modelos/quadrupede.3mf`), BY-NC lisansı, dosyanın kendi verilerine göre: **yalnızca Quadrúpede robotunda** kullanılır, diğer robotlarda kullanılmaz. Oceano'nun AGPL'si altında değildir ve ticari kullanılamaz.
 
 - **[Whisper](https://github.com/openai/whisper)**, OpenAI'nin (MIT), [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0) ONNX dönüşümüyle: bilgisayarda çalışan ve yalnızca kişi isterse indirilen ses yazıya çevirme.
 - **[Open-Meteo](https://open-meteo.com)**: hava durumu ve şehir arama, anahtarsız ve hesapsız.

@@ -102,9 +102,9 @@ contraste ao vivo e avisa antes de salvar. Se você cria temas, leia o
 
 ## Licença
 
-O código do Oceano é **software livre**, sob a [GNU GPL v3.0 ou posterior](LICENSE):
+O código do Oceano é **software livre**, sob a [GNU AGPL v3.0 ou posterior](LICENSE):
 você pode usar, estudar, modificar e distribuir; quem distribuir uma versão modificada precisa
-manter o código aberto, sob a mesma licença.
+manter o código aberto, sob a mesma licença. O mesmo vale para quem oferecer uma versão modificada pela rede.
 
 - **Mods e temas são seus.** Mods (scripts Lua/Teal que usam a API de mods) e temas (arquivos
   `oceano-tema`) não são considerados obras derivadas do Oceano e podem ter qualquer licença.
@@ -120,7 +120,7 @@ O Oceano é feito em cima do trabalho de muita gente. Em especial:
 - **[Strudel](https://strudel.cc)** de Felix Roos, Alex McLean e comunidade ([código](https://codeberg.org/uzu/strudel), AGPL-3.0): a linguagem de música por código que move o Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** de shinshin86 (MIT): o avatar animado da Navegadora e o editor de avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** e **Electron**.
-- **Modelo 3D do robô quadrúpede** (`simulador/robo/modelos/quadrupede.3mf`), licença BY-NC, conforme os dados do próprio arquivo: é usado **apenas no robô Quadrúpede**, e não nos outros robôs. Não está sob a GPL do Oceano e não pode ter uso comercial.
+- **Modelo 3D do robô quadrúpede** (`simulador/robo/modelos/quadrupede.3mf`), licença BY-NC, conforme os dados do próprio arquivo: é usado **apenas no robô Quadrúpede**, e não nos outros robôs. Não está sob a AGPL do Oceano e não pode ter uso comercial.
 
 - **[Whisper](https://github.com/openai/whisper)** da OpenAI (MIT), na conversão ONNX da [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): a transcrição de voz, que roda no computador e só é baixada se a pessoa pedir.
 - **[Open-Meteo](https://open-meteo.com)**: o clima e a busca de cidades, sem chave e sem conta.

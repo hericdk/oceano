@@ -2,10 +2,10 @@
 
 Copyright (C) 2026 @hericdk
 
-O Oceano é distribuído sob a GNU General Public License, versão 3 ou (à sua escolha) qualquer
+O Oceano é distribuído sob a GNU Affero General Public License, versão 3 ou (à sua escolha) qualquer
 versão posterior. O texto completo está em [`LICENSE`](LICENSE).
 
-## Permissão adicional para mods e temas (GPLv3, seção 7)
+## Permissão adicional para mods e temas (AGPLv3, seção 7)
 
 Como permissão adicional, os seguintes itens **não** são considerados obras baseadas no Oceano e
 podem ser distribuídos sob qualquer licença, inclusive fechada:
@@ -17,6 +17,10 @@ podem ser distribuídos sob qualquer licença, inclusive fechada:
    criados por quem usa o Oceano.
 
 Esta permissão não se aplica a modificações do próprio código do Oceano.
+
+## Versões anteriores
+
+O Oceano mudou de GPL para AGPL em 04/11/2026. Quem recebeu uma cópia anterior, como a versão 1.0.0, segue com a GPL naquela cópia.
 
 ## Partes de terceiros
 
@@ -47,8 +51,8 @@ O Stave roda isolado numa página própria (`/stave`, aberto em `oceano://stave`
 partir do repositório original com as mudanças do Oceano (o "ao vivo" que toca sem apertar Play, o
 botão de fundo transparente, o endereço `/stave` e a retirada da estatística da Vercel). Essas mudanças
 estão em [`terceiros/stave-oceano.patch`](terceiros/stave-oceano.patch), e o build em
-[`terceiros/construir-stave.sh`](terceiros/construir-stave.sh), como a AGPL pede. A GPL-3.0 do Oceano e a
-AGPL-3.0 dele são compatíveis (seção 13 de ambas): cada parte continua com a sua licença.
+[`terceiros/construir-stave.sh`](terceiros/construir-stave.sh), como a AGPL pede. O Oceano e o Stave estão sob a
+AGPL: cada parte continua com o seu aviso de autoria.
 
 ### MicromediaFlash
 
@@ -57,6 +61,10 @@ O editor de animação **MicromediaFlash** (@hericdk, licença AGPL-3.0) roda is
 Oceano só o serve e oferece os arquivos (`app/micromediaflash.js`, `simulador/js/micromediaflash.js`).
 O código dele não vem neste repositório: para usar, baixe [hericdk/micromediaflash](https://github.com/hericdk/micromediaflash)
 numa pasta ao lado do Oceano (`../micromediaflash`). Sem ela, a página explica isso.
+
+### winampFM
+
+A cópia do simulador do winampFM em `simulador/winampfm` (@hericdk) continua sob a GPL-3.0. A GPL e a AGPL são compatíveis (seção 13 de ambas): cada parte fica com a sua licença.
 
 ### Dados de clima
 
@@ -76,4 +84,4 @@ A lista fica em `simulador/robo/vendor/LICENCAS.md`.
 
 ### Modelo 3D do robô
 
-- `simulador/robo/modelos/quadrupede.3mf`: licença BY-NC, conforme os dados do próprio arquivo. É usado apenas no robô Quadrúpede. Não está sob a GPL do Oceano. Modelos importados mostram na tela o autor e a licença que trouxerem.
+- `simulador/robo/modelos/quadrupede.3mf`: licença BY-NC, conforme os dados do próprio arquivo. É usado apenas no robô Quadrúpede. Não está sob a AGPL do Oceano. Modelos importados mostram na tela o autor e a licença que trouxerem.

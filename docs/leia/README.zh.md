@@ -98,9 +98,9 @@ Oceano 就是为出现在视频和直播里而设计的。本地信息(你打开
 
 ## 许可证
 
-Oceano 的代码是**自由软件**,采用 [GNU GPL v3.0 或更高版本](../../LICENSE):
+Oceano 的代码是**自由软件**,采用 [GNU AGPL v3.0 或更高版本](../../LICENSE):
 你可以使用、研究、修改和分发;分发修改版的人必须
-保持代码开源,并使用相同的许可证。
+保持代码开源,并使用相同的许可证。 通过网络提供修改版的人也一样。
 
 - **模组和主题属于你。** 模组(使用模组 API 的 Lua/Teal 脚本)和主题(`oceano-tema`
   文件)不被视为 Oceano 的衍生作品,可以使用任何许可证。
@@ -116,7 +116,7 @@ Oceano 建立在很多人的工作之上。特别感谢:
 - **[Strudel](https://strudel.cc)**,作者 Felix Roos、Alex McLean 和社区([代码](https://codeberg.org/uzu/strudel),AGPL-3.0):驱动 Stave 的代码音乐语言。
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)**,作者 shinshin86(MIT):领航员的动画头像和头像编辑器。
 - **Lua**(PUC-Rio)、**Teal**(Hisham Muhammad)、**three.js**、**Chromium** 和 **Electron**。
-- **四足机器人 3D 模型**(`simulador/robo/modelos/quadrupede.3mf`),BY-NC 许可,依据文件自身的数据:它**只用于四足机器人**,不用于其他机器人。它不在 Oceano 的 GPL 之下,也不能商用。
+- **四足机器人 3D 模型**(`simulador/robo/modelos/quadrupede.3mf`),BY-NC 许可,依据文件自身的数据:它**只用于四足机器人**,不用于其他机器人。它不在 Oceano 的 AGPL 之下,也不能商用。
 
 - **[Whisper](https://github.com/openai/whisper)**,OpenAI(MIT),使用 [onnx-community](https://huggingface.co/onnx-community/whisper-base)(Apache-2.0)的 ONNX 转换版本:语音转文字,在电脑本地运行,只有用户主动要求时才会下载。
 - **[Open-Meteo](https://open-meteo.com)**:天气和城市搜索,无需密钥,无需账号。

@@ -104,9 +104,9 @@ Oceano د ویډیوګانو او ژوندیو خپرونو لپاره فکر ش
 
 ## جواز
 
-د Oceano کوډ **ازاد سافټویر** دی، د [GNU GPL v3.0 یا وروسته](../../LICENSE) لاندې:
+د Oceano کوډ **ازاد سافټویر** دی، د [GNU AGPL v3.0 یا وروسته](../../LICENSE) لاندې:
 ته کولی شې وکاروې، زده کړې، بدل کړې او وېشې؛ څوک چې بدل شوې نسخه وېشي باید
-کوډ خلاص وساتي، په همدې جواز لاندې.
+کوډ خلاص وساتي، په همدې جواز لاندې. همدا د هغه چا لپاره هم دی چې بدله شوې نسخه د شبکې له لارې وړاندې کوي.
 
 - **موډونه او تیمونه ستا دي.** موډونه (د Lua/Teal سکریپټونه چې د موډونو API کاروي) او تیمونه (د
   `oceano-tema` فایلونه) د Oceano مشتق کار نه ګڼل کېږي او هر جواز لرلی شي.
@@ -122,7 +122,7 @@ Oceano د ډېرو خلکو په کار جوړ شوی. په ځانګړي ډول:
 - **[Strudel](https://strudel.cc)** د Felix Roos، Alex McLean او ټولنې ([کوډ](https://codeberg.org/uzu/strudel)، AGPL-3.0): د کوډ له لارې د موسیقۍ ژبه چې Stave چلوي.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** د shinshin86 (MIT): د لارښودې متحرک اوتار او د اوتار مدیر.
 - **Lua** (PUC-Rio)، **Teal** (Hisham Muhammad)، **three.js**، **Chromium** او **Electron**.
-- **د څلور پښو روبوټ 3D ماډل** (`simulador/robo/modelos/quadrupede.3mf`)، د BY-NC جواز، د فایل د خپلو معلوماتو له مخې: **یوازې په څلور پښو روبوټ** کې کارول کېږي، نه په نورو روبوټونو. د Oceano له GPL لاندې نه دی او سوداګریز کارونه نه شي لرلی.
+- **د څلور پښو روبوټ 3D ماډل** (`simulador/robo/modelos/quadrupede.3mf`)، د BY-NC جواز، د فایل د خپلو معلوماتو له مخې: **یوازې په څلور پښو روبوټ** کې کارول کېږي، نه په نورو روبوټونو. د Oceano له AGPL لاندې نه دی او سوداګریز کارونه نه شي لرلی.
 
 - **[Whisper](https://github.com/openai/whisper)** د OpenAI (MIT)، د [onnx-community](https://huggingface.co/onnx-community/whisper-base) په ONNX بدلون کې (Apache-2.0): د غږ ټکي ته اړول، چې په کمپیوټر کې چلېږي او یوازې هغه وخت ډاونلوډ کېږي چې کس یې وغواړي.
 - **[Open-Meteo](https://open-meteo.com)**: هوا او د ښارونو لټون، بې key او بې حساب.

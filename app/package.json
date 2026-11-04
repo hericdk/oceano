@@ -4,7 +4,7 @@
   "description": "MVP do navegador Oceano: a interface do simulador com abas reais (Electron).",
   "main": "main.js",
   "private": true,
-  "license": "GPL-3.0-or-later",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "electron .",
     "verificar": "node verificar-sem-chaves.js"

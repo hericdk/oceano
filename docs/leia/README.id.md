@@ -102,9 +102,9 @@ kontras secara langsung dan memperingatkan sebelum menyimpan. Kalau kamu membuat
 
 ## Lisensi
 
-Kode Oceano adalah **perangkat lunak bebas**, di bawah [GNU GPL v3.0 atau yang lebih baru](../../LICENSE):
+Kode Oceano adalah **perangkat lunak bebas**, di bawah [GNU AGPL v3.0 atau yang lebih baru](../../LICENSE):
 kamu boleh menggunakan, mempelajari, memodifikasi, dan mendistribusikan; siapa pun yang mendistribusikan versi yang dimodifikasi harus
-menjaga kodenya tetap terbuka, di bawah lisensi yang sama.
+menjaga kodenya tetap terbuka, di bawah lisensi yang sama. Hal yang sama berlaku bagi siapa pun yang menawarkan versi yang dimodifikasi melalui jaringan.
 
 - **Mod dan tema adalah milikmu.** Mod (skrip Lua/Teal yang memakai API mod) dan tema (berkas
   `oceano-tema`) tidak dianggap sebagai karya turunan Oceano dan boleh memakai lisensi apa pun.
@@ -120,7 +120,7 @@ Oceano dibangun di atas kerja banyak orang. Terutama:
 - **[Strudel](https://strudel.cc)** karya Felix Roos, Alex McLean, dan komunitas ([kode](https://codeberg.org/uzu/strudel), AGPL-3.0): bahasa musik lewat kode yang menggerakkan Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** karya shinshin86 (MIT): avatar animasi si Navigator dan editor avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium**, dan **Electron**.
-- **Model 3D robot berkaki empat** (`simulador/robo/modelos/quadrupede.3mf`), lisensi BY-NC, sesuai data berkas itu sendiri: dipakai **hanya pada robot Quadrúpede**, dan tidak pada robot lain. Model ini tidak berada di bawah GPL Oceano dan tidak boleh dipakai secara komersial.
+- **Model 3D robot berkaki empat** (`simulador/robo/modelos/quadrupede.3mf`), lisensi BY-NC, sesuai data berkas itu sendiri: dipakai **hanya pada robot Quadrúpede**, dan tidak pada robot lain. Model ini tidak berada di bawah AGPL Oceano dan tidak boleh dipakai secara komersial.
 
 - **[Whisper](https://github.com/openai/whisper)** dari OpenAI (MIT), dalam konversi ONNX dari [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): transkripsi suara, yang berjalan di komputer dan hanya diunduh jika orangnya memintanya.
 - **[Open-Meteo](https://open-meteo.com)**: cuaca dan pencarian kota, tanpa kunci dan tanpa akun.

@@ -102,9 +102,9 @@ Kontrast live und warnt dich vor dem Speichern. Wenn du Themes erstellst, lies d
 
 ## Lizenz
 
-Der Code von Oceano ist **freie Software** unter der [GNU GPL v3.0 oder später](../../LICENSE):
+Der Code von Oceano ist **freie Software** unter der [GNU AGPL v3.0 oder später](../../LICENSE):
 Du darfst ihn nutzen, studieren, verändern und weitergeben; wer eine veränderte Version weitergibt, muss
-den Code offen halten, unter derselben Lizenz.
+den Code offen halten, unter derselben Lizenz. Das gilt auch für alle, die eine veränderte Version über das Netz anbieten.
 
 - **Mods und Themes gehören dir.** Mods (Lua/Teal-Skripte, die die Mod-API nutzen) und Themes (`oceano-tema`-
   Dateien) gelten nicht als abgeleitete Werke von Oceano und können jede Lizenz haben.
@@ -120,7 +120,7 @@ Oceano ist auf der Arbeit vieler Menschen aufgebaut. Besonders:
 - **[Strudel](https://strudel.cc)** von Felix Roos, Alex McLean und der Community ([Code](https://codeberg.org/uzu/strudel), AGPL-3.0): die Sprache für Musik per Code, die Stave antreibt.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** von shinshin86 (MIT): der animierte Avatar der Navigatorin und der Avatar-Editor.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** und **Electron**.
-- **3D-Modell des vierbeinigen Roboters** (`simulador/robo/modelos/quadrupede.3mf`), BY-NC-Lizenz, laut den Daten der Datei selbst: Es wird **nur beim Vierbeiner-Roboter** verwendet, und nicht bei den anderen Robotern. Es steht nicht unter der GPL von Oceano und darf nicht kommerziell genutzt werden.
+- **3D-Modell des vierbeinigen Roboters** (`simulador/robo/modelos/quadrupede.3mf`), BY-NC-Lizenz, laut den Daten der Datei selbst: Es wird **nur beim Vierbeiner-Roboter** verwendet, und nicht bei den anderen Robotern. Es steht nicht unter der AGPL von Oceano und darf nicht kommerziell genutzt werden.
 
 - **[Whisper](https://github.com/openai/whisper)** von OpenAI (MIT), in der ONNX-Konvertierung von [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): die Sprachtranskription, die auf dem Computer läuft und nur heruntergeladen wird, wenn die Person es verlangt.
 - **[Open-Meteo](https://open-meteo.com)**: das Wetter und die Städtesuche, ohne Schlüssel und ohne Konto.

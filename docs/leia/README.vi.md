@@ -102,9 +102,9 @@ Khả năng tiếp cận đứng trước phong cách. Mọi theme phải dễ �
 
 ## Giấy phép
 
-Mã nguồn của Oceano là **phần mềm tự do**, theo [GNU GPL v3.0 hoặc mới hơn](../../LICENSE):
+Mã nguồn của Oceano là **phần mềm tự do**, theo [GNU AGPL v3.0 hoặc mới hơn](../../LICENSE):
 cậu có thể dùng, nghiên cứu, sửa đổi và phân phối; ai phân phối một phiên bản đã sửa đổi phải
-giữ mã nguồn mở, theo cùng giấy phép.
+giữ mã nguồn mở, theo cùng giấy phép. Điều này cũng áp dụng cho ai cung cấp phiên bản đã sửa đổi qua mạng.
 
 - **Mod và theme là của cậu.** Mod (script Lua/Teal dùng API mod) và theme (tệp
   `oceano-tema`) không được coi là tác phẩm phái sinh của Oceano và có thể dùng bất kỳ giấy phép nào.
@@ -120,7 +120,7 @@ Oceano được xây dựng trên công sức của rất nhiều người. Đ�
 - **[Strudel](https://strudel.cc)** của Felix Roos, Alex McLean và cộng đồng ([mã nguồn](https://codeberg.org/uzu/strudel), AGPL-3.0): ngôn ngữ làm nhạc bằng code vận hành Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** của shinshin86 (MIT): avatar hoạt hình của Hoa tiêu và trình chỉnh sửa avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** và **Electron**.
-- **Mô hình 3D của robot bốn chân** (`simulador/robo/modelos/quadrupede.3mf`), giấy phép BY-NC, theo dữ liệu trong chính tệp: chỉ được dùng **cho robot Quadrúpede**, không dùng cho các robot khác. Nó không thuộc GPL của Oceano và không được dùng cho mục đích thương mại.
+- **Mô hình 3D của robot bốn chân** (`simulador/robo/modelos/quadrupede.3mf`), giấy phép BY-NC, theo dữ liệu trong chính tệp: chỉ được dùng **cho robot Quadrúpede**, không dùng cho các robot khác. Nó không thuộc AGPL của Oceano và không được dùng cho mục đích thương mại.
 
 - **[Whisper](https://github.com/openai/whisper)** của OpenAI (MIT), trong bản chuyển đổi ONNX của [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): tính năng phiên âm giọng nói, chạy ngay trên máy tính và chỉ được tải về nếu người dùng yêu cầu.
 - **[Open-Meteo](https://open-meteo.com)**: thời tiết và tìm kiếm thành phố, không cần khóa và không cần tài khoản.

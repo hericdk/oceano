@@ -102,9 +102,9 @@ tofauti moja kwa moja na kukuonya kabla ya kuhifadhi. Ukiunda mandhari, soma
 
 ## Leseni
 
-Msimbo wa Oceano ni **programu huru**, chini ya [GNU GPL v3.0 au baadaye](../../LICENSE):
+Msimbo wa Oceano ni **programu huru**, chini ya [GNU AGPL v3.0 au baadaye](../../LICENSE):
 unaweza kuutumia, kuusoma, kuubadilisha na kuusambaza; anayesambaza toleo lililobadilishwa lazima
-aache msimbo wazi, chini ya leseni ileile.
+aache msimbo wazi, chini ya leseni ileile. Vivyo hivyo kwa yeyote anayetoa toleo lililobadilishwa kupitia mtandao.
 
 - **Mods na mandhari ni zako.** Mods (hati za Lua/Teal zinazotumia API ya mods) na mandhari (faili
   `oceano-tema`) hazihesabiwi kuwa kazi zinazotokana na Oceano na zinaweza kuwa na leseni yoyote.
@@ -120,7 +120,7 @@ Oceano kimejengwa juu ya kazi ya watu wengi. Hasa:
 - **[Strudel](https://strudel.cc)** ya Felix Roos, Alex McLean na jumuiya ([msimbo](https://codeberg.org/uzu/strudel), AGPL-3.0): lugha ya muziki kwa msimbo inayoendesha Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** ya shinshin86 (MIT): avatar iliyohuishwa ya Mwongozaji wa Safari na kihariri cha avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** na **Electron**.
-- **Modeli ya 3D ya roboti yenye miguu minne** (`simulador/robo/modelos/quadrupede.3mf`), leseni BY-NC, kulingana na data za faili lenyewe: inatumika **tu kwenye roboti ya Quadrúpede**, na si kwenye roboti nyingine. Haiko chini ya GPL ya Oceano na haiwezi kutumika kibiashara.
+- **Modeli ya 3D ya roboti yenye miguu minne** (`simulador/robo/modelos/quadrupede.3mf`), leseni BY-NC, kulingana na data za faili lenyewe: inatumika **tu kwenye roboti ya Quadrúpede**, na si kwenye roboti nyingine. Haiko chini ya AGPL ya Oceano na haiwezi kutumika kibiashara.
 
 - **[Whisper](https://github.com/openai/whisper)** ya OpenAI (MIT), katika ubadilishaji wa ONNX wa [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): unukuzi wa sauti, unaoendeshwa kwenye kompyuta na unapakuliwa tu mtu akiomba.
 - **[Open-Meteo](https://open-meteo.com)**: hali ya hewa na utafutaji wa miji, bila ufunguo na bila akaunti.

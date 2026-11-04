@@ -351,9 +351,9 @@ function comLista(nome, texto, app) {
 
 // personagens: a Kara é a padrão; "pixel" é a versão desenhada à mão (pixel art dela, grade de 6 px)
 export const PERSONAGENS = {
-  cara: { nome: 'Kara', pasta: 'avatares/cara/', pixel: 'avatares/cara-pixel/', credito: 'Kara, personagem do Oceano (@hericdk, GPL-3.0-or-later)' },
-  gato: { nome: 'Gato', sprite: 'avatares/gato/', credito: 'Gato, modelo de pixel art do Oceano, torto de propósito (@hericdk, GPL-3.0-or-later)' },
-  boneco3d: { nome: 'Boneco 3D', arquivo3d: 'avatares/boneco-3d/boneco.vrm', credito: 'Boneco 3D, exemplo em VRM do Oceano (@hericdk, GPL-3.0-or-later)' },
+  cara: { nome: 'Kara', pasta: 'avatares/cara/', pixel: 'avatares/cara-pixel/', credito: 'Kara, personagem do Oceano (@hericdk, AGPL-3.0-or-later)' },
+  gato: { nome: 'Gato', sprite: 'avatares/gato/', credito: 'Gato, modelo de pixel art do Oceano, torto de propósito (@hericdk, AGPL-3.0-or-later)' },
+  boneco3d: { nome: 'Boneco 3D', arquivo3d: 'avatares/boneco-3d/boneco.vrm', credito: 'Boneco 3D, exemplo em VRM do Oceano (@hericdk, AGPL-3.0-or-later)' },
 };
 // malha dos pontos: a mesma ilustração com células maiores custa bem menos e, no tamanho da Navegadora, fica igual
 // (lab em avatares/lab/caminhos.html: densa ~16 ms e 28 mil triângulos por quadro; leve ~6 ms; mínima ~3 ms e 3 mil)

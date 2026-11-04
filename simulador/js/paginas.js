@@ -1350,11 +1350,11 @@ const sobre = {
         <h2>Autor e licença</h2>
         <p>Criado por <b>@hericdk</b> · <a href="https://instagram.com/hericdk" target="_blank" rel="noopener">@hericdk</a>. As contas oficiais do Oceano ainda vão nascer.</p>
         <p>Um projeto de médio e longo prazo, feito com a mesma teimosia com que Sean Murray seguiu melhorando No Man's Sky: lançar cedo, ouvir quem usa e continuar, versão depois de versão. Aberto para que outras pessoas estudem, se inspirem e levem as ideias adiante.</p>
-        <p>Software livre sob a <b>GNU GPL v3.0 ou posterior</b>. Mods, temas e o que você cria nele são seus e podem ter qualquer licença.</p>
+        <p>Software livre sob a <b>GNU AGPL v3.0 ou posterior</b>. Mods, temas e o que você cria nele são seus e podem ter qualquer licença.</p>
       </section>
       <section class="px bloco">
         <h2>Aviso legal</h2>
-        <p>O Oceano é oferecido como está, sem garantia de nenhum tipo, nos termos da GNU GPL. É uma versão inicial: use com bom senso e guarde cópia do que for importante.</p>
+        <p>O Oceano é oferecido como está, sem garantia de nenhum tipo, nos termos da GNU AGPL. É uma versão inicial: use com bom senso e guarde cópia do que for importante.</p>
         <p>As ferramentas e bibliotecas incluídas pertencem aos autores delas e seguem as licenças listadas abaixo e no arquivo AVISOS.md. Nomes e marcas citados são dos respectivos donos, e o Oceano não é afiliado a eles.</p>
         <p>O que você faz, baixa, publica ou vende com o Oceano é responsabilidade sua. Respeite os direitos autorais e as regras de cada site, principalmente ao baixar ou remixar conteúdo de outras pessoas.</p>
         <p>Ligando o clima da sua cidade, os dados vêm do <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0).</p>
@@ -1366,7 +1366,7 @@ const sobre = {
           <li><b>Lua 5.4</b> (PUC-Rio) via wasmoon e <b>Teal</b> (Hisham Muhammad), MIT: os mods.</li>
           <li><b>three.js</b> (MIT): o mar com o farol.</li>
           <li><a href="https://strudel.cc" target="_blank" rel="noopener"><b>Strudel</b></a> (Felix Roos, Alex McLean e comunidade, AGPL-3.0): live coding de música, dentro do Stave em <a href="#" data-ir="oceano://stave">oceano://stave</a>. <a href="https://codeberg.org/uzu/strudel" target="_blank" rel="noopener">código-fonte</a>.</li>
-          <li>A ilha, a conversa com as IAs e o notch são de @hericdk, sob a GPL.</li>
+          <li>A ilha, a conversa com as IAs e o notch são de @hericdk, sob a AGPL.</li>
           <li>Voz neural da Navegadora: <a href="https://huggingface.co/hexgrad/Kokoro-82M" target="_blank" rel="noopener"><b>Kokoro-82M</b></a> (hexgrad, Apache-2.0), <a href="https://github.com/espeak-ng/espeak-ng" target="_blank" rel="noopener"><b>eSpeak NG</b></a> (GPL-3.0) e <a href="https://onnxruntime.ai" target="_blank" rel="noopener"><b>ONNX Runtime</b></a> (MIT). O modelo é baixado uma vez, a seu pedido, e a fala é gerada neste computador.</li>
           <li><b>🧰 Ferramentas</b> usa <b>gifenc</b> (MIT), <b>imagetracerjs</b> (Unlicense), <b>pako</b> (MIT e Zlib), <b>UPNG.js</b> (MIT) e <b>lamejs</b> (LGPL-3.0). Baixar e exportar vídeo usam o <b>yt-dlp</b> e o <b>ffmpeg</b> do seu computador.</li>
           <li><a href="https://www.gimp.org" target="_blank" rel="noopener"><b>GIMP</b></a> (time do GIMP, GPL-3.0) e <a href="https://github.com/Diolinux/PhotoGIMP" target="_blank" rel="noopener"><b>PhotoGIMP</b></a> (Diolinux, GPL-3.0): programas à parte, que o Oceano ajuda a instalar e abrir em <a href="#" data-ir="oceano://gimp">oceano://gimp</a>.</li>
@@ -1377,7 +1377,7 @@ const sobre = {
           <li>Fontes <b>Pixelify Sans</b> e <b>Silkscreen</b> (SIL OFL) e bloqueador da <b>Ghostery</b> (MPL-2.0). Leitor com o <b>Readability</b> da Mozilla (Apache-2.0).</li>
           <li><a href="https://github.com/shinshin86/mesh-avatar-studio" target="_blank" rel="noopener"><b>Mesh Avatar Studio</b></a> (shinshin86, MIT): o avatar animado da Navegadora e o editor de avatar em <a href="#" data-ir="oceano://avatar">oceano://avatar</a>.</li>
           <li><a href="https://github.com/pixiv/three-vrm" target="_blank" rel="noopener"><b>three-vrm</b></a> (pixiv, MIT): os avatares 3D em VRM.</li>
-          <li><b>Kara</b>, a personagem do Oceano (@hericdk, GPL-3.0-or-later), animada pelo runtime do Mesh Avatar Studio.</li>
+          <li><b>Kara</b>, a personagem do Oceano (@hericdk, AGPL-3.0-or-later), animada pelo runtime do Mesh Avatar Studio.</li>
         </ul>
       </section>
       <section class="px bloco">

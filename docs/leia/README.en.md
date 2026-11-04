@@ -102,9 +102,9 @@ contrast live and warns you before saving. If you create themes, read the
 
 ## License
 
-Oceano's code is **free software**, under the [GNU GPL v3.0 or later](../../LICENSE):
+Oceano's code is **free software**, under the [GNU AGPL v3.0 or later](../../LICENSE):
 you can use, study, modify and distribute it; anyone who distributes a modified version must
-keep the code open, under the same license.
+keep the code open, under the same license. The same applies to anyone who offers a modified version over a network.
 
 - **Mods and themes are yours.** Mods (Lua/Teal scripts that use the mods API) and themes (`oceano-tema`
   files) are not considered derivative works of Oceano and can have any license.
@@ -120,7 +120,7 @@ Oceano is built on the work of a lot of people. In particular:
 - **[Strudel](https://strudel.cc)** by Felix Roos, Alex McLean and community ([code](https://codeberg.org/uzu/strudel), AGPL-3.0): the music-by-code language that powers Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** by shinshin86 (MIT): the Navigator's animated avatar and the avatar editor.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** and **Electron**.
-- **3D model of the quadruped robot** (`simulador/robo/modelos/quadrupede.3mf`), BY-NC license, according to the file's own data: it is used **only on the Quadruped robot**, and not on the other robots. It is not under Oceano's GPL and cannot be used commercially.
+- **3D model of the quadruped robot** (`simulador/robo/modelos/quadrupede.3mf`), BY-NC license, according to the file's own data: it is used **only on the Quadruped robot**, and not on the other robots. It is not under Oceano's AGPL and cannot be used commercially.
 
 - **[Whisper](https://github.com/openai/whisper)** by OpenAI (MIT), in the ONNX conversion by [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): voice transcription, which runs on your computer and is only downloaded if the person asks for it.
 - **[Open-Meteo](https://open-meteo.com)**: the weather and the city search, with no key and no account.

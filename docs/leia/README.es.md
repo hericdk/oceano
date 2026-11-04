@@ -102,9 +102,9 @@ contraste en vivo y avisa antes de guardar. Si creas temas, lee la
 
 ## Licencia
 
-El código de Oceano es **software libre**, bajo la [GNU GPL v3.0 o posterior](../../LICENSE):
+El código de Oceano es **software libre**, bajo la [GNU AGPL v3.0 o posterior](../../LICENSE):
 puedes usarlo, estudiarlo, modificarlo y distribuirlo; quien distribuya una versión modificada debe
-mantener el código abierto, bajo la misma licencia.
+mantener el código abierto, bajo la misma licencia. Lo mismo vale para quien ofrezca una versión modificada a través de la red.
 
 - **Los mods y los temas son tuyos.** Los mods (scripts Lua/Teal que usan la API de mods) y los temas (archivos
   `oceano-tema`) no se consideran obras derivadas de Oceano y pueden tener cualquier licencia.
@@ -120,7 +120,7 @@ Oceano está hecho sobre el trabajo de mucha gente. En especial:
 - **[Strudel](https://strudel.cc)** de Felix Roos, Alex McLean y la comunidad ([código](https://codeberg.org/uzu/strudel), AGPL-3.0): el lenguaje de música por código que mueve a Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** de shinshin86 (MIT): el avatar animado de la Navegadora y el editor de avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** y **Electron**.
-- **Modelo 3D del robot cuadrúpedo** (`simulador/robo/modelos/quadrupede.3mf`), licencia BY-NC, según los datos del propio archivo: se usa **solo en el robot Cuadrúpedo**, y no en los otros robots. No está bajo la GPL de Oceano y no puede tener uso comercial.
+- **Modelo 3D del robot cuadrúpedo** (`simulador/robo/modelos/quadrupede.3mf`), licencia BY-NC, según los datos del propio archivo: se usa **solo en el robot Cuadrúpedo**, y no en los otros robots. No está bajo la AGPL de Oceano y no puede tener uso comercial.
 
 - **[Whisper](https://github.com/openai/whisper)** de OpenAI (MIT), en la conversión ONNX de [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): la transcripción de voz, que corre en tu computadora y solo se descarga si la persona lo pide.
 - **[Open-Meteo](https://open-meteo.com)**: el clima y la búsqueda de ciudades, sin clave y sin cuenta.

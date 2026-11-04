@@ -102,9 +102,9 @@ umehluko ngokuphila futhi ukuxwayise ngaphambi kokugcina. Uma udala izindikimba,
 
 ## Ilayisense
 
-Ikhodi ye-Oceano **isofthiwe ekhululekile**, ngaphansi kwe-[GNU GPL v3.0 noma kamuva](../../LICENSE):
+Ikhodi ye-Oceano **isofthiwe ekhululekile**, ngaphansi kwe-[GNU AGPL v3.0 noma kamuva](../../LICENSE):
 ungayisebenzisa, uyifunde, uyiguqule futhi uyisakaze; noma ubani osakaza inguqulo eguquliwe kufanele
-agcine ikhodi ivulekile, ngaphansi kwelayisense efanayo.
+agcine ikhodi ivulekile, ngaphansi kwelayisense efanayo. Kunjalo nakunoma ubani onikeza inguqulo eguquliwe ngenethiwekhi.
 
 - **Ama-mod nezindikimba ngezakho.** Ama-mod (izikripthi ze-Lua/Teal ezisebenzisa i-API yama-mod) nezindikimba (amafayela
   e-`oceano-tema`) azibalwa njengemisebenzi etholakala ku-Oceano futhi zingaba nelayisense elingaba yiliphi.
@@ -120,7 +120,7 @@ I-Oceano yakhelwe phezu komsebenzi wabantu abaningi. Ikakhulukazi:
 - **[Strudel](https://strudel.cc)** ka-Felix Roos, u-Alex McLean nomphakathi ([ikhodi](https://codeberg.org/uzu/strudel), AGPL-3.0): ulimi lomculo ngekhodi oluhambisa i-Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** ka-shinshin86 (MIT): i-avatar ephilayo yoMhambisi nomhleli we-avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** ne-**Electron**.
-- **Imodeli ye-3D yerobhothi enemilenze emine** (`simulador/robo/modelos/quadrupede.3mf`), ilayisense BY-NC, ngokwedatha yefayela ngokwalo: isetshenziswa **kuphela kurobhothi i-Quadrúpede**, hhayi kwamanye amarobhothi. Ayiphansi kwe-GPL ye-Oceano futhi ayikwazi ukusetshenziswa ngokwezohwebo.
+- **Imodeli ye-3D yerobhothi enemilenze emine** (`simulador/robo/modelos/quadrupede.3mf`), ilayisense BY-NC, ngokwedatha yefayela ngokwalo: isetshenziswa **kuphela kurobhothi i-Quadrúpede**, hhayi kwamanye amarobhothi. Ayiphansi kwe-AGPL ye-Oceano futhi ayikwazi ukusetshenziswa ngokwezohwebo.
 
 - **[Whisper](https://github.com/openai/whisper)** ye-OpenAI (MIT), ekuguqulweni kwe-ONNX kwe-[onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): ukuthulula izwi, okusebenza ekhompyutheni futhi kulandwa kuphela uma umuntu eyicela.
 - **[Open-Meteo](https://open-meteo.com)**: isimo sezulu nokusesha amadolobha, ngaphandle kokhiye futhi ngaphandle kwe-akhawunti.

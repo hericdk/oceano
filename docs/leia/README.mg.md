@@ -102,9 +102,9 @@ ny fifanoherana mivantana ary mampitandrina alohan'ny hitahiry. Raha mamorona lo
 
 ## Fahazoan-dalana
 
-Ny code an'i Oceano dia **rindrambaiko afaka**, ao ambanin'ny [GNU GPL v3.0 na aoriana](../../LICENSE):
+Ny code an'i Oceano dia **rindrambaiko afaka**, ao ambanin'ny [GNU AGPL v3.0 na aoriana](../../LICENSE):
 azonao ampiasaina, ianarana, ovaina ary zaraina; izay mizara kinovao novaina dia tsy maintsy
-mitazona ny code misokatra, ambanin'ny fahazoan-dalana mitovy.
+mitazona ny code misokatra, ambanin'ny fahazoan-dalana mitovy. Toy izany koa izay manolotra kinova novaina amin'ny tambajotra.
 
 - **Anao ny mods sy ny lohahevitra.** Ny mods (script Lua/Teal mampiasa ny API mods) sy ny lohahevitra (rakitra
   `oceano-tema`) dia tsy heverina ho asa avy amin'i Oceano ary mety hanana fahazoan-dalana rehetra.
@@ -120,7 +120,7 @@ Naorina tamin'ny asan'ny olona maro i Oceano. Indrindra:
 - **[Strudel](https://strudel.cc)** nataon'i Felix Roos, Alex McLean ary ny vondrom-piarahamonina ([code](https://codeberg.org/uzu/strudel), AGPL-3.0): ny fiteny mozika amin'ny code izay mamoy ny Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** nataon'i shinshin86 (MIT): ny avatar mihetsika an'ilay Mpitari-dalana sy ny mpanova avatar.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** ary **Electron**.
-- **Môdely 3D an'ny robot kiririoka efatra** (`simulador/robo/modelos/quadrupede.3mf`), fahazoan-dalana BY-NC, araka ny angon-drakitra ao amin'ny rakitra mihitsy: ampiasaina **amin'ny robot Quadrúpede ihany**, fa tsy amin'ny robot hafa. Tsy ao ambanin'ny GPL an'i Oceano izy ary tsy azo ampiasaina ara-barotra.
+- **Môdely 3D an'ny robot kiririoka efatra** (`simulador/robo/modelos/quadrupede.3mf`), fahazoan-dalana BY-NC, araka ny angon-drakitra ao amin'ny rakitra mihitsy: ampiasaina **amin'ny robot Quadrúpede ihany**, fa tsy amin'ny robot hafa. Tsy ao ambanin'ny AGPL an'i Oceano izy ary tsy azo ampiasaina ara-barotra.
 
 - **[Whisper](https://github.com/openai/whisper)** nataon'ny OpenAI (MIT), amin'ny fanovana ONNX an'ny [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): ny fanoratana feo, izay mandeha ao amin'ny solosaina ary alaina ihany raha mangataka ny olona.
 - **[Open-Meteo](https://open-meteo.com)**: ny toetr'andro sy ny fikarohana tanàna, tsy misy fanalahidy ary tsy misy kaonty.

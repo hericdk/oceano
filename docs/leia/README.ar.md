@@ -104,9 +104,9 @@ Oceano ويوقفها بنفسه، ولا تتحدث إلا مع حاسوبك.
 
 ## الرخصة
 
-شيفرة Oceano **برمجية حرة**، بموجب [رخصة GNU GPL الإصدار 3.0 أو أحدث](../../LICENSE):
+شيفرة Oceano **برمجية حرة**، بموجب [رخصة GNU AGPL الإصدار 3.0 أو أحدث](../../LICENSE):
 يمكنك استخدامها ودراستها وتعديلها وتوزيعها؛ ومن يوزّع نسخة معدّلة عليه أن
-يبقي الشيفرة مفتوحة، بالرخصة نفسها.
+يبقي الشيفرة مفتوحة، بالرخصة نفسها. وينطبق الأمر نفسه على من يقدّم نسخة معدّلة عبر الشبكة.
 
 - **الـ mods والسمات ملكك.** الـ mods (سكربتات Lua/Teal التي تستخدم واجهة mods البرمجية) والسمات (ملفات `oceano-tema`)
   لا تُعدّ أعمالًا مشتقة من Oceano ويمكن أن تحمل أي رخصة.
@@ -122,7 +122,7 @@ Oceano مبني على عمل الكثير من الناس. وبشكل خاص:
 - **[Strudel](https://strudel.cc)** لـ Felix Roos وAlex McLean والمجتمع ([الشيفرة](https://codeberg.org/uzu/strudel)، AGPL-3.0): لغة الموسيقى بالشيفرة التي تشغّل Stave.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** لـ shinshin86 (MIT): الصورة الرمزية المتحركة للملّاحة ومحرر الصور الرمزية.
 - **Lua** (PUC-Rio) و**Teal** (Hisham Muhammad) و**three.js** و**Chromium** و**Electron**.
-- **النموذج ثلاثي الأبعاد للروبوت رباعي الأرجل** (`simulador/robo/modelos/quadrupede.3mf`)، برخصة BY-NC، وفق بيانات الملف نفسه: يُستخدم **فقط في الروبوت Quadrúpede**، وليس في بقية الروبوتات. وهو ليس تحت GPL الخاصة بـ Oceano ولا يجوز استخدامه تجاريًا.
+- **النموذج ثلاثي الأبعاد للروبوت رباعي الأرجل** (`simulador/robo/modelos/quadrupede.3mf`)، برخصة BY-NC، وفق بيانات الملف نفسه: يُستخدم **فقط في الروبوت Quadrúpede**، وليس في بقية الروبوتات. وهو ليس تحت AGPL الخاصة بـ Oceano ولا يجوز استخدامه تجاريًا.
 
 - **[Whisper](https://github.com/openai/whisper)** من OpenAI (MIT)، بتحويل ONNX من [onnx-community](https://huggingface.co/onnx-community/whisper-base) (Apache-2.0): تفريغ الصوت إلى نص، ويعمل على الحاسوب ولا يُنزَّل إلا إذا طلب الشخص ذلك.
 - **[Open-Meteo](https://open-meteo.com)**: الطقس والبحث عن المدن، بلا مفتاح وبلا حساب.

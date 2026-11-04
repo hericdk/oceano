@@ -102,9 +102,9 @@ kontras la an dirèk epi li avèti anvan ou sove. Si ou kreye tèm, li
 
 ## Lisans
 
-Kòd Oceano a se **lojisyèl lib**, anba [GNU GPL v3.0 oswa pita](../../LICENSE):
+Kòd Oceano a se **lojisyèl lib**, anba [GNU AGPL v3.0 oswa pita](../../LICENSE):
 ou ka itilize l, etidye l, modifye l epi distribye l; moun ki distribye yon vèsyon modifye dwe
-kenbe kòd la ouvè, anba menm lisans lan.
+kenbe kòd la ouvè, anba menm lisans lan. Se menm bagay la pou moun ki ofri yon vèsyon modifye sou rezo a.
 
 - **Mod ak tèm yo se pa w.** Mod (script Lua/Teal ki itilize API mod yo) ak tèm (fichye
   `oceano-tema`) pa konsidere kòm travay derive Oceano e yo ka gen nenpòt lisans.
@@ -120,7 +120,7 @@ Oceano bati sou travay anpil moun. An patikilye:
 - **[Strudel](https://strudel.cc)** pa Felix Roos, Alex McLean ak kominote a ([kòd](https://codeberg.org/uzu/strudel), AGPL-3.0): lang mizik pa kòd ki fè Stave mache.
 - **[Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)** pa shinshin86 (MIT): avatar anime Navigatris la ak editè avatar la.
 - **Lua** (PUC-Rio), **Teal** (Hisham Muhammad), **three.js**, **Chromium** ak **Electron**.
-- **Modèl 3D robo kadripèd la** (`simulador/robo/modelos/quadrupede.3mf`), lisans BY-NC, dapre done fichye a menm: li itilize **sèlman nan robo Kadripèd la**, epi pa nan lòt robo yo. Li pa anba GPL Oceano a e li pa ka gen itilizasyon komèsyal.
+- **Modèl 3D robo kadripèd la** (`simulador/robo/modelos/quadrupede.3mf`), lisans BY-NC, dapre done fichye a menm: li itilize **sèlman nan robo Kadripèd la**, epi pa nan lòt robo yo. Li pa anba AGPL Oceano a e li pa ka gen itilizasyon komèsyal.
 
 - **[Whisper](https://github.com/openai/whisper)** pa OpenAI (MIT), nan konvèsyon ONNX [onnx-community](https://huggingface.co/onnx-community/whisper-base) la (Apache-2.0): transkripsyon vwa a, ki kouri sou òdinatè a e ki telechaje sèlman si moun nan mande l.
 - **[Open-Meteo](https://open-meteo.com)**: move tan an ak rechèch vil yo, san kle e san kont.
